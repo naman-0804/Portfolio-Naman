@@ -4,7 +4,15 @@
 .project{
   display: flex;
 }
+.Skills{
+  display: flex;
+  justify-content: center;
+}
 
+.contact{
+  display: flex;
+  justify-content: center;
+}
 .intro {
   width: 600px;
   height: 400px;
@@ -59,6 +67,11 @@
   max-width: 700px;
   height: 600px;
 }
+.exed {
+  
+  justify-content: space-between;
+}
+
 .section {
   display: flex;
   justify-content: flex-end; /* Align buttons to the right */
@@ -70,4 +83,8 @@
   justify-content: flex-end;
   margin-right: 25px ;
   padding-right: 20px;
+}
+
+h1 {
+  text-align: center;
 }
