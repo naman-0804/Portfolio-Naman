@@ -106,6 +106,42 @@ function App() {
       </div>
 
       <br />
+      <br />
+
+      <div className="exed">
+        <center><h1>Experience</h1></center>
+        <div className="exp" style={{ border: "5px solid black", marginRight:"270px",marginLeft:"270px"}}>
+          <h3>Software Developer</h3>
+          <h3>Software Developer</h3>
+          <h3>Software Developer</h3>
+        </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+        <h1>Education</h1>
+        <br />
+        <div className="edu" style={{ border: "5px solid black",marginRight:"270px",marginLeft:"270px"}}>
+          <h3>College VIT</h3>
+          <h3>High School</h3>
+        </div>
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>      
 
       <center><h1>Skills</h1></center>
 
@@ -157,35 +193,69 @@ function App() {
           <h3>React</h3>
         </div>
       </div>
-
-      <br />
-
-      <div className="exed">
-        <center><h1>Experience</h1></center>
-        <div className="exp" style={{ border: "5px solid black", marginRight:"270px",marginLeft:"270px"}}>
-          <h3>Software Developer</h3>
-          <h3>Software Developer</h3>
-          <h3>Software Developer</h3>
-        </div>
-        <h1>Education</h1>
-        <br />
-        <div className="edu" style={{ border: "5px solid black",marginRight:"270px",marginLeft:"270px" }}>
-          <h3>College VIT</h3>
-          <h3>High School</h3>
-        </div>
-      </div>
-
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <center><h1>Achievement</h1></center>
       <div className="ach" style={{ border: "5px solid black", marginLeft: "270px", marginRight: "270px" }}>
         <h3>Devhouse 4th place</h3>
         <h3>Solveathon 6th place</h3>
       </div>
-
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      
       <center><h1>Contact</h1></center>
       <div className="contact" style={{ border: "5px solid black", marginLeft: "270px", marginRight: "270px" }}>
+        <div id="Name"> 
         <h3>Naman</h3>
+        </div>
+        <div id ="Email">
         <h3>Email id</h3>
+        </div> 
+        <div id="Phone">
         <h3>Phone number</h3>
+        </div>
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <center><h1>Reach out</h1></center>
+      <div className="reach" style={{ border: "5px solid black", marginLeft: "270px", marginRight: "270px" }}>
+        <div id="Name">
+          <label for="Name">Name: </label>
+        <input type="text" placeholder="Name"></input>
+        </div>
+        <div id ="Email">
+        <label for="Email">Email: </label>
+        <input type="text" placeholder="Email"></input>
+        </div> 
+        <div id="Phone">
+        <label for="Phone">Phone: </label>
+        <input type="text" placeholder="Phone number"></input>
+        </div>
+        <div id="Message">
+        <label for="Message">Message: </label>
+        <input type="text" placeholder="Message"></input>
+        </div>
       </div>
     </div>
   );
