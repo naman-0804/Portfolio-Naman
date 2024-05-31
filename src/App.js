@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div>
-      <div className="navbar">
+      <div className="navbar" style={{backgroundImage: "url(https://plus.unsplash.com/premium_photo-1675628032838-2fe34211edcf?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"}}>
         <div className="section">
           <button id="p" onMouseDown={travel}>Project</button>
           <button id="s" onMouseDown={travel}>Skills</button>
@@ -57,8 +57,9 @@ function App() {
         </div>
       </div>
 
-      <div className="container">
-        <div className="intro">
+      <div className="container" style={{backgroundImage: "url(https://wallpapers.com/images/high/page-background-66n12aqwqihi9gzc.webp)",height:"850px"}}>
+      
+        <div className="intro" >
           <h1>I am Naman</h1>
           <h1>I am a Software Developer</h1>
           <p><h3>I am more passionate about developing new websites and applications</h3></p>
@@ -68,11 +69,8 @@ function App() {
         </div>
       </div>
 
-      <br /><br /><br /><br /><br /><br />
-
       <center><h1>Project</h1></center>
-
-      <div className="project">
+      <div className="project" style={{backgroundImage: "url(https://img.freepik.com/free-vector/gradient-background-green-modern-designs_343694-2067.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1717027200&semt=ais_user)"}}>
         <div>
           <div className="vitalized" style={{ marginRight: '130px', marginLeft: '130px' }}>
             <h1>Vitalized</h1>
@@ -107,9 +105,9 @@ function App() {
       <br />
       <br />
 
-      <div className="exed">
+      <div className="exed"  style={{ backgroundImage: "url(https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png)"}}>
         <center><h1>Experience</h1></center>
-        <div className="exp" style={{ border: "5px solid black", marginRight:"270px",marginLeft:"270px"}}>
+        <div className="exp" style={{ border: "5px solid black", marginRight:"270px",marginLeft:"270px",height:"250px"}}>
           <h3>Software Developer</h3>
           <h3>Software Developer</h3>
           <h3>Software Developer</h3>
@@ -124,24 +122,13 @@ function App() {
       <br></br>
         <h1>Education</h1>
         <br />
-        <div className="edu" style={{ border: "5px solid black",marginRight:"270px",marginLeft:"270px"}}>
+        <div className="edu" style={{ border: "5px solid black",marginRight:"270px",marginLeft:"270px",height:"250px"}}>
           <h3>College VIT</h3>
           <h3>High School</h3>
         </div>
       </div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>      
-
+   
+    <div style={{ backgroundImage: "url(https://wallpapers.com/images/featured/page-background-gb7xwx37yb4yyyal.webp)"}}>
       <center><h1>Skills</h1></center>
 
       <div className="Skills" style={{ border: "5px solid black", marginRight: "270px", marginLeft: "270px" }}>
@@ -218,8 +205,10 @@ function App() {
       <br></br>
       <br></br>
       <br></br>
-      
+    </div>
+      <div style={{ backgroundImage: "url(https://shorturl.at/nrj6n)"}}>
       <center><h1>Contact</h1></center>
+
       <div className="contact" style={{ border: "5px solid black", marginLeft: "270px", marginRight: "270px" }}>
         <div id="Name"> 
         <h3>Naman</h3>
@@ -231,7 +220,6 @@ function App() {
         <h3>Phone number</h3>
         </div>
       </div>
-      <br></br>
       <br></br>
       <br></br>
       <br></br>
@@ -257,6 +245,9 @@ function App() {
         <div id="Message">
         <h4><label for="Message">Message: </label></h4>
         <input type="text" placeholder="Enter a message"></input>
+        </div>
+        <br></br>
+        <button>Submit</button>
         </div>
       </div>
     </div>
