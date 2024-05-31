@@ -27,19 +27,19 @@ function App() {
   function travel(e) {
     switch(e.target.id) {
       case 'p':
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 900);
         break;
       case 's':
-        window.scrollTo(0, 1000);
+        window.scrollTo(0, 2700);
         break;
       case 'e':
-        window.scrollTo(0, 2000);
+        window.scrollTo(0, 1800);
         break;
       case 'ed':
         window.scrollTo(0, 3000);
         break;
       case 'c':
-        window.scrollTo(0, 4000);
+        window.scrollTo(0, 3700);
         break;
       default:
         break;
@@ -53,7 +53,6 @@ function App() {
           <button id="p" onMouseDown={travel}>Project</button>
           <button id="s" onMouseDown={travel}>Skills</button>
           <button id="e" onMouseDown={travel}>Experience</button>
-          <button id="ed" onMouseDown={travel}>Education</button>
           <button id="c" onMouseDown={travel}>Contact</button>
         </div>
       </div>
@@ -241,20 +240,23 @@ function App() {
       <center><h1>Reach out</h1></center>
       <div className="reach" style={{ border: "5px solid black", marginLeft: "270px", marginRight: "270px" }}>
         <div id="Name">
-          <label for="Name">Name: </label>
+        <h4><label for="Name">Name: </label></h4>
         <input type="text" placeholder="Name"></input>
         </div>
+        <br></br>
         <div id ="Email">
-        <label for="Email">Email: </label>
+        <h4><label for="Email">Email: </label></h4>
         <input type="text" placeholder="Email"></input>
         </div> 
+        <br></br>
         <div id="Phone">
-        <label for="Phone">Phone: </label>
-        <input type="text" placeholder="Phone number"></input>
+        <h4><label for="Phone">Phone: </label></h4>
+        <input type="text" placeholder="Enter your Phone number"></input>
         </div>
+        <br></br>
         <div id="Message">
-        <label for="Message">Message: </label>
-        <input type="text" placeholder="Message"></input>
+        <h4><label for="Message">Message: </label></h4>
+        <input type="text" placeholder="Enter a message"></input>
         </div>
       </div>
     </div>
