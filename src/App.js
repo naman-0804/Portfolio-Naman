@@ -48,16 +48,18 @@ function App() {
 
   return (
     <div>
-      <div className="navbar" style={{backgroundImage: "url(https://plus.unsplash.com/premium_photo-1675628032838-2fe34211edcf?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"}}>
-        <div className="section">
-          <button id="p" onMouseDown={travel}>Project</button>
-          <button id="s" onMouseDown={travel}>Skills</button>
-          <button id="e" onMouseDown={travel}>Experience</button>
-          <button id="c" onMouseDown={travel}>Contact</button>
+      <div className="navbar" style={{backgroundColor:"yellow"}}>
+        <div className="section" style={{padding:"8px"}}>
+          <div id="Greet" style={{marginRight:"670px"}}>
+          <h2> Welcome on my Portfolio</h2>
+          </div>
+          <button id="p" onMouseDown={travel} className="button-56">Project</button>
+          <button id="s" onMouseDown={travel} className="button-56">Skills</button>
+          <button id="e" onMouseDown={travel} className="button-56">Experience</button>
+          <button id="c" onMouseDown={travel} className="button-56">Contact</button>
         </div>
       </div>
-
-      <div className="container" style={{backgroundImage: "url(https://wallpapers.com/images/high/page-background-66n12aqwqihi9gzc.webp)",height:"850px"}}>
+      <div className="container" style={{backgroundImage: "url(https://wallpapers.com/images/high/page-background-66n12aqwqihi9gzc.webp)",height:"850px",padding:"20px"}}>
       
         <div className="intro" >
           <h1>I am Naman</h1>
@@ -70,7 +72,7 @@ function App() {
       </div>
 
       <center><h1>Project</h1></center>
-      <div className="project" style={{backgroundImage: "url(https://img.freepik.com/free-vector/gradient-background-green-modern-designs_343694-2067.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1717027200&semt=ais_user)"}}>
+      <div className="project" style={{backgroundImage: "url(https://img.freepik.com/free-vector/gradient-background-green-modern-designs_343694-2067.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1717027200&semt=ais_user)" ,padding:"8px"}}>
         <div>
           <div className="vitalized" style={{ marginRight: '130px', marginLeft: '130px' }}>
             <h1>Vitalized</h1>
@@ -101,25 +103,14 @@ function App() {
           </div>
         </div>
       </div>
-
-      <br />
-      <br />
-
-      <div className="exed"  style={{ backgroundImage: "url(https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png)"}}>
+      <div className="exed"  style={{ backgroundImage: "url(https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png)", padding:"100px"}}>
         <center><h1>Experience</h1></center>
         <div className="exp" style={{ border: "5px solid black", marginRight:"270px",marginLeft:"270px",height:"250px"}}>
           <h3>Software Developer</h3>
           <h3>Software Developer</h3>
           <h3>Software Developer</h3>
         </div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+6
         <h1>Education</h1>
         <br />
         <div className="edu" style={{ border: "5px solid black",marginRight:"270px",marginLeft:"270px",height:"250px"}}>
@@ -128,7 +119,7 @@ function App() {
         </div>
       </div>
    
-    <div style={{ backgroundImage: "url(https://wallpapers.com/images/featured/page-background-gb7xwx37yb4yyyal.webp)"}}>
+    <div style={{ backgroundImage: "url(https://wallpapers.com/images/featured/page-background-gb7xwx37yb4yyyal.webp)",padding:"10px"}}>
       <center><h1>Skills</h1></center>
 
       <div className="Skills" style={{ border: "5px solid black", marginRight: "270px", marginLeft: "270px" }}>
@@ -145,9 +136,7 @@ function App() {
           <h3>React</h3>
         </div>
       </div>
-
       <br />
-
       <div className="Skills" style={{ border: "5px solid black", marginRight: "270px", marginLeft: "270px" }}>
         <div className="p1" style={{ marginRight: "70px" }}>
           <h3>Html</h3>
@@ -189,24 +178,13 @@ function App() {
       <br></br>
       <br></br>
       <center><h1>Achievement</h1></center>
-      <div className="ach" style={{ border: "5px solid black", marginLeft: "270px", marginRight: "270px" }}>
+      <div className="ach" style={{ border: "5px solid black", marginLeft: "270px", marginRight: "270px",padding:"80px" }}>
         <h3>Devhouse 4th place</h3>
         <h3>Solveathon 6th place</h3>
       </div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+
     </div>
-      <div style={{ backgroundImage: "url(https://shorturl.at/nrj6n)"}}>
+      <div style={{ backgroundImage: "url(https://shorturl.at/nrj6n)",padding:"1px"}}>
       <center><h1>Contact</h1></center>
 
       <div className="contact" style={{ border: "5px solid black", marginLeft: "270px", marginRight: "270px" }}>
@@ -221,8 +199,7 @@ function App() {
         </div>
       </div>
       <br></br>
-      <br></br>
-      <br></br>
+      
       <br></br>
       <br></br>
       <center><h1>Reach out</h1></center>
