@@ -57,7 +57,7 @@ function App() {
           <button id="c" onMouseDown={travel} className="button-56">Contact</button>
         </div>
       </div>
-      <div className="container">
+      <div className="container" style={{backgroundColor:"lime"}}>
         <div className="intro">
           <h1>I am Naman</h1>
           <h1>I am a Software Developer</h1>
@@ -95,72 +95,52 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="exed">
+      <div className="exed" style={{backgroundColor:"pink"}}>
         <center><h1>Experience</h1></center>
         <div className="exp">
           <h3>Software Developer</h3>
           <h3>Software Developer</h3>
           <h3>Software Developer</h3>
         </div>
-        <h1>Education</h1>
         <br />
+        <br />
+        <br></br>
+        <br></br>
+        <br></br>
+        <h1>Education</h1>
+
         <div className="edu">
+      
           <h3>College VIT</h3>
           <h3>High School</h3>
         </div>
       </div>
    
-      <div style={{ padding:"10px"}}>
+      <div style={{ padding:"10px", backgroundColor:"teal"}}>
         <center><h1>Skills</h1></center>
         <div className="Skills">
           <div className="p1">
             <h3>Html</h3>
+            <h3>Css</h3>
           </div>
           <div className="p2">
             <h3>Css</h3>
           </div>
           <div className="p3">
             <h3>Js</h3>
+          </div>
+          <div className="p4">
+            <h3>React</h3>
+          </div>
+          <div className="p4">
+            <h3>React</h3>
           </div>
           <div className="p4">
             <h3>React</h3>
           </div>
         </div>
         <br />
-        <div className="Skills">
-          <div className="p1">
-            <h3>Html</h3>
-          </div>
-          <div className="p2">
-            <h3>Css</h3>
-          </div>
-          <div className="p3">
-            <h3>Js</h3>
-          </div>
-          <div className="p4">
-            <h3>React</h3>
-          </div>
-        </div>
-        <br />
-        <div className="Skills">
-          <div className="p1">
-            <h3>Html</h3>
-          </div>
-          <div className="p2">
-            <h3>Css</h3>
-          </div>
-          <div className="p3">
-            <h3>Js</h3>
-          </div>
-          <div className="p4">
-            <h3>React</h3>
-          </div>
-        </div>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+      
         <br></br>
         <br></br>
         <br></br>
@@ -171,7 +151,7 @@ function App() {
           <h3>Solveathon 6th place</h3>
         </div>
       </div>
-      <div style={{padding:"1px"}}>
+      <div style={{padding:"1px",backgroundColor:"silver"}}>
         <center><h1>Contact</h1></center>
         <div className="contact">
           <div id="Name"> 
@@ -185,30 +165,24 @@ function App() {
           </div>
         </div>
         <br></br>
-        <br></br>
-        <br></br>
         <center><h1>Reach out</h1></center>
         <div className="reach">
           <div id="Name">
             <h4><label htmlFor="Name">Name: </label></h4>
             <input type="text" placeholder="Name"></input>
           </div>
-          <br></br>
           <div id ="Email">
             <h4><label htmlFor="Email">Email: </label></h4>
             <input type="text" placeholder="Email"></input>
           </div> 
-          <br></br>
           <div id="Phone">
             <h4><label htmlFor="Phone">Phone: </label></h4>
             <input type="text" placeholder="Enter your Phone number"></input>
           </div>
-          <br></br>
           <div id="Message">
             <h4><label htmlFor="Message">Message: </label></h4>
             <input type="text" placeholder="Enter a message"></input>
           </div>
-          <br></br>
           <button>Submit</button>
         </div>
       </div>
