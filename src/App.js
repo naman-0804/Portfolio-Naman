@@ -1,48 +1,34 @@
+import React from 'react';
 import './App.css';
 
 function App() {
   function redirectToProject(id) {
     let url = '';
-    switch(id) {
-        case 'vitalized-button':
-            url = 'https://github.com/un-identified/vitalized-vit';
-            break;
-        case 'asl-button':
-            url = 'https://github.com/un-identified/Sign-Language-Translator';
-            break;
-        case 'medhub-button':
-            url = 'https://github.com/un-identified/Healthcare';
-            break;
-        case 'okra-button':
-            url = 'https://github.com/un-identified/Okra-Maturity-Analysis';
-            break;
-        default:
-            break;
-    }
-    if (url) {
-        window.location.href = url;
-    }
-  }
-
-  function travel(e) {
-    switch(e.target.id) {
-      case 'p':
-        window.scrollTo(0, 900);
+    switch (id) {
+      case 'vitalized-button':
+        url = 'https://github.com/un-identified/vitalized-vit';
         break;
-      case 's':
-        window.scrollTo(0, 2700);
+      case 'asl-button':
+        url = 'https://github.com/un-identified/Sign-Language-Translator';
         break;
-      case 'e':
-        window.scrollTo(0, 1800);
+      case 'medhub-button':
+        url = 'https://github.com/un-identified/Healthcare';
         break;
-      case 'ed':
-        window.scrollTo(0, 3000);
-        break;
-      case 'c':
-        window.scrollTo(0, 3700);
+      case 'okra-button':
+        url = 'https://github.com/un-identified/Okra-Maturity-Analysis';
         break;
       default:
         break;
+    }
+    if (url) {
+      window.open(url, '_blank');
+    }
+  }
+
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
@@ -50,14 +36,14 @@ function App() {
     <div>
       <div className="navbar">
         <div className="section">
-          <h2> Welcome on my Portfolio</h2>
-          <button id="p" onMouseDown={travel} className="button-56">Project</button>
-          <button id="s" onMouseDown={travel} className="button-56">Skills</button>
-          <button id="e" onMouseDown={travel} className="button-56">Experience</button>
-          <button id="c" onMouseDown={travel} className="button-56">Contact</button>
+          <h2>Welcome to my Portfolio</h2>
+          <button id="p" onClick={() => scrollToSection('project-section')}>Project</button>
+          <button id="s" onClick={() => scrollToSection('skills-section')}>Skills</button>
+          <button id="e" onClick={() => scrollToSection('experience-section')}>Experience</button>
+          <button id="c" onClick={() => scrollToSection('contact-section')}>Contact</button>
         </div>
       </div>
-      <div className="container" style={{backgroundColor:"lime"}}>
+      <div className="container" style={{ backgroundColor: "lime" }}>
         <div className="intro">
           <h1>I am Naman</h1>
           <h1>I am a Software Developer</h1>
@@ -68,8 +54,8 @@ function App() {
         </div>
       </div>
 
-      <div className="project" style={{backgroundColor:"orange"}}>
-      <center><h1>Project</h1></center>
+      <div id="project-section" className="project" style={{ backgroundColor: "orange" }}>
+        <center><h1>Project</h1></center>
         <div>
           <div className="vitalized">
             <h1>Vitalized</h1>
@@ -95,7 +81,8 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="exed" style={{backgroundColor:"pink"}}>
+
+      <div id="experience-section" className="exed" style={{ backgroundColor: "pink" }}>
         <center><h1>Experience</h1></center>
         <div className="exp">
           <h3>Software Developer</h3>
@@ -104,19 +91,18 @@ function App() {
         </div>
         <br />
         <br />
-        <br></br>
-        <br></br>
-        <br></br>
+        <br />
+        <br />
+        <br />
         <h1>Education</h1>
 
         <div className="edu">
-      
           <h3>College VIT</h3>
           <h3>High School</h3>
         </div>
       </div>
-   
-      <div style={{ padding:"10px", backgroundColor:"teal"}}>
+
+      <div id="skills-section" style={{ padding: "10px", backgroundColor: "teal" }}>
         <center><h1>Skills</h1></center>
         <div className="Skills">
           <div className="p1">
@@ -132,49 +118,46 @@ function App() {
           <div className="p4">
             <h3>React</h3>
           </div>
-          <div className="p4">
+          <div className="p5">
             <h3>React</h3>
           </div>
-          <div className="p4">
+          <div className="p6">
             <h3>React</h3>
           </div>
         </div>
         <br />
-      
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+        <br />
         <center><h1>Achievement</h1></center>
         <div className="ach">
           <h3>Devhouse 4th place</h3>
           <h3>Solveathon 6th place</h3>
         </div>
       </div>
-      <div style={{padding:"1px",backgroundColor:"silver"}}>
+
+      <div id="contact-section" style={{ padding: "1px", backgroundColor: "silver" }}>
         <center><h1>Contact</h1></center>
         <div className="contact">
-          <div id="Name"> 
+          <div id="Name">
             <h3>Naman</h3>
           </div>
-          <div id ="Email">
+          <div id="Email">
             <h3>Email id</h3>
-          </div> 
+          </div>
           <div id="Phone">
             <h3>Phone number</h3>
           </div>
         </div>
-        <br></br>
+        <br />
         <center><h1>Reach out</h1></center>
         <div className="reach">
           <div id="Name">
             <h4><label htmlFor="Name">Name: </label></h4>
             <input type="text" placeholder="Name"></input>
           </div>
-          <div id ="Email">
+          <div id="Email">
             <h4><label htmlFor="Email">Email: </label></h4>
             <input type="text" placeholder="Email"></input>
-          </div> 
+          </div>
           <div id="Phone">
             <h4><label htmlFor="Phone">Phone: </label></h4>
             <input type="text" placeholder="Enter your Phone number"></input>
