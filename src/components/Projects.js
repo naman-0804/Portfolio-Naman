@@ -25,7 +25,7 @@ function Projects() {
   }
 
   return (
-    <div id="project-section" className="project" style={{ backgroundColor: "orange" }}>
+    <div id="project-section" className="project" style={{  }}>
       <center><h1>Project</h1></center>
       <div>
         <div className="vitalized">
@@ -46,8 +46,8 @@ function Projects() {
           <button id="medhub-button" className='button-81' onClick={() => redirectToProject('medhub-button')}>View project</button>
         </div>
         <div className="okra">
-          <h1>Okra</h1>
-          <img decoding="async" src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg" width="600px" height="250px" alt="Okra" />
+          <h1>Okra maturity Analysis</h1>
+          <img decoding="async" src="E:\Portfolio\Portfolio-Naman\src\okra-website.png" width="600px" height="250px" alt="Okra" />
           <button id="okra-button" className='button-81' onClick={() => redirectToProject('okra-button')}>View project</button>
         </div>
       </div>
