@@ -100,7 +100,7 @@ html, body {
 
 
 .container {
-  height: 100vh;
+  height: 100%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -108,8 +108,14 @@ html, body {
   align-items: center;
 }
 
-.intro {
-  text-align: center;
+.profile-container {
+  height: 100%;
+  padding-top: 12rem;
+  padding-left: 5rem;
+  padding-right: 45rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dp img {
@@ -117,7 +123,9 @@ html, body {
   height: 200px;
   border-radius: 100%;
 }
-
+.dp {
+  margin-right: -35rem;
+}
 .project {
   padding: 1.5rem;
 }
