@@ -1,5 +1,8 @@
 import React from 'react';
-
+import okrapic from '../okra-website.png';
+import vitalized from '../vitalized-website.png';
+import medhub from '../medhub360-website.png';
+import sl from '../SL-website.png';
 function Projects() {
   function redirectToProject(id) {
     let url = '';
@@ -30,24 +33,24 @@ function Projects() {
       <div>
         <div className="vitalized">
           <h1>Vitalized</h1>
-          <img decoding="async" src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg" width="600px" height="250px" alt="Vitalized" />
+          <img src={vitalized} width="600px" height="250px" alt="Vitalized" />
           <button id="vitalized-button" className='button-81' onClick={() => redirectToProject('vitalized-button')}>View project</button>
         </div>
         <div className="asl">
           <h1>ASL/ISL Translator</h1>
-          <img decoding="async" src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg" width="600px" height="250px" alt="ASL/ISL Translator" />
+          <img src={sl} width="600px" height="250px" alt="ASL/ISL Translator" />
           <button id="asl-button" className='button-81' onClick={() => redirectToProject('asl-button')}>View project</button>
         </div>
       </div>
       <div>
         <div className="medhub">
           <h1>Medhub360</h1>
-          <img decoding="async" src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg" width="600px" height="250px" alt="Medhub360" />
+          <img src={medhub} width="600px" height="250px" alt="Medhub360" />
           <button id="medhub-button" className='button-81' onClick={() => redirectToProject('medhub-button')}>View project</button>
         </div>
         <div className="okra">
           <h1>Okra maturity Analysis</h1>
-          <img decoding="async" src="okra-website.png" width="600px" height="250px" alt="Okra" />
+          <img src={okrapic} width="600px" height="250px" alt="Okra" />
           <button id="okra-button" className='button-81' onClick={() => redirectToProject('okra-button')}>View project</button>
         </div>
       </div>
