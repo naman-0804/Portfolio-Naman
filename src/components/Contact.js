@@ -2,17 +2,14 @@ import React from 'react';
 
 function Contact() {
   return (
-    <div id="contact-section" style={{ padding: "1px", backgroundColor: "silver" }}>
-      <center><h1>Contact</h1></center>
+    <div id="contact-section" style={{ padding: "1px"}}>
+      <center><h1>Contact Me</h1></center>
       <div className="contact">
         <div id="Name">
-          <h3>Naman</h3>
+          <h3>Name - Naman Srivastava</h3>
         </div>
         <div id="Email">
-          <h3>Email id</h3>
-        </div>
-        <div id="Phone">
-          <h3>Phone number</h3>
+          <h3>Email id - namansrivastava1608@gmail.com</h3>
         </div>
       </div>
       <br />
