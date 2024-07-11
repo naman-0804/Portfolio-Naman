@@ -47,7 +47,7 @@ function Projects() {
         </div>
         <div className="okra">
           <h1>Okra maturity Analysis</h1>
-          <img decoding="async" src="E:\Portfolio\Portfolio-Naman\src\okra-website.png" width="600px" height="250px" alt="Okra" />
+          <img decoding="async" src="okra-website.png" width="600px" height="250px" alt="Okra" />
           <button id="okra-button" className='button-81' onClick={() => redirectToProject('okra-button')}>View project</button>
         </div>
       </div>
