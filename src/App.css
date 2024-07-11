@@ -160,7 +160,7 @@ html, body {
 }
 
 .Skills {
-  border: 5px solid black;
+
   margin: 2rem auto;
   width: 80%;
   display: flex;
@@ -180,7 +180,23 @@ html, body {
   margin: 2rem auto;
   width: 80%;
   padding: 2rem;
-  text-align: center;
+  list-style: none; /* Remove default list styling */
+  text-align: left;
+}
+
+.ach li {
+  margin-bottom: 1.5rem;
+}
+
+.ach h3 {
+  margin-bottom: 0.5rem;
+}
+
+.ach p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  color: #555;
 }
 
 .contact, .reach {

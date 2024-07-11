@@ -2,36 +2,71 @@ import React from 'react';
 
 function Skills() {
   return (
-    <div id="skills-section" style={{ padding: "10px", backgroundColor: "teal" }}>
+    <div id="skills-section" style={{ padding: "10px" }}>
       <center><h1>Skills</h1></center>
       <div className="Skills">
-        <div className="p1">
-          <h3>Html</h3>
-          <h3>Css</h3>
+      <br/>
+        <div>
+        - Backend
+        <p>
+          <a href="https://skillicons.dev">
+            <img src="https://skillicons.dev/icons?i=java,nodejs,py,flask,express" />
+          </a>
+        </p>
         </div>
-        <div className="p2">
-          <h3>Css</h3>
+        <br/>
+        <div>
+        - Frontend
+        <p >
+          <a href="https://skillicons.dev">
+            <img src="https://skillicons.dev/icons?i=js,react,nextjs,materialui" />
+          </a>
+        </p>
         </div>
-        <div className="p3">
-          <h3>Js</h3>
+        <br/>
+        <div>
+        - Database
+        <p >
+          <a href="https://skillicons.dev">
+            <img src="https://skillicons.dev/icons?i=mongodb,mysql,postgresql" />
+          </a>
+        </p>
         </div>
-        <div className="p4">
-          <h3>React</h3>
+        <br/>
+        <div>
+        - Cloud Servers
+        <p >
+          <a href="https://skillicons.dev">
+            <img src="https://skillicons.dev/icons?i=supabase,firebase" />
+          </a>
+        </p>
         </div>
-        <div className="p5">
-          <h3>React</h3>
-        </div>
-        <div className="p6">
-          <h3>React</h3>
+        <br/>
+        <div>
+        - Tools
+        <p >
+          <a href="https://skillicons.dev">
+            <img src="https://skillicons.dev/icons?i=git,github,docker,figma,vscode,postman,linux" />
+          </a>
+        </p>
         </div>
       </div>
-      <br />
-      <br />
       <center><h1>Achievement</h1></center>
-      <div className="ach">
-        <h3>Devhouse 4th place</h3>
-        <h3>Solveathon 6th place</h3>
-      </div>
+      <ul className="ach">
+        <li>
+          <h3>Software developer Intern</h3>
+          <p>Secured a summer internship with The entreprenuership network, learned a lot of new stuff during my tenure</p>
+        </li>
+        <li>
+          <h3>Devshouse 4th place</h3>
+          <p>Participated in the Devhouse competition and secured the 4th place among 600+ teams.</p>
+        </li>
+        <li>
+          <h3>Solveathon 6th place</h3>
+          <p>Ranked 6th in the Solveathon and got special apprectiation for our idea.</p>
+        </li>
+
+      </ul>
     </div>
   );
 }
