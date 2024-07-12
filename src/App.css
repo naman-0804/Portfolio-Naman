@@ -6,7 +6,6 @@ html, body {
   overflow-x: hidden;
   font-family: Arial, sans-serif;
 }
-/* CSS */
 .button-86 {
   all: unset;
   width: 100px;
@@ -69,18 +68,17 @@ html, body {
   height: 100%;
 }
 
-.button-86:active::after {
-  transition: 0s;
-  transform: translate(0, 5%);
-}
 .navbar {
   background-color: yellow;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .section {
@@ -89,13 +87,42 @@ html, body {
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
-  margin-right: 90px;
+  text-align: center;
 }
 
 .section h2 {
-  margin: 0 0 1rem 0;
   flex: 1 1 100%;
-  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .section h2 {
+    flex: 0 1 auto;
+    margin: 0;
+  }
+
+  .button-86 {
+    margin: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .button-86 {
+    font-size: 18px;
+  }
 }
 
 
@@ -109,22 +136,61 @@ html, body {
 }
 
 .profile-container {
-  height: 100%;
-  padding-top: 8rem;
-  padding-left: 5rem;
-  padding-right: 45rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.intro h1 {
+  margin: 0.5rem 0;
+}
+
+.intro h3 {
+  margin: 1rem 0;
+}
+
+.intro a {
+  margin: 0 0.5rem;
 }
 
 .dp img {
-  width: 400px;
-  height: 400px;
-  border-radius: 20%;
+  width: 500px;
+  max-width: 500px;
+  height: auto;
+  border-radius: 25%;
+  margin-top: 1rem;
 }
-.dp {
-  margin-right: -35rem;
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+  .profile-container {
+    flex-direction: row;
+    padding: 4rem;
+    text-align: left;
+  }
+
+  .intro {
+    max-width: 50%;
+    padding-right: 2rem;
+  }
+
+  .dp {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .intro {
+    max-width: 40%;
+  }
+
+  .dp img {
+    width: 400px;
+    height: 400px;
+  }
 }
 .project {
   padding: 1.5rem;
@@ -150,7 +216,6 @@ html, body {
 .exed {
   padding: 2vh 0;
   text-align: center;
-
 }
 
 .exp {
@@ -159,7 +224,7 @@ html, body {
   padding: 2rem;
   list-style: none; /* Remove default list styling */
   text-align: left;
-  width: 100%; /* Expand the width */
+  width: 90%; /* Default width */
   max-width: 1200px; /* Ensure it doesn't stretch too much */
 }
 
@@ -178,6 +243,18 @@ html, body {
   color: #555;
 }
 
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+  .exed .exp {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .exed .exp {
+    width: 50%;
+  }
+}
 .Skills {
 
   margin: 2rem auto;
