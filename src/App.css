@@ -110,7 +110,7 @@ html, body {
 
 .profile-container {
   height: 100%;
-  padding-top: 12rem;
+  padding-top: 8rem;
   padding-left: 5rem;
   padding-right: 45rem;
   display: flex;
@@ -119,9 +119,9 @@ html, body {
 }
 
 .dp img {
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
+  width: 400px;
+  height: 400px;
+  border-radius: 20%;
 }
 .dp {
   margin-right: -35rem;
