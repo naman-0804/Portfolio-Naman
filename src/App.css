@@ -30,11 +30,11 @@ html, body {
 
 .navbar {
   background-color: yellow;
-  width: 98%;
+  width: 99%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 0.6rem;
   flex-wrap: wrap;
   position: sticky;
   top: 0;
@@ -128,7 +128,7 @@ html, body {
 @media (min-width: 768px) {
   .profile-container {
     flex-direction: row;
-    padding: 4rem;
+    padding: 6rem;
     text-align: left;
   }
 
