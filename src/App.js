@@ -14,11 +14,11 @@ function App() {
         <div className="navbar">
           <div className="section">
             <h2>Welcome to my Portfolio</h2>
-            <Link to="/" className='button-86'>Home</Link>
-            <Link to="/projects" className='button-86'>Projects</Link>
-            <Link to="/skills" className='button-86'>Skills</Link>
-            <Link to="/experience" className='button-86'>Experience</Link>
-            <Link to="/contact" className='button-86'>Contact</Link>
+            <Link to="/" className='button-11'>Home</Link>
+            <Link to="/projects" className='button-11'>Projects</Link>
+            <Link to="/skills" className='button-11'>Skills</Link>
+            <Link to="/experience" className='button-11'>Experience</Link>
+            <Link to="/contact" className='button-11'>Contact</Link>
           </div>
         </div>
         <Routes>
