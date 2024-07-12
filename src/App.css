@@ -45,7 +45,7 @@ html, body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  width: 100%;
+  width: 110%;
   justify-content: center;
   text-align: center;
 }
