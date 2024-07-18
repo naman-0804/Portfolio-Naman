@@ -4,8 +4,7 @@ import resume from '../Naman_srivastava.pdf';
 
 function Home() {
   useEffect(() => {
-    // Show the alert when the component mounts
-    alert('The css part is still under development !');
+    alert('The css part is still under development.');
   }, []);
 
   return (
