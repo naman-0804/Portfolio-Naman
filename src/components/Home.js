@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import photo from '../profile-pic.jpg';
-import resume from '../Naman_srivastava.pdf'
+import resume from '../Naman_srivastava.pdf';
+
 function Home() {
+  useEffect(() => {
+    // Show the alert when the component mounts
+    alert('The css part is still under development !');
+  }, []);
+
   return (
     <div className="profile-container" style={{ }}>
       <div className="intro">
