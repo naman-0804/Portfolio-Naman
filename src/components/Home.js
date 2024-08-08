@@ -20,7 +20,7 @@ function Home() {
           <img src="https://skillicons.dev/icons?i=github" alt="GitHub" height="50" width="50" style={{ margin: '10px' }} />
         </a>
         <div>
-          <a href={resume} download="Naman_Srivastava_Resume.pdf">
+          <a href={resume} download="Naman_Srivastava.pdf">
             <button>Download Resume</button>
           </a>
         </div>
