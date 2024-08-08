@@ -10,7 +10,7 @@ function Skills() {
         - Backend
         <p>
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=java,nodejs,py,flask,express" />
+            <img src="https://skillicons.dev/icons?i=java,nodejs,py,flask,express" alt="Backend" />
           </a>
         </p>
         </div>
@@ -19,7 +19,7 @@ function Skills() {
         - Frontend
         <p >
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=js,react,nextjs,materialui" />
+            <img src="https://skillicons.dev/icons?i=js,react,nextjs,materialui" alt="Frontend" />
           </a>
         </p>
         </div>
@@ -28,7 +28,7 @@ function Skills() {
         - Database
         <p >
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=mongodb,mysql,postgresql" />
+            <img src="https://skillicons.dev/icons?i=mongodb,mysql,postgresql" alt="Database" />
           </a>
         </p>
         </div>
@@ -37,7 +37,7 @@ function Skills() {
         - Cloud Servers
         <p >
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=supabase,firebase" />
+            <img src="https://skillicons.dev/icons?i=supabase,firebase" alt='cloud server'/>
           </a>
         </p>
         </div>
@@ -46,7 +46,7 @@ function Skills() {
         - Tools
         <p >
           <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=git,github,docker,figma,vscode,postman,linux" />
+            <img src="https://skillicons.dev/icons?i=git,github,docker,figma,vscode,postman,linux" alt="tools" />
           </a>
         </p>
         </div>
