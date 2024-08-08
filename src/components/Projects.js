@@ -1,7 +1,7 @@
 import React from 'react';
-import okrapic from '../okra-website.png';
-import vitalized from '../vitalized-website.png';
-import medhub from '../medhub360-website.png';
+import okrapic from '../Images/okra-website.png';
+import vitalized from '../Images/vitalized-website.png';
+import medhub from '../Images/medhub-website.png';
 import sl from '../SL-website.png';
 
 function Projects() {
