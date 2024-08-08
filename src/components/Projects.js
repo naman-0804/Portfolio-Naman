@@ -1,8 +1,8 @@
 import React from 'react';
 import okrapic from '../Images/okra-website.png';
 import vitalized from '../Images/vitalized-website.png';
-import medhub from '../Images/medhub-website.png';
-import sl from '../Images/sl-website.png';
+import medhub from '../Images/medhub360-website.png';
+import sl from '../Images/SL-website.png';
 
 function Projects() {
   function redirectToProject(id) {
