@@ -1,243 +1,152 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  font-family: Arial, sans-serif;
-} 
-/* CSS */
-.button-11 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 6px 14px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-  border-radius: 6px;
-  color: #3D3D3D;
-  background: #fff;
-  border: none;
-  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-11:focus {
-  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
-  outline: 0;
-}
-
-.navbar {
-  background-color: yellow;
-  width: 99%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.6rem;
-  flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.section {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 110%;
-  justify-content: center;
-  text-align: center;
-}
-
-.section h2 {
-  flex: 1 1 100%;
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 768px) {
-  .navbar {
-    justify-content: space-between;
-  }
-
-  .section {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .section h2 {
-    flex: 0 1 auto;
-    margin: 0;
-  }
-
-  .button-86 {
-    margin: 0.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section h2 {
-    font-size: 1.5rem;
-  }
-
-  .button-86 {
-    font-size: 18px;
-  }
-}
-
-
-.container {
-  height: 100%;
+#contact-section {
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.profile-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.contact, .reach {
+  border: 2px solid #000;
   padding: 2rem;
-  text-align: center;
+  margin: 1rem auto;
+  max-width: 600px;
+  border-radius: 8px;
 }
 
-.intro h1 {
-  margin: 0.5rem 0;
-}
-
-.intro h3 {
-  margin: 1rem 0;
-}
-
-.intro a {
-  margin: 0 0.5rem;
-}
-
-.dp img {
-  width: 500px;
-  max-width: 500px;
-  height: auto;
-  border-radius: 25%;
-  margin-top: 1rem;
-}
-
-/* Media queries for responsiveness */
-@media (min-width: 768px) {
-  .profile-container {
-    flex-direction: row;
-    padding: 6rem;
-    text-align: left;
-  }
-
-  .intro {
-    max-width: 50%;
-    padding-right: 2rem;
-  }
-
-  .dp {
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .intro {
-    max-width: 40%;
-  }
-
-  .dp img {
-    width: 400px;
-    height: 400px;
-  }
-}
-.project {
-  padding: 1.5rem;
-}
-
-.project div {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.project .vitalized, .project .asl, .project .medhub, .project .okra {
-  flex: 1 0 100%;
-  margin: 1rem 0;
-  text-align: center;
-}
-
-.project img {
-  max-width: 100%;
-  height: auto;
-}
-
-.exed {
-  padding: 20px;
-  text-align: center;
-}
-
-.exp {
-  border: 5px solid black;
-  margin: 2rem auto;
-  padding: 2rem;
-  list-style: none; /* Remove default list styling */
-  text-align: left;
-  width: 90%; /* Default width */
-  max-width: 1200px; /* Ensure it doesn't stretch too much */
-}
-
-.exp li {
-  margin-bottom: 1.5rem;
-}
-
-.exp h3 {
+.contact h3, .reach h4 {
   margin-bottom: 0.5rem;
 }
 
-.exp p {
+.reach input, .reach textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.reach button {
+  background-color: #1e293b;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.reach button:hover {
+  background-color: #0d172a;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  #contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact, .reach {
+    padding: 2.5rem;
+    width: 100%; /* Full width but centered */
+    max-width: 600px;
+  }
+
+  .reach button {
+    max-width: 100%; /* Ensure button stays full width */
+  }
+}
+#experience-section {
+  padding: 2rem;
+}
+
+.exed h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.exp, .edu {
+  border: 2px solid #000;
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.exp li, .edu ul {
+  margin-bottom: 1.5rem;
+  list-style-type: none; /* Remove bullet points */
+  padding-left: 0;
+}
+
+.exp h3, .edu h3 {
+  margin-bottom: 0.5rem;
+}
+
+.exp p, .edu li {
   margin: 0;
   padding: 0;
   line-height: 1.5;
   color: #555;
 }
 
-/* Media queries for responsiveness */
+/* Media Queries */
 @media (min-width: 768px) {
-  .exed .exp {
-    width: 60%;
+  #experience-section {
+    padding: 3rem;
+  }
+
+  .exp, .edu {
+    max-width: 70%; /* Slightly wider on larger screens */
   }
 }
 
 @media (min-width: 1024px) {
-  .exed .exp {
-    width: 50%;
+  .exp, .edu {
+    max-width: 60%; /* Center content with a comfortable width */
+    padding: 2.5rem;
   }
 }
-.Skills {
+#skills-section {
+  padding: 2rem;
+}
 
-  margin: 2rem auto;
-  width: 80%;
+.Skills {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .Skills div {
-  flex: 1;
-  margin: 0.5rem;
+  border: 2px solid #000;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  max-width: 800px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
   text-align: center;
 }
 
+.Skills img {
+  max-width: 100%;
+  height: auto;
+}
+
 .ach {
-  border: 5px solid black;
-  margin: 2rem auto;
-  width: 80%;
+  border: 2px solid #000;
   padding: 2rem;
-  list-style: none; /* Remove default list styling */
-  text-align: left;
+  margin: 1rem auto;
+  max-width: 800px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  list-style-type: none; /* Remove bullet points */
+  padding-left: 0;
 }
 
 .ach li {
@@ -255,104 +164,262 @@ html, body {
   color: #555;
 }
 
-.contact, .reach {
-  border: 5px solid black;
-  margin: 2rem auto;
-  width: 80%;
-  padding: 2rem;
-}
-.edu{
-  border: 5px solid black;
-  margin: 2rem auto;
-  padding: 2rem;
-  list-style: none; 
-  text-align: left;
-  width: 100%; 
-  max-width: 1200px; 
-
-}
-.reach input {
-  width: 100%;
-  padding: 0.5rem;
-  margin: 0.5rem 0;
-}
-
-/* Media queries for responsiveness */
+/* Media Queries */
 @media (min-width: 768px) {
-  .navbar {
-    flex-wrap: nowrap;
+  #skills-section {
+    padding: 3rem;
   }
 
-  .section {
+  .Skills {
     flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .section h2 {
-    flex: 0 1 auto;
-    margin: 0;
-  }
-
-  .button-56 {
-    flex: 0 1 auto;
-  }
-
-  .project div, .Skills {
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
   .Skills div {
-    flex: 1 0 30%;
-    margin: 1rem;
-  }
-
-  .project .vitalized, .project .asl, .project .medhub, .project .okra {
     flex: 1 0 45%;
     margin: 1rem;
   }
 
-  .exed .exp, .exed .edu, .ach, .contact, .reach {
-    width: 60%;
+  .ach {
+    max-width: 70%;
   }
 }
 
 @media (min-width: 1024px) {
-  .exed .exp, .exed .edu, .ach, .contact, .reach {
-    width: 50%;
+  .Skills div {
+    flex: 1 0 30%;
+  }
+
+  .ach {
+    max-width: 60%;
+    padding: 2.5rem;
+  }
+}
+.project {
+  padding: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.project-item {
+  text-align: center;
+}
+
+.project-item img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-.button-81 {
-  background-color: #fff;
-  border: 0 solid #e2e8f0;
-  border-radius: 1.5rem;
-  box-sizing: border-box;
-  color: #0d172a;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1;
-  padding: 1rem 1.6rem;
+@media (min-width: 1024px) {
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .project-item img {
+    max-width: 100%;
+  }
+}
+/* Home.css */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  text-decoration: none #0d172a solid;
-  text-decoration-thickness: auto;
-  transition: all .1s cubic-bezier(.4, 0, .2, 1);
-  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  padding: 40px; /* Increased padding for more spacing */
+  margin: 0 auto;
+  height: 100vh; /* Ensure it covers the full viewport height */
+
+  background-size: cover;
 }
 
-.button-81:hover {
-  background-color: #1e293b;
+.intro {
+  margin-bottom: 40px; /* Increased margin for more spacing */
+}
+
+.intro h1 {
+  margin: 20px 0; /* Increased margin */
+  font-size: 3rem; /* Larger font size */
+}
+
+.intro h3 {
+  margin: 20px 0; /* Increased margin */
+  font-size: 1.5rem; /* Larger font size */
+  color: #666;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  border-radius: 50%;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Slightly larger border radius */
+  cursor: pointer;
+  padding: 12px 24px; /* Increased padding for larger button */
+  font-size: 1.1rem; /* Larger font size */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.dp img {
+  width: 200px; /* Larger width */
+  height: 200px; /* Larger height */
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .intro h1 {
+    font-size: 2.5rem; /* Adjusted for medium screens */
+  }
+  
+  .intro h3 {
+    font-size: 1.25rem; /* Adjusted for medium screens */
+  }
+  
+  .dp img {
+    width: 160px; /* Adjusted size */
+    height: 160px; /* Adjusted size */
+  }
+}
+
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: 2rem; /* Further adjusted for small screens */
+  }
+  
+  .intro h3 {
+    font-size: 1rem; /* Further adjusted for small screens */
+  }
+  
+  .dp img {
+    width: 140px; /* Further adjusted size */
+    height: 140px; /* Further adjusted size */
+  }
+}
+/* General Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Space between the heading and buttons */
+  align-items: center;
+  background-color: #333; /* Dark background color */
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a raised effect */
+}
+
+.section-left {
+  display: flex;
+  align-items: center;
+}
+
+.section-right {
+  display: flex;
+  align-items: center;
+}
+
+h2 {
   color: #fff;
+  margin: 0;
+  font-size: 2rem; /* Larger font size for the welcome text */
 }
 
-@media (min-width: 768px) {
-  .button-81 {
-    font-size: 1.125rem;
-    padding: 1rem 2rem;
+.button-11 {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  color: #fff;
+  background-color: #007bff; /* Button background color */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem; /* Larger font size for readability */
+  text-align: center;
+}
+
+.button-11:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left on small screens */
+  }
+
+  .section-left {
+    width: 100%; /* Full width for heading */
+    margin-bottom: 15px;
+  }
+
+  .section-right {
+    width: 100%; /* Full width for buttons */
+    justify-content: flex-start; /* Align buttons to the start of the container */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Adjusted font size for medium screens */
+    margin-bottom: 10px;
+  }
+
+  .button-11 {
+    padding: 8px 16px;
+    font-size: 0.9rem; /* Adjusted font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px;
+    flex-direction: column;
+    align-items: stretch; /* Stretch items to fit container width */
+  }
+
+  .section-left {
+    margin-bottom: 10px;
+  }
+
+  .section-right {
+    margin-top: 10px;
+    justify-content: flex-start; /* Align buttons to the start of the container */
+  }
+
+  h2 {
+    font-size: 1.2rem; /* Further adjusted font size for small screens */
+    margin-bottom: 5px;
+  }
+
+  .button-11 {
+    width: 100%; /* Make buttons full-width on small screens */
+    padding: 12px;
+    font-size: 1rem; /* Adjusted font size */
+    box-sizing: border-box; /* Include padding in width */
   }
 }

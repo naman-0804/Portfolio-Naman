@@ -11,16 +11,19 @@ function App() {
   return (
     <Router>
       <div>
-        <div className="navbar">
-          <div className="section">
-            <h2>Welcome to my Portfolio</h2>
-            <Link to="/" className='button-11'>Home</Link>
-            <Link to="/projects" className='button-11'>Projects</Link>
-            <Link to="/skills" className='button-11'>Skills</Link>
-            <Link to="/experience" className='button-11'>Experience</Link>
-            <Link to="/contact" className='button-11'>Contact</Link>
-          </div>
+      <div className="navbar">
+        <div className="section-left">
+          <h2>Welcome to my Portfolio</h2>
         </div>
+        <div className="section-right">
+          <Link to="/" className='button-11'>Home</Link>
+          <Link to="/projects" className='button-11'>Projects</Link>
+          <Link to="/skills" className='button-11'>Skills</Link>
+          <Link to="/experience" className='button-11'>Experience</Link>
+          <Link to="/contact" className='button-11'>Contact</Link>
+        </div>
+      </div>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />

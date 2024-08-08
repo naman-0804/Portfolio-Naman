@@ -3,6 +3,7 @@ import okrapic from '../okra-website.png';
 import vitalized from '../vitalized-website.png';
 import medhub from '../medhub360-website.png';
 import sl from '../SL-website.png';
+
 function Projects() {
   function redirectToProject(id) {
     let url = '';
@@ -28,30 +29,28 @@ function Projects() {
   }
 
   return (
-    <div id="project-section" className="project" style={{  }}>
-      <center><h1>Project</h1></center>
-      <div>
-        <div className="vitalized">
+    <div id="project-section" className="project">
+      <center><h1>Projects</h1></center>
+      <div className="project-grid">
+        <div className="project-item">
           <h1>Vitalized</h1>
-          <img src={vitalized} width="600px" height="250px" alt="Vitalized" />
-          <button id="vitalized-button" className='button-81' onClick={() => redirectToProject('vitalized-button')}>View project</button>
+          <img src={vitalized} alt="Vitalized" />
+          <button id="vitalized-button" className='button' onClick={() => redirectToProject('vitalized-button')}>View project</button>
         </div>
-        <div className="asl">
+        <div className="project-item">
           <h1>ASL/ISL Translator</h1>
-          <img src={sl} width="600px" height="250px" alt="ASL/ISL Translator" />
-          <button id="asl-button" className='button-81' onClick={() => redirectToProject('asl-button')}>View project</button>
+          <img src={sl} alt="ASL/ISL Translator" />
+          <button id="asl-button" className='button' onClick={() => redirectToProject('asl-button')}>View project</button>
         </div>
-      </div>
-      <div>
-        <div className="medhub">
+        <div className="project-item">
           <h1>Medhub360</h1>
-          <img src={medhub} width="600px" height="250px" alt="Medhub360" />
-          <button id="medhub-button" className='button-81' onClick={() => redirectToProject('medhub-button')}>View project</button>
+          <img src={medhub} alt="Medhub360" />
+          <button id="medhub-button" className='button' onClick={() => redirectToProject('medhub-button')}>View project</button>
         </div>
-        <div className="okra">
-          <h1>Okra maturity Analysis</h1>
-          <img src={okrapic} width="600px" height="250px" alt="Okra" />
-          <button id="okra-button" className='button-81' onClick={() => redirectToProject('okra-button')}>View project</button>
+        <div className="project-item">
+          <h1>Okra Maturity Analysis</h1>
+          <img src={okrapic} alt="Okra" />
+          <button id="okra-button" className='button' onClick={() => redirectToProject('okra-button')}>View project</button>
         </div>
       </div>
     </div>
