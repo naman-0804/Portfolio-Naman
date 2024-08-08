@@ -2,7 +2,7 @@ import React from 'react';
 import okrapic from '../Images/okra-website.png';
 import vitalized from '../Images/vitalized-website.png';
 import medhub from '../Images/medhub-website.png';
-import sl from '../SL-website.png';
+import sl from '../Images/sl-website.png';
 
 function Projects() {
   function redirectToProject(id) {
