@@ -26,7 +26,7 @@ function Home() {
         </div>
       </div> 
       <div className="dp">
-        <img src={photo} alt="Profile" />
+        
       </div>
     </div>
   );
