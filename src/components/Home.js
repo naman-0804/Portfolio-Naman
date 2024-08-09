@@ -1,6 +1,6 @@
 import React from 'react';
 
-import photo from '../Images/profile-pic.jpg';
+//import photo from '../Images/profile-pic.jpg';
 import resume from '../Naman_srivastava.pdf';
 
 function Home() {
