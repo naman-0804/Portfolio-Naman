@@ -27,9 +27,10 @@ function Contact() {
   };
 
   return (
-    <div id="contact-section" style={{ padding: "1px"}}>
+    <div id="contact-section" style={{ padding: "1px", backgroundColor: '#fff7e6' }}>
       <center><h1>Contact Me</h1></center>
-      <div className="contact">
+      
+      <div className="contact" style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px' }}>
         <div id="Name">
           <h3>Name - Naman Srivastava</h3>
         </div>
@@ -37,10 +38,12 @@ function Contact() {
           <h3>Email id - namansrivastava1608@gmail.com</h3>
         </div>
       </div>
+
       <br />
+
       <center><h1>Reach out</h1></center>
       <form onSubmit={handleSubmit}>
-        <div className="reach">
+        <div className="reach" style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px' }}>
           <div id="Name">
             <h4><label htmlFor="name">Name: </label></h4>
             <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} />

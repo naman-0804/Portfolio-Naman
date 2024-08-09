@@ -2,7 +2,7 @@ import React from 'react';
 
 function Skills() {
   return (
-    <div id="skills-section" style={{ padding: "10px" }}>
+    <div id="skills-section" style={{ padding: "10px" ,backgroundColor:"#fff7e6"}}>
       <center><h1>Skills</h1></center>
       <div className="Skills">
       <br/>

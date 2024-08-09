@@ -29,7 +29,7 @@ function Projects() {
   }
 
   return (
-    <div id="project-section" className="project">
+    <div id="project-section" className="project"  style={{ backgroundColor: '#fff7e6' }}>
       <center><h1>Projects</h1></center>
       <div className="project-grid">
         <div className="project-item">

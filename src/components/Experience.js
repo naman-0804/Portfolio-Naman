@@ -3,7 +3,7 @@ import React from 'react';
 function Experience() {
   return (
     
-    <div id="experience-section" className="exed">
+    <div id="experience-section" className="exed" style={{ backgroundColor: '#fff7e6' }}>
       <center><h1>Experience</h1></center>
       <ul className="exp">
         <li>
