@@ -5,9 +5,8 @@ import resume from '../Naman_srivastava.pdf';
 
 function Home() {
 
-
   return (
-    <div className="profile-container">
+    <div className="profile-container" style={{ backgroundColor: '#fff7e6' }}>
       <div className="intro">
         <h1>I am Naman</h1>
         <h1>I am a Software Developer</h1>

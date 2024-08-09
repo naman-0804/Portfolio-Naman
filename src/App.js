@@ -10,8 +10,8 @@ import Contact from './components/Contact';
 function App() {
   return (
     <Router>
-      <div>
-      <div className="navbar">
+      <div >
+      <div className="navbar" >
         <div className="section-left">
           <h2>Welcome to my Portfolio</h2>
         </div>
