@@ -1,3 +1,4 @@
+
 #contact-section {
   padding: 2rem;
 }
@@ -236,32 +237,43 @@
   }
 }
 /* Home.css */
+/* Home.css */
 .profile-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px; /* Increased padding for more spacing */
+  justify-content: space-between; /* Space between the details and links */
+  align-items: flex-start; /* Align items to the top */
+  padding: 40px;
   margin: 0 auto;
-  height: 100vh; /* Ensure it covers the full viewport height */
-
+  height: 100vh;
+  background-color: #fff7e6; /* Background color */
   background-size: cover;
 }
 
-.intro {
-  margin-bottom: 40px; /* Increased margin for more spacing */
+.details {
+  flex: 1; 
+  text-align: left; 
+  max-width: 60%; 
+  background-color: #ffffff; 
+  padding: 20px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border: #000 1.5px solid;
 }
 
-.intro h1 {
-  margin: 20px 0; /* Increased margin */
-  font-size: 3rem; /* Larger font size */
+.details h1 {
+  margin: 20px 0;
+  font-size: 2.5rem; /* Adjust font size */
 }
 
-.intro h3 {
-  margin: 20px 0; /* Increased margin */
-  font-size: 1.5rem; /* Larger font size */
+.details h3 {
+  margin: 20px 0;
+  font-size: 1.25rem; /* Adjust font size */
   color: #666;
+}
+
+.details p {
+  margin: 0 0 10px; /* Add margin between paragraphs */
+  line-height: 1.6; /* Increase line height for readability */
 }
 
 a {
@@ -276,10 +288,10 @@ button {
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 8px; /* Slightly larger border radius */
+  border-radius: 8px;
   cursor: pointer;
-  padding: 12px 24px; /* Increased padding for larger button */
-  font-size: 1.1rem; /* Larger font size */
+  padding: 12px 24px;
+  font-size: 1.1rem;
 }
 
 button:hover {
@@ -287,22 +299,31 @@ button:hover {
 }
 
 .dp img {
-  width: 200px; /* Larger width */
-  height: 200px; /* Larger height */
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .intro h1 {
-    font-size: 2.5rem; /* Adjusted for medium screens */
+  .profile-container {
+    flex-direction: column; /* Stack items vertically on small screens */
+    text-align: center; /* Center text on small screens */
   }
-  
-  .intro h3 {
-    font-size: 1.25rem; /* Adjusted for medium screens */
+
+  .details {
+    text-align: center; /* Center text */
+    max-width: 100%; /* Full width on small screens */
+    margin-right: 0; /* Remove right margin */
   }
-  
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center links */
+  }
+
   .dp img {
     width: 160px; /* Adjusted size */
     height: 160px; /* Adjusted size */
@@ -310,19 +331,20 @@ button:hover {
 }
 
 @media (max-width: 480px) {
-  .intro h1 {
-    font-size: 2rem; /* Further adjusted for small screens */
+  .details h1 {
+    font-size: 1.5rem; /* Further adjusted for small screens */
   }
-  
-  .intro h3 {
+
+  .details h3 {
     font-size: 1rem; /* Further adjusted for small screens */
   }
-  
+
   .dp img {
     width: 140px; /* Further adjusted size */
     height: 140px; /* Further adjusted size */
   }
 }
+
 /* General Styles */
 /* General Styles */
 .navbar {
