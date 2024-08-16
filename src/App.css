@@ -2,7 +2,9 @@
   padding: 2rem;
   background-color: #fff7e6;
 }
-
+#Email h3 {
+  word-wrap: break-word; /* Ensures long words break and wrap to the next line */
+}
 .contact, .reach {
   border: 2px solid #000;
   padding: 2.5rem; /* Increased padding for more space inside */
