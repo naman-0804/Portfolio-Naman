@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -27,10 +28,9 @@ function Contact() {
   };
 
   return (
-    <div id="contact-section" style={{ padding: "1px", backgroundColor: '#fff7e6' }}>
-      <center><h1>Contact Me</h1></center>
-      
-      <div className="contact" style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px' }}>
+    <div id="contact-section">
+      <div className="contact">
+        <h1>Contact Me</h1>
         <div id="Name">
           <h3>Name - Naman Srivastava</h3>
         </div>
@@ -39,11 +39,9 @@ function Contact() {
         </div>
       </div>
 
-      <br />
-
-      <center><h1>Reach out</h1></center>
-      <form onSubmit={handleSubmit}>
-        <div className="reach" style={{ backgroundColor: '#ffffff', padding: '20px', borderRadius: '8px' }}>
+      <div className="reach">
+        <h1>Reach out</h1>
+        <form onSubmit={handleSubmit}>
           <div id="Name">
             <h4><label htmlFor="name">Name: </label></h4>
             <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} />
@@ -58,8 +56,8 @@ function Contact() {
             <textarea name="message" placeholder="Enter a message" value={formData.message} onChange={handleChange}></textarea>
           </div>
           <button type="submit">Submit</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }
