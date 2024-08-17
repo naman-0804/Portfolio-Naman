@@ -29,12 +29,22 @@ function Home() {
         </h3>
       </div>
       <div className="links" style={linksStyle}>
+        <div>
         <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noopener noreferrer">
           <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" height="50" width="50" style={{ margin: '10px' }} />
         </a>
         <a href="https://github.com/un-identified" target="_blank" rel="noopener noreferrer">
           <img src="https://skillicons.dev/icons?i=github" alt="GitHub" height="50" width="50" style={{ margin: '10px' }} />
         </a>
+        </div>
+        <div>
+        <a href="https://www.geeksforgeeks.org/user/naman1608/" target="_blank" rel="noopener noreferrer">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS6xTYgBnDdDx4_NlISNyHkN1LtWogCOcYop0yMwFt1aNkqfgfbC-jA2Y8XsxZajJ8Pf0" alt="GitHub" height="50" width="50" style={{ margin: '10px' }} />
+        </a>
+        <a href="https://takeuforward.org/profile/naman160804" target="_blank" rel="noopener noreferrer">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRsQPKmkjRLVBygaXHIMKgl_rO3q8T8aQaA&s" alt="LinkedIn" height="50" width="50" style={{ margin: '10px' }} />
+        </a>
+        </div>
         <div>
           <a href={resume} download="Naman_Srivastava.pdf">
             <button>Download Resume</button>
