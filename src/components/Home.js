@@ -88,7 +88,7 @@ function Home() {
           </div>
         </div>
         <div style={dpstyle}>
-          <img src="https://avatars.githubusercontent.com/u/56339859?v=4" style={imgStyle} alt="Naman Srivastava" />
+          <img src="https://drive.google.com/file/d/12gG_PtEEAUDUbJ-OAxMTE9UtxWJfptCK/view?usp=drivesdk" style={imgStyle} alt="Naman Srivastava" />
         </div>
       </div>
     </div>
