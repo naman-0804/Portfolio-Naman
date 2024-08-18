@@ -1,6 +1,6 @@
 import React from 'react';
 import resume from '../Naman_srivastava.pdf';
-
+import IMG_20240807_232437_330.jpg from '../Images/IMG_20240807_232437_330.jpg';
 function Home() {
   
   const containerStyle = {
@@ -18,7 +18,7 @@ function Home() {
   const linksStyle = {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'center',import okrapic from '../Images/okra-website.png';
     backgroundColor: '#ffffff', // White background
     padding: '20px', // Add padding
     borderRadius: '8px', // Rounded corners
@@ -88,7 +88,7 @@ function Home() {
           </div>
         </div>
         <div style={dpstyle}>
-          <img src="https://drive.google.com/file/d/12gG_PtEEAUDUbJ-OAxMTE9UtxWJfptCK/view?usp=drivesdk" style={imgStyle} alt="Naman Srivastava" />
+          <img src={IMG_20240807_232437_330.jpg} style={imgStyle} alt="Naman Srivastava" />
         </div>
       </div>
     </div>
