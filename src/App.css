@@ -1,3 +1,10 @@
+body {
+  background-color: #fff7e6; /* Light peach color */
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  font-family: Arial, sans-serif; /* Set a default font */
+  box-sizing: border-box; /* Ensure padding and border are included in width and height */
+}
 #contact-section {
   padding: 2rem;
   background-color: #fff7e6;
@@ -252,7 +259,6 @@
   background-color: #fff7e6; /* Background color */
   background-size: cover;
 }
-
 .details {
   flex: 1; 
   text-align: left; 
@@ -262,6 +268,7 @@
   border-radius: 8px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   border: #000 1.5px solid;
+  margin-top:35px ;
 }
 
 .details h1 {
@@ -302,12 +309,6 @@ button:hover {
   background-color: #0056b3;
 }
 
-.dp img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -328,10 +329,6 @@ button:hover {
     align-items: center; /* Center links */
   }
 
-  .dp img {
-    width: 160px; /* Adjusted size */
-    height: 160px; /* Adjusted size */
-  }
 }
 
 @media (max-width: 480px) {
@@ -343,10 +340,6 @@ button:hover {
     font-size: 1rem; /* Further adjusted for small screens */
   }
 
-  .dp img {
-    width: 140px; /* Further adjusted size */
-    height: 140px; /* Further adjusted size */
-  }
 }
 
 /* General Styles */
