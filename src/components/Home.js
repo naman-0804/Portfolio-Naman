@@ -18,7 +18,7 @@ function Home() {
   const linksStyle = {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',import okrapic from '../Images/okra-website.png';
+    alignItems: 'center',
     backgroundColor: '#ffffff', // White background
     padding: '20px', // Add padding
     borderRadius: '8px', // Rounded corners
