@@ -1,6 +1,6 @@
 import React from 'react';
 import resume from '../Naman_srivastava.pdf';
-import IMG_20240807_232437_330.jpg from '../Images/IMG_20240807_232437_330.jpg';
+import mypic from '../Images/IMG_20240807_232437_330.jpg';
 function Home() {
   
   const containerStyle = {
@@ -88,7 +88,7 @@ function Home() {
           </div>
         </div>
         <div style={dpstyle}>
-          <img src={IMG_20240807_232437_330.jpg} style={imgStyle} alt="Naman Srivastava" />
+          <img src={mypic} style={imgStyle} alt="Naman Srivastava" />
         </div>
       </div>
     </div>
