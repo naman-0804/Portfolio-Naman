@@ -69,7 +69,7 @@ function Home() {
             <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noopener noreferrer">
               <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" height="50" width="50" style={{ margin: '15px' }} />
             </a>
-            <a href="https://github.com/un-identified" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/naman-0804" target="_blank" rel="noopener noreferrer">
               <img src="https://skillicons.dev/icons?i=github" alt="GitHub" height="50" width="50" style={{ margin: '10px' }} />
             </a>
           </div>
