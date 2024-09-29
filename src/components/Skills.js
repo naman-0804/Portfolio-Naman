@@ -2,60 +2,35 @@ import React from 'react';
 
 function Skills() {
   return (
-    <div id="skills-section" style={{ padding: "10px" ,backgroundColor:"#fff7e6"}}>
+    <div id="skills-section" style={{ padding: "10px", backgroundColor: "#fff7e6" }}>
       <center><h1>Skills</h1></center>
-      <div className="Skills">
-      <br/>
+      <div className="Skills" style={{ display: "flex", justifyContent: "space-around" }}>
         <div>
-        - Backend
-        <p>
-          <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=java,nodejs,py,flask,express" alt="Backend" />
-          </a>
-        </p>
+          <h3>Backend</h3>
+          <p>Java, Node.js, Python, Flask</p>
         </div>
-        <br/>
         <div>
-        - Frontend
-        <p >
-          <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=js,react,nextjs,materialui" alt="Frontend" />
-          </a>
-        </p>
+          <h3>Frontend</h3>
+          <p>JavaScript, React, HTML</p>
         </div>
-        <br/>
         <div>
-        - Database
-        <p >
-          <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=mongodb,mysql,postgresql" alt="Database" />
-          </a>
-        </p>
+          <h3>Database</h3>
+          <p>MongoDB, MySQL, PostgreSQL</p>
         </div>
-        <br/>
         <div>
-        - Cloud Servers
-        <p >
-          <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=supabase,firebase" alt='cloud server'/>
-          </a>
-        </p>
+          <h3>Cloud Servers</h3>
+          <p>Supabase, Firebase, Amazon Web servies</p>
         </div>
-        <br/>
         <div>
-        - Tools
-        <p >
-          <a href="https://skillicons.dev">
-            <img src="https://skillicons.dev/icons?i=git,github,docker,figma,vscode,postman,linux" alt="tools" />
-          </a>
-        </p>
+          <h3>Tools</h3>
+          <p>Git, GitHub, Docker, Figma, Postman</p>
         </div>
       </div>
       <center><h1>Achievement</h1></center>
       <ul className="ach">
         <li>
           <h3>Software developer Intern</h3>
-          <p>Secured a summer internship with The entreprenuership network, learned a lot of new stuff during my tenure</p>
+          <p>Secured a summer internship with The entrepreneurship network, learned a lot of new stuff during my tenure</p>
         </li>
         <li>
           <h3>Devshouse 4th place</h3>
@@ -63,9 +38,12 @@ function Skills() {
         </li>
         <li>
           <h3>Solveathon 6th place</h3>
-          <p>Ranked 6th in the Solveathon and got special apprectiation for our idea.</p>
+          <p>Ranked 6th in the Solveathon and got special appreciation for our idea.</p>
         </li>
-
+        <li>
+          <h3>VITISH (SIH Internal Hackathon) 33rd place</h3>
+          <p>Ranked 33rd out of 600 teams, qualified two elimination rounds and got nominated for official SIH24.</p>
+        </li>
       </ul>
     </div>
   );
