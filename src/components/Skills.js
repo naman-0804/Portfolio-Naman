@@ -7,7 +7,7 @@ function Skills() {
       <div className="Skills" style={{ display: "flex", justifyContent: "space-around" }}>
         <div>
           <h3>Backend</h3>
-          <p>Java, Node.js, Python, Flask</p>
+          <p>Node.js, Python, Flask</p>
         </div>
         <div>
           <h3>Frontend</h3>
@@ -18,8 +18,8 @@ function Skills() {
           <p>MongoDB, MySQL, PostgreSQL</p>
         </div>
         <div>
-          <h3>Cloud Servers</h3>
-          <p>Supabase, Firebase, Amazon Web servies</p>
+          <h3>Cloud</h3>
+          <p>Supabase,Amazon Web servies</p>
         </div>
         <div>
           <h3>Tools</h3>
