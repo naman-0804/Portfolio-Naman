@@ -42,7 +42,7 @@ function Skills() {
         </li>
         <li>
           <h3>VITISH (SIH Internal Hackathon) 33rd place</h3>
-          <p>Ranked 33rd out of 600 teams, qualified two elimination rounds and got nominated for official SIH24.</p>
+          <p>Qualified two elimination rounds and got nominated for official SIH24 out of 600 teams.</p>
         </li>
       </ul>
     </div>
