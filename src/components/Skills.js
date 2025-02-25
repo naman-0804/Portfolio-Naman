@@ -41,7 +41,7 @@ function Skills() {
           <p>Ranked 6th in the Solveathon and got special appreciation for our idea.</p>
         </li>
         <li>
-          <h3>VITISH (SIH Internal Hackathon) 33rd place</h3>
+          <h3>VITISH (SIH Internal Hackathon) Nominated for official SIH24</h3>
           <p>Qualified two elimination rounds and got nominated for official SIH24 out of 600 teams.</p>
         </li>
       </ul>
