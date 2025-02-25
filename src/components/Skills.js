@@ -42,7 +42,7 @@ function Skills() {
         </li>
         <li>
           <h3>VITISH (SIH Internal Hackathon) Nominated for official SIH24</h3>
-          <p>Qualified two elimination rounds and got nominated for official SIH24 out of 600 teams.</p>
+          <p>Qualified two elimination rounds and got nominated for official SIH24 from VIT CHENNAI out of 600 teams.</p>
         </li>
       </ul>
     </div>
