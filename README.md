@@ -39,10 +39,16 @@ This project is a personal portfolio website built using React. It showcases the
 
 ```
 /
-    App.css
     App.js
     index.js
     Naman_srivastava.pdf
+design/
+   skill.css
+   exp.css
+   contact.css
+   home.css
+   nav.csee
+   project.css
 components/
     Contact.js
     Experience.js
