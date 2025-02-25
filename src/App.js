@@ -1,6 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import './App.css';
+import '../src/Design/home.css';
+import '../src/Design/nav.css';
+import '../src/Design/contact.css';
+import '../src/Design/exp.css';
+import '../src/Design/project.css';
+import '../src/Design/skill.css';
+
 
 import Home from './components/Home';
 import Projects from './components/Projects';

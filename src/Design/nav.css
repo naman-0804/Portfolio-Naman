@@ -1,0 +1,102 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between the heading and buttons */
+    align-items: center;
+    background-color: #333; /* Dark background color */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a raised effect */
+    flex-wrap: wrap; /* Allow wrapping of items if they overflow */
+  }
+  
+  .section-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .section-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping of buttons */
+  }
+  
+  h2 {
+    color: #fff;
+    margin: 0;
+    font-size: 2rem; /* Larger font size for the welcome text */
+  }
+  
+  .button-11 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    color: #fff;
+    background-color: #007bff; /* Button background color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem; /* Larger font size for readability */
+    text-align: center;
+  }
+  
+  .button-11:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 15px;
+      flex-direction: column;
+      align-items: flex-start; /* Align items to the left on small screens */
+    }
+  
+    .section-left {
+      width: 100%; /* Full width for heading */
+      margin-bottom: 15px;
+    }
+  
+    .section-right {
+      width: 100%; /* Full width for buttons */
+      justify-content: flex-start; /* Align buttons to the start of the container */
+    }
+  
+    h2 {
+      font-size: 1.5rem; /* Adjusted font size for medium screens */
+      margin-bottom: 10px;
+    }
+  
+    .button-11 {
+      padding: 8px 16px;
+      font-size: 0.9rem; /* Adjusted font size */
+      margin: 5px; /* Margin to ensure buttons are not too close to each other */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 10px;
+      flex-direction: column;
+      align-items: stretch; /* Stretch items to fit container width */
+    }
+  
+    .section-left {
+      margin-bottom: 10px;
+    }
+  
+    .section-right {
+      margin-top: 10px;
+      justify-content: flex-start; /* Align buttons to the start of the container */
+    }
+  
+    h2 {
+      font-size: 1.2rem; /* Further adjusted font size for small screens */
+      margin-bottom: 5px;
+    }
+  
+    .button-11 {
+      width: 100%; /* Make buttons full-width on small screens */
+      padding: 12px;
+      font-size: 1rem; /* Adjusted font size */
+      box-sizing: border-box; /* Include padding in width */
+    }
+  }

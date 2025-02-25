@@ -1,0 +1,92 @@
+.profile-container {
+    display: flex;
+    justify-content: space-between; /* Space between the details and links */
+    align-items: flex-start; /* Align items to the top */
+    padding: 40px;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: #fff7e6; /* Background color */
+    background-size: cover;
+  }
+  .details {
+    flex: 1; 
+    text-align: left; 
+    max-width: 60%; 
+    background-color: #ffffff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border: #000 1.5px solid;
+    margin-top:35px ;
+  }
+  
+  .details h1 {
+    margin: 20px 0;
+    font-size: 2.5rem; /* Adjust font size */
+  }
+  
+  .details h3 {
+    margin: 20px 0;
+    font-size: 1.25rem; /* Adjust font size */
+    color: #666;
+  }
+  
+  .details p {
+    margin: 0 0 10px; /* Add margin between paragraphs */
+    line-height: 1.6; /* Increase line height for readability */
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    border-radius: 50%;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .profile-container {
+      flex-direction: column; /* Stack items vertically on small screens */
+      text-align: center; /* Center text on small screens */
+    }
+  
+    .details {
+      text-align: center; /* Center text */
+      max-width: 100%; /* Full width on small screens */
+      margin-right: 0; /* Remove right margin */
+    }
+  
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center links */
+    }
+  
+  }
+  
+  @media (max-width: 480px) {
+    .details h1 {
+      font-size: 1.5rem; /* Further adjusted for small screens */
+    }
+  
+    .details h3 {
+      font-size: 1rem; /* Further adjusted for small screens */
+    }
+  
+  }
