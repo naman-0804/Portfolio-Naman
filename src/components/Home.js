@@ -53,12 +53,11 @@ function Home() {
         <h1>I am a Software Developer</h1>
         </center>
         <h3>
-          
-          <p>I love working on new problems and designing their solutions, I love solving bugs, fixing the code.</p>
-          <p><span style={{ color: '#007bff' }}>Backend</span> or <span style={{ color: '#007bff' }}>APIs</span>, they all excite me.</p>
-          <p>I love taking part in <span style={{ color: '#007bff' }}>Hackathons</span> as they bring out the best in me and helps me to think differently and invent something totally unique, it also helps me expand my knowledge even more.</p>
-          <p>I am looking forward to jobs offering me a <span style={{ color: '#007bff' }}>developer role</span>.</p>
-          <p>I have a good level of knowledge on <span style={{ color: '#007bff' }}>Databases (MongoDB)</span>, <span style={{ color: '#007bff' }}>Backend (Flask)</span>, <span style={{ color: '#007bff' }}>APIs</span>, <span style={{ color: '#007bff' }}>Frontend (React Js)</span>, and <span style={{ color: '#007bff' }}>Amazon Web Services</span>.</p>
+          <br></br>
+          <p>I love working on new problems and designing their solutions, I love solving bugs, fixing the code.</p><br></br>
+          <p>I love taking part in <span style={{ color: '#007bff' }}>Hackathons</span> as they bring out the best in me and helps me to think differently and invent something totally unique, it also helps me expand my knowledge even more.</p><br></br>
+          <p>I am looking forward to jobs offering me a <span style={{ color: '#007bff' }}>developer role</span>.</p><br></br>
+          <p>I have a good level of knowledge on <span style={{ color: '#007bff' }}>Databases (MongoDB)</span>, <span style={{ color: '#007bff' }}>Backend (Flask)</span>, <span style={{ color: '#007bff' }}>APIs</span>, <span style={{ color: '#007bff' }}>Frontend (React Js)</span>, and <span style={{ color: '#007bff' }}>Amazon Web Services</span>.</p><br></br>
           <p>I am also interested in <span style={{ color: '#007bff' }}>cloud computing</span>, <span style={{ color: '#007bff' }}>Machine Learning</span>, and currently expanding my knowledge in those domains.</p>
           
         </h3>
