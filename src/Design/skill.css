@@ -56,31 +56,64 @@
   color: #666; /* Subtle text color */
 }
 
-/* Achievements Table Styling */
-.achievements-table {
-  width: calc(100% - 4rem);
-  margin-left: auto;
-  margin-right: auto;
-  border-collapse: collapse;
+/* Achievements Section Styling */
+.Achievements {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem; /* Space between achievement cards */
 }
 
-.achievements-table th,
-.achievements-table td {
-  padding: 12px;
+.achievement-card {
+  flex: 1 1 calc(60% - 2rem); /* Increased width for larger cards */
+  max-width: 700px; /* Limit the maximum width */
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #fff; /* White card background */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: left; /* Align text to the left for better readability */
+  position: relative; /* For positioning the colorful bar */
 }
 
-.achievements-table thead tr {
-  background-color: #333; /* Dark header background */
+.achievement-card h3 {
+  font-size: 1.2rem;
+  color: #333; /* Darker color for the title */
+  margin-bottom: 0.5rem;
 }
 
-.achievements-table th {
-  color: #fff; /* White text for header */
+.achievement-card p {
+  font-size: 1rem;
+  color: #666; /* Subtle text color for descriptions */
 }
 
-.achievements-table tbody tr:nth-of-type(even) {
-  background-color: #f9f9f9; /* Alternating row colors for readability */
+/* Add a colored bar on the left side of each achievement card */
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px; /* Width of the colored bar */
+  height: 100%;
+  background-image: linear-gradient(45deg, #ff7eb3, #ff758c); /* Gradient color */
+  border-top-left-radius: inherit; /* Match the card's border radius */
+  border-bottom-left-radius: inherit; /* Match the card's border radius */
 }
 
-.achievements-table tbody tr:hover {
-  background-color: #f1c40f; /* Highlight row on hover */
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .achievement-card {
+    flex: 1 1 calc(80% - 2rem); /* Adjust width for smaller screens */
+    max-width: none;
+    padding: 1.2rem;
+    font-size: smaller; /* Reduce font size slightly */
+    margin-bottom: auto;
+    box-sizing: border-box;
+    text-align: left;
+}
+}
+
+@media (max-width: 480px) {
+   .achievement-card {
+     flex:1 calc(100% -2rem);
+     max-width:none;}
 }
