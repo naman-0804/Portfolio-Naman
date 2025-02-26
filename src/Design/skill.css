@@ -57,33 +57,21 @@
 }
 
 /* Achievements Section Styling */
+/* Achievements Section Styling */
 .Achievements {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid; /* Use CSS Grid for layout */
+  grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
   gap: 2rem; /* Space between achievement cards */
+  justify-content: center; /* Center the grid content */
 }
 
 .achievement-card {
-  flex: 1 1 calc(60% - 2rem); /* Increased width for larger cards */
-  max-width: 700px; /* Limit the maximum width */
   padding: 1.5rem;
   border-radius: 12px;
   background-color: #fff; /* White card background */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   text-align: left; /* Align text to the left for better readability */
   position: relative; /* For positioning the colorful bar */
-}
-
-.achievement-card h3 {
-  font-size: 1.2rem;
-  color: #333; /* Darker color for the title */
-  margin-bottom: 0.5rem;
-}
-
-.achievement-card p {
-  font-size: 1rem;
-  color: #666; /* Subtle text color for descriptions */
 }
 
 /* Add a colored bar on the left side of each achievement card */
@@ -99,21 +87,20 @@
   border-bottom-left-radius: inherit; /* Match the card's border radius */
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .achievement-card {
-    flex: 1 1 calc(80% - 2rem); /* Adjust width for smaller screens */
-    max-width: none;
-    padding: 1.2rem;
-    font-size: smaller; /* Reduce font size slightly */
-    margin-bottom: auto;
-    box-sizing: border-box;
-    text-align: left;
-}
+.achievement-card h3 {
+  font-size: 1.2rem;
+  color: #333; /* Darker color for the title */
+  margin-bottom: 0.5rem;
 }
 
-@media (max-width: 480px) {
-   .achievement-card {
-     flex:1 calc(100% -2rem);
-     max-width:none;}
+.achievement-card p {
+  font-size: 1rem;
+  color: #666; /* Subtle text color for descriptions */
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width:768px) {
+   .Achievements {
+      grid-template-columns: repeat(1,1fr); 
+}
 }
