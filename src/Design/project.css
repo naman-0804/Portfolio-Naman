@@ -1,39 +1,69 @@
+/* General Project Section Styling */
 .project {
-    padding: 2rem;
-  }
-  
+  padding: 2rem;
+  background-color: #fff7e6; /* Matches the overall theme */
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid with uniform tiles */
+  gap: 2rem; /* Space between project tiles */
+}
+
+/* Project Item Styling */
+.project-item {
+  text-align: center;
+  background-color: #f4f4f9; /* Light gray background for contrast */
+  border-radius: 12px; /* Rounded corners for a modern look */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+  overflow: hidden; /* Ensures content stays within the box */
+  height: auto; /* Allow dynamic height based on content */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add a subtle gradient background to the box */
+.project-item {
+  background-image: linear-gradient(135deg, #ffecd2, #fcb69f); /* Gradient color */
+}
+
+/* Image Styling */
+/* Image Styling */
+.project-item img {
+  width: 100%; /* Ensures the image spans the width of its container */
+  height: 200px; /* Fixed height to maintain a rectangular shape */
+  object-fit: cover; /* Ensures the image doesn't stretch or distort */
+  border-radius: 8px; /* Optional: Add slight rounding for aesthetics */
+}
+
+
+/* Button Styling */
+.project-item .button {
+  padding: 10px;
+  color: #fff;
+  background-color: #007bff; /* Button background color */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.project-item .button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
   .project-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(300px, auto)); /* Two columns on medium screens */
     gap: 2rem;
   }
-  
-  .project-item {
-    text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(3, minmax(300px, auto)); /* Three columns on larger screens */
+    gap: 3rem; /* Larger gaps on bigger screens */
+    justify-items: center; /* Center-align items in the grid */
+    align-items: center;
   }
-  
-  .project-item img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-  }
-  
-  /* Media Queries */
-  @media (min-width: 768px) {
-    .project-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .project-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-  
-    .project-item img {
-      max-width: 100%;
-    }
-  }
+}

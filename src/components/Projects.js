@@ -43,37 +43,37 @@ function Projects() {
       <center><h1>Projects</h1></center>
       <div className="project-grid">
       <div className="project-item">
-          <h1>Diabetes Prediction on AWS</h1>
+          <h3>Diabetes Prediction on AWS</h3>
           <img src={db} alt="Diabetes" />
           <button id="ml-button" className='button' onClick={() => redirectToProject('ml-button')}>View project</button>
         </div>
         <div className="project-item">
-          <h1>Vitalized</h1>
+          <h3>Vitalized</h3>
           <img src={vitalized} alt="Vitalized" />
           <button id="vitalized-button" className='button' onClick={() => redirectToProject('vitalized-button')}>View project</button>
         </div>
         <div className="project-item">
-          <h1>Sahyogi</h1>
+          <h3>Sahyogi</h3>
           <img src={sahyogi} alt="Sahyogi" />
           <button id="sahyogi-button" className='button' onClick={() => redirectToProject('sahyogi-button')}>View project</button>
         </div>
         <div className="project-item">
-          <h1>Serverless Web App on AWS</h1>
+          <h3>Serverless Web App on AWS</h3>
           <img src={aws} alt="AWS" />
           <button id="AWS-button" className='button' onClick={() => redirectToProject('AWS-button')}>View project</button>
         </div>
         <div className="project-item">
-          <h1>Medhub360</h1>
+          <h3>Medhub360</h3>
           <img src={medhub} alt="Medhub360" />
           <button id="medhub-button" className='button' onClick={() => redirectToProject('medhub-button')}>View project</button>
         </div>
         <div className="project-item">
-          <h1>ASL/ISL Translator</h1>
+          <h3>ASL/ISL Translator</h3>
           <img src={sl} alt="ASL/ISL Translator" />
           <button id="asl-button" className='button' onClick={() => redirectToProject('asl-button')}>View project</button>
         </div>
         <div className="project-item">
-          <h1>Okra Maturity Analysis</h1>
+          <h3>Okra Maturity Analysis</h3>
           <img src={okrapic} alt="Okra" />
           <button id="okra-button" className='button' onClick={() => redirectToProject('okra-button')}>View project</button>
         </div>
