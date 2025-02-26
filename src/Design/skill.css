@@ -1,85 +1,86 @@
+/* General Section Styling */
 #skills-section {
-    padding: 2rem;
-  }
-  
-  .Skills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-  
-  .Skills div {
-    border: 2px solid #000;
-    padding: 1.5rem;
-    margin: 1rem 0;
-    max-width: 800px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  
-  .Skills img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 0px;
-  }
-  
-  .ach {
-    border: 2px solid #000;
-    padding: 2rem;
-    margin: 1rem auto;
-    max-width: 800px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    list-style-type: none; /* Remove bullet points */
-    padding-left: 0;
-  }
-  
-  .ach li {
-    margin-bottom: 1.5rem;
-  }
-  
-  .ach h3 {
-    margin-bottom: 0.5rem;
-  }
-  
-  .ach p {
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    color: #555;
-  }
-  
-  /* Media Queries */
-  @media (min-width: 768px) {
-    #skills-section {
-      padding: 3rem;
-    }
-  
-    .Skills {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  
-    .Skills div {
-      flex: 1 0 45%;
-      margin: 1rem;
-    }
-  
-    .ach {
-      max-width: 70%;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .Skills div {
-      flex: 1 0 30%;
-    }
-  
-    .ach {
-      max-width: 60%;
-      padding: 2.5rem;
-    }
-  }
+  padding: 3rem;
+  background-color: #f9f4e8; /* Soft beige background */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Skills Section Styling */
+.Skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem; /* Space between skill cards */
+}
+
+.skill-card {
+  flex: 1 1 calc(30% - 2rem); /* Responsive card width */
+  max-width: 300px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: #fff; /* White card background */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: left; /* Align text to the left for better readability */
+  position: relative; /* For positioning the colorful bar */
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px; /* Width of the colored bar */
+  height: 100%;
+  background-image: linear-gradient(45deg, #ff7eb3, #ff758c); /* Gradient color */
+  border-top-left-radius: inherit; /* Match the card's border radius */
+  border-bottom-left-radius: inherit; /* Match the card's border radius */
+}
+
+.skill-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.skill-card h3 {
+  margin-bottom: 1rem;
+}
+
+.skill-card p {
+  color: #666; /* Subtle text color */
+}
+
+/* Achievements Table Styling */
+.achievements-table {
+  width: calc(100% - 4rem);
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+.achievements-table th,
+.achievements-table td {
+  padding: 12px;
+}
+
+.achievements-table thead tr {
+  background-color: #333; /* Dark header background */
+}
+
+.achievements-table th {
+  color: #fff; /* White text for header */
+}
+
+.achievements-table tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9; /* Alternating row colors for readability */
+}
+
+.achievements-table tbody tr:hover {
+  background-color: #f1c40f; /* Highlight row on hover */
+}

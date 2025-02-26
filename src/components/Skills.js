@@ -1,50 +1,70 @@
-import React from 'react';
+import React from "react";
+
 
 function Skills() {
   return (
-    <div id="skills-section" style={{ padding: "10px", backgroundColor: "#fff7e6" }}>
-      <center><h1>Skills</h1></center>
-      <div className="Skills" style={{ display: "flex", justifyContent: "space-around" }}>
-        <div>
-          <h3>Backend</h3>
-          <p>Node.js, Python, Flask</p>
-        </div>
-        <div>
-          <h3>Frontend</h3>
-          <p>JavaScript, React, HTML</p>
-        </div>
-        <div>
-          <h3>Database</h3>
-          <p>MongoDB, MySQL, PostgreSQL</p>
-        </div>
-        <div>
-          <h3>Cloud</h3>
-          <p>Supabase,Amazon Web servies</p>
-        </div>
-        <div>
-          <h3>Tools</h3>
-          <p>Git, GitHub, Docker, Figma, Postman</p>
-        </div>
+    <div id="skills-section">
+      {/* Skills Section */}
+      <center>
+        <h1 className="section-title">Skills</h1>
+      </center>
+      <div className="Skills">
+        {[
+          { title: "Backend", content: "Node.js, Python, Flask" },
+          { title: "Frontend", content: "JavaScript, React, HTML" },
+          { title: "Database", content: "MongoDB, MySQL, PostgreSQL" },
+          { title: "Cloud", content: "Supabase, Amazon Web Services" },
+          { title: "Tools", content: "Git, GitHub, Docker, Figma, Postman" },
+        ].map((skill, index) => (
+          <div key={index} className="skill-card">
+            <h3>{skill.title}</h3>
+            <p>{skill.content}</p>
+          </div>
+        ))}
       </div>
-      <center><h1>Achievement</h1></center>
-      <ul className="ach">
-        <li>
-          <h3>Software developer Intern</h3>
-          <p>Secured a summer internship with The entrepreneurship network, learned a lot of new stuff during my tenure</p>
-        </li>
-        <li>
-          <h3>Devshouse 4th place</h3>
-          <p>Participated in the Devhouse competition and secured the 4th place among 600+ teams.</p>
-        </li>
-        <li>
-          <h3>Solveathon 6th place</h3>
-          <p>Ranked 6th in the Solveathon and got special appreciation for our idea.</p>
-        </li>
-        <li>
-          <h3>VITISH (SIH Internal Hackathon) Nominated for official SIH24</h3>
-          <p>Qualified two elimination rounds and got nominated for official SIH24 from VIT CHENNAI out of 600 teams.</p>
-        </li>
-      </ul>
+
+      {/* Achievements Section */}
+      <center>
+        <h1 className="section-title">Achievements</h1>
+      </center>
+      <table className="achievements-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            {
+              title: "Software Developer Intern",
+              description:
+                "Secured a summer internship with The Entrepreneurship Network and learned a lot of new skills.",
+            },
+            {
+              title: "Devshouse 4th Place",
+              description:
+                "Participated in the Devshouse competition and secured the 4th place among 600+ teams.",
+            },
+            {
+              title: "Solveathon 6th Place",
+              description:
+                "Ranked 6th in the Solveathon and received special appreciation for our idea.",
+            },
+            {
+              title:
+                "VITISH (SIH Internal Hackathon) Nominated for Official SIH24",
+              description:
+                "Qualified two elimination rounds and got nominated for official SIH24 from VIT Chennai out of 600 teams.",
+            },
+          ].map((achievement, index) => (
+            <tr key={index}>
+              <td>{achievement.title}</td>
+              <td>{achievement.description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
