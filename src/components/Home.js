@@ -1,6 +1,6 @@
 import React from 'react';
 import resume from '../Naman_srivastava.pdf';
-import mypic from '../Images/IMG_20240807_232437_330.jpg';
+import mypic from '../Images/IMG_20240807_232437_330.jpeg';
 function Home() {
   
   const containerStyle = {
