@@ -31,7 +31,7 @@ This project is a personal portfolio website built using React. It showcases the
 
 1. **Start the Development Server:**
    ```bash
-   npm start
+   npm start index.js
    ```
 2. **Open the website in your browser:** The website will be accessible at `http://localhost:3000`.
 
