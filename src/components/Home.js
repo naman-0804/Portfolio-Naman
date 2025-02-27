@@ -69,15 +69,15 @@ function Home() {
               <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn" height="50" width="50" style={{ margin: '15px' }} />
             </a>
             <a href="https://github.com/naman-0804" target="_blank" rel="noopener noreferrer">
-              <img src="https://skillicons.dev/icons?i=github" alt="GitHub" height="50" width="50" style={{ margin: '10px' }} />
+              <img src="https://skillicons.dev/icons?i=github" alt="GitHub" height="50" width="50" style={{ margin: '15px' }} />
             </a>
           </div>
           <div>
-            <a href="https://leetcode.com/u/na_m_an/" target="_blank" rel="noopener noreferrer">
-              <img src="https://cdn.iconscout.com/icon/free/png-256/free-leetcode-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-4-pack-logos-icons-2944960.png" alt="GeeksforGeeks" height="50" width="50" style={{ margin: '15px' }} />
+            <a href="https://www.youtube.com/@naman_0804/" target="_blank" rel="noopener noreferrer">
+              <img src="https://i.pinimg.com/1200x/3f/3e/3b/3f3e3bb313ca6bc4a383114dd9f7d576.jpg" alt="GeeksforGeeks" height="50" width="50" style={{ margin: '15px' }} />
             </a>
             <a href="https://takeuforward.org/plus/profile/naman160804" target="_blank" rel="noopener noreferrer">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRsQPKmkjRLVBygaXHIMKgl_rO3q8T8aQaA&s" alt="TakeUForward" height="50" width="50" style={{ margin: '10px' }} />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRsQPKmkjRLVBygaXHIMKgl_rO3q8T8aQaA&s" alt="TakeUForward" height="50" width="50" style={{ margin: '15px' }} />
             </a>
           </div>
           <div>
