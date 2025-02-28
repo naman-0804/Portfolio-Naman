@@ -23,7 +23,7 @@ function Projects() {
         url = 'https://github.com/naman-0804/Okra-Maturity-Analysis';
         break;
       case 'sahyogi-button':
-        url = 'https://github.com/naman-0804/SIH';
+        url = 'https://github.com/naman-0804/sih-site';
         break;
       case 'AWS-button':
         url = 'https://github.com/naman-0804/Cloud-AWS';
