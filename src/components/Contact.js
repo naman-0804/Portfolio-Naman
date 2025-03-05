@@ -19,7 +19,7 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.send('service_655mg9c', 'template_jo7ezml', formData, 'sqzDmJD_V393T3d-j')
+    emailjs.send('service_655mg9c', 'template_jo7ezml', formData, 'K34YWs3fe407eAfCX')
       .then((response) => {
         alert('Message sent successfully!');
       }, (error) => {
