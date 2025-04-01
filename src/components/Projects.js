@@ -6,6 +6,7 @@ import sl from '../Images/SL-website.png';
 import sahyogi from '../Images/sahyogi.png';
 import aws from '../Images/AWS.png';
 import db from '../Images/Diabetes.png';
+import wcs from '../Images/th.png';
 function Projects() {
   function redirectToProject(id) {
     let url = '';
@@ -27,6 +28,9 @@ function Projects() {
         break;
       case 'AWS-button':
         url = 'https://github.com/naman-0804/Cloud-AWS';
+        break;
+      case 'wcs-button':
+        url='https://github.com/naman-0804/Ai_content_summarizer';
         break;
       case 'ml-button':
         url = 'https://github.com/naman-0804/Diabetes_Prediction_onAWS';
@@ -61,6 +65,11 @@ function Projects() {
           <h3>Serverless Web App on AWS</h3>
           <img src={aws} alt="AWS" />
           <button id="AWS-button" className='button' onClick={() => redirectToProject('AWS-button')}>View project</button>
+        </div>
+        <div className="project-item">
+          <h3>AI Webpage Content Summarizer</h3>
+          <img src={wcs} alt="Diabetes" />
+          <button id="wcs-button" className='button' onClick={() => redirectToProject('wcs-button')}>View project</button>
         </div>
         <div className="project-item">
           <h3>Medhub360</h3>
