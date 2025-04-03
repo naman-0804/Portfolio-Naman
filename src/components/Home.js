@@ -1,47 +1,49 @@
 import React from 'react';
 import resume from '../Naman_srivastava.pdf';
 import mypic from '../Images/IMG_20240807_232437_330.jpeg';
+
 function Home() {
   
   const containerStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: '#f5f5f5', // Slight gray background for the whole container
+    backgroundColor: '#f5f5f5',
     padding: '20px',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     maxWidth: '400px',
-    margin: '20px auto',
+    margin: '20px 0',
+    width: '100%',
   };
 
   const linksStyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: '#ffffff', // White background
-    padding: '20px', // Add padding
-    borderRadius: '8px', // Rounded corners
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow
-    width: '100%', // Take the full width of the container
-    marginBottom: '20px', // Add some space between the links and the profile picture
+    backgroundColor: '#ffffff',
+    padding: '20px',
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    width: '100%',
+    marginBottom: '20px',
   };
 
   const dpstyle = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: '#ffffff', // White background
-    padding: '20px', // Add padding
-    borderRadius: '8px', // Rounded corners
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtle shadow
-    width: '100%', // Take the full width of the container
+    backgroundColor: '#ffffff',
+    padding: '20px',
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    width: '100%',
   };
 
   const imgStyle = {
-    maxWidth: '100%', // Scale the image to fit within the box
-    height: 'auto', // Maintain aspect ratio
-    borderRadius: '2px', // Optional: Match the box’s rounded corners
+    maxWidth: '100%',
+    height: 'auto',
+    borderRadius: '2px',
   };
 
   return (
