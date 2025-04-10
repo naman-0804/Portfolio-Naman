@@ -54,7 +54,7 @@ function Home() {
             </div>
             
             <div className="about-content">
-              <p>I love working on new problems and designing their solutions. I can solve bugs and fix codes whole day long .</p>
+              <p>I love working on new problems and designing their solutions. I can solve bugs and fix codes whole day long.</p>
               <p>I thrive in <span className="highlight">Hackathons</span>, which bring out my best and help me think innovatively.</p>
               <p>I'm seeking opportunities for a <span className="highlight">developer role</span>.</p>
             </div>
@@ -68,49 +68,51 @@ function Home() {
               <FaDownload /> Download Resume
             </a>
           </div>
-            <div className="section-title">
-              <h3>My Expertise</h3>
-              <div className="title-underline"></div>
-            </div>
-            
-            <div className="skills-grid">
-              <div className="skill-item">
-                <div className="skill-icon"><FaDatabase /></div>
-                <div className="skill-text">
-                  <h4>Databases</h4>
-                  <p>MongoDB</p>
-                </div>
+            <div className="expertise-section">
+              <div className="section-title">
+                <h3>My Expertise</h3>
+                <div className="title-underline"></div>
               </div>
               
-              <div className="skill-item">
-                <div className="skill-icon"><FaServer /></div>
-                <div className="skill-text">
-                  <h4>Backend</h4>
-                  <p>Flask</p>
+              <div className="skills-grid">
+                <div className="skill-item">
+                  <div className="skill-icon"><FaDatabase /></div>
+                  <div className="skill-text">
+                    <h4>Databases</h4>
+                    <p>MongoDB</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="skill-item">
-                <div className="skill-icon"><FaCode /></div>
-                <div className="skill-text">
-                  <h4>APIs</h4>
-                  <p>RESTful & GraphQL</p>
+                
+                <div className="skill-item">
+                  <div className="skill-icon"><FaServer /></div>
+                  <div className="skill-text">
+                    <h4>Backend</h4>
+                    <p>Flask</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="skill-item">
-                <div className="skill-icon"><FaLaptopCode /></div>
-                <div className="skill-text">
-                  <h4>Frontend</h4>
-                  <p>React JS</p>
+                
+                <div className="skill-item">
+                  <div className="skill-icon"><FaCode /></div>
+                  <div className="skill-text">
+                    <h4>APIs</h4>
+                    <p>RESTful & GraphQL</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="skill-item">
-                <div className="skill-icon"><FaCloud /></div>
-                <div className="skill-text">
-                  <h4>Cloud</h4>
-                  <p>AWS</p>
+                
+                <div className="skill-item">
+                  <div className="skill-icon"><FaLaptopCode /></div>
+                  <div className="skill-text">
+                    <h4>Frontend</h4>
+                    <p>React JS</p>
+                  </div>
+                </div>
+                
+                <div className="skill-item">
+                  <div className="skill-icon"><FaCloud /></div>
+                  <div className="skill-text">
+                    <h4>Cloud</h4>
+                    <p>AWS</p>
+                  </div>
                 </div>
               </div>
             </div>            
