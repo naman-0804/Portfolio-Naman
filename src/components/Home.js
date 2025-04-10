@@ -54,7 +54,7 @@ function Home() {
             </div>
             
             <div className="about-content">
-              <p>I love working on new problems and designing their solutions. Solving bugs and fixing code is my passion.</p>
+              <p>I love working on new problems and designing their solutions. I can solve bugs and fix codes whole day long .</p>
               <p>I thrive in <span className="highlight">Hackathons</span>, which bring out my best and help me think innovatively.</p>
               <p>I'm seeking opportunities for a <span className="highlight">developer role</span>.</p>
             </div>
