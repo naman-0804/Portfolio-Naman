@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaPaperPlane, FaUser, FaCommentAlt, FaInstagram } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -23,23 +24,34 @@ function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      
-      // Reset form after submission
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
+    // Use EmailJS to send the form
+    emailjs.send('service_655mg9c', 'template_jo7ezml', formData, 'K34YWs3fe407eAfCX')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setIsSubmitting(false);
+        setSubmitStatus('success');
+        
+        // Reset form after submission
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+        
+        // Clear success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 5000);
+      }, (error) => {
+        console.log('FAILED...', error);
+        setIsSubmitting(false);
+        setSubmitStatus('error');
+        
+        // Clear error message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 5000);
       });
-      
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
-    }, 1500);
   };
   
   return (
@@ -154,6 +166,12 @@ function Contact() {
               {submitStatus === 'success' && (
                 <div className="success-message">
                   <p>Thank you! Your message has been sent successfully.</p>
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="error-message">
+                  <p>Oops! Something went wrong. Please try again later.</p>
                 </div>
               )}
             </form>
