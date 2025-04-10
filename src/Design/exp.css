@@ -1,16 +1,36 @@
+/* Experience Section Styles - Combined Light and Dark Mode */
 
+/* Light Mode Styles */
 #experience-section {
   padding: 4rem 2rem;
   background-color: #fff7e6; 
   font-family: 'Arial', sans-serif;
   color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+#experience-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.1) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(0, 0, 0, 0.1) 2%, transparent 0%);
+  background-size: 100px 100px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .section-container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
-
 
 .section-header {
   text-align: center;
@@ -41,13 +61,11 @@
   margin-top: 4rem;
 }
 
-
 .experience-grid, .education-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
 }
-
 
 .experience-card, .education-card {
   background: white;
@@ -66,7 +84,6 @@
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
-
 
 .card-header {
   padding: 1.5rem;
@@ -125,7 +142,6 @@
   color: #555;
 }
 
-
 .tech-container {
   margin-top: 1.5rem;
 }
@@ -160,13 +176,95 @@
   transform: translateY(-3px);
 }
 
-
 .achievements p {
   margin-bottom: 0.5rem;
   position: relative;
   padding-left: 0.5rem;
 }
 
+/* Dark Mode Styles */
+.dark-mode #experience-section {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.dark-mode #experience-section::before {
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.05) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.05) 2%, transparent 0%);
+}
+
+.dark-mode .section-header h1 {
+  background: linear-gradient(45deg, #bb86fc, #8c54e9);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.dark-mode .section-underline {
+  background: linear-gradient(45deg, #bb86fc, #8c54e9);
+}
+
+.dark-mode .experience-card, 
+.dark-mode .education-card {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  border-top: 5px solid #8c54e9;
+}
+
+.dark-mode .education-card {
+  border-top-color: #bb86fc;
+}
+
+.dark-mode .experience-card:hover, 
+.dark-mode .education-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode .card-header {
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.dark-mode .icon-container {
+  background: #8c54e9;
+}
+
+.dark-mode .icon-container.education {
+  background: #bb86fc;
+}
+
+.dark-mode .card-header h3 {
+  color: #ffffff;
+}
+
+.dark-mode .company-info, 
+.dark-mode .institution-info {
+  color: #bbbbbb;
+}
+
+.dark-mode .card-body p {
+  color: #cccccc;
+}
+
+.dark-mode .tech-label {
+  color: #dddddd;
+}
+
+.dark-mode .tech-pills span {
+  background-color: #3a3a3a;
+  color: #dddddd;
+}
+
+.dark-mode .tech-pills span:hover {
+  background-color: #8c54e9;
+  color: white;
+}
+
+.dark-mode .achievements p {
+  color: #cccccc;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .section-header h1 {
     font-size: 2rem;

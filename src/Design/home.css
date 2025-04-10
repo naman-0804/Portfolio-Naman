@@ -354,3 +354,83 @@
   color: #4776E6;
   font-weight: bold;
 }
+/* Dark mode styles for Home component */
+.dark-mode .hero-container {
+  background-color: #1a1a1a;
+  background-image: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+}
+
+.dark-mode .profile-card {
+  background-color: #2d2d2d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .profile-card h1 {
+  color: #ffffff;
+}
+
+.dark-mode .profile-card h2 {
+  color: #bbbbbb;
+}
+
+.dark-mode .about-card {
+  background-color: #2d2d2d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .section-title h3 {
+  color: #ffffff;
+}
+
+.dark-mode .about-content p, 
+.dark-mode .interests p {
+  color: #bbbbbb;
+}
+
+.dark-mode .skill-item {
+  background-color: #3a3a3a;
+}
+
+.dark-mode .skill-text h4 {
+  color: #ffffff;
+}
+
+.dark-mode .skill-text p {
+  color: #bbbbbb;
+}
+
+.dark-mode .recommendation-card {
+  background-color: #3a3a3a;
+  border-left: 4px solid #6c5ce7;
+}
+
+.dark-mode .recommendation-header h4 {
+  color: #bbbbbb;
+}
+
+.dark-mode .recommender-name {
+  color: #ffffff;
+}
+
+.dark-mode .recommender-title,
+.dark-mode .recommendation-date {
+  color: #aaaaaa;
+}
+
+.dark-mode .recommendation-content {
+  color: #bbbbbb;
+}
+
+.dark-mode .recommendation-content p::before,
+.dark-mode .recommendation-content p::after {
+  color: #6c5ce7;
+}
+
+.dark-mode .highlight {
+  color: #6c5ce7;
+}
+
+.dark-mode .social-icon.takeforward {
+  background-color: #3a3a3a;
+  border: 1px solid #555;
+}

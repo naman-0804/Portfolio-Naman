@@ -1,3 +1,6 @@
+/* Navbar Styles - Light and Dark Mode */
+
+/* Light Mode Styles */
 .navbar {
   position: fixed;
   top: 0;
@@ -129,12 +132,86 @@
   transform: rotate(-45deg);
 }
 
-
 .content {
   margin-top: 80px; 
   min-height: calc(100vh - 80px);
 }
 
+/* Dark Mode Toggle Switch */
+.dark-mode-toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.dark-mode-toggle:after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  left: 3px;
+  transition: transform 0.3s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .dark-mode-toggle {
+  background-color: #bb86fc;
+}
+
+.dark-mode .dark-mode-toggle:after {
+  transform: translateX(30px);
+}
+
+/* Dark Mode Styles */
+.dark-mode .navbar {
+  background-color: rgba(33, 33, 33, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .navbar.scrolled {
+  background-color: rgba(33, 33, 33, 0.98);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .logo-text {
+  color: #ffffff;
+}
+
+.dark-mode .logo-dot {
+  color: #bb86fc;
+}
+
+.dark-mode .nav-link {
+  color: #bbbbbb;
+}
+
+.dark-mode .nav-link:hover {
+  color: #bb86fc;
+}
+
+.dark-mode .nav-link::after {
+  background: linear-gradient(45deg, #bb86fc, #8c54e9);
+}
+
+.dark-mode .nav-link.active {
+  color: #bb86fc;
+}
+
+.dark-mode .hamburger span {
+  background: #ffffff;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .navbar-toggle {
     display: block;
@@ -149,7 +226,7 @@
     gap: 0;
     background-color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
+    padding: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
@@ -169,4 +246,9 @@
   .nav-link::after {
     display: none;
   }
+  
+  .dark-mode .navbar-links {
+    background-color: #212121;
+  }
 }
+
