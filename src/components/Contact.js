@@ -114,7 +114,7 @@ function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Naman"
+                  placeholder="Name"
                   required
                 />
               </div>
