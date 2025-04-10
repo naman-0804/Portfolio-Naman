@@ -8,99 +8,245 @@
 /* Section Titles */
 .section-title {
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   text-align: center;
+  position: relative;
 }
 
-/* Skills Section Styling */
-.Skills {
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-image: linear-gradient(45deg, #ff7eb3, #ff758c);
+  border-radius: 2px;
+}
+
+/* Modern Skills Section Styling */
+.skills-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem; /* Space between skill cards */
+  gap: 2rem;
+  margin-bottom: 4rem;
 }
 
-.skill-card {
-  flex: 1 1 calc(30% - 2rem); /* Responsive card width */
-  max-width: 300px;
+.skill-item {
+  display: flex;
+  align-items: flex-start;
+  background-color: white;
+  border-radius: 16px;
   padding: 1.5rem;
-  border-radius: 12px;
-  background-color: #fff; /* White card background */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  text-align: left; /* Align text to the left for better readability */
-  position: relative; /* For positioning the colorful bar */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-top: 4px solid var(--skill-color, #ff758c);
 }
 
-.skill-card::before {
+.skill-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.skill-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--skill-color, #ff758c);
+  border-radius: 12px;
+  margin-right: 1.5rem;
+  color: white;
+}
+
+.skill-icon {
+  font-size: 28px;
+}
+
+.skill-content {
+  flex: 1;
+}
+
+.skill-content h3 {
+  margin: 0 0 0.8rem 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  background-color: rgba(0,0,0,0.05);
+  color: #555;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.skill-tag:hover {
+  background-color: var(--skill-color, #ff758c);
+  color: white;
+}
+
+/* Achievements Timeline Styling */
+.Achievements {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Timeline vertical line */
+.Achievements::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 8px; /* Width of the colored bar */
-  height: 100%;
-  background-image: linear-gradient(45deg, #ff7eb3, #ff758c); /* Gradient color */
-  border-top-left-radius: inherit; /* Match the card's border radius */
-  border-bottom-left-radius: inherit; /* Match the card's border radius */
-}
-
-.skill-card:hover {
-  transform: translateY(-10px); /* Lift effect on hover */
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-.skill-card h3 {
-  margin-bottom: 1rem;
-}
-
-.skill-card p {
-  color: #666; /* Subtle text color */
-}
-
-/* Achievements Section Styling */
-/* Achievements Section Styling */
-.Achievements {
-  display: grid; /* Use CSS Grid for layout */
-  grid-template-columns: repeat(2, 1fr); /* Create 2 columns */
-  gap: 2rem; /* Space between achievement cards */
-  justify-content: center; /* Center the grid content */
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  margin-left: -2px;
+  background-image: linear-gradient(to bottom, #ff7eb3, #ff758c);
+  border-radius: 2px;
 }
 
 .achievement-card {
+  position: relative;
+  width: 45%;
   padding: 1.5rem;
   border-radius: 12px;
-  background-color: #fff; /* White card background */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  text-align: left; /* Align text to the left for better readability */
-  position: relative; /* For positioning the colorful bar */
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Add a colored bar on the left side of each achievement card */
-.achievement-card::before {
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline node/dot for each achievement */
+.achievement-card::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 8px; /* Width of the colored bar */
-  height: 100%;
-  background-image: linear-gradient(45deg, #ff7eb3, #ff758c); /* Gradient color */
-  border-top-left-radius: inherit; /* Match the card's border radius */
-  border-bottom-left-radius: inherit; /* Match the card's border radius */
+  top: 22px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 4px solid #ff758c;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Position cards on alternating sides */
+.achievement-card:nth-child(odd) {
+  float: left;
+  clear: both;
+}
+
+.achievement-card:nth-child(even) {
+  float: right;
+  clear: both;
+}
+
+/* Position the dots on the timeline */
+.achievement-card:nth-child(odd)::after {
+  right: -60px;
+}
+
+.achievement-card:nth-child(even)::after {
+  left: -60px;
+}
+
+/* Date styling */
+.achievement-date {
+  display: inline-block;
+  padding: 5px 10px;
+  background-image: linear-gradient(45deg, #ff7eb3, #ff758c);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .achievement-card h3 {
   font-size: 1.2rem;
-  color: #333; /* Darker color for the title */
+  color: #333;
   margin-bottom: 0.5rem;
 }
 
 .achievement-card p {
   font-size: 1rem;
-  color: #666; /* Subtle text color for descriptions */
+  color: #666;
+}
+
+/* Clear floats */
+.Achievements::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 /* Responsive Adjustments for Smaller Screens */
-@media (max-width:768px) {
-   .Achievements {
-      grid-template-columns: repeat(1,1fr); 
+@media (max-width: 768px) {
+  .Achievements::before {
+    left: 30px;
+  }
+  
+  .achievement-card {
+    width: calc(100% - 80px);
+    float: right;
+    clear: both;
+    margin-left: 80px;
+  }
+  
+  .achievement-card::after {
+    left: -50px;
+  }
+  
+  .achievement-card:nth-child(odd)::after,
+  .achievement-card:nth-child(even)::after {
+    left: -50px;
+  }
+  
+  .skill-item {
+    max-width: 100%;
+  }
 }
+
+@media (max-width: 480px) {
+  .achievement-card {
+    width: calc(100% - 60px);
+    margin-left: 60px;
+  }
+  
+  .achievement-card::after {
+    left: -40px;
+  }
+  
+  .achievement-card:nth-child(odd)::after,
+  .achievement-card:nth-child(even)::after {
+    left: -40px;
+  }
+  
+  .skill-item {
+    flex-direction: column;
+  }
+  
+  .skill-icon-container {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
 }
