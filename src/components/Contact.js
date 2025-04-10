@@ -114,7 +114,7 @@ function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="John Doe"
+                  placeholder="Naman"
                   required
                 />
               </div>
@@ -129,7 +129,7 @@ function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="john@example.com"
+                  placeholder="abcd@example.com"
                   required
                 />
               </div>
