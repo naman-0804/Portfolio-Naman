@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import okrapic from '../Images/okra-website.png';
 import vitalized from '../Images/vitalized-website.png';
 import medhub from '../Images/medhub360-website.png';
@@ -7,85 +7,140 @@ import sahyogi from '../Images/sahyogi.png';
 import aws from '../Images/AWS.png';
 import db from '../Images/Diabetes.png';
 import wcs from '../Images/th.png';
+import { FaGithub, FaYoutube } from 'react-icons/fa';
+
 function Projects() {
-  function redirectToProject(id) {
-    let url = '';
-    switch (id) {
-      case 'vitalized-button':
-        url = 'https://github.com/naman-0804/vitalized-vit';
-        break;
-      case 'asl-button':
-        url = 'https://github.com/naman-0804/Sign-Language-Translator';
-        break;
-      case 'medhub-button':
-        url = 'https://github.com/naman-0804/Healthcare';
-        break;
-      case 'okra-button':
-        url = 'https://github.com/naman-0804/Okra-Maturity-Analysis';
-        break;
-      case 'sahyogi-button':
-        url = 'https://github.com/naman-0804/sih-site';
-        break;
-      case 'AWS-button':
-        url = 'https://github.com/naman-0804/Cloud-AWS';
-        break;
-      case 'wcs-button':
-        url='https://github.com/naman-0804/Ai_content_summarizer';
-        break;
-      case 'ml-button':
-        url = 'https://github.com/naman-0804/Diabetes_Prediction_onAWS';
-        break;      
-      default:
+  const [hoveredProject, setHoveredProject] = useState(null);
+
+  const projects = [
+    {
+      id: 'ml-button',
+      title: 'Diabetes Prediction on AWS',
+      image: db,
+      description: 'Machine learning model deployed on AWS to predict diabetes risk based on patient data.',
+      technologies: ['Python', 'AWS', 'Machine Learning', 'Flask'],
+      github: 'https://github.com/naman-0804/Diabetes_Prediction_onAWS',
+      youtube: 'https://youtube.com/your-diabetes-prediction-video'
+    },
+    {
+      id: 'vitalized-button',
+      title: 'Vitalized',
+      image: vitalized,
+      description: 'A wellness platform for VIT students to track and improve their mental and physical health.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+      github: 'https://github.com/naman-0804/vitalized-vit',
+      youtube: 'https://youtube.com/your-vitalized-video'
+    },
+    {
+      id: 'sahyogi-button',
+      title: 'Sahyogi',
+      image: sahyogi,
+      description: 'A platform connecting volunteers with organizations for social causes and community service.',
+      technologies: ['React', 'Firebase', 'Material UI'],
+      github: 'https://github.com/naman-0804/sih-site',
+      youtube: 'https://youtube.com/your-sahyogi-video'
+    },
+    {
+      id: 'AWS-button',
+      title: 'Serverless Web App on AWS',
+      image: aws,
+      description: 'A fully serverless web application deployed on AWS using Lambda, API Gateway, and DynamoDB.',
+      technologies: ['AWS', 'Serverless', 'JavaScript', 'DynamoDB'],
+      github: 'https://github.com/naman-0804/Cloud-AWS',
+      youtube: 'https://youtube.com/your-serverless-video'
+    },
+    {
+      id: 'wcs-button',
+      title: 'AI Webpage Content Summarizer',
+      image: wcs,
+      description: 'An AI-powered tool that summarizes web page content using natural language processing.',
+      technologies: ['Python', 'NLP', 'AI', 'Flask'],
+      github: 'https://github.com/naman-0804/Ai_content_summarizer',
+      youtube: 'https://youtube.com/your-summarizer-video'
+    },
+    {
+      id: 'medhub-button',
+      title: 'Medhub360',
+      image: medhub,
+      description: 'A comprehensive healthcare platform connecting patients with doctors and medical services.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+      github: 'https://github.com/naman-0804/Healthcare',
+      youtube: 'https://youtube.com/your-medhub-video'
+    },
+    {
+      id: 'asl-button',
+      title: 'ASL/ISL Translator',
+      image: sl,
+      description: 'An application that translates American and Indian Sign Language to text using computer vision.',
+      technologies: ['Python', 'TensorFlow', 'OpenCV', 'Deep Learning'],
+      github: 'https://github.com/naman-0804/Sign-Language-Translator',
+      youtube: 'https://youtube.com/your-asl-translator-video'
+    },
+    {
+      id: 'okra-button',
+      title: 'Okra Maturity Analysis',
+      image: okrapic,
+      description: 'An image processing system that analyzes the maturity of okra plants for optimal harvesting.',
+      technologies: ['Python', 'Computer Vision', 'Image Processing'],
+      github: 'https://github.com/naman-0804/Okra-Maturity-Analysis',
+      youtube: 'https://youtube.com/your-okra-analysis-video'
     }
+  ];
+
+  function redirectToProject(url) {
     if (url) {
       window.open(url, '_blank');
     }
   }
 
   return (
-    <div id="project-section" className="project"  style={{ backgroundColor: '#fff7e6' }}>
-      <center><h1>Projects</h1></center>
+    <div id="project-section" className="project">
+      <div className="project-header">
+        <h1>Projects</h1>
+        <p>A showcase of my technical skills and creative problem-solving</p>
+      </div>
+      
       <div className="project-grid">
-      <div className="project-item">
-          <h3>Diabetes Prediction on AWS</h3>
-          <img src={db} alt="Diabetes" />
-          <button id="ml-button" className='button' onClick={() => redirectToProject('ml-button')}>View project</button>
-        </div>
-        <div className="project-item">
-          <h3>Vitalized</h3>
-          <img src={vitalized} alt="Vitalized" />
-          <button id="vitalized-button" className='button' onClick={() => redirectToProject('vitalized-button')}>View project</button>
-        </div>
-        <div className="project-item">
-          <h3>Sahyogi</h3>
-          <img src={sahyogi} alt="Sahyogi" />
-          <button id="sahyogi-button" className='button' onClick={() => redirectToProject('sahyogi-button')}>View project</button>
-        </div>
-        <div className="project-item">
-          <h3>Serverless Web App on AWS</h3>
-          <img src={aws} alt="AWS" />
-          <button id="AWS-button" className='button' onClick={() => redirectToProject('AWS-button')}>View project</button>
-        </div>
-        <div className="project-item">
-          <h3>AI Webpage Content Summarizer</h3>
-          <img src={wcs} alt="Diabetes" />
-          <button id="wcs-button" className='button' onClick={() => redirectToProject('wcs-button')}>View project</button>
-        </div>
-        <div className="project-item">
-          <h3>Medhub360</h3>
-          <img src={medhub} alt="Medhub360" />
-          <button id="medhub-button" className='button' onClick={() => redirectToProject('medhub-button')}>View project</button>
-        </div>
-        <div className="project-item">
-          <h3>ASL/ISL Translator</h3>
-          <img src={sl} alt="ASL/ISL Translator" />
-          <button id="asl-button" className='button' onClick={() => redirectToProject('asl-button')}>View project</button>
-        </div>
-        <div className="project-item">
-          <h3>Okra Maturity Analysis</h3>
-          <img src={okrapic} alt="Okra" />
-          <button id="okra-button" className='button' onClick={() => redirectToProject('okra-button')}>View project</button>
-        </div>
+        {projects.map((project, index) => (
+          <div 
+            className="project-item" 
+            key={project.id}
+            onMouseEnter={() => setHoveredProject(project.id)}
+            onMouseLeave={() => setHoveredProject(null)}
+          >
+            <div className="project-image-container">
+              <img src={project.image} alt={project.title} />
+              <div className={`project-overlay ${hoveredProject === project.id ? 'active' : ''}`}>
+                <div className="project-description">
+                  <p>{project.description}</p>
+                  <div className="tech-stack">
+                    {project.technologies.map((tech, i) => (
+                      <span key={i} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
+                </div>
+                <button 
+                  className="view-project-btn youtube-btn"
+                  onClick={() => redirectToProject(project.youtube)}
+                >
+                  <FaYoutube /> View on YouTube
+                </button>
+              </div>
+            </div>
+            <div className="project-info">
+              <h3>{project.title}</h3>
+              <div className="project-links">
+                <button 
+                  className="icon-button github-btn"
+                  onClick={() => redirectToProject(project.github)}
+                  aria-label="View GitHub repository"
+                >
+                  <FaGithub />
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
