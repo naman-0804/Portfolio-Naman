@@ -33,9 +33,19 @@ const NavBar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
+  // Close menu when location changes (route changes)
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
+  
   // Toggle mobile menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+  
+  // Handle link click to close menu
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
   };
   
   return (
@@ -57,19 +67,39 @@ const NavBar = () => {
         </div>
         
         <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
+          <Link 
+            to="/" 
+            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+            onClick={handleLinkClick}
+          >
             Home
           </Link>
-          <Link to="/projects" className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`}>
+          <Link 
+            to="/projects" 
+            className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`}
+            onClick={handleLinkClick}
+          >
             Projects
           </Link>
-          <Link to="/skills" className={`nav-link ${location.pathname === '/skills' ? 'active' : ''}`}>
+          <Link 
+            to="/skills" 
+            className={`nav-link ${location.pathname === '/skills' ? 'active' : ''}`}
+            onClick={handleLinkClick}
+          >
             Skills
           </Link>
-          <Link to="/experience" className={`nav-link ${location.pathname === '/experience' ? 'active' : ''}`}>
+          <Link 
+            to="/experience" 
+            className={`nav-link ${location.pathname === '/experience' ? 'active' : ''}`}
+            onClick={handleLinkClick}
+          >
             Experience
           </Link>
-          <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>
+          <Link 
+            to="/contact" 
+            className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
+            onClick={handleLinkClick}
+          >
             Contact
           </Link>
         </div>
