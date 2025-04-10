@@ -20,7 +20,7 @@ function Projects() {
       description: 'Machine learning model deployed on AWS to predict diabetes risk based on patient data.',
       technologies: ['Python', 'AWS', 'Machine Learning', 'Flask'],
       github: 'https://github.com/naman-0804/Diabetes_Prediction_onAWS',
-      youtube: 'https://youtube.com/your-diabetes-prediction-video'
+      youtube: 'https://youtu.be/qMkM-zELXGI?si=OnXqZru0goOXu35-'
     },
     {
       id: 'vitalized-button',
@@ -29,7 +29,7 @@ function Projects() {
       description: 'A wellness platform for VIT students to track and improve their mental and physical health.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
       github: 'https://github.com/naman-0804/vitalized-vit',
-      youtube: 'https://youtube.com/your-vitalized-video'
+      youtube: 'https://youtu.be/PPTDtrzJOT8?si=e32v89AZyyjjZ0av'
     },
     {
       id: 'sahyogi-button',
@@ -38,7 +38,7 @@ function Projects() {
       description: 'A platform connecting volunteers with organizations for social causes and community service.',
       technologies: ['React', 'Firebase', 'Material UI'],
       github: 'https://github.com/naman-0804/sih-site',
-      youtube: 'https://youtube.com/your-sahyogi-video'
+      youtube: 'https://youtu.be/eXR-V_Ck7VA?si=OxYaDhNPUAbsYDEK'
     },
     {
       id: 'AWS-button',
@@ -47,7 +47,7 @@ function Projects() {
       description: 'A fully serverless web application deployed on AWS using Lambda, API Gateway, and DynamoDB.',
       technologies: ['AWS', 'Serverless', 'JavaScript', 'DynamoDB'],
       github: 'https://github.com/naman-0804/Cloud-AWS',
-      youtube: 'https://youtube.com/your-serverless-video'
+      youtube: 'https://youtu.be/bld7EkDXFR4?si=4ccr0Le0AUv6gtfL'
     },
     {
       id: 'wcs-button',
@@ -56,7 +56,7 @@ function Projects() {
       description: 'An AI-powered tool that summarizes web page content using natural language processing.',
       technologies: ['Python', 'NLP', 'AI', 'Flask'],
       github: 'https://github.com/naman-0804/Ai_content_summarizer',
-      youtube: 'https://youtube.com/your-summarizer-video'
+      youtube: 'https://www.youtube.com/watch?v=X9xr08p2mtk'
     },
     {
       id: 'medhub-button',
@@ -65,7 +65,7 @@ function Projects() {
       description: 'A comprehensive healthcare platform connecting patients with doctors and medical services.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
       github: 'https://github.com/naman-0804/Healthcare',
-      youtube: 'https://youtube.com/your-medhub-video'
+      youtube: 'https://www.youtube.com/@naman_0804'
     },
     {
       id: 'asl-button',
@@ -74,7 +74,7 @@ function Projects() {
       description: 'An application that translates American and Indian Sign Language to text using computer vision.',
       technologies: ['Python', 'TensorFlow', 'OpenCV', 'Deep Learning'],
       github: 'https://github.com/naman-0804/Sign-Language-Translator',
-      youtube: 'https://youtube.com/your-asl-translator-video'
+      youtube: 'https://youtu.be/qMkM-zELXGI?si=hYzMO1V07OooRW-y'
     },
     {
       id: 'okra-button',
@@ -83,7 +83,7 @@ function Projects() {
       description: 'An image processing system that analyzes the maturity of okra plants for optimal harvesting.',
       technologies: ['Python', 'Computer Vision', 'Image Processing'],
       github: 'https://github.com/naman-0804/Okra-Maturity-Analysis',
-      youtube: 'https://youtube.com/your-okra-analysis-video'
+      youtube: 'https://www.youtube.com/@naman_0804'
     }
   ];
 
