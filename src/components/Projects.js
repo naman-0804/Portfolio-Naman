@@ -20,7 +20,7 @@ function Projects() {
       description: 'Machine learning model deployed on AWS to predict diabetes risk based on patient data.',
       technologies: ['Python', 'AWS', 'Machine Learning', 'Flask'],
       github: 'https://github.com/naman-0804/Diabetes_Prediction_onAWS',
-      youtube: 'https://youtu.be/qMkM-zELXGI?si=OnXqZru0goOXu35-'
+      youtube: 'https://youtu.be/OqBdSu4jDhs?si=s80-z3eRVexeqTu1'
     },
     {
       id: 'vitalized-button',
