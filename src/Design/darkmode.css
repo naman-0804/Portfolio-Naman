@@ -1,0 +1,35 @@
+/* Add this to an existing CSS file or create a new dark-mode.css */
+
+/* Dark mode background and text colors */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  /* Navbar styles for dark mode */
+  .dark-mode .navbar {
+    background-color: #1f1f1f;
+    color: #ffffff;
+  }
+  
+  /* Links in dark mode */
+  .dark-mode .nav-link {
+    color: #ffffff;
+  }
+  
+  .dark-mode .nav-link:hover {
+    color: #bb86fc;
+  }
+  
+  /* Buttons in dark mode */
+  .dark-mode .dark-mode-toggle {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .dark-mode .dark-mode-toggle:hover {
+    background-color: #565656;
+  }
