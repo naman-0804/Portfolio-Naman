@@ -1,4 +1,4 @@
-/* Contact Section Styling */
+
 #contact-section {
   padding: 5rem 2rem;
   background-color: #fff7e6;
@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-/* Add a subtle pattern overlay */
+
 #contact-section::before {
   content: '';
   position: absolute;
@@ -28,7 +28,6 @@
   z-index: 1;
 }
 
-/* Header Styling */
 .contact-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -51,7 +50,6 @@
   margin: 0 auto;
 }
 
-/* Content Layout */
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
@@ -59,7 +57,6 @@
   align-items: start;
 }
 
-/* Contact Info Cards */
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -107,7 +104,6 @@
   word-break: break-word;
 }
 
-/* Social Links */
 .social-links {
   background: white;
   border-radius: 12px;
@@ -146,7 +142,7 @@
   box-shadow: 0 10px 20px rgba(255, 117, 140, 0.3);
 }
 
-/* Contact Form */
+
 .contact-form-container {
   background: white;
   border-radius: 16px;
@@ -220,7 +216,7 @@
   transform: translateY(-1px);
 }
 
-/* Loading spinner */
+
 .submit-button.submitting {
   background: #ff758c;
   cursor: not-allowed;
@@ -239,7 +235,7 @@
   to { transform: rotate(360deg); }
 }
 
-/* Success message */
+
 .success-message {
   margin-top: 1.5rem;
   padding: 1rem;
@@ -249,7 +245,7 @@
   color: #2E7D32;
 }
 
-/* Responsive Design */
+
 @media (max-width: 992px) {
   .contact-content {
     grid-template-columns: 1fr;

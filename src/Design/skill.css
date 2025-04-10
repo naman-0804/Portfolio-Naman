@@ -1,11 +1,11 @@
-/* General Section Styling */
+
 #skills-section {
   padding: 3rem;
   background-color: #f9f4e8; /* Soft beige background */
   font-family: 'Arial', sans-serif;
 }
 
-/* Section Titles */
+
 .section-title {
   font-size: 2rem;
   margin-bottom: 2.5rem;
@@ -33,7 +33,7 @@
   border-radius: 2px;
 }
 
-/* Modern Skills Section Styling */
+
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -107,7 +107,6 @@
   color: white;
 }
 
-/* Achievements Timeline Styling */
 .Achievements {
   position: relative;
   max-width: 1200px;
@@ -115,7 +114,6 @@
   padding: 20px 0;
 }
 
-/* Timeline vertical line */
 .Achievements::before {
   content: '';
   position: absolute;
@@ -144,7 +142,7 @@
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Timeline node/dot for each achievement */
+
 .achievement-card::after {
   content: '';
   position: absolute;
@@ -157,7 +155,7 @@
   z-index: 1;
 }
 
-/* Position cards on alternating sides */
+
 .achievement-card:nth-child(odd) {
   float: left;
   clear: both;
@@ -168,7 +166,7 @@
   clear: both;
 }
 
-/* Position the dots on the timeline */
+
 .achievement-card:nth-child(odd)::after {
   right: -60px;
 }
@@ -177,7 +175,7 @@
   left: -60px;
 }
 
-/* Date styling */
+
 .achievement-date {
   display: inline-block;
   padding: 5px 10px;
@@ -200,14 +198,13 @@
   color: #666;
 }
 
-/* Clear floats */
+
 .Achievements::after {
   content: '';
   display: table;
   clear: both;
 }
 
-/* Responsive Adjustments for Smaller Screens */
 @media (max-width: 768px) {
   .Achievements::before {
     left: 30px;

@@ -1,4 +1,4 @@
-/* General Project Section Styling */
+
 .project {
   padding: 4rem 2rem;
   background-color: f8f9fa;
@@ -6,7 +6,6 @@
   overflow: hidden;
 }
 
-/* Add a subtle pattern overlay */
 .project::before {
   content: '';
   position: absolute;
@@ -52,7 +51,7 @@
   margin: 0 auto;
 }
 
-/* Project Item Styling - FIXED */
+
 .project-item {
   background-color: white;
   border-radius: 12px;
@@ -63,29 +62,27 @@
   position: relative;
 }
 
-/* Remove any curved shapes at the top */
 .project-item::before,
 .project-item::after {
   display: none !important;
 }
 
-/* Image Container - Make it rectangular */
 .project-image-container {
   position: relative;
   overflow: hidden;
   height: 220px;
   width: 100%;
-  border-radius: 0; /* Remove any border radius at the top */
+  border-radius: 0; 
 }
 
-/* Make image fill the container completely */
+
 .project-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
-  display: block; /* Ensures no extra space below image */
-  border-radius: 0; /* Remove any border radius on the image */
+  display: block; 
+  border-radius: 0; 
 }
 
 .project-item:hover img {
@@ -129,7 +126,7 @@
   line-height: 1.5;
 }
 
-/* Tech Stack Tags */
+
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
@@ -147,7 +144,7 @@
   backdrop-filter: blur(4px);
 }
 
-/* View Project Button */
+
 .view-project-btn {
   background-color: white;
   color: #ff758c;
@@ -169,10 +166,9 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* YouTube button styling */
 .view-project-btn.youtube-btn {
   background-color: white;
-  color: #FF0000; /* YouTube red */
+  color: #FF0000; 
 }
 
 .view-project-btn.youtube-btn:hover {
@@ -180,7 +176,7 @@
   color: white;
 }
 
-/* Project Info Section */
+
 .project-info {
   padding: 1.5rem;
   display: flex;
@@ -255,7 +251,7 @@
     font-size: 2rem;
   }
   
-  /* Mobile-specific overlay behavior */
+
   .project-overlay {
     background: linear-gradient(to bottom, 
                 rgba(255, 123, 179, 0.95), 
@@ -289,7 +285,7 @@
   }
   
   .project-image-container {
-    height: 200px; /* Fixed: Increased from 20px to 200px */
+    height: 200px; 
   }
   
   .project-info {
@@ -309,7 +305,6 @@
   }
 }
 
-/* Animation for project items on page load */
 @keyframes fadeInUp {
   from {
     opacity: 0;

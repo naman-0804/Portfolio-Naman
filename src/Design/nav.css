@@ -1,4 +1,3 @@
-/* Modern Navbar Styling */
 .navbar {
   position: fixed;
   top: 0;
@@ -130,13 +129,12 @@
   transform: rotate(-45deg);
 }
 
-/* Add this to your existing CSS for the content area */
+
 .content {
-  margin-top: 80px; /* Adjust based on your navbar height */
+  margin-top: 80px; 
   min-height: calc(100vh - 80px);
 }
 
-/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .navbar-toggle {
     display: block;

@@ -1,4 +1,3 @@
-/* Hero Section Styles */
 .hero-container {
   min-height: 100vh;
   background-color: #f8f9fa;
@@ -235,7 +234,7 @@
   margin-top: 1rem;
 }
 
-/* Responsive Design */
+
 @media (max-width: 992px) {
   .hero-content {
     flex-direction: column;
