@@ -17,7 +17,7 @@ function Projects() {
       id: 'ml-button',
       title: 'Diabetes Prediction on AWS',
       image: db,
-      description: 'Machine learning model deployed on AWS to predict diabetes risk based on patient data.',
+      description: 'Project deployed on AWS to predict diabetes risk based on patient data.',
       technologies: ['Python', 'AWS', 'Machine Learning', 'Flask'],
       github: 'https://github.com/naman-0804/Diabetes_Prediction_onAWS',
       youtube: 'https://youtu.be/OqBdSu4jDhs?si=s80-z3eRVexeqTu1'
@@ -26,7 +26,7 @@ function Projects() {
       id: 'vitalized-button',
       title: 'Vitalized',
       image: vitalized,
-      description: 'A wellness platform for VIT students to track and improve their mental and physical health.',
+      description: 'A platform for VIT students/faculties to find ongoing researches.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
       github: 'https://github.com/naman-0804/vitalized-vit',
       youtube: 'https://youtu.be/PPTDtrzJOT8?si=e32v89AZyyjjZ0av'
@@ -35,7 +35,7 @@ function Projects() {
       id: 'sahyogi-button',
       title: 'Sahyogi',
       image: sahyogi,
-      description: 'A platform connecting volunteers with organizations for social causes and community service.',
+      description: 'A platform focussing on mute people in healthcare.',
       technologies: ['React', 'Firebase', 'Material UI'],
       github: 'https://github.com/naman-0804/sih-site',
       youtube: 'https://youtu.be/eXR-V_Ck7VA?si=OxYaDhNPUAbsYDEK'
@@ -44,7 +44,7 @@ function Projects() {
       id: 'AWS-button',
       title: 'Serverless Web App on AWS',
       image: aws,
-      description: 'A fully serverless web application deployed on AWS using Lambda, API Gateway, and DynamoDB.',
+      description: 'A fully serverless web application deployed on AWS using its features.',
       technologies: ['AWS', 'Serverless', 'JavaScript', 'DynamoDB'],
       github: 'https://github.com/naman-0804/Cloud-AWS',
       youtube: 'https://youtu.be/bld7EkDXFR4?si=4ccr0Le0AUv6gtfL'
@@ -53,7 +53,7 @@ function Projects() {
       id: 'wcs-button',
       title: 'AI Webpage Content Summarizer',
       image: wcs,
-      description: 'An AI-powered tool that summarizes web page content using natural language processing.',
+      description: 'An AI-powered tool that summarizes web page content using gemini api.',
       technologies: ['Python', 'NLP', 'AI', 'Flask'],
       github: 'https://github.com/naman-0804/Ai_content_summarizer',
       youtube: 'https://www.youtube.com/watch?v=X9xr08p2mtk'
@@ -71,7 +71,7 @@ function Projects() {
       id: 'asl-button',
       title: 'ASL/ISL Translator',
       image: sl,
-      description: 'An application that translates American and Indian Sign Language to text using computer vision.',
+      description: 'Translates American and Indian Sign Language to text using computer vision.',
       technologies: ['Python', 'TensorFlow', 'OpenCV', 'Deep Learning'],
       github: 'https://github.com/naman-0804/Sign-Language-Translator',
       youtube: 'https://youtu.be/qMkM-zELXGI?si=hYzMO1V07OooRW-y'
