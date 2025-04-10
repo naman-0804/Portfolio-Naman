@@ -63,28 +63,28 @@ function Skills() {
       <div className="Achievements">
         {[
           {
-            date: "June 2024",
-            title: "Software Developer Intern",
-            description:
-              "Secured a summer internship with The Entrepreneurship Network and learned a lot of new skills.",
-          },
-          {
             date: "November 2024",
             title: "VITISH (SIH Internal Hackathon) Nominated for Official SIH24",
             description:
               "Qualified two elimination rounds and got nominated for official SIH24 from VIT Chennai out of 600 teams.",
           },
           {
-            date: "March 2024",
-            title: "Devshouse 4th Place",
+            date: "June 2024",
+            title: "Software Developer Intern",
             description:
-              "Participated in the Devshouse competition and secured the 4th place among 600+ teams.",
+              "Secured a summer internship with The Entrepreneurship Network and learned a lot of new skills.",
           },
           {
             date: "April 2024",
             title: "Solveathon 6th Place",
             description:
               "Ranked 6th in the Solveathon and received special appreciation for our idea.",
+          },
+          {
+            date: "March 2024",
+            title: "Devshouse 4th Place",
+            description:
+              "Participated in the Devshouse competition and secured the 4th place among 600+ teams.",
           },
         ].map((achievement, index) => (
           <div key={index} className="achievement-card">
