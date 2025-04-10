@@ -10,7 +10,7 @@ import wcs from '../Images/th.png';
 import { FaGithub, FaYoutube } from 'react-icons/fa';
 
 function Projects() {
-  const [hoveredProject, setHoveredProject] = useState(null);
+  const [activeProject, setActiveProject] = useState(null);
 
   const projects = [
     {
@@ -93,6 +93,24 @@ function Projects() {
     }
   }
 
+  // Handle both hover on desktop and touch on mobile
+  const handleProjectInteraction = (projectId) => {
+    if (window.innerWidth <= 768) {
+      // Toggle for mobile (touch)
+      setActiveProject(activeProject === projectId ? null : projectId);
+    } else {
+      // Set on hover for desktop
+      setActiveProject(projectId);
+    }
+  };
+
+  // Clear active project on mouse leave (desktop only)
+  const handleMouseLeave = () => {
+    if (window.innerWidth > 768) {
+      setActiveProject(null);
+    }
+  };
+
   return (
     <div id="project-section" className="project">
       <div className="project-header">
@@ -105,12 +123,13 @@ function Projects() {
           <div 
             className="project-item" 
             key={project.id}
-            onMouseEnter={() => setHoveredProject(project.id)}
-            onMouseLeave={() => setHoveredProject(null)}
+            onMouseEnter={() => handleProjectInteraction(project.id)}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => handleProjectInteraction(project.id)}
           >
             <div className="project-image-container">
               <img src={project.image} alt={project.title} />
-              <div className={`project-overlay ${hoveredProject === project.id ? 'active' : ''}`}>
+              <div className={`project-overlay ${activeProject === project.id ? 'active' : ''}`}>
                 <div className="project-description">
                   <p>{project.description}</p>
                   <div className="tech-stack">
@@ -121,7 +140,10 @@ function Projects() {
                 </div>
                 <button 
                   className="view-project-btn youtube-btn"
-                  onClick={() => redirectToProject(project.youtube)}
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent triggering card click
+                    redirectToProject(project.youtube);
+                  }}
                 >
                   <FaYoutube /> View on YouTube
                 </button>
@@ -132,10 +154,23 @@ function Projects() {
               <div className="project-links">
                 <button 
                   className="icon-button github-btn"
-                  onClick={() => redirectToProject(project.github)}
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent triggering card click
+                    redirectToProject(project.github);
+                  }}
                   aria-label="View GitHub repository"
                 >
                   <FaGithub />
+                </button>
+                <button 
+                  className="icon-button youtube-btn"
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent triggering card click
+                    redirectToProject(project.youtube);
+                  }}
+                  aria-label="View YouTube demo"
+                >
+                  <FaYoutube />
                 </button>
               </div>
             </div>

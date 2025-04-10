@@ -53,7 +53,6 @@
 }
 
 /* Project Item Styling - FIXED */
-/* Project Item Styling - FIXED */
 .project-item {
   background-color: white;
   border-radius: 12px;
@@ -110,6 +109,7 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 2;
 }
 
 .project-overlay.active {
@@ -161,11 +161,23 @@
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 3;
 }
 
 .view-project-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* YouTube button styling */
+.view-project-btn.youtube-btn {
+  background-color: white;
+  color: #FF0000; /* YouTube red */
+}
+
+.view-project-btn.youtube-btn:hover {
+  background-color: #FF0000;
+  color: white;
 }
 
 /* Project Info Section */
@@ -174,6 +186,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
+  position: relative;
+  z-index: 1;
 }
 
 .project-info h3 {
@@ -206,6 +221,18 @@
   transform: translateY(-3px);
 }
 
+.icon-button.github-btn:hover {
+  color: #333;
+}
+
+.icon-button.youtube-btn {
+  color: #FF0000;
+}
+
+.icon-button.youtube-btn:hover {
+  color: #FF0000;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
   .project-grid {
@@ -227,6 +254,33 @@
   .project-header h1 {
     font-size: 2rem;
   }
+  
+  /* Mobile-specific overlay behavior */
+  .project-overlay {
+    background: linear-gradient(to bottom, 
+                rgba(255, 123, 179, 0.95), 
+                rgba(255, 117, 140, 0.95));
+    padding: 1rem;
+  }
+  
+  .project-description p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .tech-stack {
+    margin-top: 0.5rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .view-project-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -235,7 +289,23 @@
   }
   
   .project-image-container {
-    height: 20px;
+    height: 200px; /* Fixed: Increased from 20px to 200px */
+  }
+  
+  .project-info {
+    padding: 1rem;
+  }
+  
+  .project-info h3 {
+    font-size: 1.1rem;
+  }
+  
+  .project-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .project-header p {
+    font-size: 1rem;
   }
 }
 
