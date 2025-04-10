@@ -162,16 +162,6 @@ function Projects() {
                 >
                   <FaGithub />
                 </button>
-                <button 
-                  className="icon-button youtube-btn"
-                  onClick={(e) => {
-                    e.stopPropagation(); // Prevent triggering card click
-                    redirectToProject(project.youtube);
-                  }}
-                  aria-label="View YouTube demo"
-                >
-                  <FaYoutube />
-                </button>
               </div>
             </div>
           </div>
