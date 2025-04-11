@@ -79,13 +79,14 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
           </Link>
         </div>
 
-        <button className="dark-mode-toggle" onClick={toggleDarkMode}>
+        <button className="theme-toggle-btn" onClick={toggleDarkMode} aria-label="Toggle dark mode">
           {darkMode ? '☀️' : '🌙'}
         </button>
       </div>
     </nav>
   );
 };
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);

@@ -9,7 +9,7 @@
   z-index: 1000;
   transition: all 0.3s ease;
   padding: 1.2rem 0;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(237, 240, 241, 0.95);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -138,31 +138,32 @@
 }
 
 /* Dark Mode Toggle Switch */
-.dark-mode-toggle {
-  position: relative;
-  width: 60px;
-  height: 30px;
-  background-color: #ccc;
-  border-radius: 30px;
+.theme-toggle-btn {
+  background: none;
   border: none;
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
-  padding: 0 4px;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.dark-mode-toggle:after {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  background-color: white;
-  border-radius: 50%;
-  left: 3px;
-  transition: transform 0.3s;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+.theme-toggle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: scale(1.1);
 }
+
+.dark-mode .theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle-btn:focus {
+  outline: none;
+}
+
 
 .dark-mode .dark-mode-toggle {
   background-color: #bb86fc;
