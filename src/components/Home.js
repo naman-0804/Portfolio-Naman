@@ -54,8 +54,9 @@ function Home() {
             </div>
             
             <div className="about-content">
-              <p>I love working on new problems and designing their solutions. I can solve bugs and fix codes whole day long.</p>
+              <p>I love working on new problems and designing their solutions. Debugging and fixing code isn't just a task for me—it's something I can do all day with enthusiasm.</p>
               <p>I thrive in <span className="highlight">Hackathons</span>, which bring out my best and help me think innovatively.</p>
+              <p>With experience in software development, cloud computing (AWS), and full-stack projects, I am always eager to explore new technologies and enhance my skills. </p>
               <p>I'm seeking opportunities for a <span className="highlight">developer role</span>.</p>
             </div>
             <div className="section-title">
@@ -95,7 +96,7 @@ function Home() {
                   <div className="skill-icon"><FaCode /></div>
                   <div className="skill-text">
                     <h4>APIs</h4>
-                    <p>RESTful & GraphQL</p>
+                    <p>RESTful</p>
                   </div>
                 </div>
                 

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaServer, FaReact, FaDatabase, FaCloud, FaTools } from "react-icons/fa";
+import { FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode } from "react-icons/fa";
 
 function Skills() {
   const skillsData = [
@@ -23,8 +23,14 @@ function Skills() {
     },
     { 
       title: "Cloud", 
-      content: "Supabase, Amazon Web Services", 
+      content: "Amazon Web Services", 
       icon: <FaCloud className="skill-icon" />,
+      color: "#9C27B0"
+    },
+    { 
+      title: "Coding", 
+      content: "DSA(250+), C++, Python, C, Java", 
+      icon: <FaCode className="skill-icon" />,
       color: "#9C27B0"
     },
     { 
@@ -78,7 +84,7 @@ function Skills() {
             date: "April 2024",
             title: "Solveathon 6th Place",
             description:
-              "Ranked 6th in the Solveathon and received special appreciation for our idea.",
+              "Ranked 6th in the Solveathon and received special appreciation from vice chancellor of VIT for our idea.",
           },
           {
             date: "March 2024",
