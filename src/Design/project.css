@@ -329,3 +329,39 @@
 .project-item:nth-child(6) { animation-delay: 0.6s; }
 .project-item:nth-child(7) { animation-delay: 0.7s; }
 .project-item:nth-child(8) { animation-delay: 0.8s; }
+/* Project card specific styles for dark mode */
+.dark-mode .project-item {
+  background-color: #2a2a2a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .project-info {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.dark-mode .project-info h3 {
+  color: #ffffff;
+}
+
+.dark-mode .icon-button {
+  color: #cccccc;
+}
+
+.dark-mode .icon-button:hover {
+  color: #ff758c;
+}
+
+.dark-mode .project-image-container {
+  background-color: #2a2a2a;
+}
+
+/* Ensure the project section background also changes */
+.dark-mode .project {
+  background-color: #121212;
+}
+
+/* Project header text in dark mode */
+.dark-mode .project-header p {
+  color: #cccccc;
+}
