@@ -7,6 +7,8 @@ import sahyogi from '../Images/sahyogi.png';
 import aws from '../Images/AWS.png';
 import db from '../Images/Diabetes.png';
 import wcs from '../Images/th.png';
+import lex from '../Images/lex.png';
+import Portfolio from '../Images/portfolio.png';
 import { FaGithub, FaYoutube } from 'react-icons/fa';
 
 function Projects() {
@@ -83,6 +85,24 @@ function Projects() {
       description: 'An image processing system that analyzes the maturity of okra plants for optimal harvesting.',
       technologies: ['Python', 'Computer Vision', 'Image Processing'],
       github: 'https://github.com/naman-0804/Okra-Maturity-Analysis',
+      youtube: 'https://www.youtube.com/@naman_0804'
+    },
+    {
+      id: 'lex-button',
+      title: 'Lex ChatBot',
+      image: lex,
+      description: 'A chatbot built using AWS Lex.',
+      technologies: ['Chat Bot', 'Ai'],
+      github: 'https://github.com/naman-0804?tab=repositories',
+      youtube: 'https://www.youtube.com/watch?v=lU9DK8GRS1k'
+    },
+    {
+      id: 'portfolio-button',
+      title: 'Portfolio Website',
+      image: Portfolio,
+      description: 'About Me',
+      technologies: ['React', 'EmailJs'],
+      github: 'https://github.com/naman-0804/Portfolio-Naman',
       youtube: 'https://www.youtube.com/@naman_0804'
     }
   ];
