@@ -6,6 +6,7 @@ import '../src/Design/contact.css';
 import '../src/Design/exp.css';
 import '../src/Design/project.css';
 import '../src/Design/skill.css';
+import { Analytics } from '@vercel/analytics/react';
 
 import Home from './components/Home';
 import Projects from './components/Projects';
@@ -108,9 +109,11 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
+        <Analytics />
       </div>
     </Router>
   );
 }
+
 
 export default App;
