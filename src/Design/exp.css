@@ -1,6 +1,4 @@
-/* Experience Section Styles - Combined Light and Dark Mode */
 
-/* Light Mode Styles */
 #experience-section {
   padding: 4rem 2rem;
   background-color: #fff7e6; 
@@ -182,7 +180,7 @@
   padding-left: 0.5rem;
 }
 
-/* Dark Mode Styles */
+
 .dark-mode #experience-section {
   background-color: #1a1a1a;
   color: #e0e0e0;
@@ -264,7 +262,7 @@
   color: #cccccc;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
   .section-header h1 {
     font-size: 2rem;

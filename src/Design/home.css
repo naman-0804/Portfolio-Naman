@@ -15,7 +15,6 @@
   gap: 2rem;
 }
 
-/* Left Side - Profile Card */
 .hero-left {
   flex: 1;
   max-width: 350px;
@@ -139,7 +138,7 @@
   box-shadow: 0 5px 15px rgba(71, 118, 230, 0.4);
 }
 
-/* Right Side - About Card */
+
 .hero-right {
   flex: 2;
 }
