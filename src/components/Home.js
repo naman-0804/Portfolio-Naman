@@ -34,8 +34,10 @@ function Home() {
               <div className="recommendation-header">
                 <h4>Recommendation</h4>
                 <div className="recommender-info">
-                  <span className="recommender-name">srikrupa HD</span>
-                  <span className="recommender-title">Data Analyst | Data Scientist | Python | Web developer | Power BI | Quick learner | Mentor | Problem solver</span>
+                  <span className="recommender-name">Srikrupa HD</span>
+                  <span className="recommender-title">Working at The Entrepreneurship Network</span>
+                  <br></br>
+                  <span className="recommender-title">Data Analyst | Data Scientist | Python | Web developer | Power BI | Mentor | Problem solver</span>
                   <span className="recommendation-date">August 12, 2024</span>
                 </div>
               </div>
