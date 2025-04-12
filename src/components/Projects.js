@@ -103,7 +103,7 @@ function Projects() {
       description: 'About Me',
       technologies: ['React', 'EmailJs'],
       github: 'https://github.com/naman-0804/Portfolio-Naman',
-      youtube: 'https://www.youtube.com/@naman_0804'
+      youtube: 'https://www.youtube.com/watch?v=u4lYKwQs48s'
     }
   ];
 
