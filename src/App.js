@@ -7,7 +7,7 @@ import '../src/Design/exp.css';
 import '../src/Design/project.css';
 import '../src/Design/skill.css';
 import { Analytics } from '@vercel/analytics/react';
-
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import Home from './components/Home';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
@@ -109,6 +109,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
+        <SpeedInsights/>
         <Analytics />
       </div>
     </Router>
