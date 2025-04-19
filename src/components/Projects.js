@@ -3,6 +3,7 @@ import okrapic from '../Images/okra-website.png';
 import vitalized from '../Images/vitalized-website.png';
 import medhub from '../Images/medhub360-website.png';
 import sl from '../Images/SL-website.png';
+import dl from '../Images/Filetransfer.png';
 import sahyogi from '../Images/sahyogi.png';
 import aws from '../Images/AWS.png';
 import db from '../Images/Diabetes.png';
@@ -15,6 +16,15 @@ function Projects() {
   const [activeProject, setActiveProject] = useState(null);
 
   const projects = [
+    {
+      id: 'dl-button',
+      title: 'Upload and download without login',
+      image: dl,
+      description: 'Transfer assignments from lab computers to your device without logging into Gmail.',
+      technologies: ['GCP', 'Google API', 'Javascript', 'Flask'],
+      github: 'https://github.com/naman-0804/File_Storage',
+      youtube: 'https://www.youtube.com/watch?v=5xgZ00DH89w'
+    },
     {
       id: 'ml-button',
       title: 'Diabetes Prediction on AWS',
