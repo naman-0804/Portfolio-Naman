@@ -88,7 +88,6 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
   );
 };
 
-
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
@@ -115,6 +114,5 @@ function App() {
     </Router>
   );
 }
-
 
 export default App;
