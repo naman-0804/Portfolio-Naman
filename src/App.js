@@ -7,7 +7,7 @@ import '../src/Design/exp.css';
 import '../src/Design/project.css';
 import '../src/Design/skill.css';
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Home from './components/Home';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
@@ -54,15 +54,7 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
           </Link>
         </div>
 
-        <div className="navbar-toggle" onClick={toggleMenu}>
-          <div className={`hamburger ${isMenuOpen ? 'active' : ''}`}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-
-        <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
+        <div className="navbar-links">
           <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={handleLinkClick}>
             Home
           </Link>
@@ -84,10 +76,21 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
           {darkMode ? '☀️' : '🌙'}
         </button>
       </div>
+
+      {/* Mobile Bubble Menu */}
+      <div className={`bubble-menu ${isMenuOpen ? 'open' : ''}`}>
+        <button className={`fab ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>+</button>
+        <div className={`bubble-links ${isMenuOpen ? 'show' : ''}`}>
+          <Link to="/" onClick={handleLinkClick}>🏠</Link>
+          <Link to="/projects" onClick={handleLinkClick}>💻</Link>
+          <Link to="/skills" onClick={handleLinkClick}>🧠</Link>
+          <Link to="/experience" onClick={handleLinkClick}>📜</Link>
+          <Link to="/contact" onClick={handleLinkClick}>✉️</Link>
+        </div>
+      </div>
     </nav>
   );
 };
-
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -109,12 +112,11 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
-        <SpeedInsights/>
+        <SpeedInsights />
         <Analytics />
       </div>
     </Router>
   );
 }
-
 
 export default App;
