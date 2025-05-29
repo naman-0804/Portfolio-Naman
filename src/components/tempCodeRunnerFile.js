@@ -56,27 +56,21 @@ function Home() {
             </div>
             
             <div className="about-content">
-              <p>I love working on new problems and designing their solutions. <span className="highlight-green">Debugging</span> and <span className="highlight-green">Designing</span> the code isn't just a task for me—it's something I can do all day with enthusiasm.</p>
-              
-              <p>I thrive in <span className="highlight-purple">Hackathons</span>, which bring out my best and help me think innovatively.</p>
-              
-              <p>With experience in software development, cloud computing (<span className="highlight-orange">AWS</span>), and full-stack projects, I am always eager to explore new technologies and enhance my skills.</p>
-              
-              <p>I'm seeking opportunities for a <span className="highlight-blue">developer role</span>.</p>
+              <p>I love working on new problems and designing their solutions. Debugging and fixing code isn't just a task for me—it's something I can do all day with enthusiasm.</p>
+              <p>I thrive in <span className="highlight">Hackathons</span>, which bring out my best and help me think innovatively.</p>
+              <p>With experience in software development, cloud computing (AWS), and full-stack projects, I am always eager to explore new technologies and enhance my skills. </p>
+              <p>I'm seeking opportunities for a <span className="highlight">developer role</span>.</p>
             </div>
-
-            
             <div className="section-title">
-              <h3>Resume</h3>
-              <div className="title-underline"></div>
-            </div>
+            <h3>Resume</h3>
+            <div className="title-underline"></div>
+          </div>
 
-            <div className="resume-section">
-              <a href={resume} download="Naman_Srivastava.pdf" className="download-button">
-                <FaDownload /> Download Resume
-              </a>
-            </div>
-            
+          <div className="resume-section">
+            <a href={resume} download="Naman_Srivastava.pdf" className="download-button">
+              <FaDownload /> Download Resume
+            </a>
+          </div>
             <div className="expertise-section">
               <div className="section-title">
                 <h3>My Expertise</h3>
