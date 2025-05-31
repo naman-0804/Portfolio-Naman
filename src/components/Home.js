@@ -1,7 +1,7 @@
 import React from 'react';
 import resume from '../Naman_srivastava.pdf';
 import mypic from '../Images/IMG_20240807_232437_330.jpeg';
-import { FaLinkedin, FaGithub, FaYoutube, FaDownload, FaCode, FaDatabase, FaCloud, FaLaptopCode, FaServer } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaYoutube, FaDownload, FaCode, FaTools, FaCloud, FaLaptopCode, FaServer } from 'react-icons/fa';
 
 function Home() {
   return (
@@ -85,21 +85,21 @@ function Home() {
               
               <div className="skills-grid">
                 <div className="skill-item">
-                  <div className="skill-icon"><FaDatabase /></div>
+                  <div className="skill-icon"><FaLaptopCode /></div>
                   <div className="skill-text">
-                    <h4>Databases</h4>
-                    <p>MongoDB</p>
+                    <h4>Frontend</h4>
+                    <p>React JS</p>
                   </div>
                 </div>
-                
+
                 <div className="skill-item">
                   <div className="skill-icon"><FaServer /></div>
                   <div className="skill-text">
                     <h4>Backend</h4>
-                    <p>Flask</p>
+                    <p>Flask, Node.js</p>
                   </div>
                 </div>
-                
+
                 <div className="skill-item">
                   <div className="skill-icon"><FaCode /></div>
                   <div className="skill-text">
@@ -107,15 +107,15 @@ function Home() {
                     <p>RESTful</p>
                   </div>
                 </div>
-                
+
                 <div className="skill-item">
-                  <div className="skill-icon"><FaLaptopCode /></div>
+                  <div className="skill-icon"><FaTools /></div>
                   <div className="skill-text">
-                    <h4>Frontend</h4>
-                    <p>React JS</p>
+                    <h4>DevOps</h4>
+                    <p>Docker, GitHub Actions</p>
                   </div>
                 </div>
-                
+
                 <div className="skill-item">
                   <div className="skill-icon"><FaCloud /></div>
                   <div className="skill-text">
@@ -124,7 +124,8 @@ function Home() {
                   </div>
                 </div>
               </div>
-            </div>            
+            </div>
+            
           </div>
         </div>
       </div>

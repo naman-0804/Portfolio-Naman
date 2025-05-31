@@ -10,6 +10,7 @@ import db from '../Images/Diabetes.png';
 import wcs from '../Images/th.png';
 import lex from '../Images/lex.png';
 import Portfolio from '../Images/portfolio.png';
+import devops from '../Images/devops.png';
 import { FaGithub, FaYoutube } from 'react-icons/fa';
 
 function Projects() {
@@ -33,6 +34,15 @@ function Projects() {
       technologies: ['Python', 'AWS', 'Machine Learning', 'Flask'],
       github: 'https://github.com/naman-0804/Diabetes_Prediction_onAWS',
       youtube: 'https://youtu.be/OqBdSu4jDhs?si=s80-z3eRVexeqTu1'
+    },
+    {
+      id: 'devops-button',
+      title: 'DevOps Project',
+      image: devops,
+      description: 'A comprehensive DevOps project showcasing CI/CD pipelines and Dockerization of code.',
+      technologies: ['Docker', 'React', 'CI/CD-GitHub Actions'],
+      github: 'https://github.com/naman-0804/to-do_devops_',
+      youtube: 'https://www.youtube.com/watch?v=NSN33CLi0M8'
     },
     {
       id: 'vitalized-button',
