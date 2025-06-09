@@ -56,7 +56,7 @@ function getBotResponse(message) {
 
 function Home() {
   const [messages, setMessages] = useState([
-    { from: 'bot', text: "Hi! I'm your portfolio assistant. Ask me about my work experience, projects, or skills." }
+    { from: 'bot', text: "Hi! I'm Naman's portfolio assistant. Ask me about his work experience, projects, or skills." }
   ]);
   const [input, setInput] = useState('');
   const navigate = useNavigate();
