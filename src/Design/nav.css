@@ -210,10 +210,10 @@
 /* MOBILE STYLES */
 @media (max-width: 768px) {
   .navbar-links {
-    display: none; /* Hide by default */
-    position: fixed;
-    bottom: 70px; /* Above the hamburger bubble */
-    right: 20px;   /* <-- Changed from left: 20px; */
+    display: none;
+    position: absolute;  /* Changed from fixed */
+    top: 100%;          /* Position below navbar */
+    right: 0;           /* Align to right */
     width: 200px;
     flex-direction: column;
     gap: 0;
@@ -224,42 +224,58 @@
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
     z-index: 1000;
+    margin-top: 0.5rem;  /* Add some space below navbar */
   }
+
   .navbar-links.active {
     display: flex; /* Show when active */
     max-height: 300px;
     padding: 1rem 0;
     overflow-y: auto;
   }
+
   .nav-link {
     padding: 1rem 2rem;
     width: 100%;
     text-align: center;
     display: block;
   }
+
   .nav-link::after {
     display: none;
   }
+
   .navbar-toggle {
-    display: block;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;   /* <-- Changed from left: 20px; */
-    z-index: 1100;
-    background-color: #ff758c;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
     display: flex;
+    position: static;    /* Changed from fixed */
+    width: 40px;         /* Smaller size to match navbar */
+    height: 40px;
+    background-color: transparent;  /* Remove background */
+    border-radius: 50%;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: none;    /* Remove shadow */
+    margin-left: 1rem;   /* Space between dark mode button */
   }
+
   .hamburger span {
-    background: #fff;
+    background: #333;    /* Dark color for hamburger lines */
   }
-  .dark-mode .navbar-links,
-  .dark-mode .navbar-links.active {
-    background-color: #212121;
+
+  .dark-mode .hamburger span {
+    background: #fff;    /* Light color for dark mode */
+  }
+
+  /* Update navbar container to accommodate the new layout */
+  .navbar-container {
+    padding: 0 1rem;
+    justify-content: space-between;
+  }
+
+  /* Group the theme toggle and hamburger */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 }
