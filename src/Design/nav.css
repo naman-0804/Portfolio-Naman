@@ -23,6 +23,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
 }
 
 .navbar-logo a {
@@ -44,8 +45,22 @@
 }
 
 .navbar-links {
-  display: flex;
-  gap: 2rem;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  max-width: 320px;
+  flex-direction: column;
+  gap: 0;
+  background-color: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  z-index: 1000;
 }
 
 .nav-link {
@@ -83,8 +98,20 @@
 }
 
 .navbar-toggle {
-  display: none;
-  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1100;
+  background-color: #ff758c;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hamburger {
@@ -211,10 +238,12 @@
 @media (max-width: 768px) {
   .navbar-links {
     display: none; /* Hide by default */
-    position: fixed;
-    bottom: 70px; /* Above the hamburger bubble */
-    right: 20px;   /* <-- Changed from left: 20px; */
-    width: 200px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 320px;
     flex-direction: column;
     gap: 0;
     background-color: white;
@@ -242,14 +271,15 @@
   }
   .navbar-toggle {
     display: block;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;   /* <-- Changed from left: 20px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1100;
     background-color: #ff758c;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -261,5 +291,5 @@
   .dark-mode .navbar-links,
   .dark-mode .navbar-links.active {
     background-color: #212121;
-  }
-}
+
+  }}
