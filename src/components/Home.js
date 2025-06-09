@@ -13,7 +13,7 @@ const botResponses = [
     buttonLink: "/experience"
   },
   {
-    keywords: ['project', 'projects', 'portfolio'],
+    keywords: ['project', 'projects', 'portfolio','proj'],
     response: "I've worked on projects like Medhub360, Vitalized, Sahyogi, and more.",
     buttonText: "View Projects",
     buttonLink: "/projects"
