@@ -62,11 +62,15 @@ function Home() {
   const navigate = useNavigate();
   const messagesEndRef = useRef(null);
 
-  useEffect(() => {
-    // Scroll to bottom when messages change
+  const scrollToBottom = () => {
     if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+      const chatContainer = messagesEndRef.current.parentElement;
+      chatContainer.scrollTop = chatContainer.scrollHeight;
     }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
   }, [messages]);
 
   const handleSend = () => {
@@ -174,7 +178,7 @@ function Home() {
                     )}
                   </div>
                 ))}
-                <div ref={messagesEndRef} />
+                <div ref={messagesEndRef} style={{ height: 0 }} />
               </div>
               <div className="chatbot-input-row">
                 <input
