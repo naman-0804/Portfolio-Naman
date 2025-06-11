@@ -11,12 +11,21 @@ import wcs from '../Images/th.png';
 import lex from '../Images/lex.png';
 import Portfolio from '../Images/portfolio.png';
 import devops from '../Images/devops.png';
+import auth from '../Images/auth.png';
 import { FaGithub, FaYoutube } from 'react-icons/fa';
 
 function Projects() {
   const [activeProject, setActiveProject] = useState(null);
 
   const projects = [
+    {
+      id: 'auth-button',
+      title: 'Chat Application using Next , Clerk and GetStream',
+      image: auth,
+      description: 'A real-time chat application built with Next.js, Clerk for authentication, and GetStream for messaging.',
+      technologies: ['Next.js', 'Clerk', 'GetStream'],
+      github: 'https://github.com/naman-0804/Chat-App',
+      youtube: 'https://www.youtube.com/watch?v=OOlXkIn3GucY'},
     {
       id: 'dl-button',
       title: 'Upload and download without login',
