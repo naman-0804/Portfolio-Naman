@@ -70,7 +70,7 @@ function Contact() {
               </div>
               <div className="contact-details">
                 <h3>Email</h3>
-                <p>namansrivastava1608@gmail.com</p>
+                <p>namansrivastava0104@gmail.com</p>
               </div>
             </div>
             
