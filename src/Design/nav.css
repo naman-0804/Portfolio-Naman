@@ -210,35 +210,42 @@
 /* MOBILE STYLES */
 @media (max-width: 768px) {
   .navbar-links {
-    display: none;
-    position: absolute;  /* Changed from fixed */
-    top: 100%;          /* Position below navbar */
-    right: 0;           /* Align to right */
-    width: 200px;
-    flex-direction: column;
-    gap: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 0.5rem;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
     background-color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    padding: 0;
     max-height: 0;
     overflow: hidden;
+    padding: 0 1rem;
     transition: max-height 0.3s ease, padding 0.3s ease;
     z-index: 1000;
-    margin-top: 0.5rem;  /* Add some space below navbar */
+    margin-top: 0.5rem;
   }
 
   .navbar-links.active {
-    display: flex; /* Show when active */
-    max-height: 300px;
-    padding: 1rem 0;
-    overflow-y: auto;
+    max-height: 500px;
+    padding: 1rem;
   }
 
   .nav-link {
-    padding: 1rem 2rem;
-    width: 100%;
-    text-align: center;
     display: block;
+    padding: 0.75rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    background-color: #ffe6ec;
+    color: #ff758c;
   }
 
   .nav-link::after {
@@ -247,35 +254,47 @@
 
   .navbar-toggle {
     display: flex;
-    position: static;    /* Changed from fixed */
-    width: 40px;         /* Smaller size to match navbar */
+    position: static;
+    width: 40px;
     height: 40px;
-    background-color: transparent;  /* Remove background */
+    background-color: transparent;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    box-shadow: none;    /* Remove shadow */
-    margin-left: 1rem;   /* Space between dark mode button */
+    box-shadow: none;
+    margin-left: 1rem;
   }
 
   .hamburger span {
-    background: #333;    /* Dark color for hamburger lines */
+    background: #333;
   }
 
   .dark-mode .hamburger span {
-    background: #fff;    /* Light color for dark mode */
+    background: #fff;
   }
 
-  /* Update navbar container to accommodate the new layout */
   .navbar-container {
     padding: 0 1rem;
     justify-content: space-between;
   }
 
-  /* Group the theme toggle and hamburger */
   .navbar-right {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+  }
+
+  .dark-mode .nav-link {
+    background-color: #333;
+    color: #ddd;
+  }
+
+  .dark-mode .nav-link:hover {
+    background-color: #444;
+    color: #bb86fc;
+  }
+
+  .dark-mode .navbar-links {
+    background-color: #1e1e1e;
   }
 }

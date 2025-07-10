@@ -1,9 +1,91 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import resume from '../Naman_srivastava.pdf';
 import mypic from '../Images/IMG_20240807_232437_330.jpeg';
-import { FaLinkedin, FaGithub, FaYoutube, FaDownload, FaCode, FaDatabase, FaCloud, FaLaptopCode, FaServer } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaYoutube, FaDownload } from 'react-icons/fa';
+
+// Bot responses
+const botResponses = [
+  {
+    keywords: ['work', 'experience', 'job', 'intern'],
+    response: "I have interned at The Entrepreneurship Network (TEN) as a Software Development Intern and worked as a Web Developer for Biosphere Club.",
+    buttonText: "See Experience",
+    buttonLink: "/experience"
+  },
+  {
+    keywords: ['project', 'projects', 'portfolio','proj'],
+    response: "I've worked on projects like Medhub360, Vitalized, Sahyogi, and more.",
+    buttonText: "View Projects",
+    buttonLink: "/projects"
+  },
+  {
+    keywords: ['tech', 'stack', 'technology', 'technologies', 'skills'],
+    response: "I'm skilled in React, Python, Flask, AWS, MongoDB, and more.",
+    buttonText: "See Skills",
+    buttonLink: "/skills"
+  },
+  {
+    keywords: ['education', 'college', 'school'],
+    response: "I'm pursuing B.Tech in Computer Science at VIT, Vellore. I completed my schooling at Peace Public School.",
+    buttonText: "See Education",
+    buttonLink: "/experience"
+  },
+  {
+    keywords: ['contact', 'email', 'reach'],
+    response: "You can contact me through the Contact section of my portfolio!",
+    buttonText: "Contact Me",
+    buttonLink: "/contact"
+  },
+  {
+    keywords: ['hello', 'hi', 'hey'],
+    response: "Hello! I'm Naman's portfolio bot. Ask me about my work experience, projects, or skills."
+  }
+];
+
+function getBotResponse(message) {
+  const lowerMsg = message.toLowerCase();
+  for (const entry of botResponses) {
+    if (entry.keywords.some(keyword => lowerMsg.includes(keyword))) {
+      return entry;
+    }
+  }
+  return {
+    response: "Sorry, I didn't understand that. You can ask about my work experience, projects, skills, or education!"
+  };
+}
 
 function Home() {
+  const [messages, setMessages] = useState([
+    { from: 'bot', text: "Hi! I'm Naman's portfolio assistant. Ask me about his work experience, projects, or skills." }
+  ]);
+  const [input, setInput] = useState('');
+  const navigate = useNavigate();
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    if (messagesEndRef.current) {
+      const chatContainer = messagesEndRef.current.parentElement;
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  const handleSend = () => {
+    if (!input.trim()) return;
+    const userMsg = { from: 'user', text: input };
+    const botReplyObj = getBotResponse(input);
+    const botMsg = { from: 'bot', text: botReplyObj.response, buttonText: botReplyObj.buttonText, buttonLink: botReplyObj.buttonLink };
+    setMessages([...messages, userMsg, botMsg]);
+    setInput('');
+  };
+
+  const handleBotButton = (link) => {
+    navigate(link);
+  };
+
   return (
     <div className="hero-container">
       <div className="hero-content">
@@ -36,7 +118,7 @@ function Home() {
                 <div className="recommender-info">
                   <span className="recommender-name">Srikrupa HD</span>
                   <span className="recommender-title">Working at The Entrepreneurship Network</span>
-                  <br></br>
+                  <br />
                   <span className="recommender-title">Data Analyst | Data Scientist | Python | Web developer | Power BI | Mentor | Problem solver</span>
                   <span className="recommendation-date">August 12, 2024</span>
                 </div>
@@ -56,69 +138,61 @@ function Home() {
             </div>
             
             <div className="about-content">
-              <p>I love working on new problems and designing their solutions. Debugging and fixing code isn't just a task for me—it's something I can do all day with enthusiasm.</p>
-              <p>I thrive in <span className="highlight">Hackathons</span>, which bring out my best and help me think innovatively.</p>
-              <p>With experience in software development, cloud computing (AWS), and full-stack projects, I am always eager to explore new technologies and enhance my skills. </p>
-              <p>I'm seeking opportunities for a <span className="highlight">developer role</span>.</p>
-            </div>
-            <div className="section-title">
-            <h3>Resume</h3>
-            <div className="title-underline"></div>
-          </div>
-
-          <div className="resume-section">
-            <a href={resume} download="Naman_Srivastava.pdf" className="download-button">
-              <FaDownload /> Download Resume
-            </a>
-          </div>
-            <div className="expertise-section">
-              <div className="section-title">
-                <h3>My Expertise</h3>
-                <div className="title-underline"></div>
-              </div>
+              <p>I love working on new problems and designing their solutions. <span className="highlight-green">Debugging</span> and <span className="highlight-green">Designing</span> the code isn't just a task for me—it's something I can do all day with enthusiasm.</p>
               
-              <div className="skills-grid">
-                <div className="skill-item">
-                  <div className="skill-icon"><FaDatabase /></div>
-                  <div className="skill-text">
-                    <h4>Databases</h4>
-                    <p>MongoDB</p>
+              <p>I thrive in <span className="highlight-purple">Hackathons</span>, which bring out my best and help me think innovatively.</p>
+              
+              <p>With experience in software development, cloud computing (<span className="highlight-orange">AWS</span>), and full-stack projects, I am always eager to explore new technologies and enhance my skills.</p>
+              
+              <p>I'm seeking opportunities for a <span className="highlight-blue">developer role</span>.</p>
+            </div>
+
+            <div className="section-title">
+              <h3>Resume</h3>
+              <div className="title-underline"></div>
+            </div>
+
+            <div className="resume-section">
+              <a href={resume} download="Naman_Srivastava.pdf" className="download-button">
+                <FaDownload /> Download Resume
+              </a>
+            </div>
+
+            {/* Chatbot Section */}
+            <div className="section-title">
+              <h3>Ask Me Anything!</h3>
+              <div className="title-underline"></div>
+            </div>
+            <div className="chatbot-container uniform-bg">
+              <div className="chatbot-messages">
+                {messages.map((msg, idx) => (
+                  <div key={idx} className={`chatbot-message ${msg.from}`}>
+                    <span>{msg.text}</span>
+                    {msg.from === 'bot' && msg.buttonText && msg.buttonLink && (
+                      <button
+                        className="chatbot-link-btn"
+                        onClick={() => handleBotButton(msg.buttonLink)}
+                      >
+                        {msg.buttonText}
+                      </button>
+                    )}
                   </div>
-                </div>
-                
-                <div className="skill-item">
-                  <div className="skill-icon"><FaServer /></div>
-                  <div className="skill-text">
-                    <h4>Backend</h4>
-                    <p>Flask</p>
-                  </div>
-                </div>
-                
-                <div className="skill-item">
-                  <div className="skill-icon"><FaCode /></div>
-                  <div className="skill-text">
-                    <h4>APIs</h4>
-                    <p>RESTful</p>
-                  </div>
-                </div>
-                
-                <div className="skill-item">
-                  <div className="skill-icon"><FaLaptopCode /></div>
-                  <div className="skill-text">
-                    <h4>Frontend</h4>
-                    <p>React JS</p>
-                  </div>
-                </div>
-                
-                <div className="skill-item">
-                  <div className="skill-icon"><FaCloud /></div>
-                  <div className="skill-text">
-                    <h4>Cloud</h4>
-                    <p>AWS</p>
-                  </div>
-                </div>
+                ))}
+                <div ref={messagesEndRef} style={{ height: 0 }} />
               </div>
-            </div>            
+              <div className="chatbot-input-row">
+                <input
+                  type="text"
+                  value={input}
+                  onChange={e => setInput(e.target.value)}
+                  onKeyDown={e => e.key === 'Enter' && handleSend()}
+                  placeholder="Type your question..."
+                />
+                <button onClick={handleSend}>Send</button>
+              </div>
+            </div>
+            {/* End chatbot */}
+            
           </div>
         </div>
       </div>
