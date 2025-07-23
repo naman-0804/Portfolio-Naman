@@ -31,7 +31,7 @@ function Skills() {
     },
     { 
       title: "Coding", 
-      content: "DSA(250+), C++, Python, C, Java", 
+      content: "DSA(400+), C++, Python, C, Java", 
       icon: <FaCode className="skill-icon" />,
       color: "#9C27B0"
     },
