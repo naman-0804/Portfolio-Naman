@@ -1,5 +1,7 @@
 import React from "react";
-import { FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode } from "react-icons/fa";
+import { 
+    FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode, FaTrophy 
+} from "react-icons/fa";
 
 function Skills() {
   const skillsData = [
@@ -45,7 +47,6 @@ function Skills() {
     <div id="skills-section">
       {/* Skills Section */}
       <h1 className="section-title">Skills</h1>
-      
       <div className="skills-container">
         {skillsData.map((skill, index) => (
           <div key={index} className="skill-item" style={{"--skill-color": skill.color}}>
@@ -100,6 +101,21 @@ function Skills() {
           </div>
         ))}
       </div>
+
+      {/* --- SCHOLARSHIP FORMAT --- */}
+      <h1 className="section-title">Scholarship</h1>
+      <div className="scholarship-banner">
+        <FaTrophy className="scholarship-icon" />
+        <div>
+          <h3>
+            Annual Academic Excellence Scholarship
+          </h3>
+          <p>
+            Got a scholarship from INDIAN AIR FORCE each academic year for academic excellence in class 12th CBSE Boards.
+          </p>
+        </div>
+      </div>
+
     </div>
   );
 }

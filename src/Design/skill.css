@@ -16,7 +16,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.05) 2%, transparent 0%),
     radial-gradient(circle at 75px 75px, rgba(0, 0, 0, 0.05) 2%, transparent 0%);
   background-size: 100px 100px;
@@ -224,6 +224,37 @@
   clear: both;
 }
 
+/* --- Scholarship Banner Styles --- */
+.scholarship-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  margin: 20px 40px; 
+  border-radius: 10px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #4a2c00;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.scholarship-banner .scholarship-icon {
+  font-size: 50px;
+  flex-shrink: 0;
+}
+
+.scholarship-banner h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #4a2c00;
+}
+
+.scholarship-banner p {
+  margin: 0;
+}
+
+
 /* Dark Mode Styles */
 .dark-mode #skills-section {
   background-color: #1a1a1a;
@@ -231,7 +262,7 @@
 }
 
 .dark-mode #skills-section::before {
-  background-image: 
+  background-image:
     radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.05) 2%, transparent 0%),
     radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.05) 2%, transparent 0%);
 }
@@ -308,30 +339,50 @@
   color: #bbbbbb;
 }
 
+/* --- Dark Mode Scholarship Banner --- */
+.dark-mode .scholarship-banner {
+  background: linear-gradient(135deg, #bb86fc, #8c54e9);
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.dark-mode .scholarship-banner h3 {
+  color: #ffffff;
+}
+
+.dark-mode .scholarship-banner p {
+  color: #e0e0e0;
+}
+
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .Achievements::before {
     left: 30px;
   }
-  
+
   .achievement-card {
     width: calc(100% - 80px);
     float: right;
     clear: both;
     margin-left: 80px;
   }
-  
+
   .achievement-card::after {
     left: -50px;
   }
-  
+
   .achievement-card:nth-child(odd)::after,
   .achievement-card:nth-child(even)::after {
     left: -50px;
   }
-  
+
   .skill-item {
     max-width: 100%;
+  }
+
+  .scholarship-banner {
+    margin: 20px; /* Adjust margin for smaller screens */
   }
 }
 
@@ -340,22 +391,29 @@
     width: calc(100% - 60px);
     margin-left: 60px;
   }
-  
+
   .achievement-card::after {
     left: -40px;
   }
-  
+
   .achievement-card:nth-child(odd)::after,
   .achievement-card:nth-child(even)::after {
     left: -40px;
   }
-  
+
   .skill-item {
     flex-direction: column;
   }
-  
+
   .skill-icon-container {
     margin-right: 0;
     margin-bottom: 1rem;
+  }
+
+  .scholarship-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    margin: 20px 10px; /* Further adjust margin */
   }
 }
