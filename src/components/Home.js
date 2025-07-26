@@ -15,7 +15,6 @@ function Home() {
             </div>
             <h1>Naman Srivastava</h1>
             <h2>Software Developer</h2>
-
             <div className="social-links">
               <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
                 <FaLinkedin />
@@ -26,8 +25,8 @@ function Home() {
               <a href="https://www.youtube.com/@naman_0804/" target="_blank" rel="noopener noreferrer" className="social-icon youtube">
                 <FaYoutube />
               </a>
-              <a href="https://takeuforward.org/plus/profile/naman160804" target="_blank" rel="noopener noreferrer" className="social-icon takeforward">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRsQPKmkjRLVBygaXHIMKgl_rO3q8T8aQaA&s" alt="TakeUForward" />
+              <a href="https://codolio.com/profile/naman08" target="_blank" rel="noopener noreferrer" className="social-icon takeforward">
+                <img src="https://d3hr337ydpgtsa.cloudfront.net/assets/Banner.png" alt="Codolio" />
               </a>
             </div>
 
