@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaPaperPlane, FaUser, FaCommentAlt, FaInstagram } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -21,38 +22,40 @@ function Contact() {
   };
   
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Use EmailJS to send the form
-    emailjs.send('service_655mg9c', 'template_jo7ezml', formData, 'K34YWs3fe407eAfCX')
-      .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        setIsSubmitting(false);
-        setSubmitStatus('success');
-        
-        // Reset form after submission
-        setFormData({
-          name: '',
-          email: '',
-          message: ''
-        });
-        
-        // Clear success message after 5 seconds
-        setTimeout(() => {
-          setSubmitStatus(null);
-        }, 5000);
-      }, (error) => {
-        console.log('FAILED...', error);
-        setIsSubmitting(false);
-        setSubmitStatus('error');
-        
-        // Clear error message after 5 seconds
-        setTimeout(() => {
-          setSubmitStatus(null);
-        }, 5000);
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  emailjs.send('service_655mg9c', 'template_jo7ezml', formData, 'K34YWs3fe407eAfCX')
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      setIsSubmitting(false);
+
+      Swal.fire({
+        title: 'Message Sent!',
+        text: 'Thank you for reaching out. I will get back to you soon.',
+        icon: 'success',
+        confirmButtonColor: '#6a0dad'
       });
-  };
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    }, (error) => {
+      console.error('FAILED...', error);
+      setIsSubmitting(false);
+
+      Swal.fire({
+        title: 'Oops!',
+        text: 'Something went wrong. Please try again later.',
+        icon: 'error',
+        confirmButtonColor: '#d33'
+      });
+    });
+};
+
   
   return (
     <div id="contact-section">
@@ -163,17 +166,7 @@ function Contact() {
                 )}
               </button>
               
-              {submitStatus === 'success' && (
-                <div className="success-message">
-                  <p>Thank you! Your message has been sent successfully.</p>
-                </div>
-              )}
-              
-              {submitStatus === 'error' && (
-                <div className="error-message">
-                  <p>Oops! Something went wrong. Please try again later.</p>
-                </div>
-              )}
+            
             </form>
           </div>
         </div>
