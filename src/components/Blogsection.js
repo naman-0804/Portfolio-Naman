@@ -2,7 +2,7 @@
 import React from 'react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import dl from '../Images/Filetransfer.png';
-
+import db from '../Images/Diabetes.png';
 const blogs = [
   {
     id: 'blog-1',
@@ -12,7 +12,16 @@ const blogs = [
     readTime: '3 min read',
     link: 'https://dev.to/naman_2004/secure-login-free-file-transfers-with-filestorage-1j99',
     image: dl,
-  }
+  },
+  {
+    id: 'blog-2',
+    title: 'Diabetes Prediction with ML on AWS',
+    description: 'Explore how I made a diabetes prediction model using AWS services',
+    date: 'August 2025',
+    readTime: '20 min read',
+    link: 'https://dev.to/naman_2004/diabetes-detection-on-aws-4fll',
+    image: db,
+  },
 ];
 
 function BlogSection() {
