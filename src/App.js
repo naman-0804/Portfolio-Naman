@@ -6,6 +6,7 @@ import '../src/Design/contact.css';
 import '../src/Design/exp.css';
 import '../src/Design/project.css';
 import '../src/Design/skill.css';
+import '../src/Design/blog.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import Home from './components/Home';
@@ -13,6 +14,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
+import BlogSection from './components/Blogsection';
 
 const NavBar = ({ toggleDarkMode, darkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -75,6 +77,9 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
           <Link to="/experience" className={`nav-link ${location.pathname === '/experience' ? 'active' : ''}`} onClick={handleLinkClick}>
             Experience
           </Link>
+          <Link to="/blogs" className={`nav-link ${location.pathname === '/blogs' ? 'active' : ''}`} onClick={handleLinkClick}>
+            Blogs
+          </Link>
           <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} onClick={handleLinkClick}>
             Contact
           </Link>
@@ -105,6 +110,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/experience" element={<Experience />} />
+            <Route path="/blogs" element={<BlogSection />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

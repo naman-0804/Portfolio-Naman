@@ -1,0 +1,97 @@
+
+.blog-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+.project-description p {
+  margin: 0; /* keeps it clean */
+  color: #ba56b8; /* white text for black background */
+}
+
+.project-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.project-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-header p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.project-image-container {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.project-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.project-info h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.icon-button:hover {
+  color: #0077ff;
+}
+
+.project-description {
+  padding: 0 1rem 1rem 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  flex-grow: 1; 
+}
+
+.project-description p {
+  margin: 0; /* removes extra gap */
+  
+}
+
