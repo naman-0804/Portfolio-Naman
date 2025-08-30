@@ -1,5 +1,4 @@
 import React from 'react';
-import resume from '../Naman_srivastava.pdf';
 import mypic from '../Images/IMG_20240807_232437_330.jpeg';
 import { FaLinkedin, FaGithub, FaYoutube, FaDownload } from 'react-icons/fa';
 
@@ -68,8 +67,13 @@ function Home() {
             </div>
 
             <div className="resume-section">
-              <a href={resume} download="Naman_Srivastava.pdf" className="download-button">
-                <FaDownload /> Download Resume
+              <a
+                href="https://drive.google.com/file/d/1GT2cGCyLLkD9CqNMD3gDRPYPTpiLgZP8/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="download-button"
+              >
+                <FaDownload /> View Resume
               </a>
             </div>
 
