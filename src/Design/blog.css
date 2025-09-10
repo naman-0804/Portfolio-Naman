@@ -4,10 +4,6 @@
   max-width: 1200px;
   margin: auto;
 }
-.project-description p {
-  margin: 0; /* keeps it clean */
-  color: #ba56b8; /* white text for black background */
-}
 
 .project-header {
   text-align: center;
@@ -82,16 +78,29 @@
   color: #0077ff;
 }
 
+/* Blog title links */
+.blog-title-link {
+  text-decoration: none;  /* remove underline */
+  color: inherit;         /* keep same color as parent (black/white) */
+}
+
+.blog-title-link:hover,
+.blog-title-link:active,
+.blog-title-link:visited {
+  text-decoration: none;  /* no underline on hover/click/visited */
+  color: inherit;         /* always same as normal text */
+}
+.project-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* force content to top */
+}
+
 .project-description {
-  padding: 0 1rem 1rem 1rem;
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.4;
-  flex-grow: 1; 
+  padding: 0 1rem 0.5rem 1rem; /* small bottom space */
+  margin-bottom: 0;            /* no extra space */
 }
 
 .project-description p {
-  margin: 0; /* removes extra gap */
-  
+  margin: 0; /* remove paragraph spacing */
 }
-
