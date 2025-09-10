@@ -3,6 +3,7 @@ import React from 'react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import dl from '../Images/Filetransfer.png';
 import db from '../Images/Diabetes.png';
+import chat from '../Images/chatapp.png';
 const blogs = [
   {
     id: 'blog-1',
@@ -21,6 +22,15 @@ const blogs = [
     readTime: '20 min read',
     link: 'https://dev.to/naman_2004/diabetes-detection-on-aws-4fll',
     image: db,
+  },
+  {
+    id: 'blog-3',
+    title: 'Building a Real-Time Chat App with React , Clerk & GetStream',
+    description: 'A step-by-step guide to creating a real-time chat application using React, Clerk for authentication, and GetStream for messaging functionality.',
+    date: 'July 2025',
+    readTime: '15 min read',
+    link: 'https://dev.to/naman_2004/build-a-secure-real-time-chat-app-in-minutes-with-react-clerk-and-stream-4a45',
+    image: chat,
   },
 ];
 
