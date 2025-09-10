@@ -3,7 +3,7 @@ import React from 'react';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import dl from '../Images/Filetransfer.png';
 import db from '../Images/Diabetes.png';
-import chat from '../Images/chatapp.png';
+import chat from '../Images/auth.png';
 const blogs = [
   {
     id: 'blog-1',
