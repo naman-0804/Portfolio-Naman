@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import '../Design/eyefollower.css';
 
 const EyeFollower = () => {
-    // State to track if the screen is desktop-sized
-    const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
-
-    // Effect to handle mouse movement
     useEffect(() => {
-        if (!isDesktop) return; // Don't run this effect on mobile
-
-        const handleMouseMove = (e) => {
+        const handleMove = (e) => {
             const pupils = document.querySelectorAll('.pupil');
+
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+
+            if (clientX === undefined || clientY === undefined) {
+                return;
+            }
+
             pupils.forEach(pupil => {
                 const eye = pupil.parentElement;
                 const rect = eye.getBoundingClientRect();
                 const eyeCenterX = rect.left + rect.width / 2;
                 const eyeCenterY = rect.top + rect.height / 2;
-                const angle = Math.atan2(e.clientY - eyeCenterY, e.clientX - eyeCenterX);
+                const angle = Math.atan2(clientY - eyeCenterY, clientX - eyeCenterX);
                 const radius = eye.offsetWidth / 4;
                 const x = radius * Math.cos(angle);
                 const y = radius * Math.sin(angle);
@@ -24,32 +26,15 @@ const EyeFollower = () => {
             });
         };
 
-        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mousemove', handleMove);
+        document.addEventListener('touchmove', handleMove);
 
-        // Cleanup function to remove the event listener
         return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, [isDesktop]); // Rerun this effect if isDesktop changes
-
-    // Effect to update the isDesktop state on window resize
-    useEffect(() => {
-        const handleResize = () => {
-            setIsDesktop(window.innerWidth > 768);
-        };
-
-        window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
+            document.removeEventListener('mousemove', handleMove);
+            document.removeEventListener('touchmove', handleMove);
         };
     }, []);
 
-    // If it's not desktop, render nothing
-    if (!isDesktop) {
-        return null;
-    }
-
-    // If it is desktop, render the characters
     return (
         <div className="character-container">
             <div id="orange" className="character">
@@ -72,3 +57,4 @@ const EyeFollower = () => {
 };
 
 export default EyeFollower;
+

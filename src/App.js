@@ -50,13 +50,7 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <div className="navbar-logo">
-          <Link to="/">
-            <span className="logo-text">Naman</span>
-            <span className="logo-dot">.</span>
-          </Link>
-        </div>
-
+        <EyeFollower />
         <div className="navbar-toggle" onClick={toggleMenu}>
           <div className={`hamburger ${isMenuOpen ? 'active' : ''}`}>
             <span></span>
@@ -117,7 +111,6 @@ function App() {
         </main>
         <SpeedInsights/>
         <Analytics />
-        <EyeFollower />
       </div>
     </Router>
   );

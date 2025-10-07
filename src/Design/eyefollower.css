@@ -1,11 +1,8 @@
 .character-container {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
+    /* POSITIONING RULES REMOVED */
     display: flex;
     align-items: flex-end;
     gap: -5px;
-    z-index: 1000; /* Ensure it's on top of other content */
 }
 
 .eye {
