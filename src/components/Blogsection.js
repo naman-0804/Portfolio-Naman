@@ -36,6 +36,8 @@
       <div className="blog-section">
         <div className="project-header">
           <h1>Blogs</h1>
+          <div className="section-underline"></div>
+          <br></br>
           <p>Case studies, technical breakdowns & behind-the-scenes of my projects</p>
         </div>
 

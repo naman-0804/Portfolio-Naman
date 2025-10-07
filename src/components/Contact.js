@@ -11,7 +11,6 @@ function Contact() {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
   
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,6 +61,7 @@ function Contact() {
       <div className="contact-container">
         <div className="contact-header">
           <h1>Get In Touch</h1>
+          <div className="section-underline"></div>
           <p>I'd love to hear from you! Whether you have a question or just want to say hi.</p>
         </div>
         
