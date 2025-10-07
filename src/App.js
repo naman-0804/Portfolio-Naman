@@ -15,6 +15,7 @@ import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import BlogSection from './components/Blogsection';
+import EyeFollower from './components/EyeFollower';
 
 const NavBar = ({ toggleDarkMode, darkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -116,6 +117,7 @@ function App() {
         </main>
         <SpeedInsights/>
         <Analytics />
+        <EyeFollower />
       </div>
     </Router>
   );

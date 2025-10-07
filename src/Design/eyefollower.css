@@ -1,0 +1,95 @@
+.character-container {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: flex-end;
+    gap: -5px;
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.eye {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pupil {
+    width: 4px;
+    height: 4px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.1s linear;
+}
+
+.character {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+#orange {
+    width: 40px;
+    height: 20px;
+    background-color: #f97316;
+    border-radius: 20px 20px 0 0;
+    align-items: center;
+}
+
+#purple {
+    width: 22px;
+    height: 45px;
+    background-color: #7c3aed;
+    border-radius: 3px;
+    padding-top: 5px;
+}
+#purple .eye {
+    width: 6px;
+    height: 6px;
+}
+#purple .pupil {
+    width: 3px;
+    height: 3px;
+}
+
+#black {
+    width: 18px;
+    height: 35px;
+    background-color: #1e293b;
+    border-radius: 3px;
+    padding-top: 4px;
+}
+
+#yellow {
+    width: 20px;
+    height: 30px;
+    background-color: #facc15;
+    border-radius: 10px 10px 3px 3px;
+    align-items: center;
+    padding-top: 4px;
+}
+#yellow .eye {
+    width: 6px;
+    height: 6px;
+}
+#yellow .pupil {
+    width: 3px;
+    height: 3px;
+}
+#yellow::after { /* Beak */
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 2px;
+    background-color: #1e293b;
+    top: 15px;
+    right: -3px;
+    border-radius: 1px;
+}
