@@ -62,7 +62,6 @@ function Contact() {
         <div className="contact-header">
           <h1>Get In Touch</h1>
           <div className="section-underline"></div>
-          <p>I'd love to hear from you! Whether you have a question or just want to say hi.</p>
         </div>
         
         <div className="contact-content">
