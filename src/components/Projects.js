@@ -164,7 +164,7 @@ function Projects() {
     <div id="project-section" className="project">
       <div className="project-header">
         <h1>Projects</h1>
-        <p>A showcase of my technical skills and creative problem-solving</p>
+        <div className="section-underline"></div>
       </div>
       
       <div className="project-grid">

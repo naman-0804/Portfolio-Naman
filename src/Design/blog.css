@@ -1,23 +1,56 @@
-
 .blog-section {
-  padding: 2rem;
-  max-width: 1200px;
+  padding: 4rem 2rem;
+  max-width: 100%;
   margin: auto;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
+  position: relative;
+  overflow: hidden;
+  /* FIX: Ensure section fills viewport height */
+  min-height: calc(100vh - 80px); /* Adjust 80px to match your navbar height */
+  box-sizing: border-box;
+  /* REMOVED: display: flex and flex-direction: column */
+}
+
+.blog-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.04) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(0, 0, 0, 0.04) 2%, transparent 0%);
+  background-size: 100px 100px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .project-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .project-header h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #ff7eb3, #ff758c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
 }
 
 .project-header p {
-  font-size: 1rem;
-  color: #777;
+  font-size: 1.1rem;
+  color: #666;
 }
 
 .project-grid {
@@ -34,6 +67,7 @@
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  justify-content: flex-start;
 }
 
 .project-item:hover {
@@ -78,29 +112,74 @@
   color: #0077ff;
 }
 
-/* Blog title links */
 .blog-title-link {
-  text-decoration: none;  /* remove underline */
-  color: inherit;         /* keep same color as parent (black/white) */
+  text-decoration: none;
+  color: inherit;
 }
 
 .blog-title-link:hover,
 .blog-title-link:active,
 .blog-title-link:visited {
-  text-decoration: none;  /* no underline on hover/click/visited */
-  color: inherit;         /* always same as normal text */
-}
-.project-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* force content to top */
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-description {
-  padding: 0 1rem 0.5rem 1rem; /* small bottom space */
-  margin-bottom: 0;            /* no extra space */
+  padding: 0 1rem 1rem 1rem;
+  margin-bottom: 0;
 }
 
 .project-description p {
-  margin: 0; /* remove paragraph spacing */
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
 }
+
+
+/* --- Dark Mode Styles --- */
+.dark-mode .blog-section {
+  background-image: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+}
+
+.dark-mode .blog-section::before {
+  background-image:
+    radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.05) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.05) 2%, transparent 0%);
+}
+
+.dark-mode .project-header h1 {
+  background: linear-gradient(45deg, #bb86fc, #8c54e9);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.dark-mode .project-header p {
+  color: #bbbbbb;
+}
+
+.dark-mode .project-item {
+  background: #2d2d2d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .project-item:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .project-info h3 {
+    color: #ffffff;
+}
+
+.dark-mode .project-description p {
+    color: #bbbbbb;
+}
+
+.dark-mode .icon-button {
+  color: #bbbbbb;
+}
+
+.dark-mode .icon-button:hover {
+  color: #8c54e9;
+}
+

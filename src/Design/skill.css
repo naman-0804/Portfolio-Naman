@@ -3,7 +3,8 @@
 /* Light Mode Styles */
 #skills-section {
   padding: 3rem;
-  background-color: #f9f4e8; /* Soft beige background */
+  /* UPDATED: Replaced solid color with a light gradient */
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
   font-family: 'Arial', sans-serif;
   position: relative;
   overflow: hidden;
@@ -17,8 +18,9 @@
   right: 0;
   bottom: 0;
   background-image:
-    radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.05) 2%, transparent 0%),
-    radial-gradient(circle at 75px 75px, rgba(0, 0, 0, 0.05) 2%, transparent 0%);
+    /* UPDATED: Dot color alpha changed for consistency */
+    radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.04) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(0, 0, 0, 0.04) 2%, transparent 0%);
   background-size: 100px 100px;
   pointer-events: none;
   z-index: 0;
@@ -27,6 +29,7 @@
 .section-title {
   font-size: 2rem;
   margin-bottom: 2.5rem;
+  margin-top: -1.5rem;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -230,7 +233,7 @@
   align-items: center;
   gap: 20px;
   padding: 25px;
-  margin: 20px 40px; 
+  margin: 20px 40px;
   border-radius: 10px;
   background: linear-gradient(135deg, #FFD700, #FFA500);
   color: #4a2c00;
@@ -257,7 +260,8 @@
 
 /* Dark Mode Styles */
 .dark-mode #skills-section {
-  background-color: #1a1a1a;
+  /* UPDATED: Replaced solid color with a dark gradient */
+  background-image: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
   color: #e0e0e0;
 }
 
