@@ -12,6 +12,7 @@ import lex from '../Images/lex.png';
 import Portfolio from '../Images/portfolio.png';
 import devops from '../Images/devops.png';
 import auth from '../Images/auth.png';
+import ecommerce from '../Images/ecommerce.png';
 import { FaGithub, FaYoutube } from 'react-icons/fa';
 
 function Projects() {
@@ -19,13 +20,23 @@ function Projects() {
 
   const projects = [
     {
+      id: 'ecommerce-ml',
+      title: 'E-Commerce Customer Segmentation and Purchase Prediction using Machine Learning',
+      image: ecommerce, // replace with your imported image variable
+      description: 'Segmented e-commerce customers using KMeans clustering and predicted purchases score with Random Forest',
+      technologies: ['Scikit-learn', 'Pandas', 'Matplotlib'],
+      github: 'https://github.com/naman-0804/E-Commerce-Customer-Segmentation-Purchase-Prediction', // replace with actual GitHub link
+      youtube: '', // optional if no video available
+    },
+    {
       id: 'auth-button',
       title: 'Chat Application using Next , Clerk and GetStream',
       image: auth,
       description: 'A real-time chat application built with Next.js, Clerk for authentication, and GetStream for messaging.',
       technologies: ['Next.js', 'Clerk', 'GetStream'],
       github: 'https://github.com/naman-0804/Chat-App',
-      youtube: 'https://www.youtube.com/watch?v=OOlXkIn3GucY'},
+      youtube: 'https://www.youtube.com/watch?v=OOlXkIn3GucY'
+    },
     {
       id: 'dl-button',
       title: 'Upload and download without login',
