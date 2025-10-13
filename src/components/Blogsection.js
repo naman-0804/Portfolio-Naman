@@ -3,7 +3,7 @@
   import dl from '../Images/Filetransfer.png';
   import db from '../Images/Diabetes.png';
   import chat from '../Images/auth.png';
-
+  import ecommerece from '../Images/ecommerce.png';
   const blogs = [
     {
       id: 'blog-1',
@@ -29,6 +29,14 @@
       link: 'https://dev.to/naman_2004/build-a-secure-real-time-chat-app-in-minutes-with-react-clerk-and-stream-4a45',
       image: chat,
     },
+    {
+      id: 'blog-4',
+      title: 'E-Commerce Customer Segmentation and Purchase Prediction using Machine Learning',
+      date: 'June 2025',
+      readTime: '10 min read',
+      link: 'https://dev.to/naman_2004/-mall-customer-segmentation-streamlit-app-a-step-by-step-tutorial-4pm2',
+      image: ecommerece,
+    }
   ];
 
   function BlogSection() {
