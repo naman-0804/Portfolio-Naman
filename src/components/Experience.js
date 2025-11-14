@@ -16,6 +16,36 @@ function Experience() {
               <div className="icon-container">
                 <FaBriefcase />
               </div>
+              <h3>Upcoming Intern at Infosys</h3>
+            </div>
+            <div className="card-body">
+              <div className="company-info">
+                <div className="company">
+                  <FaBuilding /> <span>Infosys</span>
+                </div>
+                <div className="duration">
+                  <FaCalendarAlt /> <span>2026 - Current</span>
+                </div>
+              </div>
+              <p>
+                Cleared interview process and selected for the role of Software Engineer Intern at Infosys, 
+                starting in 2026.
+              </p>
+              <div className="tech-container">
+                <div className="tech-label"><FaTools /> Technologies:</div>
+                <div className="tech-pills">
+                  <span>Full-Stack</span>
+                  <span>Cloud</span>
+                  <span>ML</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="experience-card">
+            <div className="card-header">
+              <div className="icon-container">
+                <FaBriefcase />
+              </div>
               <h3>Software Development Intern</h3>
             </div>
             <div className="card-body">

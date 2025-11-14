@@ -70,6 +70,12 @@ function Skills() {
       <div className="Achievements">
         {[
           {
+            date: "January 2026",
+            title: "Intern at Infosys",
+            description:"Cleared Infosys interviews and got selected as an intern for the role of Software Developer.",
+
+          },
+          {
             date: "November 2024",
             title: "VITISH (SIH Internal Hackathon) Nominated for Official SIH24",
             description:
@@ -101,9 +107,10 @@ function Skills() {
           </div>
         ))}
       </div>
-
+<br></br>
       {/* --- SCHOLARSHIP FORMAT --- */}
       <h1 className="section-title">Scholarship</h1>
+      
       <div className="scholarship-banner">
         <FaTrophy className="scholarship-icon" />
         <div>
