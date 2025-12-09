@@ -369,6 +369,13 @@
 .project-item:nth-child(13) {
   animation-delay: 1.3s;
 }
+.project-item:nth-child(14) {
+  animation-delay: 1.4s;
+}
+.project-item:nth-child(15) {
+  animation-delay: 1.5s;
+}
+
 
 .dark-mode .project-item {
   background-color: #2a2a2a;
