@@ -193,7 +193,7 @@ function Projects() {
                     ))}
                   </div>
                 </div>
-                <button 
+                {/* <button 
                   className="view-project-btn youtube-btn"
                   onClick={(e) => {
                     e.stopPropagation(); // Prevent triggering card click
@@ -201,23 +201,36 @@ function Projects() {
                   }}
                 >
                   <FaYoutube /> View on YouTube
-                </button>
+                </button> */}
               </div>
             </div>
             <div className="project-info">
               <h3>{project.title}</h3>
-              <div className="project-links">
-                <button 
-                  className="icon-button github-btn"
-                  onClick={(e) => {
-                    e.stopPropagation(); // Prevent triggering card click
-                    redirectToProject(project.github);
-                  }}
-                  aria-label="View GitHub repository"
-                >
-                  <FaGithub />
-                </button>
-              </div>
+<div className="project-links">
+  {/* GitHub */}
+  <button 
+    className="icon-button github-btn"
+    onClick={(e) => {
+      e.stopPropagation();
+      redirectToProject(project.github);
+    }}
+  >
+    <FaGithub />
+  </button>
+
+  {/* YouTube (Only show if link exists) */}
+  {project.youtube && (
+    <button 
+      className="icon-button youtube-btn"
+      onClick={(e) => {
+        e.stopPropagation();
+        redirectToProject(project.youtube);
+      }}
+    >
+      <FaYoutube />
+    </button>
+  )}
+</div>
             </div>
           </div>
         ))}
