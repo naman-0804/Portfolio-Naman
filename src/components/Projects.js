@@ -23,7 +23,6 @@ function Projects() {
       id: 'routeguard',
       title: 'RouteGuard: Real-Time Loitering Detection and safe Navigation',
       image: route,
-      description: 'A navigation app that detects loitering in unsafe areas and provides safe route alternatives using real-time data analysis and mapping.',
       technologies: ['React', 'Python', 'OpenCV', 'OSM API','Express.js'],
       github: 'https://github.com/naman-0804/RouteGuard',
       youtube: 'https://www.youtube.com/watch?v=LGjBXVr_ZvM'
@@ -32,7 +31,6 @@ function Projects() {
       id: 'ecommerce-ml',
       title: 'E-Commerce Customer Segmentation and Purchase Prediction using Machine Learning',
       image: ecommerce, // replace with your imported image variable
-      description: 'Segmented e-commerce customers using KMeans clustering and predicted purchases score with Random Forest',
       technologies: ['Scikit-learn', 'Pandas', 'Matplotlib'],
       github: 'https://github.com/naman-0804/E-Commerce-Customer-Segmentation-Purchase-Prediction', // replace with actual GitHub link
       youtube: '', // optional if no video available
@@ -41,7 +39,6 @@ function Projects() {
       id: 'auth-button',
       title: 'Chat Application using Next , Clerk and GetStream',
       image: auth,
-      description: 'A real-time chat application built with Next.js, Clerk for authentication, and GetStream for messaging.',
       technologies: ['Next.js', 'Clerk', 'GetStream'],
       github: 'https://github.com/naman-0804/Chat-App',
       youtube: 'https://www.youtube.com/watch?v=OOlXkIn3GucY'
@@ -50,7 +47,6 @@ function Projects() {
       id: 'dl-button',
       title: 'Upload and download without login',
       image: dl,
-      description: 'Transfer assignments from lab computers to your device without logging into Gmail.',
       technologies: ['GCP', 'Google API', 'Javascript', 'Flask'],
       github: 'https://github.com/naman-0804/File_Storage',
       youtube: 'https://www.youtube.com/watch?v=5xgZ00DH89w'
@@ -59,7 +55,6 @@ function Projects() {
       id: 'ml-button',
       title: 'Diabetes Prediction on AWS',
       image: db,
-      description: 'Project deployed on AWS to predict diabetes risk based on patient data.',
       technologies: ['Python', 'AWS', 'Machine Learning', 'Flask'],
       github: 'https://github.com/naman-0804/Diabetes_Prediction_onAWS',
       youtube: 'https://youtu.be/OqBdSu4jDhs?si=s80-z3eRVexeqTu1'
@@ -68,7 +63,6 @@ function Projects() {
       id: 'devops-button',
       title: 'DevOps Project',
       image: devops,
-      description: 'A comprehensive DevOps project showcasing CI/CD pipelines and Dockerization of code.',
       technologies: ['Docker', 'React', 'CI/CD-GitHub Actions'],
       github: 'https://github.com/naman-0804/to-do_devops_',
       youtube: 'https://www.youtube.com/watch?v=NSN33CLi0M8'
@@ -77,7 +71,6 @@ function Projects() {
       id: 'vitalized-button',
       title: 'Vitalized',
       image: vitalized,
-      description: 'A platform for VIT students/faculties to find ongoing researches.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
       github: 'https://github.com/naman-0804/vitalized-vit',
       youtube: 'https://youtu.be/PPTDtrzJOT8?si=e32v89AZyyjjZ0av'
@@ -86,7 +79,6 @@ function Projects() {
       id: 'sahyogi-button',
       title: 'Sahyogi',
       image: sahyogi,
-      description: 'A platform focussing on mute people in healthcare.',
       technologies: ['React', 'Firebase', 'Material UI'],
       github: 'https://github.com/naman-0804/sih-site',
       youtube: 'https://youtu.be/eXR-V_Ck7VA?si=OxYaDhNPUAbsYDEK'
@@ -95,7 +87,6 @@ function Projects() {
       id: 'AWS-button',
       title: 'Serverless Web App on AWS',
       image: aws,
-      description: 'A fully serverless web application deployed on AWS using its features.',
       technologies: ['AWS', 'Serverless', 'JavaScript', 'DynamoDB'],
       github: 'https://github.com/naman-0804/Cloud-AWS',
       youtube: 'https://youtu.be/bld7EkDXFR4?si=4ccr0Le0AUv6gtfL'
@@ -104,7 +95,6 @@ function Projects() {
       id: 'wcs-button',
       title: 'AI Webpage Content Summarizer',
       image: wcs,
-      description: 'An AI-powered tool that summarizes web page content using gemini api.',
       technologies: ['Python', 'NLP', 'AI', 'Flask'],
       github: 'https://github.com/naman-0804/Ai_content_summarizer',
       youtube: 'https://www.youtube.com/watch?v=X9xr08p2mtk'
@@ -113,7 +103,6 @@ function Projects() {
       id: 'medhub-button',
       title: 'Medhub360',
       image: medhub,
-      description: 'A comprehensive healthcare platform connecting patients with doctors and medical services.',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
       github: 'https://github.com/naman-0804/Healthcare',
       youtube: 'https://www.youtube.com/@naman_0804'
@@ -122,7 +111,6 @@ function Projects() {
       id: 'asl-button',
       title: 'ASL/ISL Translator',
       image: sl,
-      description: 'Translates American and Indian Sign Language to text using computer vision.',
       technologies: ['Python', 'TensorFlow', 'OpenCV', 'Deep Learning'],
       github: 'https://github.com/naman-0804/Sign-Language-Translator',
       youtube: 'https://youtu.be/qMkM-zELXGI?si=hYzMO1V07OooRW-y'
@@ -131,7 +119,6 @@ function Projects() {
       id: 'okra-button',
       title: 'Okra Maturity Analysis',
       image: okrapic,
-      description: 'An image processing system that analyzes the maturity of okra plants for optimal harvesting.',
       technologies: ['Python', 'Computer Vision', 'Image Processing'],
       github: 'https://github.com/naman-0804/Okra-Maturity-Analysis',
       youtube: 'https://www.youtube.com/@naman_0804'
@@ -140,7 +127,6 @@ function Projects() {
       id: 'lex-button',
       title: 'Lex ChatBot',
       image: lex,
-      description: 'A chatbot built using AWS Lex.',
       technologies: ['Chat Bot', 'Ai'],
       github: 'https://github.com/naman-0804?tab=repositories',
       youtube: 'https://www.youtube.com/watch?v=lU9DK8GRS1k'
