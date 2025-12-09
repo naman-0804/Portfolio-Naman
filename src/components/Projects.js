@@ -12,6 +12,7 @@ import lex from '../Images/lex.png';
 import Portfolio from '../Images/portfolio.png';
 import devops from '../Images/devops.png';
 import auth from '../Images/auth.png';
+import route from '../Images/route.png';
 import ecommerce from '../Images/ecommerce.png';
 import { FaGithub, FaYoutube } from 'react-icons/fa';
 function Projects() {
@@ -21,7 +22,7 @@ function Projects() {
     {
       id: 'routeguard',
       title: 'RouteGuard: Real-Time Loitering Detection and safe Navigation',
-      image: 'https://user-images.githubusercontent.com/61449385/241208486-1f3f3f3c-1f3e-4f5d-8f7b-5e2e1f5f4c3e.png', // replace with your imported image variable
+      image: route,
       description: 'A navigation app that detects loitering in unsafe areas and provides safe route alternatives using real-time data analysis and mapping.',
       technologies: ['React', 'Python', 'OpenCV', 'OSM API','Express.js'],
       github: 'https://github.com/naman-0804/RouteGuard',
