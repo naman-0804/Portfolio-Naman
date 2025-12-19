@@ -14,7 +14,7 @@ function Experience() {
     {
       role: "Software Development Intern",
       company: "The Entrepreneurship Network (TEN)",
-      date: "June 2023 - July 2023",
+      date: "June 2024 - July 2024",
       description: "Worked as a software development intern at The Entrepreneurship Network (TEN), contributing to various projects and gaining valuable industry experience.",
       technologies: ["React", "Flask", "MongoDB"]
     },
