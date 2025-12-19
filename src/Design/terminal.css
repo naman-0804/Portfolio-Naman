@@ -58,3 +58,44 @@
   flex: 1;
   font-family: monospace;
 }
+/* ======================
+   DEFAULT THEME
+   ====================== */
+.theme-default {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* ======================
+   MATRIX THEME
+   ====================== */
+.theme-matrix {
+  background: #000000;
+  color: #00ff88;
+}
+
+.theme-matrix .prompt,
+.theme-matrix input {
+  color: #00ff88;
+}
+
+.theme-matrix .terminal-header {
+  background: #020202;
+}
+
+/* ======================
+   SOLARIZED THEME
+   ====================== */
+.theme-solarized {
+  background: #002b36;
+  color: #93a1a1;
+}
+
+.theme-solarized .prompt,
+.theme-solarized input {
+  color: #93a1a1;
+}
+
+.theme-solarized .terminal-header {
+  background: #073642;
+}
