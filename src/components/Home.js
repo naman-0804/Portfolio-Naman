@@ -1,6 +1,6 @@
 import React from 'react';
 import mypic from '../Images/IMG_20240807_232437_330.jpeg';
-import { FaLinkedin, FaGithub, FaYoutube, FaDownload } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaYoutube, FaDownload,FaEye } from 'react-icons/fa';
 import Terminal from './terminal.js';
 import '../Design/terminal.css';
 function Home() {
@@ -62,21 +62,40 @@ function Home() {
               <p>I'm seeking opportunities for a <span className="highlight-blue">developer role</span>.</p>
             </div>
 
-            <div className="section-title">
-              <h3>Resume</h3>
-              <div className="title-underline"></div>
-            </div>
+<div className="section-title">
+  <h3>Resume</h3>
+  <div className="title-underline"></div>
+</div>
 
-            <div className="resume-section">
-              <a
-                href="https://drive.google.com/file/d/1GT2cGCyLLkD9CqNMD3gDRPYPTpiLgZP8/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="download-button"
-              >
-                <FaDownload /> View Resume
-              </a>
-            </div>
+<div className="resume-card">
+  <div className="resume-left">
+    <span className="resume-badge">PDF</span>
+    <div>
+      <h4>Naman — Resume</h4>
+      <p>ML • Cloud • Full-Stack</p>
+    </div>
+  </div>
+
+  <div className="resume-actions">
+    <a
+      href="https://drive.google.com/file/d/1GT2cGCyLLkD9CqNMD3gDRPYPTpiLgZP8/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="resume-btn primary"
+    >
+      <FaEye /> View
+    </a>
+
+    <a
+      href="https://drive.google.com/uc?export=download&id=1GT2cGCyLLkD9CqNMD3gDRPYPTpiLgZP8"
+      className="resume-btn secondary"
+    >
+      <FaDownload /> Download
+    </a>
+  </div>
+
+</div>
+
 
 <div className="section-title">
   <h3>Interactive CLI</h3>
