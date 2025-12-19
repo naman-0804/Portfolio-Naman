@@ -9,7 +9,9 @@
   --nav-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* --- Navbar Container --- */
+/* ============================
+   DESKTOP NAVBAR (Top)
+   ============================ */
 .navbar {
   position: fixed;
   top: 0;
@@ -29,7 +31,7 @@
 .navbar.scrolled {
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: var(--nav-shadow);
-  height: 70px; /* Slightly smaller on scroll */
+  height: 70px;
 }
 
 .navbar-container {
@@ -42,22 +44,20 @@
   padding: 0 2rem;
 }
 
-/* --- Logo / Eye Container --- */
 .navbar-logo {
   display: flex;
   align-items: center;
-  /* Ensures EyeFollower doesn't shrink */
   flex-shrink: 0; 
 }
 
-/* --- Navigation Links (Desktop) --- */
+/* Desktop Links (Pill Shape) */
 .navbar-links {
   display: flex;
   gap: 0.5rem;
   align-items: center;
   background: rgba(0, 0, 0, 0.03);
   padding: 5px;
-  border-radius: 50px; /* Pill container */
+  border-radius: 50px;
   border: 1px solid rgba(0,0,0,0.02);
 }
 
@@ -67,9 +67,12 @@
   font-size: 0.95rem;
   font-weight: 600;
   padding: 0.6rem 1.2rem;
-  border-radius: 99px; /* Pill shape */
+  border-radius: 99px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .nav-link:hover {
@@ -83,10 +86,9 @@
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-/* Remove old underline effect */
 .nav-link::after { display: none; }
 
-/* --- Theme Toggle Button --- */
+/* Theme Toggle */
 .theme-toggle-btn {
   background: rgba(0,0,0,0.05);
   border: 1px solid rgba(0,0,0,0.05);
@@ -107,39 +109,22 @@
   transform: rotate(15deg);
 }
 
-/* --- Mobile Menu Toggle (Hamburger) --- */
-.navbar-toggle {
-  display: none;
-  cursor: pointer;
-  margin-left: 1rem;
-  padding: 5px;
+/* ============================
+   MOBILE BOTTOM DOCK (The New Part)
+   ============================ */
+.mobile-nav-container {
+  display: none; /* Hidden on Desktop */
 }
 
-.hamburger {
-  width: 24px;
-  height: 20px;
-  position: relative;
+/* Spacer for Content */
+.content {
+  padding-top: var(--nav-height); 
+  min-height: 100vh;
 }
 
-.hamburger span {
-  display: block;
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background: #333;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.hamburger span:nth-child(1) { top: 0; }
-.hamburger span:nth-child(2) { top: 9px; }
-.hamburger span:nth-child(3) { top: 18px; }
-
-.hamburger.active span:nth-child(1) { top: 9px; transform: rotate(45deg); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { top: 9px; transform: rotate(-45deg); }
-
-/* --- Dark Mode Styles --- */
+/* ============================
+   DARK MODE OVERRIDES
+   ============================ */
 .dark-mode .navbar {
   background-color: var(--glass-bg-dark);
   border-bottom: var(--glass-border-dark);
@@ -161,74 +146,94 @@
 .dark-mode .theme-toggle-btn {
   background: rgba(255,255,255,0.05);
   border-color: rgba(255,255,255,0.05);
-  color: #facc15; /* Sun color */
+  color: #facc15;
 }
 .dark-mode .theme-toggle-btn:hover { background-color: rgba(255,255,255,0.1); }
 
-.dark-mode .hamburger span { background: #f1f5f9; }
 
-/* --- Main Content Spacer --- */
-.content {
-  /* Pushes content down so it's not hidden behind fixed navbar */
-  padding-top: var(--nav-height); 
-  min-height: 100vh;
-}
-
-/* --- Responsive (Mobile) --- */
+/* ============================
+   RESPONSIVE (MOBILE)
+   ============================ */
 @media (max-width: 992px) {
+  .navbar-links {
+    display: none; /* Hide Top Links */
+  }
+
   .navbar-container {
     padding: 0 1.5rem;
   }
-
-  .navbar-toggle {
-    display: block;
+  
+  /* --- FLOATING BOTTOM DOCK --- */
+  .mobile-nav-container {
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1001;
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+    border-radius: 24px;
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
   }
 
-  /* Hide Desktop Pill Container */
-  .navbar-links {
-    position: absolute;
-    top: 100%; /* Directly below navbar */
-    left: 0;
-    right: 0;
-    width: calc(100% - 2rem); /* Add some margin */
-    margin: 10px auto;
-    
+  .dark-mode .mobile-nav-container {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Icons in Dock */
+  .mobile-nav-item {
+    color: #64748b;
+    font-size: 1.4rem;
+    padding: 10px;
+    border-radius: 14px;
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    
-    border-radius: 16px;
-    padding: 1rem;
-    gap: 0.5rem;
-    
-    /* Animation Properties */
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    text-decoration: none;
+  }
+
+  /* Active Indicator Dot */
+  .mobile-nav-item::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
     opacity: 0;
-    transform: translateY(-20px);
-    pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    border: 1px solid rgba(0,0,0,0.05);
+    transform: translateY(5px);
+    transition: all 0.3s ease;
   }
 
-  .dark-mode .navbar-links {
-    background: rgba(15, 23, 42, 0.95);
-    border: 1px solid rgba(255,255,255,0.1);
+  .mobile-nav-item.active {
+    color: #6366f1;
+    transform: translateY(-2px);
   }
 
-  /* Show Menu */
-  .navbar-links.active {
+  .dark-mode .mobile-nav-item.active {
+    color: #a855f7;
+  }
+
+  .mobile-nav-item.active::after {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: all;
   }
 
-  .nav-link {
-    text-align: center;
-    border-radius: 12px;
-    padding: 1rem;
-    width: 100%;
+  /* Hide the Text Label on Mobile (Icons only for clean look) */
+  .mobile-nav-label {
+    display: none; 
   }
 }
