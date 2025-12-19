@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/react";
+
+// CSS Imports
 import '../src/Design/home.css';
 import '../src/Design/nav.css';
 import '../src/Design/contact.css';
@@ -7,8 +11,9 @@ import '../src/Design/exp.css';
 import '../src/Design/project.css';
 import '../src/Design/skill.css';
 import '../src/Design/blog.css';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import '../src/Design/terminal.css'; // Don't forget this if you haven't added it!
+
+// Component Imports
 import Home from './components/Home';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
@@ -24,34 +29,29 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location]);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
-  };
-
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <EyeFollower />
-        <div className="navbar-toggle" onClick={toggleMenu}>
+        
+        {/* Logo / Eye Follower */}
+        <div className="navbar-logo">
+           <EyeFollower />
+        </div>
+
+        {/* Mobile Hamburger Toggle */}
+        <div className="navbar-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <div className={`hamburger ${isMenuOpen ? 'active' : ''}`}>
             <span></span>
             <span></span>
@@ -59,30 +59,37 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
           </div>
         </div>
 
+        {/* Navigation Links */}
         <div className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={handleLinkClick}>
+          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
             Home
           </Link>
-          <Link to="/projects" className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`} onClick={handleLinkClick}>
+          <Link to="/projects" className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`}>
             Projects
           </Link>
-          <Link to="/skills" className={`nav-link ${location.pathname === '/skills' ? 'active' : ''}`} onClick={handleLinkClick}>
+          <Link to="/skills" className={`nav-link ${location.pathname === '/skills' ? 'active' : ''}`}>
             Skills
           </Link>
-          <Link to="/experience" className={`nav-link ${location.pathname === '/experience' ? 'active' : ''}`} onClick={handleLinkClick}>
+          <Link to="/experience" className={`nav-link ${location.pathname === '/experience' ? 'active' : ''}`}>
             Experience
           </Link>
-          <Link to="/blogs" className={`nav-link ${location.pathname === '/blogs' ? 'active' : ''}`} onClick={handleLinkClick}>
+          <Link to="/blogs" className={`nav-link ${location.pathname === '/blogs' ? 'active' : ''}`}>
             Blogs
           </Link>
-          <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} onClick={handleLinkClick}>
+          <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>
             Contact
           </Link>
         </div>
 
-        <button className="theme-toggle-btn" onClick={toggleDarkMode} aria-label="Toggle dark mode">
+        {/* Theme Toggle (Always visible) */}
+        <button 
+          className="theme-toggle-btn" 
+          onClick={toggleDarkMode} 
+          aria-label="Toggle dark mode"
+        >
           {darkMode ? '☀️' : '🌙'}
         </button>
+
       </div>
     </nav>
   );
