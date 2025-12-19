@@ -175,36 +175,38 @@
     transform: translateX(-50%);
     z-index: 1001;
     width: 90%;
-    max-width: 400px;
+    max-width: 380px;
     
-    /* LIGHT MODE: High Opacity White (Not Black) */
-    background: rgba(255, 255, 255, 0.95); 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    /* NEW LOOK: Deep Navy Slate (Soothing, High Contrast) */
+    background: #1e293b; 
     
-    /* DISTINCTION: Colored Border & Strong Shadow */
-    border: 1px solid rgba(99, 102, 241, 0.4); /* Visible Indigo Border */
-    box-shadow: 0 10px 40px -5px rgba(99, 102, 241, 0.25); /* Colored Glow Shadow */
+    /* Subtle border to define shape */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     
-    border-radius: 50px;
+    /* Soft, deep shadow for lift */
+    box-shadow: 0 15px 35px rgba(30, 41, 59, 0.4);
+    
+    border-radius: 50px; /* Pill shape */
     padding: 0.8rem 1.5rem;
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s ease;
   }
 
-  /* DARK MODE: Dark Grey/Slate (Standard Dark Mode) */
+  /* DARK MODE: Lighter Slate for Visibility */
   .dark-mode .mobile-nav-container {
-    background: rgba(30, 41, 59, 0.95); /* Deep Slate */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1); /* Glassy White */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   }
 
   /* --- ICONS --- */
   .mobile-nav-item {
-    color: #64748b; /* Slate Grey when inactive */
+    color: #94a3b8; /* Muted Grey-Blue (Inactive) */
     font-size: 1.3rem;
-    padding: 10px;
+    padding: 8px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -214,42 +216,24 @@
     text-decoration: none;
   }
 
-  /* Dark Mode Icons Inactive */
-  .dark-mode .mobile-nav-item {
-    color: #94a3b8;
-  }
-
-  /* Active Indicator (Dot) */
-  .mobile-nav-item::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    width: 4px;
-    height: 4px;
-    background: #6366f1; /* Indigo Dot */
-    border-radius: 50%;
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-
-  /* --- ACTIVE STATE --- */
-  
-  /* Light Mode Active: Primary Color */
+  /* --- ACTIVE STATE (Light Mode) --- */
   .mobile-nav-item.active {
-    color: #6366f1; /* Bright Indigo */
-    transform: translateY(-3px);
-    background: rgba(99, 102, 241, 0.1); /* Soft highlight pill */
+    color: #ffffff; /* Bright White */
+    background: rgba(255, 255, 255, 0.15); /* Soft light pill background */
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
-  /* Dark Mode Active: Bright White/Purple */
+  /* --- ACTIVE STATE (Dark Mode) --- */
   .dark-mode .mobile-nav-item.active {
-    color: #a855f7;
-    background: rgba(168, 85, 247, 0.1);
+    color: #ffffff;
+    background: var(--primary-gradient); /* Purple Gradient Pill */
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
   }
 
-  .mobile-nav-item.active::after {
-    opacity: 1;
-    transform: translateY(0);
+  /* Remove the small dot, the pill background is cleaner */
+  .mobile-nav-item::after {
+    display: none;
   }
 
   .mobile-nav-label {
