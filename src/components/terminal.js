@@ -109,7 +109,7 @@ function Terminal() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleCommand}
-            autoFocus
+            autoFocus={false}
           />
         </div>
       </div>
