@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { FaGithub, FaYoutube } from 'react-icons/fa';
+
+// Import Images
 import okrapic from '../Images/okra-website.png';
 import vitalized from '../Images/vitalized-website.png';
 import medhub from '../Images/medhub360-website.png';
@@ -14,30 +17,33 @@ import devops from '../Images/devops.png';
 import auth from '../Images/auth.png';
 import route from '../Images/route.png';
 import ecommerce from '../Images/ecommerce.png';
-import { FaGithub, FaYoutube } from 'react-icons/fa';
+
 function Projects() {
   const [activeProject, setActiveProject] = useState(null);
 
   const projects = [
     {
       id: 'routeguard',
-      title: 'RouteGuard: Real-Time Loitering Detection and safe Navigation',
+      title: 'RouteGuard: Real-Time Detection',
+      description: 'Real-Time Loitering Detection and safe Navigation using OpenCV and OSM.',
       image: route,
-      technologies: ['React', 'Python', 'OpenCV', 'OSM API','Express.js'],
+      technologies: ['React', 'Python', 'OpenCV', 'OSM API'],
       github: 'https://github.com/naman-0804/RouteGuard',
       youtube: 'https://www.youtube.com/watch?v=LGjBXVr_ZvM'
     },
     {
       id: 'ecommerce-ml',
-      title: 'E-Commerce Customer Segmentation and Purchase Prediction using Machine Learning',
-      image: ecommerce, // replace with your imported image variable
+      title: 'E-Commerce ML Prediction',
+      description: 'Customer Segmentation and Purchase Prediction using Scikit-learn.',
+      image: ecommerce, 
       technologies: ['Scikit-learn', 'Pandas', 'Matplotlib'],
-      github: 'https://github.com/naman-0804/E-Commerce-Customer-Segmentation-Purchase-Prediction', // replace with actual GitHub link
-      youtube: '', // optional if no video available
+      github: 'https://github.com/naman-0804/E-Commerce-Customer-Segmentation-Purchase-Prediction',
+      youtube: ''
     },
     {
       id: 'auth-button',
-      title: 'Chat Application using Next , Clerk and GetStream',
+      title: 'Next.js Chat App',
+      description: 'Real-time chat application using Next.js, Clerk Auth and GetStream.',
       image: auth,
       technologies: ['Next.js', 'Clerk', 'GetStream'],
       github: 'https://github.com/naman-0804/Chat-App',
@@ -45,39 +51,44 @@ function Projects() {
     },
     {
       id: 'dl-button',
-      title: 'Upload and download without login',
+      title: 'Anonymous File Share',
+      description: 'Upload and download files securely without requiring user login.',
       image: dl,
-      technologies: ['GCP', 'Google API', 'Javascript', 'Flask'],
+      technologies: ['GCP', 'Google API', 'Flask'],
       github: 'https://github.com/naman-0804/File_Storage',
       youtube: 'https://www.youtube.com/watch?v=5xgZ00DH89w'
     },
     {
       id: 'ml-button',
-      title: 'Diabetes Prediction on AWS',
+      title: 'AWS Diabetes Prediction',
+      description: 'Machine Learning model deployed on AWS for predicting diabetes.',
       image: db,
-      technologies: ['Python', 'AWS', 'Machine Learning', 'Flask'],
+      technologies: ['Python', 'AWS', 'Flask', 'ML'],
       github: 'https://github.com/naman-0804/Diabetes_Prediction_onAWS',
       youtube: 'https://youtu.be/OqBdSu4jDhs?si=s80-z3eRVexeqTu1'
     },
     {
       id: 'devops-button',
-      title: 'DevOps Project',
+      title: 'DevOps CI/CD Pipeline',
+      description: 'React app with Docker containerization and GitHub Actions workflow.',
       image: devops,
-      technologies: ['Docker', 'React', 'CI/CD-GitHub Actions'],
+      technologies: ['Docker', 'React', 'GitHub Actions'],
       github: 'https://github.com/naman-0804/to-do_devops_',
       youtube: 'https://www.youtube.com/watch?v=NSN33CLi0M8'
     },
     {
       id: 'vitalized-button',
-      title: 'Vitalized',
+      title: 'Vitalized Healthcare',
+      description: 'Comprehensive healthcare platform for connecting patients and doctors.',
       image: vitalized,
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+      technologies: ['React', 'Node.js', 'MongoDB'],
       github: 'https://github.com/naman-0804/vitalized-vit',
       youtube: 'https://youtu.be/PPTDtrzJOT8?si=e32v89AZyyjjZ0av'
     },
     {
       id: 'sahyogi-button',
-      title: 'Sahyogi',
+      title: 'Sahyogi Platform',
+      description: 'Community helper platform built for SIH with real-time database.',
       image: sahyogi,
       technologies: ['React', 'Firebase', 'Material UI'],
       github: 'https://github.com/naman-0804/sih-site',
@@ -85,81 +96,81 @@ function Projects() {
     },
     {
       id: 'AWS-button',
-      title: 'Serverless Web App on AWS',
+      title: 'Serverless Web App',
+      description: 'Fully serverless architecture using AWS Lambda and DynamoDB.',
       image: aws,
-      technologies: ['AWS', 'Serverless', 'JavaScript', 'DynamoDB'],
+      technologies: ['AWS Lambda', 'DynamoDB', 'JS'],
       github: 'https://github.com/naman-0804/Cloud-AWS',
       youtube: 'https://youtu.be/bld7EkDXFR4?si=4ccr0Le0AUv6gtfL'
     },
     {
       id: 'wcs-button',
-      title: 'AI Webpage Content Summarizer',
+      title: 'AI Content Summarizer',
+      description: 'NLP-based tool to summarize long web articles automatically.',
       image: wcs,
-      technologies: ['Python', 'NLP', 'AI', 'Flask'],
+      technologies: ['Python', 'NLP', 'Flask'],
       github: 'https://github.com/naman-0804/Ai_content_summarizer',
       youtube: 'https://www.youtube.com/watch?v=X9xr08p2mtk'
     },
     {
       id: 'medhub-button',
       title: 'Medhub360',
+      description: 'Medical resource aggregator and appointment booking system.',
       image: medhub,
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+      technologies: ['React', 'Node.js', 'Express'],
       github: 'https://github.com/naman-0804/Healthcare',
       youtube: 'https://www.youtube.com/@naman_0804'
     },
     {
       id: 'asl-button',
-      title: 'ASL/ISL Translator',
+      title: 'Sign Language Translator',
+      description: 'Real-time ASL/ISL translation using computer vision and deep learning.',
       image: sl,
-      technologies: ['Python', 'TensorFlow', 'OpenCV', 'Deep Learning'],
+      technologies: ['TensorFlow', 'OpenCV', 'Python'],
       github: 'https://github.com/naman-0804/Sign-Language-Translator',
       youtube: 'https://youtu.be/qMkM-zELXGI?si=hYzMO1V07OooRW-y'
     },
     {
       id: 'okra-button',
       title: 'Okra Maturity Analysis',
+      description: 'Agricultural tech solution for analyzing crop maturity via images.',
       image: okrapic,
-      technologies: ['Python', 'Computer Vision', 'Image Processing'],
+      technologies: ['Python', 'Image Processing'],
       github: 'https://github.com/naman-0804/Okra-Maturity-Analysis',
       youtube: 'https://www.youtube.com/@naman_0804'
     },
     {
       id: 'lex-button',
       title: 'Lex ChatBot',
+      description: 'Intelligent conversational bot powered by Amazon Lex.',
       image: lex,
-      technologies: ['Chat Bot', 'Ai'],
+      technologies: ['AWS Lex', 'AI', 'Cloud'],
       github: 'https://github.com/naman-0804?tab=repositories',
       youtube: 'https://www.youtube.com/watch?v=lU9DK8GRS1k'
     },
     {
       id: 'portfolio-button',
       title: 'Portfolio Website',
+      description: 'The website you are currently looking at!',
       image: Portfolio,
-      description: 'About Me',
-      technologies: ['React', 'EmailJs'],
+      technologies: ['React', 'EmailJs', 'CSS3'],
       github: 'https://github.com/naman-0804/Portfolio-Naman',
       youtube: 'https://www.youtube.com/watch?v=u4lYKwQs48s'
     }
   ];
 
-  function redirectToProject(url) {
-    if (url) {
-      window.open(url, '_blank');
-    }
-  }
+  const redirectToProject = (url) => {
+    if (url) window.open(url, '_blank');
+  };
 
-  // Handle both hover on desktop and touch on mobile
   const handleProjectInteraction = (projectId) => {
     if (window.innerWidth <= 768) {
-      // Toggle for mobile (touch)
       setActiveProject(activeProject === projectId ? null : projectId);
     } else {
-      // Set on hover for desktop
       setActiveProject(projectId);
     }
   };
 
-  // Clear active project on mouse leave (desktop only)
   const handleMouseLeave = () => {
     if (window.innerWidth > 768) {
       setActiveProject(null);
@@ -168,10 +179,8 @@ function Projects() {
 
   return (
     <div id="project-section" className="project">
-      <div className="project-header">
-        <h1>Projects</h1>
-        <div className="section-underline"></div>
-      </div>
+      {/* UPDATED HEADER: Matches Skills Section */}
+      <h1 className="section-title">Projects</h1>
       
       <div className="project-grid">
         {projects.map((project, index) => (
@@ -184,53 +193,46 @@ function Projects() {
           >
             <div className="project-image-container">
               <img src={project.image} alt={project.title} />
+              
               <div className={`project-overlay ${activeProject === project.id ? 'active' : ''}`}>
                 <div className="project-description">
-                  <p>{project.description}</p>
+                  <p>{project.description || `A cool project built with ${project.technologies[0]}.`}</p>
                   <div className="tech-stack">
                     {project.technologies.map((tech, i) => (
                       <span key={i} className="tech-tag">{tech}</span>
                     ))}
                   </div>
                 </div>
-                {/* <button 
-                  className="view-project-btn youtube-btn"
-                  onClick={(e) => {
-                    e.stopPropagation(); // Prevent triggering card click
-                    redirectToProject(project.youtube);
-                  }}
-                >
-                  <FaYoutube /> View on YouTube
-                </button> */}
               </div>
             </div>
-            <div className="project-info">
-              <h3>{project.title}</h3>
-<div className="project-links">
-  {/* GitHub */}
-  <button 
-    className="icon-button github-btn"
-    onClick={(e) => {
-      e.stopPropagation();
-      redirectToProject(project.github);
-    }}
-  >
-    <FaGithub />
-  </button>
 
-  {/* YouTube (Only show if link exists) */}
-  {project.youtube && (
-    <button 
-      className="icon-button youtube-btn"
-      onClick={(e) => {
-        e.stopPropagation();
-        redirectToProject(project.youtube);
-      }}
-    >
-      <FaYoutube />
-    </button>
-  )}
-</div>
+            <div className="project-info">
+              <h3 title={project.title}>{project.title}</h3>
+              <div className="project-links">
+                <button 
+                  className="icon-button github-btn"
+                  title="View Code"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    redirectToProject(project.github);
+                  }}
+                >
+                  <FaGithub />
+                </button>
+
+                {project.youtube && (
+                  <button 
+                    className="icon-button youtube-btn"
+                    title="Watch Demo"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      redirectToProject(project.youtube);
+                    }}
+                  >
+                    <FaYoutube />
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         ))}

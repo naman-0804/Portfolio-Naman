@@ -2,161 +2,138 @@ import React from 'react';
 import { FaBriefcase, FaGraduationCap, FaCalendarAlt, FaTools, FaBuilding, FaMapMarkerAlt } from 'react-icons/fa';
 
 function Experience() {
+
+  const experienceData = [
+    {
+      role: "Upcoming Intern at Infosys",
+      company: "Infosys",
+      date: "2026 - Current",
+      description: "Cleared interview process and selected for the role of Software Engineer Intern at Infosys, starting in 2026.",
+      technologies: ["Full-Stack", "Cloud", "ML"]
+    },
+    {
+      role: "Software Development Intern",
+      company: "The Entrepreneurship Network (TEN)",
+      date: "June 2023 - July 2023",
+      description: "Worked as a software development intern at The Entrepreneurship Network (TEN), contributing to various projects and gaining valuable industry experience.",
+      technologies: ["React", "Flask", "MongoDB"]
+    },
+    {
+      role: "Web Developer",
+      company: "Biosphere Club",
+      date: "2022 - 2023",
+      description: "Active member of the Biosphere Club, responsible for developing and maintaining the club's website, ensuring it is up-to-date and user-friendly.",
+      technologies: ["HTML", "CSS", "JavaScript", "Python"]
+    }
+  ];
+
+  const educationData = [
+    {
+      degree: "B.Tech in Computer Science and Engineering",
+      institution: "Vellore Institute of Technology",
+      date: "2022 - 2026",
+      location: "Vellore, India",
+      description: "Currently pursuing undergraduate degree with focus on software development and computer science fundamentals."
+    },
+    {
+      degree: "Higher Secondary Education",
+      institution: "Peace Public School",
+      date: "2020 - 2022",
+      location: "", // Optional
+      achievements: [
+        "Completed Class XII in 2022 with 90.4% marks",
+        "Completed Class X in 2020 with 90% marks"
+      ]
+    }
+  ];
+
   return (
     <div id="experience-section">
       <div className="section-container">
-        <div className="section-header">
-          <h1>Professional Experience</h1>
-          <div className="section-underline"></div>
-        </div>
+        
+        {/* Experience Header */}
+        <h2 className="section-title">Professional Experience</h2>
         
         <div className="experience-grid">
-          <div className="experience-card">
-            <div className="card-header">
-              <div className="icon-container">
-                <FaBriefcase />
-              </div>
-              <h3>Upcoming Intern at Infosys</h3>
-            </div>
-            <div className="card-body">
-              <div className="company-info">
-                <div className="company">
-                  <FaBuilding /> <span>Infosys</span>
+          {experienceData.map((exp, index) => (
+            <div key={index} className="experience-card">
+              <div className="card-header">
+                <div className="icon-container">
+                  <FaBriefcase />
                 </div>
-                <div className="duration">
-                  <FaCalendarAlt /> <span>2026 - Current</span>
-                </div>
+                <h3>{exp.role}</h3>
               </div>
-              <p>
-                Cleared interview process and selected for the role of Software Engineer Intern at Infosys, 
-                starting in 2026.
-              </p>
-              <div className="tech-container">
-                <div className="tech-label"><FaTools /> Technologies:</div>
-                <div className="tech-pills">
-                  <span>Full-Stack</span>
-                  <span>Cloud</span>
-                  <span>ML</span>
+              
+              <div className="card-body">
+                <div className="info-row">
+                  <div className="info-item">
+                    <FaBuilding className="text-icon" /> <span>{exp.company}</span>
+                  </div>
+                  <div className="info-item">
+                    <FaCalendarAlt className="text-icon" /> <span>{exp.date}</span>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="experience-card">
-            <div className="card-header">
-              <div className="icon-container">
-                <FaBriefcase />
-              </div>
-              <h3>Software Development Intern</h3>
-            </div>
-            <div className="card-body">
-              <div className="company-info">
-                <div className="company">
-                  <FaBuilding /> <span>The Entrepreneurship Network (TEN)</span>
-                </div>
-                <div className="duration">
-                  <FaCalendarAlt /> <span>June 2023 - July 2023</span>
-                </div>
-              </div>
-              <p>
-                Worked as a software development intern at The Entrepreneurship Network (TEN), 
-                contributing to various projects and gaining valuable industry experience.
-              </p>
-              <div className="tech-container">
-                <div className="tech-label"><FaTools /> Technologies:</div>
-                <div className="tech-pills">
-                  <span>React</span>
-                  <span>Flask</span>
-                  <span>MongoDB</span>
+                
+                <p>{exp.description}</p>
+                
+                <div className="tech-container">
+                  <div className="tech-label"><FaTools /> Technologies:</div>
+                  <div className="tech-pills">
+                    {exp.technologies.map((tech, i) => (
+                      <span key={i}>{tech}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <div className="experience-card">
-            <div className="card-header">
-              <div className="icon-container">
-                <FaBriefcase />
-              </div>
-              <h3>Web Developer</h3>
-            </div>
-            <div className="card-body">
-              <div className="company-info">
-                <div className="company">
-                  <FaBuilding /> <span>Biosphere Club</span>
-                </div>
-                <div className="duration">
-                  <FaCalendarAlt /> <span>2022 - 2023</span>
-                </div>
-              </div>
-              <p>
-                Active member of the Biosphere Club, responsible for developing and maintaining 
-                the club's website, ensuring it is up-to-date and user-friendly.
-              </p>
-              <div className="tech-container">
-                <div className="tech-label"><FaTools /> Technologies:</div>
-                <div className="tech-pills">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JavaScript</span>
-                  <span>Python</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
         
-        <div className="section-header education-header">
-          <h1>Education</h1>
-          <div className="section-underline"></div>
-        </div>
+        {/* Education Header */}
+        <br></br>
+        <h2 className="section-title education-title">Education</h2>
         
         <div className="education-grid">
-          <div className="education-card">
-            <div className="card-header">
-              <div className="icon-container education">
-                <FaGraduationCap />
+          {educationData.map((edu, index) => (
+            <div key={index} className="education-card">
+              <div className="card-header">
+                <div className="icon-container">
+                  <FaGraduationCap />
+                </div>
+                <h3>{edu.degree}</h3>
               </div>
-              <h3>B.Tech in Computer Science and Engineering</h3>
-            </div>
-            <div className="card-body">
-              <div className="institution-info">
-                <div className="institution">
-                  <FaBuilding /> <span>Vellore Institute of Technology</span>
+              
+              <div className="card-body">
+                <div className="info-row">
+                  <div className="info-item">
+                    <FaBuilding /> <span>{edu.institution}</span>
+                  </div>
+                  <div className="info-item">
+                    <FaCalendarAlt /> <span>{edu.date}</span>
+                  </div>
+                  {edu.location && (
+                    <div className="info-item">
+                      <FaMapMarkerAlt /> <span>{edu.location}</span>
+                    </div>
+                  )}
                 </div>
-                <div className="duration">
-                  <FaCalendarAlt /> <span>2022 - 2026</span>
-                </div>
-                <div className="location">
-                  <FaMapMarkerAlt /> <span>Vellore, India</span>
-                </div>
-              </div>
-              <p>Currently pursuing undergraduate degree with focus on software development and computer science fundamentals.</p>
-            </div>
-          </div>
-          
-          <div className="education-card">
-            <div className="card-header">
-              <div className="icon-container education">
-                <FaGraduationCap />
-              </div>
-              <h3>Higher Secondary Education</h3>
-            </div>
-            <div className="card-body">
-              <div className="institution-info">
-                <div className="institution">
-                  <FaBuilding /> <span>Peace Public School</span>
-                </div>
-                <div className="duration">
-                  <FaCalendarAlt /> <span>2020 - 2022</span>
-                </div>
-              </div>
-              <div className="achievements">
-                <p>• Completed Class XII in 2022 with 90.4% marks</p>
-                <p>• Completed Class X in 2020 with 90% marks</p>
+                
+                {edu.description && <p>{edu.description}</p>}
+                
+                {edu.achievements && (
+                  <div className="achievements">
+                    <ul>
+                      {edu.achievements.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
-          </div>
+          ))}
         </div>
+
       </div>
     </div>
   );
