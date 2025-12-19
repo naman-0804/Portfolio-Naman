@@ -154,6 +154,9 @@
 /* ============================
    RESPONSIVE (MOBILE)
    ============================ */
+/* ============================
+   RESPONSIVE (MOBILE)
+   ============================ */
 @media (max-width: 992px) {
   .navbar-links {
     display: none; /* Hide Top Links */
@@ -167,64 +170,81 @@
   .mobile-nav-container {
     display: flex;
     position: fixed;
-    bottom: 20px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1001;
     width: 90%;
     max-width: 400px;
-    background: rgba(255, 255, 255, 0.85);
+    
+    /* LIGHT MODE: High Opacity White (Not Black) */
+    background: rgba(255, 255, 255, 0.95); 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
-    border-radius: 24px;
-    padding: 0.5rem 1rem;
+    
+    /* DISTINCTION: Colored Border & Strong Shadow */
+    border: 1px solid rgba(99, 102, 241, 0.4); /* Visible Indigo Border */
+    box-shadow: 0 10px 40px -5px rgba(99, 102, 241, 0.25); /* Colored Glow Shadow */
+    
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s ease;
   }
 
+  /* DARK MODE: Dark Grey/Slate (Standard Dark Mode) */
   .dark-mode .mobile-nav-container {
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+    background: rgba(30, 41, 59, 0.95); /* Deep Slate */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.5);
   }
 
-  /* Icons in Dock */
+  /* --- ICONS --- */
   .mobile-nav-item {
-    color: #64748b;
-    font-size: 1.4rem;
+    color: #64748b; /* Slate Grey when inactive */
+    font-size: 1.3rem;
     padding: 10px;
-    border-radius: 14px;
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 4px;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     text-decoration: none;
   }
 
-  /* Active Indicator Dot */
+  /* Dark Mode Icons Inactive */
+  .dark-mode .mobile-nav-item {
+    color: #94a3b8;
+  }
+
+  /* Active Indicator (Dot) */
   .mobile-nav-item::after {
     content: '';
+    position: absolute;
+    bottom: -2px;
     width: 4px;
     height: 4px;
-    background: var(--primary-gradient);
+    background: #6366f1; /* Indigo Dot */
     border-radius: 50%;
     opacity: 0;
-    transform: translateY(5px);
     transition: all 0.3s ease;
   }
 
+  /* --- ACTIVE STATE --- */
+  
+  /* Light Mode Active: Primary Color */
   .mobile-nav-item.active {
-    color: #6366f1;
-    transform: translateY(-2px);
+    color: #6366f1; /* Bright Indigo */
+    transform: translateY(-3px);
+    background: rgba(99, 102, 241, 0.1); /* Soft highlight pill */
   }
 
+  /* Dark Mode Active: Bright White/Purple */
   .dark-mode .mobile-nav-item.active {
     color: #a855f7;
+    background: rgba(168, 85, 247, 0.1);
   }
 
   .mobile-nav-item.active::after {
@@ -232,7 +252,6 @@
     transform: translateY(0);
   }
 
-  /* Hide the Text Label on Mobile (Icons only for clean look) */
   .mobile-nav-label {
     display: none; 
   }
