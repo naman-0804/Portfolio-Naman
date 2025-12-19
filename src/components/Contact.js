@@ -21,51 +21,50 @@ function Contact() {
   };
   
   const handleSubmit = (e) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  emailjs.send('service_655mg9c', 'template_jo7ezml', formData, 'K34YWs3fe407eAfCX')
-    .then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
-      setIsSubmitting(false);
+    // Make sure your EmailJS Service/Template IDs are correct
+    emailjs.send('service_655mg9c', 'template_jo7ezml', formData, 'K34YWs3fe407eAfCX')
+      .then((response) => {
+        setIsSubmitting(false);
 
-      Swal.fire({
-        title: 'Message Sent!',
-        text: 'Thank you for reaching out. I will get back to you soon.',
-        icon: 'success',
-        confirmButtonColor: '#6a0dad'
+        Swal.fire({
+          title: 'Message Sent!',
+          text: 'Thank you for reaching out. I will get back to you soon.',
+          icon: 'success',
+          confirmButtonColor: '#6366f1', // Updated to match theme
+          background: '#f8f9fa',
+          color: '#1e293b'
+        });
+
+        setFormData({ name: '', email: '', message: '' });
+      }, (error) => {
+        setIsSubmitting(false);
+
+        Swal.fire({
+          title: 'Oops!',
+          text: 'Something went wrong. Please try again later.',
+          icon: 'error',
+          confirmButtonColor: '#d33'
+        });
       });
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-    }, (error) => {
-      console.error('FAILED...', error);
-      setIsSubmitting(false);
-
-      Swal.fire({
-        title: 'Oops!',
-        text: 'Something went wrong. Please try again later.',
-        icon: 'error',
-        confirmButtonColor: '#d33'
-      });
-    });
-};
-
+  };
   
   return (
     <div id="contact-section">
       <div className="contact-container">
-        <div className="contact-header">
-          <h1>Get In Touch</h1>
-          <div className="section-underline"></div>
-        </div>
+        
+        {/* Header */}
+        <h1 className="section-title">Get In Touch</h1>
+        <p className="section-subtitle">
+          Have a question or want to work together? Drop me a message!
+        </p>
         
         <div className="contact-content">
-          <div className="contact-info">
+          
+          {/* Left Column: Info & Social */}
+          <div className="contact-left-col">
             <div className="contact-card">
               <div className="contact-icon">
                 <FaEnvelope />
@@ -82,26 +81,27 @@ function Contact() {
               </div>
               <div className="contact-details">
                 <h3>Phone</h3>
-                <p>+91 ---</p>
+                <p>+91 (Available on Request)</p>
               </div>
             </div>
             
             <div className="social-links">
               <h3>Connect With Me</h3>
               <div className="social-icons">
-                <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="LinkedIn">
                   <FaLinkedin />
                 </a>
-                <a href="https://github.com/naman-0804" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                <a href="https://github.com/naman-0804" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="GitHub">
                   <FaGithub />
                 </a>
-                <a href="https://www.instagram.com/namansrivastava._/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+                <a href="https://www.instagram.com/namansrivastava._/" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="Instagram">
                   <FaInstagram />
                 </a>
               </div>
             </div>
           </div>
           
+          {/* Right Column: Form */}
           <div className="contact-form-container">
             <form className="contact-form" onSubmit={handleSubmit}>
               <h2>Send Me a Message</h2>
@@ -116,7 +116,7 @@ function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Name"
+                  placeholder="Enter your name"
                   required
                 />
               </div>
@@ -131,7 +131,7 @@ function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="abcd@example.com"
+                  placeholder="Enter your email"
                   required
                 />
               </div>
@@ -145,7 +145,7 @@ function Contact() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Hello, I'd like to talk about..."
+                  placeholder="How can I help you?"
                   rows="5"
                   required
                 ></textarea>
@@ -153,7 +153,7 @@ function Contact() {
               
               <button 
                 type="submit" 
-                className={`submit-button ${isSubmitting ? 'submitting' : ''}`}
+                className="submit-button"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -164,10 +164,10 @@ function Contact() {
                   </>
                 )}
               </button>
-              
             
             </form>
           </div>
+
         </div>
       </div>
     </div>

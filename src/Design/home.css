@@ -1,17 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-/* ===============================
-   GLOBAL LAYOUT
-   =============================== */
+/* --- Global Variables (Matches Previous Sections) --- */
+:root {
+  --font-main: system-ui, -apple-system, sans-serif;
+  --bg-light: #f8f9fa;
+  --bg-dark: #0f172a;
+  --text-light: #1e293b;
+  --text-dark: #f1f5f9;
+  --card-light: rgba(255, 255, 255, 0.8);
+  --card-dark: rgba(30, 41, 59, 0.7);
+  --glass-border-light: 1px solid rgba(255, 255, 255, 0.5);
+  --glass-border-dark: 1px solid rgba(255, 255, 255, 0.1);
+  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --accent-gradient: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+}
 
 .hero-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 3.5rem 2rem 5rem 2rem; /* Added top padding for navbar */
+  background-color: var(--bg-light);
+  font-family: var(--font-main);
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 3rem 1.5rem;
-  font-family: 'Inter', sans-serif;
+  align-items: flex-start; /* Align top for long content */
+  position: relative;
+  overflow-x: hidden;
+  
+  /* Matching Mesh Gradient */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
+}
+
+.hero-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-content {
@@ -19,6 +44,8 @@
   max-width: 1200px;
   width: 100%;
   gap: 2.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* ===============================
@@ -27,144 +54,134 @@
 
 .hero-left {
   flex: 1;
-  max-width: 350px;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .profile-card {
-  background: #ffffff;
-  border-radius: 16px;
+  background: var(--card-light);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border-light);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 14px 36px rgba(0,0,0,0.14);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   text-align: center;
   padding-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .profile-image-container {
-  height: 250px;
+  height: 280px;
   position: relative;
   overflow: hidden;
-}
-
-.profile-image-container::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,0.7));
-  z-index: 1;
+  margin: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .profile-image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.profile-card:hover .profile-image-container img {
+  transform: scale(1.05);
 }
 
 .profile-card h1 {
-  margin-top: 1.6rem;
-  margin-bottom: 0.3rem;
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: #222;
+  margin: 1.2rem 0 0.2rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .profile-card h2 {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  color: #666;
-  margin-bottom: 1.6rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
 }
 
-/* ===============================
-   SOCIAL LINKS
-   =============================== */
-
+/* Social Links */
 .social-links {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  padding: 0 1rem;
 }
 
 .social-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: white;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: all 0.3s ease;
+  background: #333; /* Fallback */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .social-icon:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
 }
 
 .social-icon.linkedin { background: #0077B5; }
-.social-icon.github   { background: #333; }
-.social-icon.youtube  { background: #FF0000; }
+.social-icon.github { background: #1f2937; }
+.social-icon.youtube { background: #EF4444; }
+.social-icon.takeforward { background: white; border: 1px solid #e5e7eb; overflow: hidden; }
+.social-icon.takeforward img { width: 100%; height: 100%; object-fit: cover; }
 
-.social-icon.takeforward {
-  background: #ffffff;
-  border: 1px solid #ddd;
-}
-
-.social-icon.takeforward img {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-}
-
-/* ===============================
-   RECOMMENDATION (FIXED)
-   =============================== */
-
+/* Recommendation Bubble */
 .recommendation-card {
-  background: #f8f9fa;
+  background: white; /* Contrast against glass card if nested, or glass itself */
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(99, 102, 241, 0.2);
   border-left: 4px solid #6366f1;
   border-radius: 12px;
-  padding: 1.2rem 1.4rem;
-  margin: 1.5rem 1.2rem 0;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  padding: 1.2rem;
+  margin: 1.5rem;
   text-align: left;
+  position: relative;
 }
 
 .recommendation-header h4 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6366f1;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
-.recommender-info {
-  margin-bottom: 0.8rem;
-}
-
-.recommender-name {
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.recommender-title {
-  font-size: 0.8rem;
-  color: #666;
-  line-height: 1.4;
-}
-
-.recommendation-date {
-  font-size: 0.75rem;
-  color: #888;
-  margin-top: 0.2rem;
-}
+.recommender-name { font-weight: 700; color: var(--text-light); display: block; }
+.recommender-title { font-size: 0.8rem; color: #64748b; display: block; margin-bottom: 0.5rem; }
+.recommendation-date { font-size: 0.75rem; color: #94a3b8; display: block; margin-top: 0.2rem;}
 
 .recommendation-content {
   font-style: italic;
-  font-size: 0.9rem;
-  color: #444;
-  line-height: 1.55;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  background: rgba(255,255,255,0.5);
+  padding: 0.8rem;
+  border-radius: 8px;
 }
 
 /* ===============================
@@ -173,147 +190,235 @@
 
 .hero-right {
   flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .about-card {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 14px 36px rgba(0,0,0,0.14);
-  padding: 2.2rem;
+  background: var(--card-light);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border-light);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-.about-card > * {
-  margin-bottom: 2.8rem;
-}
-.about-card > *:last-child {
-  margin-bottom: 0;
-}
-
-/* ===============================
-   SECTION TITLES
-   =============================== */
-
-.section-title h3 {
-  font-size: 1.45rem;
-  font-weight: 600;
-  color: #222;
+/* Section Titles inside Card */
+.content-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.title-underline {
-  width: 42px;
+.content-title::after {
+  content: '';
   height: 3px;
-  background: linear-gradient(45deg, #4776E6, #8E54E9);
+  flex: 1;
+  background: var(--glass-border-light);
+  background: linear-gradient(90deg, #6366f1, transparent);
   border-radius: 2px;
-  margin-top: 0.4rem;
 }
 
-/* ===============================
-   ABOUT TEXT
-   =============================== */
-
+/* About Text */
 .about-content p {
-  max-width: 65ch;
-  font-size: 1.02rem;
-  line-height: 1.75;
-  color: #444;
-  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 1.2rem;
 }
 
-.highlight-blue   { color: #3b82f6; font-weight: 600; }
-.highlight-purple{ color: #8b5cf6; font-weight: 600; }
-.highlight-green { color: #22c55e; font-weight: 600; }
-.highlight-orange{ color: #f97316; font-weight: 600; }
+/* Highlights */
+.highlight {
+  position: relative;
+  font-weight: 700;
+  z-index: 0;
+  padding: 0 4px;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background-color: rgba(99, 102, 241, 0.2);
+  z-index: -1;
+  transition: height 0.2s;
+}
+
+.highlight:hover::after {
+  height: 100%;
+}
+
+.highlight.green { color: #10b981; }
+.highlight.green::after { background-color: rgba(16, 185, 129, 0.2); }
+
+.highlight.purple { color: #8b5cf6; }
+.highlight.purple::after { background-color: rgba(139, 92, 246, 0.2); }
+
+.highlight.orange { color: #f59e0b; }
+.highlight.orange::after { background-color: rgba(245, 158, 11, 0.2); }
+
+.highlight.blue { color: #3b82f6; }
+.highlight.blue::after { background-color: rgba(59, 130, 246, 0.2); }
 
 /* ===============================
    RESUME CARD
    =============================== */
 
-.resume-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.4rem 1.6rem;
+.resume-section {
+  background: white; /* Inner card */
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(99, 102, 241, 0.15);
   border-radius: 16px;
-  background: linear-gradient(
-    135deg,
-    rgba(71,118,230,0.08),
-    rgba(142,84,233,0.08)
-  );
-  border: 1px solid rgba(71,118,230,0.25);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  transition: transform 0.3s ease;
 }
 
-.resume-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(71,118,230,0.25);
+.resume-section:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(99, 102, 241, 0.4);
 }
 
-.resume-left {
+.resume-info {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
 .resume-badge {
-  background: linear-gradient(45deg, #4776e6, #8e54e9);
+  background: var(--primary-gradient);
   color: white;
   font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.4rem 0.7rem;
+  font-weight: 700;
+  padding: 0.5rem 0.8rem;
   border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(99, 102, 241, 0.3);
 }
 
-.resume-left h4 {
-  margin: 0;
-  font-size: 1.05rem;
-  color: #222;
-}
-
-.resume-left p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #666;
-}
+.resume-text h4 { margin: 0; font-size: 1.1rem; color: var(--text-light); }
+.resume-text p { margin: 0; font-size: 0.9rem; color: #64748b; }
 
 .resume-actions {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.8rem;
 }
 
 .resume-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
-  background: linear-gradient(45deg, #4776e6, #8e54e9);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.resume-btn.primary {
+  background: var(--primary-gradient);
   color: white;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+}
+
+.resume-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(99, 102, 241, 0.3);
 }
 
 .resume-btn.secondary {
   background: white;
-  color: #444;
-  border: 1px solid #ddd;
+  color: #475569;
+  border: 1px solid #e2e8f0;
 }
 
-.resume-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(71,118,230,0.35);
+.resume-btn.secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #1e293b;
+}
+
+
+/* ===============================
+   TERMINAL WRAPPER
+   =============================== */
+.terminal-container {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  border: 1px solid rgba(0,0,0,0.1);
 }
 
 /* ===============================
-   TERMINAL
+   DARK MODE
    =============================== */
 
-.terminal-wrapper {
-  margin-top: 0.5rem;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+.dark-mode .hero-container {
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.08) 0px, transparent 50%);
+}
+
+.dark-mode .profile-card,
+.dark-mode .about-card {
+  background: var(--card-dark);
+  border: var(--glass-border-dark);
+}
+
+.dark-mode .profile-card h1 {
+  /* Gradient text works on dark, or make white */
+}
+
+.dark-mode .profile-card h2 { color: #94a3b8; }
+
+.dark-mode .recommendation-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+.dark-mode .recommendation-content {
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+}
+.dark-mode .recommender-name { color: #f1f5f9; }
+.dark-mode .recommender-title { color: #94a3b8; }
+
+.dark-mode .content-title { color: #f1f5f9; }
+.dark-mode .content-title::after { background: linear-gradient(90deg, #818cf8, transparent); }
+
+.dark-mode .about-content p { color: #cbd5e1; }
+
+.dark-mode .resume-section {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.dark-mode .resume-section:hover { background: rgba(0, 0, 0, 0.5); }
+.dark-mode .resume-text h4 { color: #f1f5f9; }
+.dark-mode .resume-text p { color: #94a3b8; }
+
+.dark-mode .resume-btn.secondary {
+  background: transparent;
+  border-color: #475569;
+  color: #cbd5e1;
+}
+.dark-mode .resume-btn.secondary:hover {
+  border-color: #94a3b8;
+  color: white;
 }
 
 /* ===============================
@@ -328,68 +433,30 @@
 
   .hero-left {
     max-width: 100%;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .profile-card {
-    max-width: 420px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-container {
-    padding: 2rem 1rem;
-  }
-
-  .resume-card {
+  .hero-container { padding: 6rem 1rem 3rem 1rem; }
+  
+  .resume-section {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     text-align: center;
   }
-}
-
-/* ===============================
-   DARK MODE
-   =============================== */
-
-.dark-mode .hero-container {
-  background: linear-gradient(135deg, #141414, #1f2937);
-}
-
-.dark-mode .profile-card,
-.dark-mode .about-card {
-  background: #1f1f1f;
-}
-
-.dark-mode .profile-card h1,
-.dark-mode .section-title h3 {
-  color: #f9fafb;
-}
-
-.dark-mode .profile-card h2,
-.dark-mode .about-content p,
-.dark-mode .recommendation-content {
-  color: #d1d5db;
-}
-
-.dark-mode .recommendation-card {
-  background: #2a2a2a;
-  border-left-color: #8b5cf6;
-}
-
-.dark-mode .resume-card {
-  background: linear-gradient(
-    135deg,
-    rgba(108,92,231,0.15),
-    rgba(142,84,233,0.15)
-  );
-  border-color: rgba(142,84,233,0.35);
-}
-
-.dark-mode .resume-left h4 {
-  color: #f9fafb;
-}
-
-.dark-mode .resume-left p {
-  color: #cbd5f5;
+  
+  .resume-info { flex-direction: column; }
+  .resume-actions { width: 100%; justify-content: center; }
+  
+  .about-card { padding: 1.5rem; }
 }

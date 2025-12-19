@@ -1,101 +1,157 @@
+/* --- Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
+/* --- Base Terminal Styles --- */
 .terminal-card {
-  background: #020617;
   border-radius: 12px;
-  margin-top: 20px;
   overflow: hidden;
-  font-family: monospace;
+  font-family: 'Fira Code', 'Consolas', monospace; /* Better coding font */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 250px; /* Fixed height for scrolling */
+  width: 100%;
 }
 
+/* --- Header --- */
 .terminal-header {
-  background: #0f172a;
-  padding: 8px 12px;
+  padding: 10px 16px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  user-select: none; /* Prevent selecting UI elements */
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
+  transition: transform 0.2s;
 }
 
-.red { background: #ef4444; }
-.yellow { background: #facc15; }
-.green { background: #22c55e; }
+.dot:hover { transform: scale(1.1); }
+
+.red { background: #ff5f56; box-shadow: 0 0 8px rgba(255, 95, 86, 0.4); }
+.yellow { background: #ffbd2e; box-shadow: 0 0 8px rgba(255, 189, 46, 0.4); }
+.green { background: #27c93f; box-shadow: 0 0 8px rgba(39, 201, 63, 0.4); }
 
 .terminal-title {
-  margin-left: 8px;
-  color: #cbd5f5;
-  font-size: 0.85rem;
+  margin-left: 12px;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
+/* --- Body --- */
 .terminal-body {
-  padding: 12px;
-  color: #e5e7eb;
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto; /* Enable scrolling */
   font-size: 0.9rem;
+  line-height: 1.6;
+  cursor: text; /* Indicates clickable */
+}
+
+/* Custom Scrollbar */
+.terminal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .terminal-line {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  white-space: pre-wrap; /* Handle long lines */
+  word-break: break-word;
 }
 
+/* --- Input Area --- */
 .terminal-input {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+  margin-top: 8px;
 }
 
 .prompt {
-  color: #22c55e;
+  font-weight: 600;
+  flex-shrink: 0;
 }
 
 .terminal-input input {
   background: transparent;
   border: none;
   outline: none;
-  color: #e5e7eb;
   flex: 1;
-  font-family: monospace;
-}
-/* ======================
-   DEFAULT THEME
-   ====================== */
-.theme-default {
-  background: #0f172a;
-  color: #e5e7eb;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  font-weight: 500;
+  caret-color: currentColor; /* Cursor matches text color */
 }
 
 /* ======================
-   MATRIX THEME
+   THEME: DEFAULT (Glass Dark)
+   ====================== */
+.theme-default {
+  background: rgba(15, 23, 42, 0.85); /* Dark Glass */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #e2e8f0;
+}
+
+.theme-default .terminal-header { background: rgba(255, 255, 255, 0.03); }
+.theme-default .terminal-title { color: #94a3b8; }
+.theme-default .prompt { color: #a855f7; /* Purple prompt */ }
+.theme-default input { color: #f1f5f9; }
+
+/* ======================
+   THEME: MATRIX (Hacker)
    ====================== */
 .theme-matrix {
   background: #000000;
-  color: #00ff88;
+  color: #00ff41;
+  border: 1px solid #003b00;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
 }
 
-.theme-matrix .prompt,
-.theme-matrix input {
-  color: #00ff88;
-}
-
-.theme-matrix .terminal-header {
-  background: #020202;
-}
+.theme-matrix .terminal-header { background: #0a0a0a; border-bottom: 1px solid #003b00; }
+.theme-matrix .terminal-title { color: #008f11; }
+.theme-matrix .prompt { color: #00ff41; text-shadow: 0 0 5px rgba(0, 255, 65, 0.5); }
+.theme-matrix input { color: #00ff41; text-shadow: 0 0 5px rgba(0, 255, 65, 0.5); }
+.theme-matrix .terminal-line { text-shadow: 0 0 2px rgba(0, 255, 65, 0.3); }
 
 /* ======================
-   SOLARIZED THEME
+   THEME: SOLARIZED (Pro)
    ====================== */
 .theme-solarized {
   background: #002b36;
-  color: #93a1a1;
+  color: #839496;
+  border: 1px solid #073642;
 }
 
-.theme-solarized .prompt,
-.theme-solarized input {
-  color: #93a1a1;
-}
+.theme-solarized .terminal-header { background: #073642; }
+.theme-solarized .terminal-title { color: #586e75; }
+.theme-solarized .prompt { color: #b58900; }
+.theme-solarized input { color: #93a1a1; }
 
-.theme-solarized .terminal-header {
-  background: #073642;
+/* Mobile Adjustment */
+@media (max-width: 480px) {
+  .terminal-card { height: 300px; }
+  .terminal-input { flex-wrap: wrap; gap: 4px; }
+  .prompt { width: 100%; }
 }
