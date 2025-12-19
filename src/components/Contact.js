@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaEnvelope, FaPhone, FaLinkedin, FaGithub,FaUser, FaCommentAlt, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub,FaUser, FaCommentAlt, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
 
@@ -96,6 +96,9 @@ function Contact() {
                 </a>
                 <a href="https://x.com/n_a_m_a_n_16" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="Instagram">
                   <FaTwitter />
+                </a>
+                <a href="https://www.youtube.com/@naman_0804" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="Twitter">
+                  <FaYoutube />
                 </a>
               </div>
             </div>
