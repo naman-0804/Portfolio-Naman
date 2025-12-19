@@ -1,6 +1,6 @@
 import React from "react";
 import { 
-    FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode, FaTrophy 
+  FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode, FaTrophy 
 } from "react-icons/fa";
 
 function Skills() {
@@ -8,48 +8,81 @@ function Skills() {
     { 
       title: "Backend", 
       content: "Node.js, Python, Flask", 
-      icon: <FaServer className="skill-icon" />,
-      color: "#4CAF50"
+      icon: <FaServer />,
+      color: "#10b981" // Emerald
     },
     { 
       title: "Frontend", 
       content: "JavaScript, React, HTML", 
-      icon: <FaReact className="skill-icon" />,
-      color: "#2196F3"
+      icon: <FaReact />,
+      color: "#3b82f6" // Blue
     },
     { 
       title: "Database", 
       content: "MongoDB, MySQL, PostgreSQL", 
-      icon: <FaDatabase className="skill-icon" />,
-      color: "#FF9800"
+      icon: <FaDatabase />,
+      color: "#f59e0b" // Amber
     },
     { 
       title: "Cloud", 
       content: "Amazon Web Services", 
-      icon: <FaCloud className="skill-icon" />,
-      color: "#9C27B0"
+      icon: <FaCloud />,
+      color: "#8b5cf6" // Violet
     },
     { 
       title: "Coding", 
       content: "DSA(400+), C++, Python, C, Java", 
-      icon: <FaCode className="skill-icon" />,
-      color: "#9C27B0"
+      icon: <FaCode />,
+      color: "#ec4899" // Pink
     },
     { 
       title: "Tools", 
       content: "Git, GitHub, Docker, Figma, Postman", 
-      icon: <FaTools className="skill-icon" />,
-      color: "#E91E63"
+      icon: <FaTools />,
+      color: "#6366f1" // Indigo
+    },
+  ];
+
+  const achievementsData = [
+    {
+      date: "January 2026",
+      title: "Intern at Infosys",
+      description: "Cleared Infosys interviews and got selected as an intern for the role of Software Developer.",
+    },
+    {
+      date: "November 2024",
+      title: "VITISH (SIH Internal Hackathon)",
+      description: "Qualified two elimination rounds and got nominated for official SIH24 from VIT Chennai out of 600 teams.",
+    },
+    {
+      date: "June 2024",
+      title: "Software Developer Intern",
+      description: "Secured a summer internship with The Entrepreneurship Network and learned a lot of new skills.",
+    },
+    {
+      date: "April 2024",
+      title: "Solveathon 6th Place",
+      description: "Ranked 6th in the Solveathon and received special appreciation from vice chancellor of VIT for our idea.",
+    },
+    {
+      date: "March 2024",
+      title: "Devshouse 4th Place",
+      description: "Participated in the Devshouse competition and secured the 4th place among 600+ teams.",
     },
   ];
 
   return (
     <div id="skills-section">
+      
       {/* Skills Section */}
-      <h1 className="section-title">Skills</h1>
+      <h2 className="section-title">Technical Skills</h2>
       <div className="skills-container">
         {skillsData.map((skill, index) => (
-          <div key={index} className="skill-item" style={{"--skill-color": skill.color}}>
+          <div 
+            key={index} 
+            className="skill-item" 
+            style={{ "--skill-color": skill.color }}
+          >
             <div className="skill-icon-container">
               {skill.icon}
             </div>
@@ -66,59 +99,24 @@ function Skills() {
       </div>
 
       {/* Achievements Section */}
-      <h1 className="section-title">Achievements</h1>
+      <h2 className="section-title">Experience & Achievements</h2>
       <div className="Achievements">
-        {[
-          {
-            date: "January 2026",
-            title: "Intern at Infosys",
-            description:"Cleared Infosys interviews and got selected as an intern for the role of Software Developer.",
-
-          },
-          {
-            date: "November 2024",
-            title: "VITISH (SIH Internal Hackathon) Nominated for Official SIH24",
-            description:
-              "Qualified two elimination rounds and got nominated for official SIH24 from VIT Chennai out of 600 teams.",
-          },
-          {
-            date: "June 2024",
-            title: "Software Developer Intern",
-            description:
-              "Secured a summer internship with The Entrepreneurship Network and learned a lot of new skills.",
-          },
-          {
-            date: "April 2024",
-            title: "Solveathon 6th Place",
-            description:
-              "Ranked 6th in the Solveathon and received special appreciation from vice chancellor of VIT for our idea.",
-          },
-          {
-            date: "March 2024",
-            title: "Devshouse 4th Place",
-            description:
-              "Participated in the Devshouse competition and secured the 4th place among 600+ teams.",
-          },
-        ].map((achievement, index) => (
+        {achievementsData.map((achievement, index) => (
           <div key={index} className="achievement-card">
-            <div className="achievement-date">{achievement.date}</div>
+            <span className="achievement-date">{achievement.date}</span>
             <h3>{achievement.title}</h3>
             <p>{achievement.description}</p>
           </div>
         ))}
       </div>
-<br></br>
-      {/* --- SCHOLARSHIP FORMAT --- */}
-      <h1 className="section-title">Scholarship</h1>
-      
+
+      {/* Scholarship Section */}
       <div className="scholarship-banner">
         <FaTrophy className="scholarship-icon" />
         <div>
-          <h3>
-            Annual Academic Excellence Scholarship
-          </h3>
+          <h3>Annual Academic Excellence Scholarship</h3>
           <p>
-            Got a scholarship from INDIAN AIR FORCE each academic year for academic excellence in class 12th CBSE Boards.
+            Awarded scholarship from INDIAN AIR FORCE each academic year for academic excellence in class 12th CBSE Boards.
           </p>
         </div>
       </div>

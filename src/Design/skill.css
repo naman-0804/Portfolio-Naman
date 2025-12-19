@@ -1,116 +1,114 @@
-/* Skills Section - Light and Dark Mode Styles */
-
-/* Light Mode Styles */
-#skills-section {
-  padding: 3rem;
-  /* UPDATED: Replaced solid color with a light gradient */
-  background-image: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
-  font-family: 'Arial', sans-serif;
-  position: relative;
-  overflow: hidden;
+/* --- Global Variables & Font --- */
+:root {
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --bg-light: #f8f9fa;
+  --bg-dark: #0f172a;
+  --text-light: #1e293b;
+  --text-dark: #f1f5f9;
+  --card-light: rgba(255, 255, 255, 0.85);
+  --card-dark: rgba(30, 41, 59, 0.7);
+  --glass-border-light: 1px solid rgba(255, 255, 255, 0.5);
+  --glass-border-dark: 1px solid rgba(255, 255, 255, 0.1);
+  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --gold-gradient: linear-gradient(135deg, #fbbf24, #d97706);
 }
 
+#skills-section {
+  padding: 1.5rem 2rem 5rem 2rem;
+  background-color: var(--bg-light);
+  /* Subtle mesh gradient background */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
+  font-family: var(--font-main);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+/* Background Pattern */
 #skills-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image:
-    /* UPDATED: Dot color alpha changed for consistency */
-    radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.04) 2%, transparent 0%),
-    radial-gradient(circle at 75px 75px, rgba(0, 0, 0, 0.04) 2%, transparent 0%);
-  background-size: 100px 100px;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
 }
 
+/* Titles */
 .section-title {
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
-  margin-top: -1.5rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
   text-align: center;
   position: relative;
   z-index: 1;
-}
-
-
-.error-message {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  background-color: rgba(220, 53, 69, 0.1);
-  border-left: 4px solid #dc3545;
-  border-radius: 4px;
-  color: #dc3545;
-  position: relative;
-  z-index: 1;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  width: 100%;
 }
 
 .section-title::after {
   content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
+  display: block;
+  width: 60px;
   height: 4px;
-  background-image: linear-gradient(45deg, #ff7eb3, #ff758c);
-  border-radius: 2px;
+  background: var(--primary-gradient);
+  margin: 10px auto 0;
+  border-radius: 4px;
 }
 
+/* --- Skills Grid --- */
 .skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-bottom: 4rem;
+  max-width: 1200px;
+  margin: 0 auto 5rem;
   position: relative;
   z-index: 1;
 }
 
 .skill-item {
   display: flex;
-  align-items: flex-start;
-  background-color: white;
+  align-items: center;
+  background: var(--card-light);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border-light);
   border-radius: 16px;
   padding: 1.5rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-  width: 100%;
-  max-width: 500px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-top: 4px solid var(--skill-color, #ff758c);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
 
 .skill-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .skill-icon-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
-  background-color: var(--skill-color, #ff758c);
+  width: 50px;
+  height: 50px;
+  background: rgba(0,0,0,0.03);
   border-radius: 12px;
-  margin-right: 1.5rem;
-  color: white;
-}
-
-.skill-icon {
-  font-size: 28px;
-}
-
-.skill-content {
-  flex: 1;
+  margin-right: 1.25rem;
+  color: var(--skill-color);
+  font-size: 1.5rem;
+  flex-shrink: 0;
 }
 
 .skill-content h3 {
-  margin: 0 0 0.8rem 0;
-  font-size: 1.3rem;
-  color: #333;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-light);
 }
 
 .skill-tags {
@@ -120,305 +118,262 @@
 }
 
 .skill-tag {
-  display: inline-block;
   background-color: rgba(0,0,0,0.05);
-  color: #555;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  transition: background-color 0.3s, color 0.3s;
+  color: #64748b;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s;
 }
 
-.skill-tag:hover {
-  background-color: var(--skill-color, #ff758c);
+.skill-item:hover .skill-tag {
+  background-color: var(--skill-color);
   color: white;
 }
 
+/* --- Timeline (Achievements) --- */
 .Achievements {
   position: relative;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
   z-index: 1;
 }
 
+/* Central Line */
 .Achievements::before {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 4px;
-  margin-left: -2px;
-  background-image: linear-gradient(to bottom, #ff7eb3, #ff758c);
-  border-radius: 2px;
+  width: 2px;
+  transform: translateX(-50%);
+  background: #e2e8f0;
+  z-index: 0;
 }
 
 .achievement-card {
   position: relative;
   width: 45%;
   padding: 1.5rem;
-  border-radius: 12px;
-  background-color: #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: var(--card-light);
+  backdrop-filter: blur(10px);
+  border: var(--glass-border-light);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 3rem;
+  transition: all 0.3s ease;
 }
 
 .achievement-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+  z-index: 2;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
+/* Connector Dot */
 .achievement-card::after {
   content: '';
   position: absolute;
-  top: 22px;
-  width: 20px;
-  height: 20px;
+  top: 20px;
+  width: 16px;
+  height: 16px;
   background-color: #fff;
-  border: 4px solid #ff758c;
+  border: 4px solid #6366f1;
   border-radius: 50%;
   z-index: 1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
 }
 
+/* Alternating Logic */
 .achievement-card:nth-child(odd) {
-  float: left;
-  clear: both;
+  align-self: flex-start;
 }
 
 .achievement-card:nth-child(even) {
-  float: right;
-  clear: both;
+  align-self: flex-end;
 }
 
 .achievement-card:nth-child(odd)::after {
-  right: -60px;
+  right: -5.555%; /* Dynamic positioning based on width */
+  transform: translateX(50%);
 }
 
 .achievement-card:nth-child(even)::after {
-  left: -60px;
+  left: -5.555%;
+  transform: translateX(-50%);
 }
+
+/* Adjust dots for precise pixel centering if using calc */
+.achievement-card:nth-child(odd)::after { right: calc(-11.11% - 1px); } /* Roughly center + gap */
+.achievement-card:nth-child(even)::after { left: calc(-11.11% - 1px); }
+
+/* Fix dot positioning using absolute layout relative to the central line requires a wrapper, 
+   but with this structure, we use margins. Let's precise it: */
+.achievement-card:nth-child(odd) { margin-right: auto; }
+.achievement-card:nth-child(even) { margin-left: auto; }
+
+/* Re-adjusting dot to be strictly absolute to the container width */
+.Achievements { position: relative; }
+.achievement-card:nth-child(odd)::after {
+  right: -50px; /* Fixed distance */
+  left: auto;
+}
+.achievement-card:nth-child(even)::after {
+  left: -50px; /* Fixed distance */
+  right: auto;
+}
+/* We need to ensure the gap between columns is 100px so 50px is center */
+.achievement-card {
+    width: calc(50% - 50px); /* 50% minus half the gap */
+}
+
 
 .achievement-date {
   display: inline-block;
-  padding: 5px 10px;
-  background-image: linear-gradient(45deg, #ff7eb3, #ff758c);
+  padding: 4px 12px;
+  background: var(--primary-gradient);
   color: white;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.3);
 }
 
 .achievement-card h3 {
-  font-size: 1.2rem;
-  color: #333;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-light);
   margin-bottom: 0.5rem;
 }
 
 .achievement-card p {
-  font-size: 1rem;
-  color: #666;
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.5;
 }
 
-.Achievements::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-/* --- Scholarship Banner Styles --- */
+/* --- Scholarship Feature --- */
 .scholarship-banner {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 25px;
-  margin: 20px 40px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #FFD700, #FFA500);
-  color: #4a2c00;
+  gap: 2rem;
+  padding: 2.5rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  border-radius: 20px;
+  background: white; /* Fallback */
+  background: linear-gradient(135deg, #fff 0%, #fffbf0 100%);
+  border: 1px solid rgba(251, 191, 36, 0.3);
   position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -5px rgba(251, 191, 36, 0.15);
   z-index: 1;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.scholarship-banner .scholarship-icon {
-  font-size: 50px;
+.scholarship-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 6px; height: 100%;
+  background: var(--gold-gradient);
+}
+
+.scholarship-icon {
+  font-size: 3.5rem;
+  color: #d97706;
+  filter: drop-shadow(0 4px 6px rgba(217, 119, 6, 0.2));
   flex-shrink: 0;
 }
 
 .scholarship-banner h3 {
-  margin-top: 0;
-  margin-bottom: 5px;
-  color: #4a2c00;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .scholarship-banner p {
+  color: #78350f;
+  font-weight: 500;
+  font-size: 1.05rem;
   margin: 0;
 }
 
-
-/* Dark Mode Styles */
+/* --- Dark Mode Overrides --- */
 .dark-mode #skills-section {
-  /* UPDATED: Replaced solid color with a dark gradient */
-  background-image: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
-  color: #e0e0e0;
-}
-
-.dark-mode #skills-section::before {
-  background-image:
-    radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.05) 2%, transparent 0%),
-    radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.05) 2%, transparent 0%);
+  background-color: var(--bg-dark);
+  /* Darker mesh */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.08) 0px, transparent 50%);
 }
 
 .dark-mode .section-title {
-  color: #ffffff;
-}
-
-.dark-mode .section-title::after {
-  background-image: linear-gradient(45deg, #bb86fc, #8c54e9);
-}
-
-.dark-mode .error-message {
-  background-color: rgba(220, 53, 69, 0.2);
-  color: #f48fb1;
+  /* Keep gradient or switch to white */
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
 }
 
 .dark-mode .skill-item {
-  background-color: #2d2d2d;
-  color: #e0e0e0;
-  border-top: 4px solid var(--skill-color, #bb86fc);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  background: var(--card-dark);
+  border: var(--glass-border-dark);
 }
 
-.dark-mode .skill-item:hover {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
-}
+.dark-mode .skill-content h3 { color: var(--text-dark); }
+.dark-mode .skill-tag { background-color: rgba(255,255,255,0.05); color: #94a3b8; }
+.dark-mode .skill-icon-container { background: rgba(255,255,255,0.05); }
 
-.dark-mode .skill-icon-container {
-  background-color: var(--skill-color, #8c54e9);
-}
-
-.dark-mode .skill-content h3 {
-  color: #ffffff;
-}
-
-.dark-mode .skill-tag {
-  background-color: #3a3a3a;
-  color: #bbbbbb;
-}
-
-.dark-mode .skill-tag:hover {
-  background-color: var(--skill-color, #8c54e9);
-  color: white;
-}
-
-.dark-mode .Achievements::before {
-  background-image: linear-gradient(to bottom, #bb86fc, #8c54e9);
-}
-
+.dark-mode .Achievements::before { background: #334155; }
 .dark-mode .achievement-card {
-  background-color: #2d2d2d;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  background: var(--card-dark);
+  border: var(--glass-border-dark);
 }
-
-.dark-mode .achievement-card:hover {
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
-}
-
+.dark-mode .achievement-card h3 { color: var(--text-dark); }
+.dark-mode .achievement-card p { color: #94a3b8; }
 .dark-mode .achievement-card::after {
-  background-color: #2d2d2d;
-  border: 4px solid #8c54e9;
+  background-color: #0f172a;
+  border-color: #818cf8;
 }
 
-.dark-mode .achievement-date {
-  background-image: linear-gradient(45deg, #bb86fc, #8c54e9);
-}
-
-.dark-mode .achievement-card h3 {
-  color: #ffffff;
-}
-
-.dark-mode .achievement-card p {
-  color: #bbbbbb;
-}
-
-/* --- Dark Mode Scholarship Banner --- */
 .dark-mode .scholarship-banner {
-  background: linear-gradient(135deg, #bb86fc, #8c54e9);
-  color: #ffffff;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-color: rgba(251, 191, 36, 0.2);
 }
-
-.dark-mode .scholarship-banner h3 {
-  color: #ffffff;
-}
-
-.dark-mode .scholarship-banner p {
-  color: #e0e0e0;
-}
+.dark-mode .scholarship-banner p { color: #e2e8f0; }
 
 
-/* Responsive Styles */
+/* --- Responsive --- */
 @media (max-width: 768px) {
-  .Achievements::before {
-    left: 30px;
-  }
-
+  #skills-section { padding: 3rem 1.5rem; }
+  
+  .Achievements::before { left: 20px; }
+  
   .achievement-card {
-    width: calc(100% - 80px);
-    float: right;
-    clear: both;
-    margin-left: 80px;
+    width: calc(100% - 50px);
+    margin-left: 50px !important;
+    margin-right: 0 !important;
   }
-
+  
   .achievement-card::after {
-    left: -50px;
+    left: -38px !important; /* Adjust based on new padding */
+    right: auto !important;
   }
-
-  .achievement-card:nth-child(odd)::after,
-  .achievement-card:nth-child(even)::after {
-    left: -50px;
-  }
-
-  .skill-item {
-    max-width: 100%;
-  }
-
-  .scholarship-banner {
-    margin: 20px; /* Adjust margin for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .achievement-card {
-    width: calc(100% - 60px);
-    margin-left: 60px;
-  }
-
-  .achievement-card::after {
-    left: -40px;
-  }
-
-  .achievement-card:nth-child(odd)::after,
-  .achievement-card:nth-child(even)::after {
-    left: -40px;
-  }
-
-  .skill-item {
-    flex-direction: column;
-  }
-
-  .skill-icon-container {
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
-
+  
   .scholarship-banner {
     flex-direction: column;
     text-align: center;
-    gap: 15px;
-    margin: 20px 10px; /* Further adjust margin */
+    padding: 2rem;
+  }
+  
+  .scholarship-banner::before {
+    width: 100%; height: 6px;
+    top: 0; left: 0;
   }
 }
