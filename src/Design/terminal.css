@@ -1,0 +1,60 @@
+.terminal-card {
+  background: #020617;
+  border-radius: 12px;
+  margin-top: 20px;
+  overflow: hidden;
+  font-family: monospace;
+}
+
+.terminal-header {
+  background: #0f172a;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.red { background: #ef4444; }
+.yellow { background: #facc15; }
+.green { background: #22c55e; }
+
+.terminal-title {
+  margin-left: 8px;
+  color: #cbd5f5;
+  font-size: 0.85rem;
+}
+
+.terminal-body {
+  padding: 12px;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.terminal-line {
+  margin-bottom: 4px;
+}
+
+.terminal-input {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.prompt {
+  color: #22c55e;
+}
+
+.terminal-input input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e5e7eb;
+  flex: 1;
+  font-family: monospace;
+}

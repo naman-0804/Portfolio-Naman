@@ -1,7 +1,8 @@
 import React from 'react';
 import mypic from '../Images/IMG_20240807_232437_330.jpeg';
 import { FaLinkedin, FaGithub, FaYoutube, FaDownload } from 'react-icons/fa';
-
+import Terminal from './terminal.js';
+import '../Design/terminal.css';
 function Home() {
 
   return (
@@ -33,7 +34,7 @@ function Home() {
               <div className="recommendation-header">
                 <h4>Recommendation</h4>
                 <div className="recommender-info">
-                  <span className="recommender-name">Srikrupa HD</span>
+                  <span className="recommender-name">Srikrupa HD<br/></span>
                   <span className="recommender-title">Working at The Entrepreneurship Network</span>
                   <br />
                   <span className="recommender-title">Data Analyst | Data Scientist | Python | Web developer | Power BI | Mentor | Problem solver</span>
@@ -77,18 +78,14 @@ function Home() {
               </a>
             </div>
 
-           <div className="section-title">
-            <h3>What I Can Build for You</h3>
-            <div className="title-underline"></div>
-          </div>
+<div className="section-title">
+  <h3>Interactive CLI</h3>
+  <div className="title-underline"></div>
+</div>
 
-          <ul className="services-list">
-            <li>⚙️ Robust backend systems using Flask or Node.js with secure APIs</li>
-            <li>🔐 Authentication-enabled platforms using modern auth providers</li>
-            <li>🌐 Scalable full-stack web applications using React and MongoDB</li>
-            <li>☁️ Cloud-native apps leveraging AWS services and serverless architecture</li>
-            <li>🧠 Intelligent systems powered by Machine Learning and Computer Vision</li>
-          </ul>
+<div className="terminal-wrapper">
+  <Terminal />
+</div>
 
           </div>
         </div>
