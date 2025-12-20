@@ -215,3 +215,39 @@
 .blog-card:nth-child(2) { animation-delay: 0.2s; }
 .blog-card:nth-child(3) { animation-delay: 0.3s; }
 .blog-card:nth-child(4) { animation-delay: 0.4s; }  
+/* =========================================
+   LARGE SCREENS (4K - 8K)
+   ========================================= */
+
+/* 2K - 4K */
+@media (min-width: 2000px) {
+  .blog-container { max-width: 2000px; }
+  .section-title { font-size: 4rem; }
+  .blog-grid { gap: 3rem; }
+  .blog-image-container { height: 280px; }
+  .blog-title h3 { font-size: 1.8rem; }
+  .blog-description { font-size: 1.2rem; }
+}
+
+/* 5K - 8K */
+@media (min-width: 4000px) {
+  #blog-section { padding: 8rem; }
+  .blog-container { max-width: 4200px; }
+  
+  .section-title { font-size: 7rem; margin-bottom: 8rem; }
+  .section-title::after { width: 150px; height: 10px; }
+  
+  .blog-grid { 
+    gap: 6rem; 
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  }
+  
+  .blog-card { border-radius: 40px; }
+  .blog-image-container { height: 500px; }
+  
+  .blog-content { padding: 4rem; }
+  .blog-meta { font-size: 2rem; margin-bottom: 2rem; }
+  
+  .blog-title h3 { font-size: 3.5rem; margin-bottom: 2rem; }
+  .blog-description { font-size: 2.5rem; line-height: 1.6; -webkit-line-clamp: 4; }
+}

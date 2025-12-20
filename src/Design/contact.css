@@ -343,3 +343,52 @@
   .section-title { font-size: 2rem; }
   .contact-form-container { padding: 1.5rem; }
 }
+/* =========================================
+   LARGE SCREENS (4K - 8K)
+   ========================================= */
+
+/* 2K - 4K */
+@media (min-width: 2000px) {
+  .contact-container { max-width: 2000px; }
+  .section-title { font-size: 4rem; }
+  .section-subtitle { font-size: 1.6rem; max-width: 1000px; }
+  .contact-form h2 { font-size: 2.5rem; }
+  .form-group input, .form-group textarea { padding: 1.5rem; font-size: 1.2rem; }
+}
+
+/* 5K - 8K */
+@media (min-width: 4000px) {
+  #contact-section { padding: 8rem; }
+  .contact-container { max-width: 4200px; }
+  
+  .section-title { font-size: 7rem; margin-bottom: 3rem; }
+  .section-subtitle { font-size: 3rem; max-width: 2500px; margin-bottom: 8rem; }
+  
+  .contact-content { gap: 6rem; grid-template-columns: 1fr 1.5fr; }
+  .contact-left-col { gap: 4rem; }
+  
+  .contact-card, .social-links, .contact-form-container { padding: 4rem; border-radius: 40px; }
+  
+  /* Left Side */
+  .contact-icon { width: 120px; height: 120px; font-size: 4rem; border-radius: 30px; }
+  .contact-details h3 { font-size: 2.8rem; margin-bottom: 1rem; }
+  .contact-details p { font-size: 2.2rem; }
+  
+  .social-links h3 { font-size: 3rem; margin-bottom: 3rem; }
+  .social-icons { gap: 3rem; }
+  .social-icon-link { width: 120px; height: 120px; font-size: 4rem; border-radius: 30px; }
+  
+  /* Form */
+  .contact-form-container { padding: 6rem; }
+  .contact-form h2 { font-size: 4rem; margin-bottom: 5rem; }
+  .form-group { margin-bottom: 4rem; }
+  .form-group label { font-size: 2.5rem; margin-bottom: 1.5rem; }
+  .form-group input, .form-group textarea { 
+    padding: 2.5rem; 
+    font-size: 2.5rem; 
+    border-radius: 30px; 
+    border-width: 2px;
+  }
+  
+  .submit-button { padding: 2.5rem; font-size: 3rem; border-radius: 30px; }
+}

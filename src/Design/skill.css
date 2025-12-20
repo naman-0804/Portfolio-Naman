@@ -377,3 +377,61 @@
     top: 0; left: 0;
   }
 }
+/* =========================================
+   LARGE SCREENS (4K - 8K)
+   ========================================= */
+
+/* 2K - 4K */
+@media (min-width: 2000px) {
+  .skills-container { max-width: 2200px; gap: 3rem; }
+  .section-title { font-size: 4rem; }
+  .skill-item { padding: 2.5rem; }
+  .skill-content h3 { font-size: 1.8rem; }
+  .skill-tag { font-size: 1.1rem; padding: 0.6rem 1.2rem; }
+  
+  .Achievements { max-width: 1800px; }
+  .achievement-card { padding: 3rem; }
+  .achievement-card h3 { font-size: 1.8rem; }
+  .achievement-card p { font-size: 1.4rem; }
+}
+
+/* 5K - 8K */
+@media (min-width: 4000px) {
+  #skills-section { padding: 8rem; }
+  .section-title { font-size: 7rem; margin-bottom: 8rem; }
+  .section-title::after { width: 150px; height: 10px; }
+  
+  .skills-container { 
+    max-width: 4500px; 
+    gap: 4rem; 
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  }
+  
+  .skill-item { padding: 4rem; border-radius: 40px; }
+  .skill-icon-container { width: 120px; height: 120px; font-size: 4rem; margin-right: 2.5rem; }
+  .skill-content h3 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+  .skill-tag { font-size: 2rem; padding: 1rem 2rem; margin: 0.5rem; border-radius: 50px; }
+  
+  /* Timeline Scaling */
+  .Achievements { max-width: 3500px; padding: 100px 0; }
+  .Achievements::before { width: 6px; }
+  
+  .achievement-card { width: 45%; padding: 4rem; border-radius: 40px; margin-bottom: 6rem; }
+  .achievement-card::after { width: 40px; height: 40px; border-width: 8px; top: 40px; }
+  
+  /* Adjust Dot Positions for Giant Screens */
+  .achievement-card:nth-child(odd) { margin-right: auto; }
+  .achievement-card:nth-child(even) { margin-left: auto; }
+  .achievement-card:nth-child(odd)::after { right: -6rem; }
+  .achievement-card:nth-child(even)::after { left: -6rem; }
+  
+  .achievement-date { font-size: 1.8rem; padding: 1rem 2.5rem; margin-bottom: 2rem; }
+  .achievement-card h3 { font-size: 3rem; margin-bottom: 1.5rem; }
+  .achievement-card p { font-size: 2.5rem; line-height: 1.6; }
+  
+  /* Scholarship Banner */
+  .scholarship-banner { max-width: 3500px; padding: 6rem; border-radius: 50px; margin: 6rem auto; }
+  .scholarship-icon { font-size: 8rem; }
+  .scholarship-banner h3 { font-size: 4rem; }
+  .scholarship-banner p { font-size: 2.5rem; }
+}

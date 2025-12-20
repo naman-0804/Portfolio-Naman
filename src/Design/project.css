@@ -256,3 +256,40 @@
 .project-item:nth-child(6) { animation-delay: 0.3s; }
 .project-item:nth-child(7) { animation-delay: 0.35s; }
 .project-item:nth-child(8) { animation-delay: 0.4s; }
+/* =========================================
+   LARGE SCREENS (4K - 8K)
+   ========================================= */
+
+/* 2K - 4K */
+@media (min-width: 2000px) {
+  .project-grid { max-width: 2400px; gap: 4rem; }
+  .project-image-container { height: 350px; }
+  .project-info h3 { font-size: 1.6rem; }
+  .tech-tag { font-size: 1rem; padding: 0.5rem 1rem; }
+}
+
+/* 5K - 8K */
+@media (min-width: 4000px) {
+  #project-section { padding: 8rem; }
+  .section-title { font-size: 7rem; margin-bottom: 8rem; }
+  .section-title::after { width: 150px; height: 10px; }
+  
+  .project-grid { 
+    max-width: 4600px; 
+    gap: 6rem; 
+    grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
+  }
+  
+  .project-item { border-radius: 40px; }
+  .project-image-container { height: 600px; }
+  
+  .project-description p { font-size: 2.5rem; padding: 0 2rem; }
+  .tech-stack { gap: 1.5rem; }
+  .tech-tag { font-size: 2rem; padding: 1rem 2.5rem; border: 3px solid rgba(255,255,255,0.2); }
+  
+  .project-info { padding: 3rem 4rem; }
+  .project-info h3 { font-size: 3rem; }
+  
+  .project-links { gap: 2.5rem; }
+  .icon-button { font-size: 3.5rem; }
+}

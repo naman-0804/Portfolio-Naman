@@ -278,3 +278,45 @@
 .experience-card:nth-child(3) { animation-delay: 0.3s; }
 .education-card:nth-child(1) { animation-delay: 0.4s; }
 .education-card:nth-child(2) { animation-delay: 0.5s; }
+/* =========================================
+   LARGE SCREENS (4K - 8K)
+   ========================================= */
+
+/* 2K - 4K */
+@media (min-width: 2000px) {
+  .section-container { max-width: 2200px; }
+  .section-title { font-size: 4rem; }
+  .experience-grid, .education-grid { gap: 4rem; }
+  .card-header h3 { font-size: 1.8rem; }
+  .card-body p, .achievements li { font-size: 1.3rem; }
+}
+
+/* 5K - 8K */
+@media (min-width: 4000px) {
+  #experience-section { padding: 8rem; }
+  .section-container { max-width: 4500px; }
+  
+  .section-title { font-size: 7rem; margin-bottom: 8rem; }
+  .section-title::after { width: 150px; height: 10px; }
+  
+  .experience-grid, .education-grid { 
+    gap: 6rem; 
+    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+  }
+  
+  .experience-card, .education-card { border-radius: 40px; }
+  
+  .card-header { padding: 4rem; gap: 3rem; }
+  .icon-container { width: 120px; height: 120px; font-size: 4rem; border-radius: 30px; }
+  .card-header h3 { font-size: 3.5rem; }
+  
+  .card-body { padding: 4rem; }
+  .info-row { font-size: 2.2rem; margin-bottom: 3rem; gap: 3rem; }
+  .card-body p { font-size: 2.5rem; margin-bottom: 4rem; }
+  
+  .achievements li { font-size: 2.5rem; padding-left: 3rem; margin-bottom: 1.5rem; }
+  
+  .tech-label { font-size: 2.2rem; margin-bottom: 2rem; }
+  .tech-pills { gap: 1.5rem; }
+  .tech-pills span { font-size: 2rem; padding: 1rem 2.5rem; border-radius: 50px; }
+}

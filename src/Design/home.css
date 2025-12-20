@@ -460,3 +460,48 @@
   
   .about-card { padding: 1.5rem; }
 }
+/* =========================================
+   LARGE SCREENS (4K - 8K)
+   ========================================= */
+
+/* 2K - 4K Monitors */
+@media (min-width: 2000px) {
+  .hero-content {
+    max-width: 2400px;
+    gap: 5rem;
+  }
+  .hero-left { max-width: 500px; }
+  .profile-image-container { height: 400px; }
+  .profile-card h1 { font-size: 2.5rem; }
+  .content-title { font-size: 2.2rem; }
+  .about-content p { font-size: 1.4rem; line-height: 2; }
+}
+
+/* 5K - 8K Monitors */
+@media (min-width: 4000px) {
+  .hero-container { padding: 10rem 5rem; }
+  .hero-content {
+    max-width: 4500px;
+    gap: 8rem;
+  }
+  .hero-left { max-width: 900px; gap: 4rem; }
+  .profile-card { border-radius: 40px; }
+  .profile-image-container { height: 700px; margin: 2rem; border-radius: 30px; }
+  
+  .profile-card h1 { font-size: 4rem; margin-top: 2rem; }
+  .profile-card h2 { font-size: 2.5rem; margin-bottom: 3rem; }
+  
+  .social-icon { width: 90px; height: 90px; font-size: 2.5rem; border-radius: 20px; }
+  
+  /* Right Side Scaling */
+  .about-card { padding: 5rem; border-radius: 40px; }
+  .content-title { font-size: 4rem; margin-bottom: 3rem; }
+  .about-content p { font-size: 2.5rem; margin-bottom: 3rem; }
+  
+  /* Resume Section Scaling */
+  .resume-section { padding: 3rem; border-radius: 30px; margin-bottom: 4rem; }
+  .resume-text h4 { font-size: 2.5rem; }
+  .resume-text p { font-size: 2rem; }
+  .resume-badge { font-size: 1.5rem; padding: 1rem 1.5rem; }
+  .resume-btn { font-size: 2rem; padding: 1.5rem 3rem; border-radius: 20px; }
+}
