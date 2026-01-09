@@ -15,7 +15,7 @@ import '../src/Design/project.css';
 import '../src/Design/skill.css';
 import '../src/Design/blog.css';
 import '../src/Design/terminal.css';
-
+import '../src/Design/stats.css';
 // Component Imports
 import Home from './components/Home';
 import Projects from './components/Projects';
@@ -24,7 +24,7 @@ import Experience from './components/Experience';
 import Contact from './components/Contact';
 import BlogSection from './components/Blogsection';
 import EyeFollower from './components/EyeFollower';
-
+import CodingStats from './components/CodingStats';
 const NavBar = ({ toggleDarkMode, darkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -64,6 +64,10 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
             </Link>
             <Link to="/blogs" className={`nav-link ${location.pathname === '/blogs' ? 'active' : ''}`}>
               Blogs
+            </Link>
+
+            <Link to="/CodingStats" className={`nav-link ${location.pathname === '/CodingStats' ? 'active' : ''}`}>
+              Coding Stats
             </Link>
             <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>
               Contact
@@ -125,6 +129,7 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/blogs" element={<BlogSection />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/CodingStats" element={<CodingStats />} />
           </Routes>
         </main>
         <SpeedInsights/>

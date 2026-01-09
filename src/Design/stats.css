@@ -1,0 +1,213 @@
+/* ===============================
+   CODING STATS CONTAINER
+   =============================== */
+.stats-container {
+  padding: 4rem 2rem;
+  background-color: var(--bg-light); /* Uses your global vars */
+  font-family: var(--font-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wrapper: Controls the grid layout */
+.stats-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  /* Fixed: Ensures Left Card is at least 320px wide so it doesn't squish */
+  grid-template-columns: minmax(320px, 1fr) 2fr; 
+  gap: 2.5rem;
+  align-items: stretch; /* Makes both cards same height */
+}
+
+/* ===============================
+   LEFT CARD (SUMMARY)
+   =============================== */
+.stats-summary {
+  background: var(--card-light);
+  backdrop-filter: blur(12px);
+  border: var(--glass-border-light);
+  border-radius: 24px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  
+  /* Flexbox to push Difficulty to bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stats-summary h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.total-solved {
+  font-size: 4.5rem;
+  font-weight: 900;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.total-label {
+  font-size: 1rem;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* Difficulty Section */
+.difficulty-breakdown {
+  width: 100%;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top: 1.5rem;
+}
+
+.difficulty-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.difficulty-item span.count {
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.difficulty-item.easy { color: #10b981; }
+.difficulty-item.medium { color: #8b5cf6; }
+.difficulty-item.hard { color: #f59e0b; }
+
+/* ===============================
+   RIGHT CARD (GITHUB)
+   =============================== */
+.stats-details {
+  background: var(--card-light);
+  backdrop-filter: blur(12px);
+  border: var(--glass-border-light);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stats-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  text-align: left;
+}
+
+.github-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.platform-card {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.platform-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.platform-badge {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.platform-total {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-light);
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.platform-stats {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ===============================
+   DARK MODE
+   =============================== */
+.dark-mode .stats-container { background-color: var(--bg-dark); }
+
+.dark-mode .stats-summary,
+.dark-mode .stats-details {
+  background: var(--card-dark);
+  border: var(--glass-border-dark);
+}
+
+.dark-mode .stats-summary h2,
+.dark-mode .total-label,
+.dark-mode .stats-title,
+.dark-mode .platform-total,
+.dark-mode .platform-stats {
+  color: var(--text-dark);
+}
+
+.dark-mode .difficulty-breakdown { border-top-color: rgba(255,255,255,0.1); }
+
+.dark-mode .platform-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.dark-mode .platform-card:hover { background: rgba(255, 255, 255, 0.08); }
+
+/* ===============================
+   RESPONSIVE (Prevents Overflow)
+   =============================== */
+@media (max-width: 1024px) {
+  /* Stack cards vertically on tablets so they don't squish */
+  .stats-wrapper {
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .github-grid {
+    grid-template-columns: 1fr; /* Stack Github cards on mobile */
+  }
+  
+  .total-solved {
+    font-size: 3.5rem;
+  }
+  
+  .stats-container {
+    padding: 2rem 1rem;
+  }
+}

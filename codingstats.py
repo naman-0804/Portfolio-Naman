@@ -74,6 +74,38 @@ final_medium = codolio_medium + tuf_medium
 final_hard = codolio_hard + tuf_hard
 final_total = final_easy + final_medium + final_hard
 
+# 4️⃣ GITHUB (FROM CODOLIO) - FIXED
+# =========================
+github_url = "https://api.codolio.com/github/profile?userKey=naman08"
+
+github_headers = {
+    "accept": "*/*",
+    "referer": "https://codolio.com/"
+}
+
+try:
+    res = requests.get(github_url, headers=github_headers, timeout=15)
+
+    if res.status_code != 200:
+        raise Exception(f"GitHub API error {res.status_code}")
+
+    github_json = res.json()
+
+    gh = github_json.get("data", {})   # ✅ IMPORTANT LINE
+
+    github_data = {
+        "githubProfile": gh.get("githubProfile"),
+        "stars": gh.get("stars", 0),
+        "issues": gh.get("issues", 0),
+        "totalActiveDays": gh.get("totalActiveDays", 0),
+        "pushRequestsCount": gh.get("pushRequestsCount", 0),
+        "commits": gh.get("totalContributions", 0)
+    }
+
+except Exception as e:
+    print("GitHub fetch failed:", e)
+    github_data = {}
+    
 import json
 import requests
 
@@ -98,7 +130,7 @@ output = {
         "medium": final_medium,
         "hard": final_hard,
         "total": final_total
-    }
+    },"github": github_data
 }
 
 with open("public/coding-stats.json", "w") as f:
