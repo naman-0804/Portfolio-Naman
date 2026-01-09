@@ -6,16 +6,16 @@
     "total": 293
   },
   "tuf": {
-    "easy": 200,
+    "easy": 201,
     "medium": 102,
     "hard": 27,
-    "total": 329
+    "total": 330
   },
   "final": {
-    "easy": 309,
+    "easy": 310,
     "medium": 211,
     "hard": 38,
-    "total": 558
+    "total": 559
   },
   "github": {
     "githubProfile": "naman-0804",
