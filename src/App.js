@@ -4,7 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Icons for the Floating Dock
-import { FaHome, FaLaptopCode, FaShapes, FaBriefcase, FaPenNib, FaEnvelope } from 'react-icons/fa';
+import { FaHome, FaLaptopCode, FaShapes, FaBriefcase, FaPenNib, FaEnvelope, FaCode } from 'react-icons/fa';
 
 // CSS Imports
 import '../src/Design/home.css';
@@ -101,6 +101,9 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
         </Link>
         <Link to="/blogs" className={`mobile-nav-item ${location.pathname === '/blogs' ? 'active' : ''}`}>
           <FaPenNib />
+        </Link>
+        <Link to="/CodingStats" className={`mobile-nav-item ${location.pathname === '/CodingStats'?'active':''}`}>
+        <FaCode/>
         </Link>
         <Link to="/contact" className={`mobile-nav-item ${location.pathname === '/contact' ? 'active' : ''}`}>
           <FaEnvelope />
