@@ -29,6 +29,7 @@ const CodingStats = () => {
     );
   }
 
+  // Handle data safely
   const { easy, medium, hard, total } = stats.final || {};
   const github = stats.github || {};
 
@@ -43,9 +44,27 @@ const CodingStats = () => {
           
           {/* Top Section: Title & Total */}
           <div className="summary-top">
-            <h2>Problem Solving</h2>
+            <h2>DSA - Problem Solving</h2>
+            
             <div className="total-solved">{total}</div>
             <span className="total-label">Total Solved</span>
+
+            {/* PLATFORM NAMES ROW */}
+            <div className="platforms-row">
+              <span className="p-name leetcode">LeetCode</span>
+              <span className="divider">•</span>
+              <span className="p-name gfg">GFG</span>
+              <span className="divider">•</span>
+              <span className="p-name tuf">TUF</span>
+              <span className="divider">•</span>
+              <span className="p-name ninjas">Coding Ninjas</span>
+              <span className="divider">•</span>
+              <span className="p-name interviewbit">InterviewBit</span>
+              <span className="divider">•</span>
+              <span className="p-name codechef">CodeChef</span>
+              <span className="divider">•</span>
+              <span className="p-name codeforces">CodeForces</span>
+            </div>
           </div>
 
           {/* Bottom Section: Difficulty List */}
@@ -82,7 +101,7 @@ const CodingStats = () => {
             <div className="platform-card">
               <span className="platform-badge" style={{ background: "#8b5cf6" }}>Active</span>
               <div className="platform-total">{github.totalActiveDays || 0}</div>
-              <div className="platform-stats">Days commiting</div>
+              <div className="platform-stats">Days coding</div>
             </div>
 
             <div className="platform-card">

@@ -15,8 +15,8 @@
   max-width: 1200px;
   width: 100%;
   display: grid;
-  /* Fixed: Ensures Left Card is at least 320px wide so it doesn't squish */
-  grid-template-columns: minmax(320px, 1fr) 2fr; 
+  /* Left Card min-width 350px to fit the names */
+  grid-template-columns: minmax(350px, 1fr) 2fr; 
   gap: 2.5rem;
   align-items: stretch; /* Makes both cards same height */
 }
@@ -60,8 +60,41 @@
   font-size: 1rem;
   color: #94a3b8;
   display: block;
-  margin-bottom: 2rem;
 }
+
+/* --- PLATFORM ROW STYLES --- */
+.platforms-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* Wraps to next line if names are too long */
+  padding: 0 10px;
+}
+
+.p-name {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.divider {
+  color: rgba(148, 163, 184, 0.4); /* Light gray dot */
+  font-size: 0.6rem;
+}
+
+/* Brand Colors */
+.leetcode { color: #ffa116; }     /* Orange */
+.gfg { color: #2f8d46; }          /* Green */
+.tuf { color: #cc0000; }          /* Red */
+.ninjas { color: #f05a28; }       /* Orange */
+.interviewbit { color: #00897b; } /* Teal */
+.codechef { color: #8b4513; }     /* Brown */
+.codeforces { color: #3182ce; }   /* Blue */
+
 
 /* Difficulty Section */
 .difficulty-breakdown {
@@ -186,6 +219,10 @@
 }
 
 .dark-mode .platform-card:hover { background: rgba(255, 255, 255, 0.08); }
+
+/* Dark Mode Colors for Platforms */
+.dark-mode .tuf { color: #ff375f; }
+.dark-mode .codechef { color: #d2691e; } /* Lighter brown for dark mode */
 
 /* ===============================
    RESPONSIVE (Prevents Overflow)
