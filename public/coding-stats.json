@@ -1,0 +1,20 @@
+{
+  "codolio": {
+    "easy": 109,
+    "medium": 109,
+    "hard": 11,
+    "total": 293
+  },
+  "tuf": {
+    "easy": 200,
+    "medium": 102,
+    "hard": 27,
+    "total": 329
+  },
+  "final": {
+    "easy": 309,
+    "medium": 211,
+    "hard": 38,
+    "total": 558
+  }
+}
