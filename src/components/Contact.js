@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { FaEnvelope, FaPhone, FaPaperPlane,FaLinkedin, FaGithub,FaUser, FaCommentAlt, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import {
+  FaEnvelope, FaPhone, FaPaperPlane, FaLinkedin,
+  FaGithub, FaUser, FaCommentAlt, FaTwitter
+} from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
 
@@ -9,166 +12,177 @@ function Contact() {
     email: '',
     message: ''
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
+  // 🔐 OTP states
+  const [otpSent, setOtpSent] = useState(false);
+  const [generatedOtp, setGeneratedOtp] = useState('');
+  const [enteredOtp, setEnteredOtp] = useState('');
+  const [isVerified, setIsVerified] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
-  
+
+  // 📩 Send OTP
+  const sendOtp = () => {
+    if (!formData.email) return;
+
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    setGeneratedOtp(otp);
+
+    emailjs.send(
+      'service_655mg9c',
+      'template_otp', // 🔴 OTP template
+      { to_email: formData.email, otp },
+      'K34YWs3fe407eAfCX'
+    ).then(() => {
+      setOtpSent(true);
+      Swal.fire('OTP Sent', 'Check your email', 'success');
+    }).catch(() => {
+      Swal.fire('Error', 'Failed to send OTP', 'error');
+    });
+  };
+
+  // ✅ Verify OTP
+  const verifyOtp = () => {
+    if (enteredOtp === generatedOtp) {
+      setIsVerified(true);
+      Swal.fire('Verified', 'Email verified successfully', 'success');
+    } else {
+      Swal.fire('Invalid OTP', 'Please try again', 'error');
+    }
+  };
+
+  // ✉️ Send Message
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!isVerified) return;
+
     setIsSubmitting(true);
 
-    // Make sure your EmailJS Service/Template IDs are correct
-    emailjs.send('(stopped)service_655mg9c', 'template_jo7ezml', formData, 'K34YWs3fe407eAfCX')
-      .then((response) => {
-        setIsSubmitting(false);
+    emailjs.send(
+      'service_655mg9c',
+      'template_jo7ezml',
+      formData,
+      'K34YWs3fe407eAfCX'
+    ).then(() => {
+      setIsSubmitting(false);
+      Swal.fire('Message Sent!', 'I will get back to you soon.', 'success');
 
-        Swal.fire({
-          title: 'Message Sent!',
-          text: 'Thank you for reaching out. I will get back to you soon.',
-          icon: 'success',
-          confirmButtonColor: '#6366f1', // Updated to match theme
-          background: '#f8f9fa',
-          color: '#1e293b'
-        });
-
-        setFormData({ name: '', email: '', message: '' });
-      }, (error) => {
-        setIsSubmitting(false);
-
-        Swal.fire({
-          title: 'Oops!',
-          text: 'Something went wrong. Please try again later.',
-          icon: 'error',
-          confirmButtonColor: '#d33'
-        });
-      });
+      setFormData({ name: '', email: '', message: '' });
+      setOtpSent(false);
+      setIsVerified(false);
+      setEnteredOtp('');
+    }).catch(() => {
+      setIsSubmitting(false);
+      Swal.fire('Oops!', 'Something went wrong.', 'error');
+    });
   };
-  
+
   return (
     <div id="contact-section">
       <div className="contact-container">
-        
-        {/* Header */}
+
         <h1 className="section-title">Get In Touch</h1>
         <p className="section-subtitle">
           Have a question or want to work together? Drop me a message!
         </p>
-        
+
         <div className="contact-content">
-          
-          {/* Left Column: Info & Social */}
+
+          {/* LEFT */}
           <div className="contact-left-col">
             <div className="contact-card">
-              <div className="contact-icon">
-                <FaEnvelope />
-              </div>
+              <div className="contact-icon"><FaEnvelope /></div>
               <div className="contact-details">
                 <h3>Email</h3>
                 <p>namansrivastava0104@gmail.com</p>
               </div>
             </div>
-            
+
             <div className="contact-card">
-              <div className="contact-icon">
-                <FaPhone />
-              </div>
+              <div className="contact-icon"><FaPhone /></div>
               <div className="contact-details">
                 <h3>Phone</h3>
                 <p>+91 (Available on Request)</p>
               </div>
             </div>
-            
+
             <div className="social-links">
               <h3>Connect With Me</h3>
               <div className="social-icons">
-                <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="LinkedIn">
-                  <FaLinkedin />
-                </a>
-                <a href="https://github.com/naman-0804" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="GitHub">
-                  <FaGithub />
-                </a>
-                <a href="https://x.com/n_a_m_a_n_16" target="_blank" rel="noopener noreferrer" className="social-icon-link" aria-label="Instagram">
-                  <FaTwitter />
-                </a>
-
+                <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noreferrer" className="social-icon-link"><FaLinkedin /></a>
+                <a href="https://github.com/naman-0804" target="_blank" rel="noreferrer" className="social-icon-link"><FaGithub /></a>
+                <a href="https://x.com/n_a_m_a_n_16" target="_blank" rel="noreferrer" className="social-icon-link"><FaTwitter /></a>
               </div>
             </div>
           </div>
-          
-          {/* Right Column: Form */}
+
+          {/* FORM */}
           <div className="contact-form-container">
             <form className="contact-form" onSubmit={handleSubmit}>
               <h2>Send Me a Message</h2>
-              
+
               <div className="form-group">
-                <label htmlFor="name">
-                  <FaUser /> <span>Your Name</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Enter your name"
-                  required
-                />
+                <label><FaUser /> Your Name</label>
+                <input type="text" name="name" value={formData.name} onChange={handleChange} required />
               </div>
-              
+
+              {/* 📧 Email + Verify */}
               <div className="form-group">
-                <label htmlFor="email">
-                  <FaEnvelope /> <span>Your Email</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Enter your email"
-                  required
-                />
+                <label><FaEnvelope /> Your Email</label>
+                <div className="email-row">
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    disabled={isVerified}
+                    required
+                  />
+
+                  {!isVerified && (
+                    <button type="button" className="verify-btn" onClick={sendOtp}>
+                      Verify
+                    </button>
+                  )}
+
+                  {isVerified && <span className="verified-badge">✔</span>}
+                </div>
               </div>
-              
+
+              {/* 🔢 OTP */}
+              {otpSent && !isVerified && (
+                <div className="form-group">
+                  <label>Enter OTP</label>
+                  <div className="email-row">
+                    <input
+                      type="text"
+                      value={enteredOtp}
+                      onChange={(e) => setEnteredOtp(e.target.value)}
+                      placeholder="6-digit OTP"
+                    />
+                    <button type="button" className="verify-btn" onClick={verifyOtp}>
+                      Verify OTP
+                    </button>
+                  </div>
+                </div>
+              )}
+
               <div className="form-group">
-                <label htmlFor="message">
-                  <FaCommentAlt /> <span>Your Message</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="How can I help you?"
-                  rows="5"
-                  required
-                ></textarea>
+                <label><FaCommentAlt /> Your Message</label>
+                <textarea name="message" rows="5" value={formData.message} onChange={handleChange} required />
               </div>
-              
-              <button 
-                type="submit" 
-                className="submit-button"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <span className="spinner"></span>
-                ) : (
-                  <>
-                    <FaPaperPlane /> Send(stopped due to spam)
-                  </>
-                )}
+
+              <button type="submit" className="submit-button" disabled={!isVerified || isSubmitting}>
+                {isSubmitting ? <span className="spinner"></span> : <><FaPaperPlane /> Send Message</>}
               </button>
-            
+
             </form>
           </div>
-
         </div>
       </div>
     </div>

@@ -392,3 +392,30 @@
   
   .submit-button { padding: 2.5rem; font-size: 3rem; border-radius: 30px; }
 }
+/* OTP / Email Verify */
+.email-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.verify-btn {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.verify-btn:hover {
+  opacity: 0.9;
+}
+
+.verified-badge {
+  font-size: 1.4rem;
+  color: #22c55e;
+  font-weight: bold;
+}
