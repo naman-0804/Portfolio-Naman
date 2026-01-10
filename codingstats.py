@@ -1,4 +1,6 @@
 import requests
+import json
+import re
 
 # =========================
 # 1️⃣ CODOLIO (ALL EXCEPT TUF)
@@ -74,6 +76,8 @@ final_medium = codolio_medium + tuf_medium
 final_hard = codolio_hard + tuf_hard
 final_total = final_easy + final_medium + final_hard
 
+
+# =========================
 # 4️⃣ GITHUB (FROM CODOLIO) - FIXED
 # =========================
 github_url = "https://api.codolio.com/github/profile?userKey=naman08"
@@ -90,7 +94,6 @@ try:
         raise Exception(f"GitHub API error {res.status_code}")
 
     github_json = res.json()
-
     gh = github_json.get("data", {})   # ✅ IMPORTANT LINE
 
     github_data = {
@@ -105,13 +108,35 @@ try:
 except Exception as e:
     print("GitHub fetch failed:", e)
     github_data = {}
-    
-import json
-import requests
 
-# --- YOUR EXISTING LOGIC (same as before) ---
-# After computing final_easy, final_medium, final_hard, etc.
 
+# =========================
+# 5️⃣ YOUTUBE VIEWS (TEXT ONLY)
+# =========================
+yt_url = "https://www.youtube.com/@naman_0804/about"
+yt_headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+yt_views_text = "0 views"
+
+try:
+    res = requests.get(yt_url, headers=yt_headers)
+    if res.status_code == 200:
+        match = re.search(r'"viewCountText":\s*"([^"]+)"', res.text)
+        if match:
+            yt_views_text = match.group(1)
+            print(f"YouTube Found: {yt_views_text}")
+    else:
+        print(f"YouTube fetch failed status: {res.status_code}")
+except Exception as e:
+    print("YouTube fetch error:", e)
+
+
+# =========================
+# 6️⃣ OUTPUT GENERATION
+# =========================
 output = {
     "codolio": {
         "easy": codolio_easy,
@@ -130,7 +155,11 @@ output = {
         "medium": final_medium,
         "hard": final_hard,
         "total": final_total
-    },"github": github_data
+    },
+    "github": github_data,
+    "youtube": {
+        "viewCountText": yt_views_text
+    }
 }
 
 with open("public/coding-stats.json", "w") as f:
