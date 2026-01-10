@@ -32,18 +32,17 @@ const CodingStats = () => {
   const { easy, medium, hard, total } = stats.final || {};
   const github = stats.github || {};
   const youtube = stats.youtube || {};
+  const devto = stats.devto || {};
 
   return (
     <section className="stats-container">
       <div className="stats-wrapper">
 
         {/* =========================================
-            LEFT CARD: SUMMARY (Total + Breakdown)
-            Added height: "fit-content" to prevent stretching
+            LEFT CARD: SUMMARY
            ========================================= */}
         <div className="stats-summary" style={{ height: "fit-content" }}>
           
-          {/* Top Section */}
           <div className="summary-top">
             <h2>DSA - Problem Solving</h2>
             
@@ -67,7 +66,6 @@ const CodingStats = () => {
             </div>
           </div>
 
-          {/* Bottom Section */}
           <div className="difficulty-breakdown">
             <div className="difficulty-item easy">
               <span>Easy</span>
@@ -89,9 +87,9 @@ const CodingStats = () => {
            ========================================= */}
         <div className="stats-details">
           
+          {/* --- GitHub Section --- */}
           <h2 className="stats-title">GitHub</h2>
           <div className="github-grid">
-            
             <div className="platform-card">
               <span className="platform-badge">Commits</span>
               <div className="platform-total">{github.commits || 0}</div>
@@ -115,15 +113,28 @@ const CodingStats = () => {
               <div className="platform-total">{github.pushRequestsCount || 0}</div>
               <div className="platform-stats">Pull Requests</div>
             </div>
+          </div>
 
-            {/* YouTube Card Merged Inside Grid */}
-            <div className="platform-card" style={{ gridColumn: "1 / -1" }}>
+          {/* --- Socials Section --- */}
+          <h2 className="stats-title" style={{ marginTop: "1.5rem" }}>Socials</h2>
+          <div className="github-grid">
+            
+            {/* YouTube Card */}
+            <div className="platform-card">
               <span className="platform-badge" style={{ background: "#FF0000" }}>YouTube</span>
               <div className="platform-total">{youtube.viewCountText || "0 views"}</div>
               <div className="platform-stats">Total Channel Views</div>
             </div>
 
+            {/* Dev.to Card */}
+            <div className="platform-card">
+              <span className="platform-badge" style={{ background: "#000000" }}>Dev.to</span>
+              <div className="platform-total">{devto.totalViews || 0}</div>
+              <div className="platform-stats">Total Blog Views</div>
+            </div>
+
           </div>
+
         </div>
 
       </div>

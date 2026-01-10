@@ -3,7 +3,7 @@
    =============================== */
 .stats-container {
   padding: 4rem 2rem;
-  background-color: var(--bg-light); /* Uses your global vars */
+  background-color: var(--bg-light);
   font-family: var(--font-main);
   display: flex;
   justify-content: center;
@@ -15,10 +15,12 @@
   max-width: 1200px;
   width: 100%;
   display: grid;
-  /* Left Card min-width 350px to fit the names */
+  /* Left Card min-width 350px, Right Card takes remaining space */
   grid-template-columns: minmax(350px, 1fr) 2fr; 
   gap: 2.5rem;
-  align-items: stretch; /* Makes both cards same height */
+  
+  /* CHANGED: 'start' prevents the Left Card from stretching to match the Right Card's height */
+  align-items: start; 
 }
 
 /* ===============================
@@ -33,7 +35,7 @@
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   
-  /* Flexbox to push Difficulty to bottom */
+  /* Flexbox for internal layout */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -70,7 +72,7 @@
   gap: 0.6rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
-  flex-wrap: wrap; /* Wraps to next line if names are too long */
+  flex-wrap: wrap; 
   padding: 0 10px;
 }
 
@@ -82,19 +84,18 @@
 }
 
 .divider {
-  color: rgba(148, 163, 184, 0.4); /* Light gray dot */
+  color: rgba(148, 163, 184, 0.4);
   font-size: 0.6rem;
 }
 
 /* Brand Colors */
-.leetcode { color: #ffa116; }     /* Orange */
-.gfg { color: #2f8d46; }          /* Green */
-.tuf { color: #cc0000; }          /* Red */
-.ninjas { color: #f05a28; }       /* Orange */
-.interviewbit { color: #00897b; } /* Teal */
-.codechef { color: #8b4513; }     /* Brown */
-.codeforces { color: #3182ce; }   /* Blue */
-
+.leetcode { color: #ffa116; }     
+.gfg { color: #2f8d46; }          
+.tuf { color: #cc0000; }          
+.ninjas { color: #f05a28; }       
+.interviewbit { color: #00897b; } 
+.codechef { color: #8b4513; }     
+.codeforces { color: #3182ce; }   
 
 /* Difficulty Section */
 .difficulty-breakdown {
@@ -122,7 +123,7 @@
 .difficulty-item.hard { color: #f59e0b; }
 
 /* ===============================
-   RIGHT CARD (GITHUB)
+   RIGHT CARD (DETAILS)
    =============================== */
 .stats-details {
   background: var(--card-light);
@@ -148,7 +149,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  height: 100%;
+  width: 100%;
 }
 
 .platform-card {
@@ -220,15 +221,13 @@
 
 .dark-mode .platform-card:hover { background: rgba(255, 255, 255, 0.08); }
 
-/* Dark Mode Colors for Platforms */
 .dark-mode .tuf { color: #ff375f; }
-.dark-mode .codechef { color: #d2691e; } /* Lighter brown for dark mode */
+.dark-mode .codechef { color: #d2691e; }
 
 /* ===============================
-   RESPONSIVE (Prevents Overflow)
+   RESPONSIVE
    =============================== */
 @media (max-width: 1024px) {
-  /* Stack cards vertically on tablets so they don't squish */
   .stats-wrapper {
     grid-template-columns: 1fr; 
     gap: 2rem;
@@ -237,7 +236,7 @@
 
 @media (max-width: 600px) {
   .github-grid {
-    grid-template-columns: 1fr; /* Stack Github cards on mobile */
+    grid-template-columns: 1fr; /* Stack Cards on Mobile */
   }
   
   .total-solved {

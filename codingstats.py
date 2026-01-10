@@ -135,7 +135,34 @@ except Exception as e:
 
 
 # =========================
-# 6️⃣ OUTPUT GENERATION
+# 6️⃣ DEV.TO VIEWS (VIA API)
+# =========================
+devto_api_key = "SKix9Q7P5uudcWpSQxk2vyCb"  # 
+devto_total_views = 0
+
+devto_headers = {
+    "api-key": devto_api_key,
+    "accept": "application/vnd.forem.api-v1+json"
+}
+
+try:
+    # Only the authenticated '/me' endpoint returns view counts
+    dev_url = "https://dev.to/api/articles/me/all?per_page=1000"
+    res = requests.get(dev_url, headers=devto_headers)
+
+    if res.status_code == 200:
+        dev_data = res.json()
+        devto_total_views = sum(item["page_views_count"] for item in dev_data)
+        print(f"Dev.to Views: {devto_total_views}")
+    else:
+        print(f"Dev.to Error: {res.status_code}")
+
+except Exception as e:
+    print("Dev.to fetch error:", e)
+
+
+# =========================
+# 7️⃣ OUTPUT GENERATION
 # =========================
 output = {
     "codolio": {
@@ -159,6 +186,9 @@ output = {
     "github": github_data,
     "youtube": {
         "viewCountText": yt_views_text
+    },
+    "devto": {
+        "totalViews": devto_total_views
     }
 }
 
