@@ -6,9 +6,18 @@ import db from '../Images/Diabetes.png';
 import chat from '../Images/auth.png';
 import ecommerece from '../Images/ecommerce.png';
 import stat from '../Images/stat.png';
-const blogs = [
+const blogs = [  
   {
     id: 'blog-1',
+    title: 'Combining Total DSA + Github Stats across Platforms',
+    link: 'https://dev.to/naman_2004/extracting-dsa-question-statistics-from-codolio-and-takeuforward-tuf-5g7o',
+    date: 'January 2026',
+    readTime: '7 min read',
+    description: 'A guide to aggregating DSA problem-solving stats from multiple platforms and GitHub contributions using APIs and web scraping.',
+    image: stat,
+  },
+  {
+    id: 'blog-5',
     title: 'Secure, Login-Free File Transfers with File_Storage',
     date: 'August 2025',
     readTime: '3 min read',
@@ -26,15 +35,6 @@ const blogs = [
     image: db,
   },
   {
-    id: 'blog-3',
-    title: 'Building a Real-Time Chat App',
-    date: 'July 2025',
-    readTime: '15 min read',
-    description: 'Learn how to construct a robust real-time chat application using React, Clerk authentication, and GetStream.',
-    link: 'https://dev.to/naman_2004/build-a-secure-real-time-chat-app-in-minutes-with-react-clerk-and-stream-4a45',
-    image: chat,
-  },
-  {
     id: 'blog-4',
     title: 'E-Commerce Customer Segmentation',
     date: 'June 2025',
@@ -44,13 +44,13 @@ const blogs = [
     image: ecommerece,
   },
   {
-    id: 'blog-5',
-    title: 'Combining Total DSA + Github Stats across Platforms',
-    link: 'https://dev.to/naman_2004/extracting-dsa-question-statistics-from-codolio-and-takeuforward-tuf-5g7o',
-    date: 'January 2026',
-    readTime: '7 min read',
-    describetion: 'A guide to aggregating DSA problem-solving stats from multiple platforms and GitHub contributions using APIs and web scraping.',
-    image: stat,
+    id: 'blog-3',
+    title: 'Building a Real-Time Chat App',
+    date: 'July 2025',
+    readTime: '15 min read',
+    description: 'Learn how to construct a robust real-time chat application using React, Clerk authentication, and GetStream.',
+    link: 'https://dev.to/naman_2004/build-a-secure-real-time-chat-app-in-minutes-with-react-clerk-and-stream-4a45',
+    image: chat,
   }
 
 ];
