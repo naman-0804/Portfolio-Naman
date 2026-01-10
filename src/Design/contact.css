@@ -392,7 +392,10 @@
   
   .submit-button { padding: 2.5rem; font-size: 3rem; border-radius: 30px; }
 }
-/* OTP / Email Verify */
+/* =====================================
+   OTP / Email Verify (UPDATED & FIXED)
+   ===================================== */
+
 .email-row {
   display: flex;
   gap: 10px;
@@ -408,14 +411,37 @@
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
+  transition: all 0.25s ease;
 }
 
-.verify-btn:hover {
+/* Hover only when enabled */
+.verify-btn:not(:disabled):hover {
   opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(99, 102, 241, 0.35);
 }
 
+/* ✅ Disabled state (IMPORTANT FIX) */
+.verify-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Green tick after verification */
 .verified-badge {
   font-size: 1.4rem;
   color: #22c55e;
   font-weight: bold;
 }
+
+/* Dark mode support */
+.dark-mode .verify-btn {
+  background: linear-gradient(135deg, #818cf8, #c084fc);
+}
+
+.dark-mode .verify-btn:disabled {
+  opacity: 0.35;
+}
+

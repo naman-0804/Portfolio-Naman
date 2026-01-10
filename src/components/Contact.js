@@ -7,6 +7,7 @@ import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
 
 function Contact() {
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,6 +22,11 @@ function Contact() {
   const [enteredOtp, setEnteredOtp] = useState('');
   const [isVerified, setIsVerified] = useState(false);
 
+  // ✅ Email format check
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -28,20 +34,24 @@ function Contact() {
 
   // 📩 Send OTP
   const sendOtp = () => {
-    if (!formData.email) return;
+    if (!isValidEmail(formData.email)) {
+      Swal.fire('Invalid Email', 'Please enter a valid email address', 'warning');
+      return;
+    }
 
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     setGeneratedOtp(otp);
 
     emailjs.send(
       'service_655mg9c',
-      'template_otp', // 🔴 OTP template
+      'template_otp',
       { to_email: formData.email, otp },
       'K34YWs3fe407eAfCX'
     ).then(() => {
       setOtpSent(true);
       Swal.fire('OTP Sent', 'Check your email', 'success');
-    }).catch(() => {
+    }).catch((err) => {
+      console.error(err);
       Swal.fire('Error', 'Failed to send OTP', 'error');
     });
   };
@@ -128,7 +138,13 @@ function Contact() {
 
               <div className="form-group">
                 <label><FaUser /> Your Name</label>
-                <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
               </div>
 
               {/* 📧 Email + Verify */}
@@ -145,7 +161,12 @@ function Contact() {
                   />
 
                   {!isVerified && (
-                    <button type="button" className="verify-btn" onClick={sendOtp}>
+                    <button
+                      type="button"
+                      className="verify-btn"
+                      onClick={sendOtp}
+                      disabled={!isValidEmail(formData.email)}
+                    >
                       Verify
                     </button>
                   )}
@@ -165,7 +186,11 @@ function Contact() {
                       onChange={(e) => setEnteredOtp(e.target.value)}
                       placeholder="6-digit OTP"
                     />
-                    <button type="button" className="verify-btn" onClick={verifyOtp}>
+                    <button
+                      type="button"
+                      className="verify-btn"
+                      onClick={verifyOtp}
+                    >
                       Verify OTP
                     </button>
                   </div>
@@ -174,11 +199,24 @@ function Contact() {
 
               <div className="form-group">
                 <label><FaCommentAlt /> Your Message</label>
-                <textarea name="message" rows="5" value={formData.message} onChange={handleChange} required />
+                <textarea
+                  name="message"
+                  rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                />
               </div>
 
-              <button type="submit" className="submit-button" disabled={!isVerified || isSubmitting}>
-                {isSubmitting ? <span className="spinner"></span> : <><FaPaperPlane /> Send Message</>}
+              <button
+                type="submit"
+                className="submit-button"
+                disabled={!isVerified || isSubmitting}
+              >
+                {isSubmitting
+                  ? <span className="spinner"></span>
+                  : <><FaPaperPlane /> Send Message</>
+                }
               </button>
 
             </form>
