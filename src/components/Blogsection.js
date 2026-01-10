@@ -98,7 +98,7 @@ function BlogSection() {
                 </a>
 
                 <p className="blog-description">
-                  {blog.description || "Read more about this project on my Dev.to profile."}
+                  {blog.description || "Combining DSA problem-solving stats from multiple platforms and GitHub contributions using APIs and web scraping."}
                 </p>
               </div>
 
