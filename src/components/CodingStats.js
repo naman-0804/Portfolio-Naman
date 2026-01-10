@@ -129,7 +129,7 @@ const CodingStats = () => {
             {/* Dev.to Card */}
             <div className="platform-card">
               <span className="platform-badge" style={{ background: "#000000" }}>Dev.to</span>
-              <div className="platform-total">{devto.totalViews || 0}</div>
+              <div className="platform-total">{devto.totalViews || 0} views</div>
               <div className="platform-stats">Total Blog Views</div>
             </div>
 
