@@ -25,7 +25,7 @@ function Contact() {
     setIsSubmitting(true);
 
     // Make sure your EmailJS Service/Template IDs are correct
-    emailjs.send('service_655mg9c', 'template_jo7ezml', formData, 'K34YWs3fe407eAfCX')
+    emailjs.send('(stopped)service_655mg9c', 'template_jo7ezml', formData, 'K34YWs3fe407eAfCX')
       .then((response) => {
         setIsSubmitting(false);
 
@@ -161,7 +161,7 @@ function Contact() {
                   <span className="spinner"></span>
                 ) : (
                   <>
-                    <FaPaperPlane /> Send Message
+                    <FaPaperPlane /> Send(stopped due to spam)
                   </>
                 )}
               </button>
