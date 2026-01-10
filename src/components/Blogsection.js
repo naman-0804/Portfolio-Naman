@@ -5,7 +5,7 @@ import dl from '../Images/Filetransfer.png';
 import db from '../Images/Diabetes.png';
 import chat from '../Images/auth.png';
 import ecommerece from '../Images/ecommerce.png';
-
+import stat from '../Images/stat.png';
 const blogs = [
   {
     id: 'blog-1',
@@ -42,7 +42,17 @@ const blogs = [
     description: 'Analyzing customer behavior and creating segmentation clusters using Python, Scikit-learn, and Streamlit.',
     link: 'https://dev.to/naman_2004/-mall-customer-segmentation-streamlit-app-a-step-by-step-tutorial-4pm2',
     image: ecommerece,
+  },
+  {
+    id: 'blog-5',
+    title: 'Combining Total DSA + Github Stats across Platforms',
+    link: 'https://dev.to/naman_2004/extracting-dsa-question-statistics-from-codolio-and-takeuforward-tuf-5g7o',
+    date: 'January 2026',
+    readTime: '7 min read',
+    describetion: 'A guide to aggregating DSA problem-solving stats from multiple platforms and GitHub contributions using APIs and web scraping.',
+    image: stat,
   }
+
 ];
 
 function BlogSection() {
