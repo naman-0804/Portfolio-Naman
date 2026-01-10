@@ -5,7 +5,7 @@ const CodingStats = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/coding-stats.json") 
+    fetch("/coding-stats.json")
       .then((res) => res.json())
       .then((data) => {
         setStats(data);
@@ -29,9 +29,9 @@ const CodingStats = () => {
     );
   }
 
-  // Handle data safely
   const { easy, medium, hard, total } = stats.final || {};
   const github = stats.github || {};
+  const youtube = stats.youtube || {};
 
   return (
     <section className="stats-container">
@@ -39,17 +39,17 @@ const CodingStats = () => {
 
         {/* =========================================
             LEFT CARD: SUMMARY (Total + Breakdown)
+            Added height: "fit-content" to prevent stretching
            ========================================= */}
-        <div className="stats-summary">
+        <div className="stats-summary" style={{ height: "fit-content" }}>
           
-          {/* Top Section: Title & Total */}
+          {/* Top Section */}
           <div className="summary-top">
             <h2>DSA - Problem Solving</h2>
             
             <div className="total-solved">{total}</div>
             <span className="total-label">Total Solved</span>
 
-            {/* PLATFORM NAMES ROW */}
             <div className="platforms-row">
               <span className="p-name leetcode">LeetCode</span>
               <span className="divider">•</span>
@@ -67,7 +67,7 @@ const CodingStats = () => {
             </div>
           </div>
 
-          {/* Bottom Section: Difficulty List */}
+          {/* Bottom Section */}
           <div className="difficulty-breakdown">
             <div className="difficulty-item easy">
               <span>Easy</span>
@@ -85,11 +85,11 @@ const CodingStats = () => {
         </div>
 
         {/* =========================================
-            RIGHT CARD: GITHUB ACTIVITY
+            RIGHT CARD: ACTIVITY & SOCIALS
            ========================================= */}
         <div className="stats-details">
-          <h2 className="stats-title">GitHub Activity</h2>
-
+          
+          <h2 className="stats-title">GitHub</h2>
           <div className="github-grid">
             
             <div className="platform-card">
@@ -114,6 +114,13 @@ const CodingStats = () => {
               <span className="platform-badge" style={{ background: "#ec4899" }}>PRs</span>
               <div className="platform-total">{github.pushRequestsCount || 0}</div>
               <div className="platform-stats">Pull Requests</div>
+            </div>
+
+            {/* YouTube Card Merged Inside Grid */}
+            <div className="platform-card" style={{ gridColumn: "1 / -1" }}>
+              <span className="platform-badge" style={{ background: "#FF0000" }}>YouTube</span>
+              <div className="platform-total">{youtube.viewCountText || "0 views"}</div>
+              <div className="platform-stats">Total Channel Views</div>
             </div>
 
           </div>
