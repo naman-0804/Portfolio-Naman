@@ -127,7 +127,7 @@ try:
         match = re.search(r'"viewCountText":\s*"([^"]+)"', res.text)
         if match:
             yt_views_text = match.group(1)
-            print(f"YouTube Found: {yt_views_text}")
+            ##print(f"YouTube Found: {yt_views_text}")
     else:
         print(f"YouTube fetch failed status: {res.status_code}")
 except Exception as e:
@@ -153,7 +153,7 @@ try:
     if res.status_code == 200:
         dev_data = res.json()
         devto_total_views = sum(item["page_views_count"] for item in dev_data)
-        print(f"Dev.to Views: {devto_total_views}")
+        ##print(f"Dev.to Views: {devto_total_views}")
     else:
         print(f"Dev.to Error: {res.status_code}")
 
