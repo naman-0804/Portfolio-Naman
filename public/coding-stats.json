@@ -17,7 +17,14 @@
     "hard": 38,
     "total": 559
   },
-  "github": {},
+  "github": {
+    "githubProfile": "naman-0804",
+    "stars": 3,
+    "issues": 3,
+    "totalActiveDays": 175,
+    "pushRequestsCount": 11,
+    "commits": 1067
+  },
   "youtube": {
     "viewCountText": "17,636 views"
   },
