@@ -45,9 +45,14 @@ function Skills() {
 
   const achievementsData = [
     {
-      date: "January 2026",
-      title: "Intern at Infosys",
-      description: "Cleared Infosys interviews and got selected as an intern for the role of Software Developer.",
+      date: "Jan 2026",
+      title: "TCS Digital Selection",
+      description: "Cleared TCS NQT for Prime role and TCS Prime interview process and got selected for the role of TCS Digital.",
+    },
+    {
+      date: "December 2025",
+      title: "Infosys Selection",
+      description: "Cleared Infosys aptitude exam, interviews and got selected as an intern for the role of Software Developer.",
     },
     {
       date: "November 2024",

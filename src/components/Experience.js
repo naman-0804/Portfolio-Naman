@@ -5,11 +5,11 @@ function Experience() {
 
   const experienceData = [
     {
-      role: "Upcoming Intern at Infosys",
-      company: "Infosys",
+      role: "Upcoming SE at TCS Digital",
+      company: "TCS Digital",
       date: "2026 - Current",
-      description: "Cleared interview process and selected for the role of Software Engineer Intern at Infosys, starting in 2026.",
-      technologies: ["Full-Stack", "Cloud", "ML"]
+      description: "Cleared interview process and selected for the role of Software Engineer Intern at TCS Digital, starting in 2026.",
+      technologies: ["Full-Stack", "Cloud", "ML","DevOps"]
     },
     {
       role: "Software Development Intern",
