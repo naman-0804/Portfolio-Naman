@@ -435,3 +435,155 @@
   .scholarship-banner h3 { font-size: 4rem; }
   .scholarship-banner p { font-size: 2.5rem; }
 }
+/* --- Certifications Section --- */
+.certifications-container {
+  max-width: 1000px;
+  margin: 0 auto 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* CARD */
+.certification-card {
+  position: relative;              /* 🔑 for top-right year */
+  padding: 1.75rem;
+  border-radius: 18px;
+  background: var(--card-light);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border-light);
+  box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.certification-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--primary-gradient);
+  opacity: 0.06;
+  z-index: -1;
+}
+
+.certification-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 35px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* TITLE */
+.certification-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin: 0;
+  padding-right: 40px; /* space so title doesn’t clash with year */
+}
+
+/* YEAR – TOP RIGHT (TINY) */
+.certification-year {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  font-size: 0.65rem;     /* 🔽 small */
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 6px;
+
+  background: rgba(0, 0, 0, 0.04);
+  color: #64748b;
+}
+
+/* SCORE */
+.certification-score {
+  align-self: flex-start;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--primary-gradient);
+  color: white;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+/* --- Dark Mode --- */
+.dark-mode .certification-card {
+  background: var(--card-dark);
+  border: var(--glass-border-dark);
+}
+
+.dark-mode .certification-card h3 {
+  color: var(--text-dark);
+}
+
+.dark-mode .certification-year {
+  background: rgba(255, 255, 255, 0.08);
+  color: #cbd5f5;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .certifications-container {
+    margin-bottom: 3rem;
+  }
+}
+
+/* --- Large Screens (2K+) --- */
+@media (min-width: 2000px) {
+  .certifications-container {
+    max-width: 1800px;
+    gap: 3rem;
+  }
+
+  .certification-card {
+    padding: 3rem;
+    border-radius: 30px;
+  }
+
+  .certification-card h3 {
+    font-size: 2rem;
+  }
+
+  .certification-score {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.8rem;
+  }
+
+  .certification-year {
+    font-size: 0.75rem; /* still small */
+  }
+}
+
+/* --- Ultra Large Screens (5K - 8K) --- */
+@media (min-width: 4000px) {
+  .certifications-container {
+    max-width: 3500px;
+    gap: 5rem;
+  }
+
+  .certification-card {
+    padding: 5rem;
+    border-radius: 45px;
+  }
+
+  .certification-card h3 {
+    font-size: 3.5rem;
+  }
+
+  .certification-score {
+    font-size: 2rem;
+    padding: 1.2rem 3rem;
+  }
+
+  .certification-year {
+    font-size: 1rem; /* proportional but still subtle */
+  }
+}

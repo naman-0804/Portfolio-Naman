@@ -75,6 +75,31 @@ function Skills() {
       description: "Participated in the Devshouse competition and secured the 4th place among 600+ teams.",
     },
   ];
+  const certificationsData = [
+  {
+    title: "Microsoft Azure DP-900",
+    year: "2024",
+    score: "925 / 1000",
+  },
+  {
+    title: "Spoken Tutorial – IIT Bombay (C++)",
+    year: "2023",
+    score: "74%",
+  },
+  {
+    title: "Spoken Tutorial – IIT Bombay (C)",
+    year: "2023",
+    score: "77.5%",
+  },
+  {
+    title: "Spoken Tutorial – IIT Bombay (Python)",
+    year: "2023",
+    score: "80%",
+  },
+];
+
+
+
 
   return (
     <div id="skills-section">
@@ -111,6 +136,17 @@ function Skills() {
             <span className="achievement-date">{achievement.date}</span>
             <h3>{achievement.title}</h3>
             <p>{achievement.description}</p>
+          </div>
+        ))}
+      </div>
+      {/* Certifications Section */}
+      <h2 className="section-title">Certifications</h2>
+      <div className="certifications-container">
+        {certificationsData.map((cert, index) => (
+          <div key={index} className="certification-card">
+            <h3>{cert.title}</h3>
+            <span className="certification-score">{cert.score}</span>
+            <span className="certification-year">{cert.year}</span>
           </div>
         ))}
       </div>
