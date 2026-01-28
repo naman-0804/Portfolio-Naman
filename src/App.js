@@ -27,6 +27,7 @@ import EyeFollower from './components/EyeFollower';
 import CodingStats from './components/CodingStats';
 const NavBar = ({ toggleDarkMode, darkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -38,11 +39,31 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <>
       {/* --- TOP NAVBAR (Logo + Theme Toggle) --- */}
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
+          
+          {/* Hamburger Menu Button (Mobile Only) */}
+          <button 
+            className="hamburger-btn" 
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+            aria-expanded={mobileMenuOpen}
+          >
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+          </button>
           
           <div className="navbar-logo">
              <EyeFollower />
@@ -85,30 +106,34 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
         </div>
       </nav>
 
-      {/* --- FLOATING BOTTOM DOCK (Mobile Only) --- */}
-      <div className="mobile-nav-container">
-        <Link to="/" className={`mobile-nav-item ${location.pathname === '/' ? 'active' : ''}`}>
+      {/* --- MOBILE DROPDOWN TILES MENU --- */}
+      <div className={`mobile-tiles-menu ${mobileMenuOpen ? 'open' : ''}`}>
+        <Link to="/" className="mobile-tile" onClick={closeMobileMenu}>
           <FaHome />
         </Link>
-        <Link to="/projects" className={`mobile-nav-item ${location.pathname === '/projects' ? 'active' : ''}`}>
+        <Link to="/projects" className="mobile-tile" onClick={closeMobileMenu}>
           <FaLaptopCode />
         </Link>
-        <Link to="/skills" className={`mobile-nav-item ${location.pathname === '/skills' ? 'active' : ''}`}>
+        <Link to="/skills" className="mobile-tile" onClick={closeMobileMenu}>
           <FaShapes />
         </Link>
-        <Link to="/experience" className={`mobile-nav-item ${location.pathname === '/experience' ? 'active' : ''}`}>
+        <Link to="/experience" className="mobile-tile" onClick={closeMobileMenu}>
           <FaBriefcase />
         </Link>
-        <Link to="/blogs" className={`mobile-nav-item ${location.pathname === '/blogs' ? 'active' : ''}`}>
+        <Link to="/blogs" className="mobile-tile" onClick={closeMobileMenu}>
           <FaPenNib />
         </Link>
-        <Link to="/CodingStats" className={`mobile-nav-item ${location.pathname === '/CodingStats'?'active':''}`}>
-        <FaCode/>
+        <Link to="/CodingStats" className="mobile-tile" onClick={closeMobileMenu}>
+          <FaCode />
         </Link>
-        <Link to="/contact" className={`mobile-nav-item ${location.pathname === '/contact' ? 'active' : ''}`}>
+        <Link to="/contact" className="mobile-tile" onClick={closeMobileMenu}>
           <FaEnvelope />
         </Link>
       </div>
+
+      {/* --- FLOATING BOTTOM DOCK (Mobile Only) --- */}
+      
+      
     </>
   );
 };
