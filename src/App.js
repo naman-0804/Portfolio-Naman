@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -25,10 +24,9 @@ import Contact from './components/Contact';
 import BlogSection from './components/Blogsection';
 import EyeFollower from './components/EyeFollower';
 import CodingStats from './components/CodingStats';
-const NavBar = ({ toggleDarkMode, darkMode }) => {
+
+const NavBar = ({ toggleDarkMode, darkMode, mobileMenuOpen, toggleMobileMenu }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,12 +37,16 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
+  const closeMobileMenu = () => {
+    if (mobileMenuOpen) toggleMobileMenu();
   };
 
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      closeMobileMenu();
+    }
   };
 
   return (
@@ -71,28 +73,28 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
 
           {/* Desktop Links (Hidden on Mobile via CSS) */}
           <div className="navbar-links">
-            <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
+            <button onClick={() => scrollToSection('home')} className="nav-link">
               Home
-            </Link>
-            <Link to="/projects" className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`}>
+            </button>
+            <button onClick={() => scrollToSection('projects')} className="nav-link">
               Projects
-            </Link>
-            <Link to="/skills" className={`nav-link ${location.pathname === '/skills' ? 'active' : ''}`}>
+            </button>
+            <button onClick={() => scrollToSection('skills')} className="nav-link">
               Skills
-            </Link>
-            <Link to="/experience" className={`nav-link ${location.pathname === '/experience' ? 'active' : ''}`}>
+            </button>
+            <button onClick={() => scrollToSection('experience')} className="nav-link">
               Experience
-            </Link>
-            <Link to="/blogs" className={`nav-link ${location.pathname === '/blogs' ? 'active' : ''}`}>
+            </button>
+            <button onClick={() => scrollToSection('blogs')} className="nav-link">
               Blogs
-            </Link>
+            </button>
 
-            <Link to="/CodingStats" className={`nav-link ${location.pathname === '/CodingStats' ? 'active' : ''}`}>
+            <button onClick={() => scrollToSection('coding-stats')} className="nav-link">
               Coding Stats
-            </Link>
-            <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>
+            </button>
+            <button onClick={() => scrollToSection('contact')} className="nav-link">
               Contact
-            </Link>
+            </button>
           </div>
 
           <button 
@@ -108,62 +110,86 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
 
       {/* --- MOBILE DROPDOWN TILES MENU --- */}
       <div className={`mobile-tiles-menu ${mobileMenuOpen ? 'open' : ''}`}>
-        <Link to="/" className="mobile-tile" onClick={closeMobileMenu}>
+        <button className="mobile-tile" onClick={() => scrollToSection('home')} title="Home">
           <FaHome />
-        </Link>
-        <Link to="/projects" className="mobile-tile" onClick={closeMobileMenu}>
+        </button>
+        <button className="mobile-tile" onClick={() => scrollToSection('projects')} title="Projects">
           <FaLaptopCode />
-        </Link>
-        <Link to="/skills" className="mobile-tile" onClick={closeMobileMenu}>
+        </button>
+        <button className="mobile-tile" onClick={() => scrollToSection('skills')} title="Skills">
           <FaShapes />
-        </Link>
-        <Link to="/experience" className="mobile-tile" onClick={closeMobileMenu}>
+        </button>
+        <button className="mobile-tile" onClick={() => scrollToSection('experience')} title="Experience">
           <FaBriefcase />
-        </Link>
-        <Link to="/blogs" className="mobile-tile" onClick={closeMobileMenu}>
+        </button>
+        <button className="mobile-tile" onClick={() => scrollToSection('blogs')} title="Blogs">
           <FaPenNib />
-        </Link>
-        <Link to="/CodingStats" className="mobile-tile" onClick={closeMobileMenu}>
+        </button>
+        <button className="mobile-tile" onClick={() => scrollToSection('coding-stats')} title="Coding Stats">
           <FaCode />
-        </Link>
-        <Link to="/contact" className="mobile-tile" onClick={closeMobileMenu}>
+        </button>
+        <button className="mobile-tile" onClick={() => scrollToSection('contact')} title="Contact">
           <FaEnvelope />
-        </Link>
+        </button>
       </div>
-
-      {/* --- FLOATING BOTTOM DOCK (Mobile Only) --- */}
-      
-      
     </>
   );
 };
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
-    <Router>
-      <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
-        <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
-        <main className="content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/blogs" element={<BlogSection />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/CodingStats" element={<CodingStats />} />
-          </Routes>
-        </main>
-        <SpeedInsights/>
-        <Analytics />
-      </div>
-    </Router>
+    <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
+      <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} mobileMenuOpen={mobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
+      <main className="content">
+        {/* Home Section */}
+        <section id="home" className="section-wrapper">
+          <Home />
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="section-wrapper">
+          <Projects />
+        </section>
+
+        {/* Skills Section */}
+        <section id="skills" className="section-wrapper">
+          <Skills />
+        </section>
+
+        {/* Experience Section */}
+        <section id="experience" className="section-wrapper">
+          <Experience />
+        </section>
+
+        {/* Blogs Section */}
+        <section id="blogs" className="section-wrapper">
+          <BlogSection />
+        </section>
+
+        {/* Coding Stats Section */}
+        <section id="coding-stats" className="section-wrapper">
+          <CodingStats />
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="section-wrapper">
+          <Contact />
+        </section>
+      </main>
+      <SpeedInsights/>
+      <Analytics />
+    </div>
   );
 }
 

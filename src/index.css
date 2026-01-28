@@ -8,7 +8,8 @@ html, body, #root {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 100vh;
   overflow-x: hidden;
   /* CHANGED: Matches var(--bg-light) from your theme */
   background-color: #f8f9fa; 
@@ -29,5 +30,5 @@ body {
   display: flex;
   flex-direction: column;
   /* CHANGED: Matches var(--bg-light) */
-  background-color: #f8f9fa; 
+  background-color: #f8f9fa;
 }

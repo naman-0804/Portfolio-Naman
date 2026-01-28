@@ -73,6 +73,9 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .nav-link:hover {
@@ -120,6 +123,15 @@
 .content {
   padding-top: var(--nav-height); 
   min-height: 100vh;
+  flex: 1;
+  width: 100%;
+}
+
+/* Section Wrapper for Scroll-based Layout */
+.section-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 0;
 }
 
 /* ============================
@@ -216,6 +228,8 @@
   width: 40px;
   height: 40px;
   background: #f1f5f9;
+  border: none;
+  cursor: pointer;
 }
 
 .mobile-tile:hover {
