@@ -77,6 +77,11 @@ function Skills() {
   ];
   const certificationsData = [
   {
+    title: "Oracle Cloud Infrastructure Associate",
+    year: "2025",
+    score: "Passed",
+  },
+  {
     title: "Microsoft Azure DP-900",
     year: "2024",
     score: "925 / 1000",
