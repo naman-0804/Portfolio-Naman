@@ -25,6 +25,7 @@ function Projects() {
     {
       id: 'routeguard',
       title: 'RouteGuard: Real-Time Detection',
+      category: 'Fullstack',
       description: 'Real-Time Loitering Detection and safe Navigation using OpenCV and OSM.',
       image: route,
       technologies: ['React', 'Python', 'OpenCV', 'OSM API'],
@@ -33,6 +34,7 @@ function Projects() {
     },
     {
       id: 'ecommerce-ml',
+      category: 'Machine Learning',
       title: 'E-Commerce ML Prediction',
       description: 'Customer Segmentation and Purchase Prediction using Scikit-learn.',
       image: ecommerce, 
@@ -42,6 +44,7 @@ function Projects() {
     },
     {
       id: 'auth-button',
+      category: 'Fullstack',
       title: 'Next.js Chat App',
       description: 'Real-time chat application using Next.js, Clerk Auth and GetStream.',
       image: auth,
@@ -51,6 +54,7 @@ function Projects() {
     },
     {
       id: 'dl-button',
+      category: 'Cloud',
       title: 'Anonymous File Share',
       description: 'Upload and download files securely without requiring user login.',
       image: dl,
@@ -60,6 +64,7 @@ function Projects() {
     },
     {
       id: 'ml-button',
+      category: 'Machine Learning',
       title: 'AWS Diabetes Prediction',
       description: 'Machine Learning model deployed on AWS for predicting diabetes.',
       image: db,
@@ -69,6 +74,7 @@ function Projects() {
     },
     {
       id: 'devops-button',
+      category: 'DevOps',
       title: 'DevOps CI/CD Pipeline',
       description: 'React app with Docker containerization and GitHub Actions workflow.',
       image: devops,
@@ -78,6 +84,7 @@ function Projects() {
     },
     {
       id: 'vitalized-button',
+      category: 'Fullstack',
       title: 'Vitalized Healthcare',
       description: 'Comprehensive healthcare platform for connecting patients and doctors.',
       image: vitalized,
@@ -87,6 +94,7 @@ function Projects() {
     },
     {
       id: 'sahyogi-button',
+      category: 'Fullstack',
       title: 'Sahyogi Platform',
       description: 'Community helper platform built for SIH with real-time database.',
       image: sahyogi,
@@ -96,6 +104,7 @@ function Projects() {
     },
     {
       id: 'AWS-button',
+      category: 'Cloud',
       title: 'Serverless Web App',
       description: 'Fully serverless architecture using AWS Lambda and DynamoDB.',
       image: aws,
@@ -105,6 +114,7 @@ function Projects() {
     },
     {
       id: 'wcs-button',
+      category: 'AI/Tools',
       title: 'AI Content Summarizer',
       description: 'NLP-based tool to summarize long web articles automatically.',
       image: wcs,
@@ -114,6 +124,7 @@ function Projects() {
     },
     {
       id: 'medhub-button',
+      category: 'Fullstack',
       title: 'Medhub360',
       description: 'Medical resource aggregator and appointment booking system.',
       image: medhub,
@@ -123,6 +134,7 @@ function Projects() {
     },
     {
       id: 'asl-button',
+      category: 'Machine Learning',
       title: 'Sign Language Translator',
       description: 'Real-time ASL/ISL translation using computer vision and deep learning.',
       image: sl,
@@ -132,6 +144,7 @@ function Projects() {
     },
     {
       id: 'okra-button',
+      category: 'Machine Learning',
       title: 'Okra Maturity Analysis',
       description: 'Agricultural tech solution for analyzing crop maturity via images.',
       image: okrapic,
@@ -141,6 +154,7 @@ function Projects() {
     },
     {
       id: 'lex-button',
+      category: 'AI/Tools',
       title: 'Lex ChatBot',
       description: 'Intelligent conversational bot powered by Amazon Lex.',
       image: lex,
@@ -150,6 +164,7 @@ function Projects() {
     },
     {
       id: 'portfolio-button',
+      category: 'Fullstack',
       title: 'Portfolio Website',
       description: 'The website you are currently looking at!',
       image: Portfolio,
@@ -158,6 +173,17 @@ function Projects() {
       youtube: 'https://www.youtube.com/watch?v=u4lYKwQs48s'
     }
   ];
+
+  // Group projects by category for sectioned rendering
+  const groupedProjects = projects.reduce((acc, project) => {
+    const cat = project.category || 'Other';
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(project);
+    return acc;
+  }, {});
+
+  // Define preferred category order for display
+  const categoryOrder = ['Fullstack', 'Machine Learning', 'DevOps', 'Cloud', 'AI/Tools', 'Other'];
 
   const redirectToProject = (url) => {
     if (url) window.open(url, '_blank');
@@ -177,66 +203,76 @@ function Projects() {
     }
   };
 
+  // Reusable renderer for a single project item
+  const renderProjectItem = (project) => (
+    <div 
+      className="project-item" 
+      key={project.id}
+      onMouseEnter={() => handleProjectInteraction(project.id)}
+      onMouseLeave={handleMouseLeave}
+      onClick={() => handleProjectInteraction(project.id)}
+    >
+      <div className="project-image-container">
+        <img src={project.image} alt={project.title} />
+        
+        <div className={`project-overlay ${activeProject === project.id ? 'active' : ''}`}>
+          <div className="project-description">
+            <p>{project.description || `A cool project built with ${project.technologies[0]}.`}</p>
+            <div className="tech-stack">
+              {project.technologies.map((tech, i) => (
+                <span key={i} className="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="project-info">
+        <h3 title={project.title}>{project.title}</h3>
+        <div className="project-links">
+          <button 
+            className="icon-button github-btn"
+            title="View Code"
+            onClick={(e) => {
+              e.stopPropagation();
+              redirectToProject(project.github);
+            }}
+          >
+            <FaGithub />
+          </button>
+
+          {project.youtube && (
+            <button 
+              className="icon-button youtube-btn"
+              title="Watch Demo"
+              onClick={(e) => {
+                e.stopPropagation();
+                redirectToProject(project.youtube);
+              }}
+            >
+              <FaYoutube />
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div id="project-section" className="project">
       {/* UPDATED HEADER: Matches Skills Section */}
       <h1 className="section-title">Projects</h1>
       
-      <div className="project-grid">
-        {projects.map((project, index) => (
-          <div 
-            className="project-item" 
-            key={project.id}
-            onMouseEnter={() => handleProjectInteraction(project.id)}
-            onMouseLeave={handleMouseLeave}
-            onClick={() => handleProjectInteraction(project.id)}
-          >
-            <div className="project-image-container">
-              <img src={project.image} alt={project.title} />
-              
-              <div className={`project-overlay ${activeProject === project.id ? 'active' : ''}`}>
-                <div className="project-description">
-                  <p>{project.description || `A cool project built with ${project.technologies[0]}.`}</p>
-                  <div className="tech-stack">
-                    {project.technologies.map((tech, i) => (
-                      <span key={i} className="tech-tag">{tech}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="project-info">
-              <h3 title={project.title}>{project.title}</h3>
-              <div className="project-links">
-                <button 
-                  className="icon-button github-btn"
-                  title="View Code"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    redirectToProject(project.github);
-                  }}
-                >
-                  <FaGithub />
-                </button>
-
-                {project.youtube && (
-                  <button 
-                    className="icon-button youtube-btn"
-                    title="Watch Demo"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      redirectToProject(project.youtube);
-                    }}
-                  >
-                    <FaYoutube />
-                  </button>
-                )}
-              </div>
+      {categoryOrder
+        .filter((cat) => groupedProjects[cat] && groupedProjects[cat].length)
+        .map((cat) => (
+          <div key={cat} className="project-category">
+            <h2 className="category-title">{cat}</h2>
+            <div className="project-grid">
+              {groupedProjects[cat].map((project) => renderProjectItem(project))}
             </div>
           </div>
         ))}
-      </div>
     </div>
   );
 }
