@@ -7,37 +7,37 @@ function Skills() {
   const skillsData = [
     { 
       title: "Backend", 
-      content: "Node.js, Python, Flask", 
+      content: "Express js, Flask", 
       icon: <FaServer />,
       color: "#10b981" // Emerald
     },
     { 
       title: "Frontend", 
-      content: "JavaScript, React, HTML", 
+      content: "React, Vite", 
       icon: <FaReact />,
       color: "#3b82f6" // Blue
     },
     { 
       title: "Database", 
-      content: "MongoDB, MySQL, PostgreSQL", 
+      content: "MongoDB, MySQL, Supabase", 
       icon: <FaDatabase />,
       color: "#f59e0b" // Amber
     },
     { 
       title: "Cloud", 
-      content: "Amazon Web Services", 
+      content: "Amazon Web Services, GCP", 
       icon: <FaCloud />,
       color: "#8b5cf6" // Violet
     },
     { 
       title: "Coding", 
-      content: "DSA(400+), C++, Python, C, Java", 
+      content: "DSA(500+), C++, Python, Java", 
       icon: <FaCode />,
       color: "#ec4899" // Pink
     },
     { 
       title: "Tools", 
-      content: "Git, GitHub, Docker, Figma, Postman", 
+      content: "Git, Figma, Postman, WinSCP, PUTTY, Clerk", 
       icon: <FaTools />,
       color: "#6366f1" // Indigo
     },
