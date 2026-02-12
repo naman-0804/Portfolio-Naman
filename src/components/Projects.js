@@ -64,7 +64,7 @@ function Projects() {
     },
     {
       id: 'ml-button',
-      category: 'Machine Learning',
+      category: 'Cloud',
       title: 'AWS Diabetes Prediction',
       description: 'Machine Learning model deployed on AWS for predicting diabetes.',
       image: db,
@@ -114,7 +114,7 @@ function Projects() {
     },
     {
       id: 'wcs-button',
-      category: 'AI/Tools',
+      category: 'Machine Learning',
       title: 'AI Content Summarizer',
       description: 'NLP-based tool to summarize long web articles automatically.',
       image: wcs,
@@ -154,7 +154,7 @@ function Projects() {
     },
     {
       id: 'lex-button',
-      category: 'AI/Tools',
+      category: 'Cloud',
       title: 'Lex ChatBot',
       description: 'Intelligent conversational bot powered by Amazon Lex.',
       image: lex,
@@ -183,7 +183,7 @@ function Projects() {
   }, {});
 
   // Define preferred category order for display
-  const categoryOrder = ['Fullstack', 'Machine Learning', 'DevOps', 'Cloud', 'AI/Tools', 'Other'];
+  const categoryOrder = ['Fullstack', 'Machine Learning', 'DevOps', 'Cloud', 'Other'];
 
   const redirectToProject = (url) => {
     if (url) window.open(url, '_blank');
