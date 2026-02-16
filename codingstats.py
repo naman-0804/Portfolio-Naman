@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta, timezone
 import requests
 import json
 import re
@@ -161,6 +162,49 @@ except Exception as e:
     print("Dev.to fetch error:", e)
 
 
+#vercel
+vercel_token = "vcp_8CeF9uTe7cNKEO5hynH9ZqYKK0IcbFACDbvDyizOtI7EXXhMGn1EKQWg"  
+
+vercel_url = "https://vercel.com/api/web-analytics/overview"
+now = datetime.now(timezone.utc)
+from_date = (now - timedelta(days=30)).isoformat().replace("+00:00", "Z")
+to_date = now.isoformat().replace("+00:00", "Z")
+params = {
+    "environment": "production",
+    "projectId": "portfolio",
+    "teamId": "team_IDCsQtagyCNDNRQSJWaNnaHm",
+    "from": from_date,
+    "to": to_date,
+    "tz": "Asia/Calcutta",
+    "filter": "{}"
+}
+
+headers = {
+    "Authorization": f"Bearer {vercel_token}",
+    "Accept": "application/json"
+}
+
+vercel_data = {}
+
+try:
+    res = requests.get(vercel_url, headers=headers, params=params, timeout=20)
+
+    if res.status_code != 200:
+        raise Exception(f"Vercel API error {res.status_code}")
+
+    data = res.json()
+
+    # adjust keys based on response structure
+    vercel_data = {
+        "Pageviews": data.get("total", 0),
+    }
+
+except Exception as e:
+    print("Vercel fetch failed:", e)
+    vercel_data = {}
+
+# =========================
+
 # =========================
 # 7️⃣ OUTPUT GENERATION
 # =========================
@@ -189,7 +233,8 @@ output = {
     },
     "devto": {
         "totalViews": devto_total_views
-    }
+    },
+    "vercel": vercel_data
 }
 
 with open("public/coding-stats.json", "w") as f:

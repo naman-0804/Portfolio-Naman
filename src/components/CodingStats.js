@@ -132,7 +132,18 @@ const CodingStats = () => {
               <div className="platform-total">{devto.totalViews || 0} views</div>
               <div className="platform-stats">Total Blog Views</div>
             </div>
-
+            {/* LinkedIn Card */}
+            <div className="platform-card">
+              <span className="platform-badge" style={{ background: "#098d9c" }}>LinkedIn</span>
+              <div className="platform-total"> 805 reactions</div>
+              <div className="platform-stats">Total Linkedn Reaction</div>
+            </div>
+            {/* Vercel Card */}
+            <div className="platform-card">
+              <span className="platform-badge" style={{ background: "#7509c8b5" }}>Portfolio Views</span>
+              <div className="platform-total">{stats.vercel ? stats.vercel.Pageviews : 0} views</div>
+              <div className="platform-stats">Total Portfolio Views (30 Days)</div>
+            </div>
           </div>
 
         </div>

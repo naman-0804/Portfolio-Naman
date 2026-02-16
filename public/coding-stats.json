@@ -3,32 +3,35 @@
     "easy": 109,
     "medium": 109,
     "hard": 11,
-    "total": 293
+    "total": 291
   },
   "tuf": {
     "easy": 201,
     "medium": 102,
     "hard": 27,
-    "total": 330
+    "total": 317
   },
   "final": {
     "easy": 310,
-    "medium": 211,
+    "medium": 198,
     "hard": 38,
-    "total": 559
+    "total": 546
   },
   "github": {
     "githubProfile": "naman-0804",
     "stars": 3,
     "issues": 3,
-    "totalActiveDays": 182,
+    "totalActiveDays": 185,
     "pushRequestsCount": 11,
-    "commits": 1090
+    "commits": 1096
   },
   "youtube": {
-    "viewCountText": "20,429 views"
+    "viewCountText": "20,995 views"
   },
   "devto": {
-    "totalViews": 508
+    "totalViews": 510
+  },
+  "vercel": {
+    "Pageviews": 340
   }
 }
