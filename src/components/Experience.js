@@ -8,21 +8,33 @@ function Experience() {
       role: "Upcoming SE at TCS Digital",
       company: "TCS Digital",
       date: "2026 - Current",
-      description: "Cleared interview process and selected for the role of Software Engineer Intern at TCS Digital, starting in 2026.",
+      points: [
+        "Cleared interview process and selected for Digital role",
+        "Starting in 2026 with focus on Full-Stack development and Cloud technologies",
+        "Opportunity to work on DevOps technologies and BigData projects"
+      ],
       technologies: ["Full-Stack", "Cloud", "ML","DevOps"]
     },
     {
       role: "Software Development Intern",
       company: "The Entrepreneurship Network (TEN)",
       date: "June 2024 - July 2024",
-      description: "Worked as a software development intern at The Entrepreneurship Network (TEN), contributing to various projects and gaining valuable industry experience.",
+      points: [
+        "Worked on Employee System using React and Flask",
+        "Worked with MongoDB for database management",
+        "Gained hands-on experience in real-world development environment"
+      ],
       technologies: ["React", "Flask", "MongoDB"]
     },
     {
       role: "Web Developer",
       company: "Biosphere Club",
       date: "2022 - 2023",
-      description: "Active member of the Biosphere Club, responsible for developing and maintaining the club's website, ensuring it is up-to-date and user-friendly.",
+      points: [
+        "Developed and maintained club's responsive website",
+        "Ensured site remains user-friendly and up-to-date",
+        "Implemented features using HTML, CSS, JavaScript"
+      ],
       technologies: ["HTML", "CSS", "JavaScript", "Python"]
     }
   ];
@@ -32,15 +44,19 @@ function Experience() {
       degree: "B.Tech in Computer Science and Engineering",
       institution: "Vellore Institute of Technology",
       date: "2022 - 2026",
-      location: "Vellore, India",
-      description: "Currently pursuing undergraduate degree with focus on software development and computer science fundamentals."
+      location: "Chennai",
+      points: [
+        "Pursuing undergraduate degree in Computer Science and Engineering",
+        "Focus on software development and computer science fundamentals",
+        "Gaining experience through projects and practical coursework"
+      ]
     },
     {
       degree: "Higher Secondary Education",
       institution: "Peace Public School",
       date: "2020 - 2022",
-      location: "", // Optional
-      achievements: [
+      location: "Ludhiana",
+      points: [
         "Completed Class XII in 2022 with 90.4% marks",
         "Completed Class X in 2020 with 90% marks"
       ]
@@ -74,7 +90,13 @@ function Experience() {
                   </div>
                 </div>
                 
-                <p>{exp.description}</p>
+                <div className="description-box">
+                  <ul className="description-points">
+                    {exp.points.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
                 
                 <div className="tech-container">
                   <div className="tech-label"><FaTools /> Technologies:</div>
@@ -118,13 +140,11 @@ function Experience() {
                   )}
                 </div>
                 
-                {edu.description && <p>{edu.description}</p>}
-                
-                {edu.achievements && (
-                  <div className="achievements">
-                    <ul>
-                      {edu.achievements.map((item, i) => (
-                        <li key={i}>{item}</li>
+                {edu.points && (
+                  <div className="description-box">
+                    <ul className="description-points">
+                      {edu.points.map((point, i) => (
+                        <li key={i}>{point}</li>
                       ))}
                     </ul>
                   </div>

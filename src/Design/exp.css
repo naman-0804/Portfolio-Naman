@@ -71,7 +71,7 @@
 /* --- Grids --- */
 .experience-grid, .education-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 2rem;
 }
 
@@ -156,6 +156,68 @@
   line-height: 1.6;
   color: #475569;
   font-size: 0.95rem;
+}
+
+/* Description Box */
+.description-box {
+  position: relative;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-left: 3px solid #6366f1;
+  border-radius: 14px;
+  padding: 1.4rem 1.4rem 1.4rem 1.8rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+}
+
+.description-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.description-points li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.8;
+  color: #334155;
+  font-size: 0.96rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+
+.description-points li:last-child {
+  margin-bottom: 0;
+}
+
+.description-points li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.description-box p {
+  margin: 0;
+  line-height: 1.8;
+  color: #334155;
+  font-size: 0.96rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  position: relative;
+  z-index: 1;
+}
+
+.description-box:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.12) 100%);
+  border-left-color: #a855f7;
+  border-color: rgba(168, 85, 247, 0.35);
+  transform: translateX(3px);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.1);
 }
 
 /* Tech Pills */
@@ -244,6 +306,30 @@
 .dark-mode .achievements li { color: #cbd5e1; }
 .dark-mode .tech-label { color: #e2e8f0; }
 
+.dark-mode .description-box {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(168, 85, 247, 0.12) 100%);
+  border-left-color: #a5b4fc;
+  border-color: rgba(165, 180, 252, 0.2);
+}
+
+.dark-mode .description-box p,
+.dark-mode .description-points li {
+  color: #e2e8f0;
+}
+
+.dark-mode .description-points li::before {
+  color: #a5b4fc;
+}
+
+.dark-mode .description-box:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.18) 100%);
+  border-left-color: #c4b5fd;
+  border-color: rgba(196, 181, 253, 0.3);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.15);
+}
+
+
+
 .dark-mode .tech-pills span {
   background-color: rgba(255, 255, 255, 0.05);
   color: #a5b4fc;
@@ -259,6 +345,20 @@
   #experience-section { padding: 1.5rem 1rem; }
   .experience-grid, .education-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 2rem; margin-bottom: 2rem; }
+  
+  .description-box {
+    padding: 1.2rem 1.2rem 1.2rem 1.4rem;
+  }
+  
+  .description-box p {
+    font-size: 0.9rem;
+  }
+  
+  .description-points li {
+    font-size: 0.9rem;
+    padding-left: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
 }
 
 /* --- Animation --- */
@@ -319,4 +419,21 @@
   .tech-label { font-size: 2.2rem; margin-bottom: 2rem; }
   .tech-pills { gap: 1.5rem; }
   .tech-pills span { font-size: 2rem; padding: 1rem 2.5rem; border-radius: 50px; }
+  
+  .description-box {
+    padding: 3rem 3rem 3rem 4rem;
+    border-left-width: 6px;
+    border-radius: 28px;
+  }
+  
+  .description-box p {
+    font-size: 2.2rem;
+    line-height: 2;
+  }
+  
+  .description-points li {
+    font-size: 2.2rem;
+    padding-left: 3rem;
+    margin-bottom: 1.5rem;
+  }
 }
