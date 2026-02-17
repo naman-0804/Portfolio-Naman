@@ -134,7 +134,7 @@ function Skills() {
       </div>
 
       {/* Achievements Section */}
-      <h2 className="section-title">Experience & Achievements</h2>
+      <h2 className="section-title">Achievements</h2>
       <div className="Achievements">
         {achievementsData.map((achievement, index) => (
           <div key={index} className="achievement-card">
