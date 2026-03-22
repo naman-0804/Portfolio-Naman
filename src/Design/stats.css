@@ -3,7 +3,7 @@
    =============================== */
 .stats-container {
   padding: 4rem 2rem;
-  background-color: var(--bg-light);
+  background-color: transparent;
   font-family: var(--font-main);
   display: flex;
   justify-content: center;
@@ -196,7 +196,7 @@
 /* ===============================
    DARK MODE
    =============================== */
-.dark-mode .stats-container { background-color: var(--bg-dark); }
+
 
 .dark-mode .stats-summary,
 .dark-mode .stats-details {

@@ -1,10 +1,10 @@
 /* --- Imports & Variables --- */
 :root {
   --nav-height: 80px;
-  --glass-bg-light: rgba(255, 255, 255, 0.7);
-  --glass-bg-dark: rgba(15, 23, 42, 0.7);
+  --glass-bg-light: rgba(250, 250, 249, 0.7);
+  --glass-bg-dark: rgba(9, 9, 11, 0.7);
   --glass-border-light: 1px solid rgba(255, 255, 255, 0.5);
-  --glass-border-dark: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-border-dark: 1px solid rgba(255, 255, 255, 0.05);
   --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
   --nav-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
@@ -143,7 +143,7 @@
 }
 
 .dark-mode .navbar.scrolled {
-  background-color: rgba(15, 23, 42, 0.9);
+  background-color: rgba(9, 9, 11, 0.9);
 }
 
 .dark-mode .navbar-links {
@@ -240,7 +240,7 @@
 
 /* Dark mode for tiles menu */
 .dark-mode .mobile-tiles-menu {
-  background: #1e293b;
+  background: #09090b;
 }
 
 .dark-mode .mobile-tile {

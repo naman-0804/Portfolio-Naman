@@ -16,28 +16,16 @@
 .hero-container {
   min-height: 100vh;
   padding: 3.5rem 2rem 5rem 2rem; /* Added top padding for navbar */
-  background-color: var(--bg-light);
+  background-color: transparent;
   font-family: var(--font-main);
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Align top for long content */
   position: relative;
   overflow-x: hidden;
-  
-  /* Matching Mesh Gradient */
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
 }
 
-.hero-container::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-}
+
 
 .hero-content {
   display: flex;
@@ -368,10 +356,7 @@
    =============================== */
 
 .dark-mode .hero-container {
-  background-color: var(--bg-dark);
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.08) 0px, transparent 50%);
+  background-color: transparent;
 }
 
 .dark-mode .profile-card,

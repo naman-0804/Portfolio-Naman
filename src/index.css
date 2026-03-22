@@ -11,8 +11,8 @@ html, body, #root {
   height: auto;
   min-height: 100vh;
   overflow-x: hidden;
-  /* CHANGED: Matches var(--bg-light) from your theme */
-  background-color: #f8f9fa; 
+  background-color: #fafaf9; 
+  color: #1e293b;
 }
 
 body {
@@ -29,6 +29,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* CHANGED: Matches var(--bg-light) */
-  background-color: #f8f9fa;
+  background-color: #fafaf9;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  transition: background-color 0.4s ease;
+}
+
+.app-container.dark-mode {
+  background-color: #09090b; 
+  color: #f1f5f9;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.05), transparent 30%),
+    radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.05), transparent 30%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
 }
