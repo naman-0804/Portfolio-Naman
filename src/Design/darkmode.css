@@ -2,8 +2,8 @@
 
 
 .dark-mode {
-    background-color: #121212;
-    color: #ffffff;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
   }
   
   .dark-mode .navbar {
