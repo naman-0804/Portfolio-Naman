@@ -1,16 +1,4 @@
-/* --- Global Variables (Matches Previous Sections) --- */
-:root {
-  --font-main: system-ui, -apple-system, sans-serif;
-  --bg-light: #f8f9fa;
-  --bg-dark: #0f172a;
-  --text-light: #1e293b;
-  --text-dark: #f1f5f9;
-  --card-light: rgba(255, 255, 255, 0.8);
-  --card-dark: rgba(30, 41, 59, 0.7);
-  --glass-border-light: 1px solid rgba(255, 255, 255, 0.5);
-  --glass-border-dark: 1px solid rgba(255, 255, 255, 0.1);
-  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-}
+/* Global variables imported from index.css */
 
 #experience-section {
   padding: 1.5rem 2rem 5rem 2rem;
@@ -70,7 +58,7 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: var(--glass-border-light);
-  border-left: 3px solid #6366f1;
+  border-left: 3px solid #0ea5e9;
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
@@ -82,7 +70,7 @@
 
 .experience-card:hover, .education-card:hover {
   transform: translateY(-4px);
-  border-left-color: #a855f7;
+  border-left-color: #14b8a6;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -100,12 +88,12 @@
 .icon-container {
   width: 36px;
   height: 36px;
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(14, 165, 233, 0.1);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6366f1;
+  color: #0ea5e9;
   font-size: 1rem;
   flex-shrink: 0;
   box-shadow: none;
@@ -160,7 +148,7 @@
   margin-bottom: 0.75rem;
   transition: all 0.3s ease;
   backdrop-filter: none;
-  border-left: 2px solid rgba(99, 102, 241, 0.3);
+  border-left: 2px solid rgba(14, 165, 233, 0.3);
 }
 
 .description-points {
@@ -205,11 +193,11 @@
 }
 
 .description-box:hover {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.12) 100%);
-  border-left-color: #a855f7;
-  border-color: rgba(168, 85, 247, 0.35);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.15) 0%, rgba(20, 184, 166, 0.12) 100%);
+  border-left-color: #14b8a6;
+  border-color: rgba(20, 184, 166, 0.35);
   transform: translateX(3px);
-  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.1);
+  box-shadow: 0 8px 16px rgba(14, 165, 233, 0.1);
 }
 
 /* Tech Pills */
@@ -237,14 +225,14 @@
 }
 
 .tech-pills span {
-  background-color: rgba(99, 102, 241, 0.08);
-  color: #6366f1;
+  background-color: rgba(14, 165, 233, 0.08);
+  color: #0ea5e9;
   padding: 0.3rem 0.7rem;
   border-radius: 6px;
   font-size: 0.75rem;
   font-weight: 500;
   transition: all 0.2s ease;
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(14, 165, 233, 0.15);
 }
 
 .tech-pills span:hover {
@@ -272,7 +260,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: #6366f1;
+  color: #0ea5e9;
   font-weight: bold;
 }
 
@@ -283,7 +271,7 @@
 .dark-mode .education-card {
   background: var(--card-dark);
   border: var(--glass-border-dark);
-  border-left: 3px solid #818cf8;
+  border-left: 3px solid #38bdf8;
 }
 
 .dark-mode .experience-card:hover,
@@ -297,7 +285,7 @@
 }
 
 .dark-mode .card-header h3 { color: var(--text-dark); }
-.dark-mode .icon-container { background: rgba(129, 140, 248, 0.1); color: #a5b4fc; }
+.dark-mode .icon-container { background: rgba(56, 189, 248, 0.1); color: #a5b4fc; }
 .dark-mode .info-row { color: #94a3b8; }
 .dark-mode .card-body p, 
 .dark-mode .achievements li { color: #cbd5e1; }

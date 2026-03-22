@@ -1,17 +1,4 @@
-/* --- Global Variables (Matches Previous Sections) --- */
-:root {
-  --font-main: system-ui, -apple-system, sans-serif;
-  --bg-light: #f8f9fa;
-  --bg-dark: #0f172a;
-  --text-light: #1e293b;
-  --text-dark: #f1f5f9;
-  --card-light: rgba(255, 255, 255, 0.8);
-  --card-dark: rgba(30, 41, 59, 0.7);
-  --glass-border-light: 1px solid rgba(255, 255, 255, 0.5);
-  --glass-border-dark: 1px solid rgba(255, 255, 255, 0.1);
-  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-  --accent-gradient: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
-}
+/* Global variables imported from index.css */
 
 .hero-container {
   min-height: 100vh;
@@ -132,15 +119,15 @@
 .social-icon.linkedin { background: #0077B5; }
 .social-icon.github { background: #1f2937; }
 .social-icon.youtube { background: #EF4444; }
-.social-icon.takeforward { background: white; border: 1px solid #e5e7eb; overflow: hidden; }
+.social-icon.takeforward { background: white; border: 1px solid #14b8a6eb; overflow: hidden; }
 .social-icon.takeforward img { width: 100%; height: 100%; object-fit: cover; }
 
 /* Recommendation Bubble */
 .recommendation-card {
   background: white; /* Contrast against glass card if nested, or glass itself */
   background: rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  border-left: 4px solid #6366f1;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-left: 4px solid #0ea5e9;
   border-radius: 12px;
   padding: 1.2rem;
   margin: 1.5rem;
@@ -152,7 +139,7 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #6366f1;
+  color: #0ea5e9;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
@@ -209,7 +196,7 @@
   height: 3px;
   flex: 1;
   background: var(--glass-border-light);
-  background: linear-gradient(90deg, #6366f1, transparent);
+  background: linear-gradient(90deg, #0ea5e9, transparent);
   border-radius: 2px;
 }
 
@@ -236,7 +223,7 @@
   left: 0;
   width: 100%;
   height: 30%;
-  background-color: rgba(99, 102, 241, 0.2);
+  background-color: rgba(14, 165, 233, 0.2);
   z-index: -1;
   transition: height 0.2s;
 }
@@ -264,7 +251,7 @@
 .resume-section {
   background: white; /* Inner card */
   background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(14, 165, 233, 0.15);
   border-radius: 16px;
   padding: 1.5rem;
   display: flex;
@@ -277,7 +264,7 @@
 .resume-section:hover {
   transform: translateY(-3px);
   background: rgba(255, 255, 255, 0.6);
-  border-color: rgba(99, 102, 241, 0.4);
+  border-color: rgba(14, 165, 233, 0.4);
 }
 
 .resume-info {
@@ -293,7 +280,7 @@
   font-weight: 700;
   padding: 0.5rem 0.8rem;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 6px rgba(14, 165, 233, 0.3);
 }
 
 .resume-text h4 { margin: 0; font-size: 1.1rem; color: var(--text-light); }
@@ -320,12 +307,12 @@
 .resume-btn.primary {
   background: var(--primary-gradient);
   color: white;
-  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.2);
 }
 
 .resume-btn.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 15px rgba(14, 165, 233, 0.3);
 }
 
 .resume-btn.secondary {
@@ -373,7 +360,7 @@
 
 .dark-mode .recommendation-card {
   background: rgba(0, 0, 0, 0.3);
-  border-color: rgba(99, 102, 241, 0.2);
+  border-color: rgba(14, 165, 233, 0.2);
 }
 
 .dark-mode .recommendation-content {
@@ -384,7 +371,7 @@
 .dark-mode .recommender-title { color: #94a3b8; }
 
 .dark-mode .content-title { color: #f1f5f9; }
-.dark-mode .content-title::after { background: linear-gradient(90deg, #818cf8, transparent); }
+.dark-mode .content-title::after { background: linear-gradient(90deg, #38bdf8, transparent); }
 
 .dark-mode .about-content p { color: #cbd5e1; }
 

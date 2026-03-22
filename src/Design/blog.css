@@ -1,17 +1,4 @@
-/* --- Global Variables (Matches Previous Sections) --- */
-:root {
-  --font-main: system-ui, -apple-system, sans-serif;
-  --bg-light: #f8f9fa;
-  --bg-dark: #0f172a;
-  --text-light: #1e293b;
-  --text-dark: #f1f5f9;
-  --card-light: rgba(255, 255, 255, 0.8);
-  --card-dark: rgba(30, 41, 59, 0.7);
-  --glass-border-light: 1px solid rgba(255, 255, 255, 0.5);
-  --glass-border-dark: 1px solid rgba(255, 255, 255, 0.1);
-  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-  --accent-gradient: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
-}
+/* Global variables imported from index.css */
 
 #blog-section {
   padding: 1.5rem 2rem 5rem 2rem;

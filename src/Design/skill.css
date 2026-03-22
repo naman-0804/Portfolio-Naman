@@ -1,15 +1,5 @@
 /* --- Global Variables & Font --- */
 :root {
-  --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --bg-light: #f8f9fa;
-  --bg-dark: #0f172a;
-  --text-light: #1e293b;
-  --text-dark: #f1f5f9;
-  --card-light: rgba(255, 255, 255, 0.85);
-  --card-dark: rgba(30, 41, 59, 0.7);
-  --glass-border-light: 1px solid rgba(255, 255, 255, 0.5);
-  --glass-border-dark: 1px solid rgba(255, 255, 255, 0.1);
-  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
   --gold-gradient: linear-gradient(135deg, #fbbf24, #d97706);
 }
 
@@ -172,10 +162,10 @@
   width: 16px;
   height: 16px;
   background-color: #fff;
-  border: 4px solid #6366f1;
+  border: 4px solid #0ea5e9;
   border-radius: 50%;
   z-index: 1;
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
 }
 
 /* Alternating Logic */
@@ -231,7 +221,7 @@
   font-size: 0.85rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);
   letter-spacing: 0.5px;
 }
 
@@ -327,8 +317,8 @@
 .dark-mode .achievement-card p { color: #cbd5e1; }
 .dark-mode .achievement-card::after {
   background-color: #0f172a;
-  border-color: #818cf8;
-  box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.2);
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
 }
 
 .dark-mode .scholarship-banner {
@@ -500,7 +490,7 @@
   font-weight: 700;
   background: var(--primary-gradient);
   color: white;
-  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);
 }
 
 /* --- Dark Mode --- */

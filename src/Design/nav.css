@@ -1,11 +1,8 @@
 /* --- Imports & Variables --- */
 :root {
   --nav-height: 80px;
-  --glass-bg-light: rgba(250, 250, 249, 0.7);
-  --glass-bg-dark: rgba(9, 9, 11, 0.7);
-  --glass-border-light: 1px solid rgba(255, 255, 255, 0.5);
-  --glass-border-dark: 1px solid rgba(255, 255, 255, 0.05);
-  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --glass-bg-light: rgba(255, 255, 255, 0.7);
+  --glass-bg-dark: rgba(10, 10, 10, 0.7);
   --nav-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
@@ -14,24 +11,29 @@
    ============================ */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--nav-height);
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  height: 64px;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   background-color: var(--glass-bg-light);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: var(--glass-border-light);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 99px;
   display: flex;
   align-items: center;
+  box-shadow: var(--shadow-md);
 }
 
 .navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: var(--nav-shadow);
-  height: 70px;
+  top: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-lg);
+  max-width: 1100px;
 }
 
 .navbar-container {
@@ -39,15 +41,14 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 .navbar-logo {
   display: flex;
   align-items: center;
   flex-shrink: 0; 
+  padding-left: 0.5rem;
 }
 
 /* Desktop Links (Pill Shape) */
@@ -79,14 +80,14 @@
 }
 
 .nav-link:hover {
-  color: #6366f1;
-  background-color: rgba(99, 102, 241, 0.08);
+  color: #0ea5e9;
+  background-color: rgba(14, 165, 233, 0.08);
 }
 
 .nav-link.active {
   background: var(--primary-gradient);
   color: white;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
 }
 
 .nav-link::after { display: none; }
@@ -108,7 +109,7 @@
 }
 
 .theme-toggle-btn:hover {
-  background-color: rgba(99, 102, 241, 0.1);
+  background-color: rgba(14, 165, 233, 0.1);
   transform: rotate(15deg);
 }
 
@@ -139,7 +140,7 @@
    ============================ */
 .dark-mode .navbar {
   background-color: var(--glass-bg-dark);
-  border-bottom: var(--glass-border-dark);
+  border: var(--glass-border-dark);
 }
 
 .dark-mode .navbar.scrolled {
@@ -233,8 +234,8 @@
 }
 
 .mobile-tile:hover {
-  background-color: rgba(99, 102, 241, 0.15);
-  color: #6366f1;
+  background-color: rgba(14, 165, 233, 0.15);
+  color: #0ea5e9;
   transform: scale(1.1);
 }
 
@@ -249,7 +250,7 @@
 }
 
 .dark-mode .mobile-tile:hover {
-  background-color: rgba(99, 102, 241, 0.25);
+  background-color: rgba(14, 165, 233, 0.25);
   color: #ffffff;
 }
 
