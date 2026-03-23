@@ -330,7 +330,7 @@
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-  #skills-section { padding: 3rem 1.5rem; }
+  #skills-section { padding: 1.5rem 1rem; }
   
   .Achievements::before { left: 20px; }
   

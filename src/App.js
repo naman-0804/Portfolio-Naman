@@ -26,7 +26,7 @@ import BlogSection from './components/Blogsection';
 import EyeFollower from './components/EyeFollower';
 import CodingStats from './components/CodingStats';
 
-const NavBar = ({ toggleDarkMode, darkMode, mobileMenuOpen, toggleMobileMenu, isDesktop }) => {
+const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
@@ -39,15 +39,10 @@ const NavBar = ({ toggleDarkMode, darkMode, mobileMenuOpen, toggleMobileMenu, is
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const closeMobileMenu = () => {
-    if (mobileMenuOpen) toggleMobileMenu();
-  };
-
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      closeMobileMenu();
     }
   };
 
@@ -59,18 +54,6 @@ const NavBar = ({ toggleDarkMode, darkMode, mobileMenuOpen, toggleMobileMenu, is
       {/* --- TOP NAVBAR (Logo + Theme Toggle) --- */}
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
-          
-          {/* Hamburger Menu Button (Mobile Only) */}
-          <button 
-            className="hamburger-btn" 
-            onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
-            aria-expanded={mobileMenuOpen}
-          >
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
-          </button>
           
           <div className="navbar-logo">
              <EyeFollower />
@@ -140,65 +123,45 @@ const NavBar = ({ toggleDarkMode, darkMode, mobileMenuOpen, toggleMobileMenu, is
         </div>
       </nav>
 
-      {/* --- MOBILE DROPDOWN TILES MENU --- */}
-      <div className={`mobile-tiles-menu ${mobileMenuOpen ? 'open' : ''}`}>
-        {isDesktop ? (
-          <>
-            <Link to="/" className="mobile-tile" title="Home" onClick={closeMobileMenu}>
-              <FaHome />
-            </Link>
-            <Link to="/projects" className="mobile-tile" title="Projects" onClick={closeMobileMenu}>
-              <FaLaptopCode />
-            </Link>
-            <Link to="/skills" className="mobile-tile" title="Skills" onClick={closeMobileMenu}>
-              <FaShapes />
-            </Link>
-            <Link to="/experience" className="mobile-tile" title="Experience" onClick={closeMobileMenu}>
-              <FaBriefcase />
-            </Link>
-            <Link to="/blogs" className="mobile-tile" title="Blogs" onClick={closeMobileMenu}>
-              <FaPenNib />
-            </Link>
-            <Link to="/stats" className="mobile-tile" title="Coding Stats" onClick={closeMobileMenu}>
-              <FaCode />
-            </Link>
-            <Link to="/contact" className="mobile-tile" title="Contact" onClick={closeMobileMenu}>
-              <FaEnvelope />
-            </Link>
-          </>
-        ) : (
-          <>
-            <button className="mobile-tile" onClick={() => scrollToSection('home')} title="Home">
-              <FaHome />
-            </button>
-            <button className="mobile-tile" onClick={() => scrollToSection('projects')} title="Projects">
-              <FaLaptopCode />
-            </button>
-            <button className="mobile-tile" onClick={() => scrollToSection('skills')} title="Skills">
-              <FaShapes />
-            </button>
-            <button className="mobile-tile" onClick={() => scrollToSection('experience')} title="Experience">
-              <FaBriefcase />
-            </button>
-            <button className="mobile-tile" onClick={() => scrollToSection('blogs')} title="Blogs">
-              <FaPenNib />
-            </button>
-            <button className="mobile-tile" onClick={() => scrollToSection('coding-stats')} title="Coding Stats">
-              <FaCode />
-            </button>
-            <button className="mobile-tile" onClick={() => scrollToSection('contact')} title="Contact">
-              <FaEnvelope />
-            </button>
-          </>
-        )}
-      </div>
+      {/* --- MOBILE BOTTOM DOCK --- */}
+      {!isDesktop && (
+        <div className="mobile-bottom-dock">
+          <button className="mobile-tile" onClick={() => scrollToSection('home')} title="Home">
+            <FaHome />
+            <span>Home</span>
+          </button>
+          <button className="mobile-tile" onClick={() => scrollToSection('projects')} title="Projects">
+            <FaLaptopCode />
+            <span>Projects</span>
+          </button>
+          <button className="mobile-tile" onClick={() => scrollToSection('skills')} title="Skills">
+            <FaShapes />
+            <span>Skills</span>
+          </button>
+          <button className="mobile-tile" onClick={() => scrollToSection('experience')} title="Experience">
+            <FaBriefcase />
+            <span>Experience</span>
+          </button>
+          <button className="mobile-tile" onClick={() => scrollToSection('blogs')} title="Blogs">
+            <FaPenNib />
+            <span>Blogs</span>
+          </button>
+          <button className="mobile-tile" onClick={() => scrollToSection('coding-stats')} title="Stats">
+            <FaCode />
+            <span>Stats</span>
+          </button>
+          <button className="mobile-tile" onClick={() => scrollToSection('contact')} title="Contact">
+            <FaEnvelope />
+            <span>Contact</span>
+          </button>
+        </div>
+      )}
     </>
   );
 };
 
 function AppContent() {
   const [darkMode, setDarkMode] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
 
   useEffect(() => {
@@ -214,15 +177,11 @@ function AppContent() {
     setDarkMode(!darkMode);
   };
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
   if (isDesktop) {
     // Desktop: Use page routes
     return (
       <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
-        <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} mobileMenuOpen={mobileMenuOpen} toggleMobileMenu={toggleMobileMenu} isDesktop={isDesktop} />
+        <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} isDesktop={isDesktop} />
         <main className="content">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -242,7 +201,7 @@ function AppContent() {
     // Mobile: Single scroll experience
     return (
       <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
-        <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} mobileMenuOpen={mobileMenuOpen} toggleMobileMenu={toggleMobileMenu} isDesktop={isDesktop} />
+        <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} isDesktop={isDesktop} />
         <main className="content">
           {/* Home Section */}
           <section id="home" className="section-wrapper">
