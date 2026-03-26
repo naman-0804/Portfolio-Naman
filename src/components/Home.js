@@ -7,10 +7,10 @@ function Home() {
   return (
     <div className="hero-container" id="home">
       <div className="hero-content">
-        
+
         {/* --- LEFT COLUMN: PROFILE --- */}
         <div className="hero-left">
-          
+
           {/* Profile Card */}
           <div className="profile-card">
             <div className="profile-image-container">
@@ -18,7 +18,7 @@ function Home() {
             </div>
             <h1>Naman Srivastava</h1>
             <h2>Software Developer</h2>
-            
+
             <div className="social-links">
               <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
                 <FaLinkedin />
@@ -55,14 +55,14 @@ function Home() {
         {/* --- RIGHT COLUMN: ABOUT & CONTENT --- */}
         <div className="hero-right">
           <div className="about-card">
-            
+
             {/* About Me Section */}
             <div className="content-section">
               <h3 className="content-title">About Me</h3>
               <div className="about-content">
                 <p>
-                  I love working on new problems and designing their solutions. 
-                  <span className="highlight blue"> Debugging</span> and 
+                  I love working on new problems and designing their solutions.
+                  <span className="highlight blue"> Debugging</span> and
                   <span className="highlight blue"> Designing</span> the code isn't just a task for me—it's something I can do all day with enthusiasm.
                 </p>
                 <p>
@@ -106,6 +106,27 @@ function Home() {
               </div>
             </div>
 
+            {/* Interview Experiences Section */}
+            <h3 className="content-title">Interview Experiences</h3>
+            <div className="resume-section" style={{ marginBottom: '2rem' }}>
+              <div className="resume-info">
+                <div className="resume-text">
+                  <h4>Read My Interview Journey</h4>
+                </div>
+              </div>
+
+              <div className="resume-actions">
+                <a
+                  href="http://localhost:5173/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resume-btn primary"
+                >
+                  <FaEye /> Read Now
+                </a>
+              </div>
+            </div>
+
             {/* Terminal Section */}
             <h3 className="content-title">Interactive CLI</h3>
             <div className="terminal-container">
@@ -114,7 +135,7 @@ function Home() {
 
           </div>
         </div>
-        
+
       </div>
     </div>
   );
