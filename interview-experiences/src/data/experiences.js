@@ -5,25 +5,25 @@ export const experiences = [
     role: 'TCS Prime',
     overview: 'The TCS Prime interview is a combined technical, managerial, and HR evaluation focusing on OOPs, SQL, core concepts, and strong resume-based discussions including cloud and system-level thinking.',
     rounds: [
-      'Round 1: Final Interview (Technical + Managerial + HR)'
+      'Round 1: Technical + Managerial + HR (Final Interview)'
     ],
     focusAreas: [
-      'Object-Oriented Programming (OOPs)',
-      'SQL Queries and DBMS Concepts',
-      'C++ Fundamentals (Header files, scope resolution)',
-      'AWS Basics and Cloud Scenarios',
-      'System Design Thinking (Load handling, DDoS, scaling)',
-      'Containerization and Orchestration',
-      'Resume-based Project Discussion',
-      'Basic DSA (optimized approach)'
+      'OOPs: abstract functions, encapsulation, access specifiers, anonymous classes',
+      'SQL: UPDATE query, difference between DROP vs TRUNCATE vs DELETE',
+      'C++: header files, scope resolution operator (::)',
+      'AWS: SNS, handling heavy load, gaming server scaling, DDoS handling',
+      'System thinking: load management, scalability scenarios',
+      'Containerization and orchestration concepts',
+      'Resume-based deep discussion (projects + hackathon role)',
+      'Basic DSA: optimized logic (e.g., prime number without brute force)'
     ],
     preparationTips: [
-      'Prepare aptitude and medium-level DSA (focus on logic, not advanced)',
-      'Strengthen OOPs and SQL concepts thoroughly',
-      'Shift focus toward cloud and DevOps fundamentals after clearing initial screening'
+      'Prepare aptitude and medium-level DSA (no need for advanced)',
+      'Strong hold on OOPs and SQL is mandatory',
+      'Shift preparation toward cloud and DevOps after clearing initial stage'
     ],
     additionalFeedback: [
-      'TCS Prime focuses on specialized domains like big data and cybersecurity',
+      'TCS Prime targets specialized domains like big data and cybersecurity',
       'TCS Digital is more aligned toward cloud and DevOps roles'
     ],
     details: {
@@ -38,7 +38,17 @@ export const experiences = [
           difficulty: 'Medium',
           mode: 'On-site',
           duration: 45,
-          summary: 'Covered OOPs (abstract functions, encapsulation, access specifiers, anonymous classes), SQL (UPDATE query, DROP vs TRUNCATE vs DELETE), C++ concepts (header files, :: operator), AWS (SNS, handling load, DDoS, gaming server scaling), containerization and orchestration, resume-based project discussion, hackathon role, HR questions, and basic DSA (optimized prime number approach)'
+          summary: [
+            'Self introduction at start',
+            'OOPs deep questions: abstract class usage, encapsulation, access control, anonymous classes',
+            'SQL: write UPDATE query + explain DROP vs TRUNCATE vs DELETE',
+            'C++: header files and :: operator',
+            'AWS: SNS and scenario-based questions (heavy load, gaming server scaling, DDoS handling)',
+            'Containerization and orchestration basics',
+            'Full resume-based grilling (projects + hackathon role)',
+            'HR questions: family background, pressure handling, future studies',
+            'DSA: easy-level but optimized approach expected (prime number logic)'
+          ]
         }
       ]
     }
@@ -50,23 +60,25 @@ export const experiences = [
     overview: 'The Infosys System Engineer process focuses on aptitude, pseudocode-based problem solving, and basic technical understanding, with moderate exam difficulty but easy interview round.',
     rounds: [
       'Round 1: Coding + Aptitude Assessment (Pseudocode, English, Logical, Maths)',
-      'Round 2: Technical Interview (OOPs, Basics, Resume-based)'
+      'Round 2: Technical Interview (OOPs + Basics + Resume)'
     ],
     focusAreas: [
-      'Pseudocode and Logical Problem Solving',
-      'English Comprehension and Aptitude',
-      'Object-Oriented Programming (OOPs)',
-      'Basic Backend Concepts (MongoDB, APIs)',
-      'CI/CD Fundamentals'
+      'Pseudocode problem solving',
+      'English comprehension (passage-based)',
+      'Logical reasoning and quantitative aptitude',
+      'OOPs (including scenario-based questions)',
+      'MongoDB basics (data storage)',
+      'Postman REST APIs',
+      'Basic CI/CD concepts'
     ],
     preparationTips: [
-      'Focus on OOP concepts and scenario-based questions',
-      'Practice pseudocode and aptitude questions thoroughly',
-      'Work on hackathons and personal projects for better discussion'
+      'Focus on OOPs (especially scenario-based questions)',
+      'Practice pseudocode and aptitude thoroughly',
+      'Work on hackathons and personal projects for discussion'
     ],
     additionalFeedback: [
-      'Aptitude and pseudocode sections are critical for clearing the first round',
-      'Interview is straightforward; minimal project deep-dive'
+      'Aptitude + pseudocode round is the main elimination stage',
+      'Technical interview is easy and not deeply project-focused'
     ],
     details: {
       difficulty: 'Easy',
@@ -80,7 +92,13 @@ export const experiences = [
           difficulty: 'Hard',
           mode: 'On-site',
           duration: 180,
-          summary: 'Includes pseudocode questions, English comprehension passages, logical reasoning, quantitative aptitude with a writing task (~200 words)'
+          summary: [
+            'Pseudocode questions',
+            'English comprehension passages',
+            'Logical reasoning',
+            'Quantitative aptitude',
+            'Essay writing (~200 words on a topic)'
+          ]
         },
         {
           name: 'Technical Interview',
@@ -88,7 +106,14 @@ export const experiences = [
           difficulty: 'Easy',
           mode: 'On-site',
           duration: 25,
-          summary: 'Introduction, OOPs (scenario-based), MongoDB basics, Postman REST APIs, basic CI/CD; minimal project discussion'
+          summary: [
+            'Self introduction',
+            'OOPs questions (including scenario-based)',
+            'MongoDB basics',
+            'Postman and REST API basics',
+            'Basic CI/CD discussion',
+            'Minimal project discussion (in some cases none)'
+          ]
         }
       ]
     }
@@ -103,20 +128,20 @@ export const experiences = [
       'Round 2: Technical Interview (Basic Security + Scenario-based)'
     ],
     focusAreas: [
-      'Basic Cybersecurity Concepts',
-      'Awareness of Current Security Trends',
-      'Understanding of AWS Security Basics',
-      'OSI Model and Layer-based Attacks',
-      'Communication and Argumentation Skills (GD)'
+      'Basic cybersecurity concepts',
+      'Awareness of real-world security issues',
+      'AWS security basics',
+      'OSI model and attack layers',
+      'Communication and argumentation (GD)'
     ],
     preparationTips: [
-      'Focus on basic cybersecurity concepts; depth is not required',
-      'Prepare for discussion-based rounds with structured arguments',
-      'Understand real-world security scenarios (AWS, banking security, phishing)'
+      'Know basics of cybersecurity (no deep technical requirement)',
+      'Prepare structured points for GD topics',
+      'Understand real-world cases like phishing, ransomware, AWS security'
     ],
     additionalFeedback: [
-      'Role leans toward support/analyst work rather than deep technical engineering',
-      'Strong communication skills are important for GD round performance'
+      'Role is more support/analyst oriented, not deep engineering',
+      'Communication matters heavily in GD round'
     ],
     details: {
       difficulty: 'Easy',
@@ -130,7 +155,13 @@ export const experiences = [
           difficulty: 'Medium',
           mode: 'On-site',
           duration: 30,
-          summary: 'Topics included AI in cybersecurity, third-party vendor security, ransomware decisions, ethical implications, and phishing via social media'
+          summary: [
+            'AI in cybersecurity: revolution vs new vulnerabilities',
+            'Third-party vendor security: necessity vs overemphasis',
+            'Ransomware: pay ransom vs invest in recovery',
+            'Ethical implications in cybersecurity',
+            'Phishing via social media rise'
+          ]
         },
         {
           name: 'Technical Round',
@@ -138,7 +169,13 @@ export const experiences = [
           difficulty: 'Easy',
           mode: 'On-site',
           duration: 25,
-          summary: 'Questions on AWS security, data protection, banking security systems, and attacks across OSI layers'
+          summary: [
+            'AWS data security and protection',
+            'How data is secured in AWS',
+            'Banking security systems',
+            'Attacks across OSI layers',
+            'Resume-based basic discussion (especially if dev background)'
+          ]
         }
       ]
     }
@@ -149,24 +186,24 @@ export const experiences = [
     role: 'Technical Analyst',
     overview: 'The ION Group Technical Analyst process emphasizes aptitude, basic technical fundamentals, and problem-solving ability, with moderate difficulty and quick turnaround.',
     rounds: [
-      'Round 1: Aptitude Test (Quantitative + English)',
-      'Round 2: Technical Interview (Basic CS + Puzzles)'
+      'Round 1: Aptitude Test (Quant + English)',
+      'Round 2: Technical Interview (Puzzles + Basics)'
     ],
     focusAreas: [
-      'Quantitative Aptitude and Verbal Ability',
-      'Logical Reasoning and Basic Problem Solving',
-      'Core Fundamentals (Defender, Antivirus, JRE, JVM, JDK)',
-      'Basic Technical Awareness',
-      'Puzzle Solving (moderate level)'
+      'Quantitative aptitude',
+      'English/verbal ability',
+      'Logical reasoning',
+      'Basic CS concepts (defender, antivirus, JRE, JVM, JDK)',
+      'Puzzle solving (important)'
     ],
     preparationTips: [
-      'Focus heavily on puzzles; they are critical for the Technical Analyst role',
-      'Practice logical and analytical problem-solving daily',
-      'Revise basic computer science fundamentals (JRE, JVM, JDK, security basics)'
+      'Focus heavily on puzzles (critical for this role)',
+      'Practice analytical and logical problems daily',
+      'Revise basic CS fundamentals (JRE, JVM, JDK, security basics)'
     ],
     additionalFeedback: [
-      'Avoid applying if your profile is heavily development-focused with weak analytical exposure',
-      'Role favors analytical thinking over pure coding skills'
+      'Not ideal for purely development-heavy profiles',
+      'Strong analytical thinking is prioritized over coding'
     ],
     details: {
       difficulty: 'Medium',
@@ -180,7 +217,11 @@ export const experiences = [
           difficulty: 'Easy',
           mode: 'Remote',
           duration: 60,
-          summary: 'Quantitative aptitude and English questions, overall easy level'
+          summary: [
+            'Quantitative aptitude questions',
+            'English/verbal questions',
+            'Overall easy level'
+          ]
         },
         {
           name: 'Technical Round',
@@ -188,7 +229,11 @@ export const experiences = [
           difficulty: 'Medium',
           mode: 'Remote',
           duration: 30,
-          summary: 'Basic technical questions (defender, antivirus, JRE, JVM, JDK) and puzzle-based questions (GFG-level)'
+          summary: [
+            'Puzzle-based questions (GFG level)',
+            'Basic CS questions: defender, antivirus',
+            'Java concepts: JRE, JVM, JDK'
+          ]
         }
       ]
     }
