@@ -117,7 +117,7 @@ function Home() {
 
               <div className="resume-actions">
                 <a
-                  href="http://localhost:5173/"
+                  href="https://interview-exp-inky.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="resume-btn primary"
