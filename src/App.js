@@ -162,11 +162,11 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
 
 function AppContent() {
   const [darkMode, setDarkMode] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 992);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768);
+      setIsDesktop(window.innerWidth > 992);
     };
 
     window.addEventListener('resize', handleResize);
