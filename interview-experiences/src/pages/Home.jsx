@@ -17,7 +17,7 @@ const Home = () => {
         {experiences.map((exp) => (
           <div className="glass-card" key={exp.id} style={{padding: '1.5rem'}}>
             <h2 style={{fontSize: '1.4rem', marginTop: 0}}><FiBriefcase /> {exp.company}</h2>
-            <h3 style={{fontSize: '1rem', color: '#0ea5e9', marginBottom: '1rem'}}>{exp.role}</h3>
+            <h3 style={{fontSize: '1rem', color: 'var(--accent)', marginBottom: '1rem'}}>{exp.role}</h3>
             <p style={{fontSize: '0.95rem', marginBottom: '1.5rem', opacity: 0.9}}>
               {exp.overview.substring(0, 100)}...
             </p>
@@ -25,8 +25,8 @@ const Home = () => {
               to={`/experience/${exp.id}`}
               style={{
                 display: 'inline-block',
-                background: 'var(--primary-gradient)',
-                color: 'white',
+                background: 'var(--accent)',
+                color: 'var(--bg-light)',
                 padding: '0.6rem 1.2rem',
                 borderRadius: '8px',
                 textDecoration: 'none',

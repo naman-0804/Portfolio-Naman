@@ -12,7 +12,7 @@ const ExperienceDetail = () => {
 
   return (
     <div className="experience-detail">
-      <Link to="/" style={{display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#0ea5e9', textDecoration: 'none', marginBottom: '1.5rem', fontWeight: '500'}}>
+      <Link to="/" style={{display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent)', textDecoration: 'none', marginBottom: '1.5rem', fontWeight: '500'}}>
         <FiArrowLeft /> Back to all experiences
       </Link>
 
@@ -20,7 +20,7 @@ const ExperienceDetail = () => {
         <h1 style={{marginTop: 0, marginBottom: '0.5rem'}}>{experience.company}</h1>
         <h3 style={{color: 'var(--text-light)', opacity: 0.7, marginTop: 0, marginBottom: '2rem', fontSize: '1.2rem'}}>Role: {experience.role}</h3>
 
-        <div style={{background: 'rgba(14, 165, 233, 0.05)', padding: '1.5rem', borderRadius: '12px', borderLeft: '4px solid #0ea5e9', marginBottom: '2.5rem'}}>
+        <div style={{background: 'var(--accent-light)', padding: '1.5rem', borderRadius: '12px', borderLeft: '4px solid var(--accent)', marginBottom: '2.5rem'}}>
           <p style={{margin: 0, fontSize: '1.1rem'}}>{experience.overview}</p>
         </div>
 
