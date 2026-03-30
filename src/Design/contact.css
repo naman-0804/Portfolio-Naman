@@ -211,10 +211,10 @@
 .submit-button {
   width: 100%;
   padding: 1rem;
-  border: none;
+  border: 2px solid #64748b;
   border-radius: 12px;
-  background: var(--primary-gradient);
-  color: white;
+  background: white;
+  color: #475569;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -225,12 +225,13 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(14, 165, 233, 0.2);
 }
 
 .submit-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 15px rgba(14, 165, 233, 0.3);
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #1e293b;
 }
 
 .submit-button:active {
@@ -300,6 +301,17 @@
 .dark-mode .form-group textarea:focus {
   border-color: #38bdf8;
   background-color: rgba(15, 23, 42, 0.8);
+}
+
+.dark-mode .submit-button {
+  background: transparent;
+  border-color: #cbd5e1;
+  color: #cbd5e1;
+}
+
+.dark-mode .submit-button:hover {
+  border-color: #94a3b8;
+  color: white;
 }
 
 /* --- Responsive --- */

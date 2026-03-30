@@ -80,7 +80,6 @@ function Home() {
             <h3 className="content-title">Resume</h3>
             <div className="resume-section">
               <div className="resume-info">
-                <span className="resume-badge">PDF</span>
                 <div className="resume-text">
                   <h4>Naman — Resume</h4>
                   <p>ML • Cloud • Full-Stack</p>
@@ -92,7 +91,7 @@ function Home() {
                   href="https://drive.google.com/file/d/1GT2cGCyLLkD9CqNMD3gDRPYPTpiLgZP8/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="resume-btn primary"
+                  className="resume-btn secondary"
                 >
                   <FaEye /> View
                 </a>
@@ -119,7 +118,7 @@ function Home() {
                   href="https://interview-exp-inky.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="resume-btn primary"
+                  className="resume-btn secondary"
                 >
                   <FaEye /> Read Now
                 </a>
