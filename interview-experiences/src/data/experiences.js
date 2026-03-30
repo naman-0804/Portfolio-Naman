@@ -5,7 +5,8 @@ export const experiences = [
     role: 'TCS Prime',
     overview: 'The TCS Prime interview is a combined technical, managerial, and HR evaluation focusing on OOPs, SQL, core concepts, and strong resume-based discussions including cloud and system-level thinking.',
     rounds: [
-      'Round 1: Technical + Managerial + HR (Final Interview)'
+      'Round 1: NQT (Aptitude, Advanced Aptitude, 1 Basic Coding, 1 Medium Coding)',
+      'Round 2: Technical + Managerial + HR (Final Interview)'
     ],
     focusAreas: [
       'OOPs: abstract functions, encapsulation, access specifiers, anonymous classes',
@@ -32,6 +33,19 @@ export const experiences = [
       mode: 'On-site',
       appliedVia: 'Company Website',
       roundsBreakdown: [
+        {
+          name: 'NQT (National Qualifier Test)',
+          type: 'Online Assessment',
+          difficulty: 'Medium',
+          mode: 'Remote',
+          duration: 120,
+          summary: [
+            'Basic Aptitude questions',
+            'Advanced Aptitude questions',
+            '1 Basic Coding question',
+            '1 Medium Coding question'
+          ]
+        },
         {
           name: 'Technical + Managerial + HR',
           type: 'Final Interview',

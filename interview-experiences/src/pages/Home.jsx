@@ -15,7 +15,12 @@ const Home = () => {
 
       <div className="experiences-grid">
         {experiences.map((exp) => (
-          <div className="glass-card" key={exp.id} style={{ display: 'flex', flexDirection: 'column', padding: '2rem' }}>
+          <Link 
+            to={`/experience/${exp.id}`} 
+            className="glass-card" 
+            key={exp.id} 
+            style={{ display: 'flex', flexDirection: 'column', padding: '2rem', textDecoration: 'none', color: 'inherit' }}
+          >
             <h2 className="card-title">
               <FiBriefcase style={{ color: 'var(--accent)', fontSize: '1.2rem' }} /> {exp.company}
             </h2>
@@ -23,10 +28,10 @@ const Home = () => {
             <p className="card-text">
               {exp.overview.substring(0, 110)}...
             </p>
-            <Link to={`/experience/${exp.id}`} className="read-more-link">
+            <div className="read-more-link">
               Read Full Experience <FiArrowRight />
-            </Link>
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
     </div>
