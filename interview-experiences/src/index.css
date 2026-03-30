@@ -4,12 +4,12 @@
   /* Typography */
   --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
   
-  /* Modern Zinc/Slate Light Mode Palette */
-  --bg-light: #f8fafc; /* very subtle slate tint */
-  --bg-dark: #09090b; /* deep zinc */
+  /* Modern Monochromatic Palette */
+  --bg-light: #f8f9fa; /* Matches main website */
+  --bg-dark: #18181b; /* Matches main website */
   
-  --text-light: #0f172a; /* Slate 900 */
-  --text-dark: #f8fafc; /* Slate 50 */
+  --text-light: #000000; /* Matches main website */
+  --text-dark: #ffffff; /* Matches main website */
   --text-muted: #64748b; /* Slate 500 */
   
   /* Accents */
@@ -45,9 +45,8 @@ body {
   color: var(--text-light);
   transition: background-color 0.4s ease, color 0.4s ease;
   min-height: 100vh;
-  /* Premium dotted background pattern for extra flair */
-  background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 0);
-  background-size: 32px 32px;
+  /* Refreshing subtle mesh/noise for light mode */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -64,7 +63,7 @@ body {
   --accent-hover: #cbd5e1; /* Slate 300 */
   --text-muted: #94a3b8; /* Slate 400 */
   --primary-gradient: linear-gradient(135deg, #e2e8f0 0%, #ffffff 100%);
-  background-image: radial-gradient(rgba(248, 250, 252, 0.06) 1px, transparent 0);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
 }
 
 /* Nav */
