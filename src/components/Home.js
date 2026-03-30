@@ -28,9 +28,6 @@ function Home() {
               <a href="https://www.youtube.com/@naman_0804/" target="_blank" rel="noopener noreferrer" className="social-icon youtube">
                 <FaYoutube />
               </a>
-              <a href="https://codolio.com/profile/naman08" target="_blank" rel="noopener noreferrer" className="social-icon takeforward">
-                <img src="https://d3hr337ydpgtsa.cloudfront.net/assets/Banner.png" alt="Codolio" />
-              </a>
             </div>
 
             {/* Recommendation Bubble (Nested inside Profile Card or below it) */}
