@@ -162,10 +162,10 @@
   width: 16px;
   height: 16px;
   background-color: #fff;
-  border: 4px solid #0ea5e9;
+  border: 4px solid #000;
   border-radius: 50%;
   z-index: 1;
-  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Alternating Logic */
@@ -221,7 +221,7 @@
   font-size: 0.85rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   letter-spacing: 0.5px;
 }
 
@@ -317,8 +317,8 @@
 .dark-mode .achievement-card p { color: #cbd5e1; }
 .dark-mode .achievement-card::after {
   background-color: #0f172a;
-  border-color: #38bdf8;
-  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2);
+  border-color: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode .scholarship-banner {
@@ -490,7 +490,7 @@
   font-weight: 700;
   background: var(--primary-gradient);
   color: white;
-  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Dark Mode --- */
@@ -506,6 +506,13 @@
 .dark-mode .certification-year {
   background: rgba(255, 255, 255, 0.08);
   color: #cbd5f5;
+}
+
+.dark-mode .achievement-date,
+.dark-mode .certification-score {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
 }
 
 /* --- Responsive --- */
