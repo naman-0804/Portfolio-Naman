@@ -221,6 +221,10 @@
 
 .dark-mode .platform-card:hover { background: rgba(255, 255, 255, 0.08); }
 
+.dark-mode .platform-badge:not([style]) {
+  color: #000000;
+}
+
 .dark-mode .tuf { color: #ff375f; }
 .dark-mode .codechef { color: #d2691e; }
 
