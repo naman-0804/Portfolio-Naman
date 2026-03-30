@@ -11,30 +11,46 @@ const ExperienceDetail = () => {
   }
 
   return (
-    <div className="experience-detail">
-      <Link to="/" style={{display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--accent)', textDecoration: 'none', marginBottom: '1.5rem', fontWeight: '500'}}>
+    <div className="page-content">
+      <Link to="/" className="back-link">
         <FiArrowLeft /> Back to all experiences
       </Link>
 
       <div className="glass-card">
-        <h1 style={{marginTop: 0, marginBottom: '0.5rem'}}>{experience.company}</h1>
-        <h3 style={{color: 'var(--text-light)', opacity: 0.7, marginTop: 0, marginBottom: '2rem', fontSize: '1.2rem'}}>Role: {experience.role}</h3>
-
-        <div style={{background: 'var(--accent-light)', padding: '1.5rem', borderRadius: '12px', borderLeft: '4px solid var(--accent)', marginBottom: '2.5rem'}}>
-          <p style={{margin: 0, fontSize: '1.1rem'}}>{experience.overview}</p>
+        <div className="hero-box">
+          <h1>{experience.company}</h1>
+          <span className="card-role" style={{ fontSize: '1rem', padding: '0.4rem 1rem' }}>{experience.role}</span>
         </div>
 
-        <h2 style={{fontSize: '1.5rem', borderBottom: '1px solid var(--glass-border-light)', paddingBottom: '0.5rem'}}>Interview Process</h2>
-        <ul className="rounds-list">
-          {experience.rounds.map((round, index) => (
-            <li key={index}><strong>{round.split(':')[0]}:</strong> {round.split(':')[1] || round}</li>
-          ))}
+        <div className="overview-box">
+          <p style={{ margin: 0 }}>{experience.overview}</p>
+        </div>
+
+        <h2 className="section-heading">Interview Process</h2>
+        <ul className="timeline">
+          {experience.rounds.map((round, index) => {
+            const splitIndex = round.indexOf(':');
+            let roundTitle = round;
+            let roundDesc = '';
+            
+            if (splitIndex !== -1) {
+              roundTitle = round.substring(0, splitIndex).trim();
+              roundDesc = round.substring(splitIndex + 1).trim();
+            }
+
+            return (
+              <li className="timeline-item" key={index}>
+                <strong>{roundTitle}</strong>
+                {roundDesc}
+              </li>
+            );
+          })}
         </ul>
 
-        <h2 style={{fontSize: '1.5rem', borderBottom: '1px solid var(--glass-border-light)', paddingBottom: '0.5rem', marginTop: '2.5rem'}}>What to Focus On</h2>
-        <ul className="focus-list">
+        <h2 className="section-heading" style={{ marginTop: '4rem' }}>What to Focus On</h2>
+        <ul className="tags-container">
           {experience.focusAreas.map((focus, index) => (
-            <li key={index}>{focus}</li>
+            <li className="tag" key={index}>{focus}</li>
           ))}
         </ul>
       </div>

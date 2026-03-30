@@ -1,42 +1,30 @@
 import { Link } from 'react-router-dom';
 import { experiences } from '../data/experiences';
-import { FiBriefcase } from 'react-icons/fi';
+import { FiBriefcase, FiArrowRight } from 'react-icons/fi';
 
 const Home = () => {
   return (
-    <div className="home-container">
-      <div className="glass-card" style={{textAlign: 'center', marginBottom: '3rem'}}>
-        <h1>My Interview Journey</h1>
-        <p style={{fontSize: '1.2rem', color: 'var(--text-light)', opacity: 0.8}}>
+    <div className="page-content">
+      <div className="glass-card" style={{ textAlign: 'center', marginBottom: '3rem', padding: '3.5rem 2rem' }}>
+        <h1 style={{ fontSize: '3.2rem', marginBottom: '1rem' }}>My Interview Journey</h1>
+        <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
           I have documented my interview experiences across various top companies. 
           Use these insights to prepare for your own technical interviews!
         </p>
       </div>
 
-      <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem'}}>
+      <div className="experiences-grid">
         {experiences.map((exp) => (
-          <div className="glass-card" key={exp.id} style={{padding: '1.5rem'}}>
-            <h2 style={{fontSize: '1.4rem', marginTop: 0}}><FiBriefcase /> {exp.company}</h2>
-            <h3 style={{fontSize: '1rem', color: 'var(--accent)', marginBottom: '1rem'}}>{exp.role}</h3>
-            <p style={{fontSize: '0.95rem', marginBottom: '1.5rem', opacity: 0.9}}>
-              {exp.overview.substring(0, 100)}...
+          <div className="glass-card" key={exp.id} style={{ display: 'flex', flexDirection: 'column', padding: '2rem' }}>
+            <h2 className="card-title">
+              <FiBriefcase style={{ color: 'var(--accent)', fontSize: '1.2rem' }} /> {exp.company}
+            </h2>
+            <span className="card-role">{exp.role}</span>
+            <p className="card-text">
+              {exp.overview.substring(0, 110)}...
             </p>
-            <Link 
-              to={`/experience/${exp.id}`}
-              style={{
-                display: 'inline-block',
-                background: 'var(--accent)',
-                color: 'var(--bg-light)',
-                padding: '0.6rem 1.2rem',
-                borderRadius: '8px',
-                textDecoration: 'none',
-                fontWeight: '600',
-                transition: 'transform 0.2s'
-              }}
-              onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
-              onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
-            >
-              Read Full Experience
+            <Link to={`/experience/${exp.id}`} className="read-more-link">
+              Read Full Experience <FiArrowRight />
             </Link>
           </div>
         ))}
