@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaLinkedin, FaGithub, FaYoutube, FaDownload, FaEye } from 'react-icons/fa';
-import Terminal from './terminal.js';
 import mypic from '../Images/IMG_20240807_232437_330.jpeg';
 
 function Home() {
@@ -125,12 +124,6 @@ function Home() {
                   <FaEye /> Read Now
                 </a>
               </div>
-            </div>
-
-            {/* Terminal Section */}
-            <h3 className="content-title">Interactive CLI</h3>
-            <div className="terminal-container">
-              <Terminal />
             </div>
 
           </div>
