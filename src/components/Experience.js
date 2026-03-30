@@ -13,7 +13,7 @@ function Experience() {
         "Starting in 2026 with focus on Full-Stack development and Cloud technologies",
         "Opportunity to work on DevOps technologies and BigData projects"
       ],
-      technologies: ["Full-Stack", "Cloud", "ML","DevOps"]
+      technologies: ["Cloud", "Big Data", "Full Stack"]
     },
     {
       role: "Software Development Intern",
@@ -24,7 +24,7 @@ function Experience() {
         "Worked with MongoDB for database management",
         "Gained hands-on experience in real-world development environment"
       ],
-      technologies: ["React", "Flask", "MongoDB"]
+      technologies: ["Full Stack"]
     },
     {
       role: "Web Developer",
@@ -35,7 +35,7 @@ function Experience() {
         "Ensured site remains user-friendly and up-to-date",
         "Implemented features using HTML, CSS, JavaScript"
       ],
-      technologies: ["HTML", "CSS", "JavaScript", "Python"]
+      technologies: ["React.js"]
     }
   ];
 
@@ -73,13 +73,11 @@ function Experience() {
           <p className="premium-subtitle">Professional experience and internships.</p>
         </div>
         
-        <div className="experience-grid">
+        <div className="experience-timeline">
           {experienceData.map((exp, index) => (
-            <div key={index} className="experience-card">
+            <div key={index} className="timeline-card">
+              <span className="timeline-date">{exp.date}</span>
               <div className="card-header">
-                <div className="icon-container">
-                  <FaBriefcase />
-                </div>
                 <h3>{exp.role}</h3>
               </div>
               
@@ -87,9 +85,6 @@ function Experience() {
                 <div className="info-row">
                   <div className="info-item">
                     <FaBuilding className="text-icon" /> <span>{exp.company}</span>
-                  </div>
-                  <div className="info-item">
-                    <FaCalendarAlt className="text-icon" /> <span>{exp.date}</span>
                   </div>
                 </div>
                 
@@ -103,9 +98,9 @@ function Experience() {
                 
                 <div className="tech-container">
                   <div className="tech-label"><FaTools /> Technologies:</div>
-                  <div className="tech-pills">
+                  <div className="tech-stack">
                     {exp.technologies.map((tech, i) => (
-                      <span key={i}>{tech}</span>
+                      <span key={i} className="tech-tag">{tech}</span>
                     ))}
                   </div>
                 </div>
@@ -120,27 +115,22 @@ function Experience() {
           <p className="premium-subtitle">Academic background and institutional learning.</p>
         </div>
         
-        <div className="education-grid">
+        <div className="experience-timeline">
           {educationData.map((edu, index) => (
-            <div key={index} className="education-card">
+            <div key={index} className="timeline-card">
+              <span className="timeline-date">{edu.date}</span>
               <div className="card-header">
-                <div className="icon-container">
-                  <FaGraduationCap />
-                </div>
                 <h3>{edu.degree}</h3>
               </div>
               
               <div className="card-body">
                 <div className="info-row">
                   <div className="info-item">
-                    <FaBuilding /> <span>{edu.institution}</span>
-                  </div>
-                  <div className="info-item">
-                    <FaCalendarAlt /> <span>{edu.date}</span>
+                    <FaBuilding className="text-icon" /> <span>{edu.institution}</span>
                   </div>
                   {edu.location && (
                     <div className="info-item">
-                      <FaMapMarkerAlt /> <span>{edu.location}</span>
+                      <FaMapMarkerAlt className="text-icon" /> <span>{edu.location}</span>
                     </div>
                   )}
                 </div>
