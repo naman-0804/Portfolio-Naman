@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import {
-  FaEnvelope, FaPhone, FaPaperPlane, FaLinkedin,
-  FaGithub, FaUser, FaCommentAlt, FaTwitter
-} from 'react-icons/fa';
+import { FaPaperPlane, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
 
@@ -95,49 +92,40 @@ function Contact() {
   return (
     <div id="contact-section">
       <div className="contact-container">
-
-        <h1 className="section-title">Get In Touch</h1>
-        <p className="section-subtitle">
-          Have a question or want to work together? Drop me a message!
-        </p>
-
         <div className="contact-content">
 
           {/* LEFT */}
-          <div className="contact-left-col">
-            <div className="contact-card">
-              <div className="contact-icon"><FaEnvelope /></div>
-              <div className="contact-details">
-                <h3>Email</h3>
+          <div className="contact-left-col premium">
+            <h2 className="premium-heading">Let's build<br/>something<br/>great.</h2>
+            
+            <div className="premium-contact-info">
+              <div className="info-block">
+                <h4>EMAIL</h4>
                 <p>namansrivastava0104@gmail.com</p>
               </div>
-            </div>
 
-            <div className="contact-card">
-              <div className="contact-icon"><FaPhone /></div>
-              <div className="contact-details">
-                <h3>Phone</h3>
+              <div className="info-block">
+                <h4>PHONE</h4>
                 <p>+91 (Available on Request)</p>
               </div>
             </div>
 
-            <div className="social-links">
-              <h3>Connect With Me</h3>
-              <div className="social-icons">
-                <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noreferrer" className="social-icon-link"><FaLinkedin /></a>
-                <a href="https://github.com/naman-0804" target="_blank" rel="noreferrer" className="social-icon-link"><FaGithub /></a>
-                <a href="https://x.com/n_a_m_a_n_16" target="_blank" rel="noreferrer" className="social-icon-link"><FaTwitter /></a>
+            <div className="premium-socials">
+              <h4>SOCIALS</h4>
+              <div className="social-icons-minimal">
+                <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href="https://github.com/naman-0804" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://x.com/n_a_m_a_n_16" target="_blank" rel="noreferrer">Twitter</a>
               </div>
             </div>
           </div>
 
           {/* FORM */}
-          <div className="contact-form-container">
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <h2>Send Me a Message</h2>
-
-              <div className="form-group">
-                <label><FaUser /> Your Name</label>
+          <div className="contact-form-wrapper premium">
+            <form className="contact-form premium" onSubmit={handleSubmit}>
+              
+              <div className="form-group premium-group">
+                <label>Name</label>
                 <input
                   type="text"
                   name="name"
@@ -148,8 +136,8 @@ function Contact() {
               </div>
 
               {/* 📧 Email + Verify */}
-              <div className="form-group">
-                <label><FaEnvelope /> Your Email</label>
+              <div className="form-group premium-group">
+                <label>Email</label>
                 <div className="email-row">
                   <input
                     type="email"
@@ -177,7 +165,7 @@ function Contact() {
 
               {/* 🔢 OTP */}
               {otpSent && !isVerified && (
-                <div className="form-group">
+                <div className="form-group premium-group">
                   <label>Enter OTP</label>
                   <div className="email-row">
                     <input
@@ -197,8 +185,8 @@ function Contact() {
                 </div>
               )}
 
-              <div className="form-group">
-                <label><FaCommentAlt /> Your Message</label>
+              <div className="form-group premium-group">
+                <label>Your Message</label>
                 <textarea
                   name="message"
                   rows="5"
