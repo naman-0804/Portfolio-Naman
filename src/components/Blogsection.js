@@ -60,11 +60,11 @@ function BlogSection() {
     <div id="blog-section">
       <div className="blog-container">
         
-        {/* Header Section */}
-        <h1 className="section-title">Blogs</h1>
-        <p className="section-subtitle">
-          Case studies, technical breakdowns & behind-the-scenes of my projects
-        </p>
+        {/* Premium Typography Header */}
+        <div className="premium-section-header">
+          <h2 className="premium-heading">Project<br/>Walkthroughs.</h2>
+          <p className="premium-subtitle">Technical breakdowns, development concepts, and behind-the-scenes.</p>
+        </div>
 
         {/* Grid Section */}
         <div className="blog-grid">

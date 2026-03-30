@@ -51,6 +51,23 @@
   margin-right: auto;
 }
 
+.premium-section-header {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.premium-subtitle {
+  font-size: 1.15rem;
+  color: #64748b;
+  font-weight: 500;
+  margin: 0;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
 /* --- Grid --- */
 .blog-grid {
   display: grid;
@@ -150,7 +167,7 @@
 /* --- Dark Mode --- */
 
 
-.dark-mode .section-subtitle {
+.dark-mode .premium-subtitle {
   color: #94a3b8;
 }
 
