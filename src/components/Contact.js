@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaPaperPlane, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaPaperPlane } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
 

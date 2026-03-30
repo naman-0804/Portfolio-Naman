@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBriefcase, FaGraduationCap, FaCalendarAlt, FaTools, FaBuilding, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaTools, FaBuilding, FaMapMarkerAlt } from 'react-icons/fa';
 
 function Experience() {
 
