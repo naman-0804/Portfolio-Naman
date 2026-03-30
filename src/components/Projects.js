@@ -260,9 +260,11 @@ function Projects() {
 
   return (
     <div id="project-section" className="project">
-      {/* UPDATED HEADER: Matches Skills Section */}
-      <h1 className="section-title">Projects</h1>
-      
+      {/* Premium Typography Header */}
+      <div className="premium-section-header" style={{ marginBottom: "3rem" }}>
+        <h2 className="premium-heading">Showcase &<br/>Works.</h2>
+        <p className="premium-subtitle">A collection of full-stack, machine learning, and cloud projects.</p>
+      </div>
       {categoryOrder
         .filter((cat) => groupedProjects[cat] && groupedProjects[cat].length)
         .map((cat) => (

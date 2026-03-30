@@ -68,7 +68,10 @@ function Experience() {
       <div className="section-container">
         
         {/* Experience Header */}
-        <h2 className="section-title">Professional Experience</h2>
+        <div className="premium-section-header" style={{ marginBottom: "3rem" }}>
+          <h2 className="premium-heading">Career &<br/>Roles.</h2>
+          <p className="premium-subtitle">Professional experience and internships.</p>
+        </div>
         
         <div className="experience-grid">
           {experienceData.map((exp, index) => (
@@ -112,8 +115,10 @@ function Experience() {
         </div>
         
         {/* Education Header */}
-        <br></br>
-        <h2 className="section-title education-title">Education</h2>
+        <div className="premium-section-header" style={{ marginBottom: "3rem", marginTop: "4rem" }}>
+          <h2 className="premium-heading">Education.</h2>
+          <p className="premium-subtitle">Academic background and institutional learning.</p>
+        </div>
         
         <div className="education-grid">
           {educationData.map((edu, index) => (

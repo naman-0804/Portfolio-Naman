@@ -109,8 +109,11 @@ function Skills() {
   return (
     <div id="skills-section">
       
-      {/* Skills Section */}
-      <h2 className="section-title">Technical Skills</h2>
+      {/* Premium Typography Header */}
+      <div className="premium-section-header" style={{ marginBottom: "3rem" }}>
+        <h2 className="premium-heading">Technical<br/>Arsenal.</h2>
+        <p className="premium-subtitle">Languages, frameworks, databases, and continuous learning.</p>
+      </div>
       <div className="skills-container">
         {skillsData.map((skill, index) => (
           <div 
@@ -134,7 +137,10 @@ function Skills() {
       </div>
 
       {/* Achievements Section */}
-      <h2 className="section-title">Achievements</h2>
+      <div className="premium-section-header" style={{ marginBottom: "3rem", marginTop: "4rem" }}>
+        <h2 className="premium-heading">Milestones.</h2>
+        <p className="premium-subtitle">Awards, hackathons, and professional highlights.</p>
+      </div>
       <div className="Achievements">
         {achievementsData.map((achievement, index) => (
           <div key={index} className="achievement-card">
@@ -145,7 +151,10 @@ function Skills() {
         ))}
       </div>
       {/* Certifications Section */}
-      <h2 className="section-title">Certifications</h2>
+      <div className="premium-section-header" style={{ marginBottom: "3rem", marginTop: "4rem" }}>
+        <h2 className="premium-heading">Credentials.</h2>
+        <p className="premium-subtitle">Verified certifications and coursework.</p>
+      </div>
       <div className="certifications-container">
         {certificationsData.map((cert, index) => (
           <div key={index} className="certification-card">
