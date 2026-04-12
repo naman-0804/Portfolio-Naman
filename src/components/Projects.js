@@ -17,11 +17,22 @@ import devops from '../Images/devops.png';
 import auth from '../Images/auth.png';
 import route from '../Images/route.png';
 import ecommerce from '../Images/ecommerce.png';
+import wecalm from '../Images/wecalm.png';
 
 function Projects() {
   const [activeProject, setActiveProject] = useState(null);
 
   const projects = [
+    {
+      id: 'pulse-tracker',
+      category: 'Fullstack',
+      title: 'Pulse Tracker',
+      description: 'Privacy-preserving mental health tracking system for students with automated SOS triggers and SHA-256 anonymization.',
+      image: wecalm,
+      technologies: ['React', 'Flask', 'MongoDB', 'Recharts'],
+      github: 'https://github.com/naman-0804/Counselling-Management-',
+      youtube: ''
+    },
     {
       id: 'routeguard',
       title: 'RouteGuard: Real-Time Detection',
