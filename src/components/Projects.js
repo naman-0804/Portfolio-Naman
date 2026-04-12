@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaGithub, FaYoutube } from 'react-icons/fa';
+import { FaGithub, FaYoutube, FaExternalLinkAlt } from 'react-icons/fa';
 
 // Import Images
 import okrapic from '../Images/okra-website.png';
@@ -18,6 +18,7 @@ import auth from '../Images/auth.png';
 import route from '../Images/route.png';
 import ecommerce from '../Images/ecommerce.png';
 import wecalm from '../Images/wecalm.png';
+import contextImg from '../Images/contxt.png';
 
 function Projects() {
   const [activeProject, setActiveProject] = useState(null);
@@ -42,6 +43,16 @@ function Projects() {
       technologies: ['React', 'Python', 'OpenCV', 'OSM API'],
       github: 'https://github.com/naman-0804/RouteGuard',
       youtube: 'https://www.youtube.com/watch?v=LGjBXVr_ZvM'
+    },
+    {
+      id: 'context-ai',
+      category: 'Machine Learning',
+      title: 'Context AI',
+      description: 'Intelligent document assistant using RAG and LLMs to interact with documents through natural language.',
+      image: contextImg,
+      technologies: ['Flask', 'Pinecone', 'Groq API', 'spaCy'],
+      github: 'https://github.com/Context-Driven-Legal-Text-Analysis/Context_Driven_Text_Analysis',
+      demo: 'https://contextai.tiiny.site/'
     },
     {
       id: 'ecommerce-ml',
@@ -262,6 +273,19 @@ function Projects() {
               }}
             >
               <FaYoutube />
+            </button>
+          )}
+
+          {project.demo && (
+            <button
+              className="icon-button youtube-btn"
+              title="View Live Demo"
+              onClick={(e) => {
+                e.stopPropagation();
+                redirectToProject(project.demo);
+              }}
+            >
+              <FaExternalLinkAlt />
             </button>
           )}
         </div>
