@@ -37,7 +37,7 @@ function Projects() {
       category: 'Machine Learning',
       title: 'E-Commerce ML Prediction',
       description: 'Customer Segmentation and Purchase Prediction using Scikit-learn.',
-      image: ecommerce, 
+      image: ecommerce,
       technologies: ['Scikit-learn', 'Pandas', 'Matplotlib'],
       github: 'https://github.com/naman-0804/E-Commerce-Customer-Segmentation-Purchase-Prediction',
       youtube: ''
@@ -205,8 +205,8 @@ function Projects() {
 
   // Reusable renderer for a single project item
   const renderProjectItem = (project) => (
-    <div 
-      className="project-item" 
+    <div
+      className="project-item"
       key={project.id}
       onMouseEnter={() => handleProjectInteraction(project.id)}
       onMouseLeave={handleMouseLeave}
@@ -214,7 +214,7 @@ function Projects() {
     >
       <div className="project-image-container">
         <img src={project.image} alt={project.title} />
-        
+
         <div className={`project-overlay ${activeProject === project.id ? 'active' : ''}`}>
           <div className="project-description">
             <p>{project.description || `A cool project built with ${project.technologies[0]}.`}</p>
@@ -230,7 +230,7 @@ function Projects() {
       <div className="project-info">
         <h3 title={project.title}>{project.title}</h3>
         <div className="project-links">
-          <button 
+          <button
             className="icon-button github-btn"
             title="View Code"
             onClick={(e) => {
@@ -242,7 +242,7 @@ function Projects() {
           </button>
 
           {project.youtube && (
-            <button 
+            <button
               className="icon-button youtube-btn"
               title="Watch Demo"
               onClick={(e) => {
@@ -262,7 +262,7 @@ function Projects() {
     <div id="project-section" className="project">
       {/* Premium Typography Header */}
       <div className="premium-section-header" style={{ marginBottom: "3rem" }}>
-        <h2 className="premium-heading">Showcase &<br/>Works.</h2>
+        <h2 className="premium-heading">Showcase &<br />Works.</h2>
         <p className="premium-subtitle">A collection of full-stack, machine learning, and cloud projects.</p>
       </div>
       {categoryOrder
