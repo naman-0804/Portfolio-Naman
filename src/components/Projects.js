@@ -27,7 +27,7 @@ function Projects() {
     {
       id: 'pulse-tracker',
       category: 'Fullstack',
-      title: 'Pulse Tracker',
+      title: 'Critical mental health support system',
       description: 'Privacy-preserving mental health tracking system for students with automated SOS triggers and SHA-256 anonymization.',
       image: wecalm,
       technologies: ['React', 'Flask', 'MongoDB', 'Recharts'],
