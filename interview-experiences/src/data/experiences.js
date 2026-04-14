@@ -53,15 +53,14 @@ export const experiences = [
           mode: 'On-site',
           duration: 45,
           summary: [
-            'Self introduction at start',
-            'OOPs deep questions: abstract class usage, encapsulation, access control, anonymous classes',
-            'SQL: write UPDATE query + explain DROP vs TRUNCATE vs DELETE',
-            'C++: header files and :: operator',
-            'AWS: SNS and scenario-based questions (heavy load, gaming server scaling, DDoS handling)',
-            'Containerization and orchestration basics',
-            'Full resume-based grilling (projects + hackathon role)',
-            'HR questions: family background, pressure handling, future studies',
-            'DSA: easy-level but optimized approach expected (prime number logic)'
+            'The interview began with a comprehensive self-introduction where I highlighted my technical journey and key interests. This transitioned quickly into an in-depth exploration of Object-Oriented Programming (OOP) concepts.',
+            'Detailed OOPS Questions: I was asked to explain and demonstrate how to write an abstract function, and we delved into access specifiers (public, private, protected), the principle of encapsulation, and the practical utility of anonymous classes in Java/C++.',
+            'SQL & Database: The focus was both on syntax and internal mechanics; I had to write an UPDATE query and clarify the distinct differences between DROP, TRUNCATE, and DELETE (SQL level: Medium for me).',
+            'C++ Core: Touched upon header files and the scope resolution operator (::).',
+            'AWS Cloud (Resume-based): Significant portion dedicated to AWS SNS and scenario-based questions like managing a gaming server under heavy load, scaling strategies, and handling DDoS attacks using AWS features.',
+            'DevOps & Projects: Discussed containerization (Docker basic) and orchestration concepts based on my resume. Grilling on my hackathon project, specifically my individual role and contributions.',
+            'DSA Problem: Optimization was key – finding a prime number without using a brute-force approach.',
+            'HR Round: Covered family background, stress management/pressure handling, and aspirations for future studies.'
           ]
         }
       ]
@@ -121,12 +120,11 @@ export const experiences = [
           mode: 'On-site',
           duration: 25,
           summary: [
-            'Self introduction',
-            'OOPs questions (including scenario-based)',
-            'MongoDB basics',
-            'Postman and REST API basics',
-            'Basic CI/CD discussion',
-            'Minimal project discussion (in some cases none)'
+            'Introduction and walking through the resume.',
+            'OOPS deep dive: Scenario-based questions on OOPS principles to test practical application.',
+            'MongoDB: Discussion on data storage format (BSON/JSON) and how it handles scaling.',
+            'API & Tools: Detailed questions on REST APIs and using Postman for endpoint testing.',
+            'DevOps/Backend: Basic CI/CD pipeline discussion based on resume projects, along with questions on backend architecture and stress management.'
           ]
         }
       ]
@@ -216,8 +214,9 @@ export const experiences = [
       'Revise basic CS fundamentals (JRE, JVM, JDK, security basics)'
     ],
     additionalFeedback: [
-      'Not ideal for purely development-heavy profiles',
-      'Strong analytical thinking is prioritized over coding'
+      'The puzzle round is the most critical; they were quite confusing and difficult if you haven\'t encounterd them in years or didn\'t study them specifically.',
+      'There is little point in applying for this specific role with a purely development-based resume unless you have strong analytical/puzzle-solving prep.',
+      'Strong analytical thinking is prioritized heavily over coding skills here.'
     ],
     details: {
       difficulty: 'Medium',

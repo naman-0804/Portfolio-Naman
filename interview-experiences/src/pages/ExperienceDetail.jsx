@@ -1,6 +1,6 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { experiences } from '../data/experiences';
-import { FiArrowLeft } from 'react-icons/fi';
+import { FiArrowLeft, FiClock, FiMapPin, FiTarget, FiInfo } from 'react-icons/fi';
 
 const ExperienceDetail = () => {
   const { id } = useParams();
@@ -16,43 +16,88 @@ const ExperienceDetail = () => {
         <FiArrowLeft /> Back to all experiences
       </Link>
 
-      <div className="glass-card">
+      <div className="glass-card detail-card">
         <div className="hero-box">
-          <h1>{experience.company}</h1>
-          <span className="card-role" style={{ fontSize: '1rem', padding: '0.4rem 1rem' }}>{experience.role}</span>
+          <h1 className="company-name">{experience.company}</h1>
+          <span className="card-role highlight-role">{experience.role}</span>
+        </div>
+
+        <div className="stats-strip">
+          <div className="stat-item">
+            <FiTarget /> <span>{experience.details?.difficulty || 'Medium'}</span>
+          </div>
+          <div className="stat-item">
+            <FiClock /> <span>{experience.details?.timeline || '1-2 Weeks'}</span>
+          </div>
+          <div className="stat-item">
+            <FiMapPin /> <span>{experience.details?.mode || 'On-site'}</span>
+          </div>
         </div>
 
         <div className="overview-box">
-          <p style={{ margin: 0 }}>{experience.overview}</p>
+          <p className="experience-overview">{experience.overview}</p>
         </div>
 
-        <h2 className="section-heading">Interview Process</h2>
-        <ul className="timeline">
-          {experience.rounds.map((round, index) => {
-            const splitIndex = round.indexOf(':');
-            let roundTitle = round;
-            let roundDesc = '';
-            
-            if (splitIndex !== -1) {
-              roundTitle = round.substring(0, splitIndex).trim();
-              roundDesc = round.substring(splitIndex + 1).trim();
-            }
-
-            return (
-              <li className="timeline-item" key={index}>
-                <strong>{roundTitle}</strong>
-                {roundDesc}
-              </li>
-            );
-          })}
-        </ul>
-
-        <h2 className="section-heading" style={{ marginTop: '4rem' }}>What to Focus On</h2>
-        <ul className="tags-container">
-          {experience.focusAreas.map((focus, index) => (
-            <li className="tag" key={index}>{focus}</li>
+        <h2 className="section-heading">Detailed Interview Process</h2>
+        <div className="detailed-rounds">
+          {(experience.details?.roundsBreakdown || []).map((round, index) => (
+            <div className="round-detail-card" key={index}>
+              <div className="round-header">
+                <div className="round-badge">{index + 1}</div>
+                <div className="round-title-group">
+                  <h3 className="round-name">{round.name}</h3>
+                  <div className="round-meta">
+                    <span className="round-type">{round.type}</span>
+                    <span className="round-dot">•</span>
+                    <span className="round-time">{round.duration} mins</span>
+                  </div>
+                </div>
+              </div>
+              <div className="round-content">
+                {Array.isArray(round.summary) ? (
+                  <ul className="round-summary-list">
+                    {round.summary.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="round-summary-text">{round.summary}</p>
+                )}
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
+
+        <div className="extra-sections">
+          <div className="prep-section">
+            <h2 className="section-heading">Preparation Tips</h2>
+            <ul className="tips-list">
+              {experience.preparationTips.map((tip, index) => (
+                <li key={index}><FiInfo className="tip-icon" /> {tip}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="focus-section">
+            <h2 className="section-heading">Key Focus Areas</h2>
+            <div className="tags-container">
+              {experience.focusAreas.map((focus, index) => (
+                <span className="tag" key={index}>{focus}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {experience.additionalFeedback && experience.additionalFeedback.length > 0 && (
+          <div className="feedback-section glass-card inner-card">
+            <h2 className="section-heading">Candidate Advice</h2>
+            <ul className="feedback-list">
+              {experience.additionalFeedback.map((feedback, index) => (
+                <li key={index}>{feedback}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
