@@ -205,6 +205,9 @@
   cursor: pointer;
   min-width: 50px;
   gap: 4px;
+  /* Removal of tap highlight and outline */
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 .mobile-tile span {
@@ -213,10 +216,18 @@
   opacity: 0.9;
 }
 
-.mobile-tile:hover {
-  background-color: rgba(14, 165, 233, 0.1);
-  color: #0ea5e9;
-  transform: translateY(-2px);
+/* Hover effect ONLY for devices that support it */
+@media (hover: hover) {
+  .mobile-tile:hover {
+    background-color: rgba(14, 165, 233, 0.1);
+    color: #0ea5e9;
+    transform: translateY(-2px);
+  }
+
+  .dark-mode .mobile-tile:hover {
+    background-color: rgba(14, 165, 233, 0.25);
+    color: #ffffff;
+  }
 }
 
 /* Dark mode for tiles menu */
@@ -229,10 +240,24 @@
   color: #94a3b8;
 }
 
-.dark-mode .mobile-tile:hover {
-  background-color: rgba(14, 165, 233, 0.25);
+/* Active State for Mobile Spy */
+.mobile-tile.active {
+  background-color: rgba(14, 165, 233, 0.15);
+  color: #0ea5e9;
+  transform: translateY(-4px);
+}
+
+.mobile-tile.active span {
+  font-weight: 800;
+  opacity: 1;
+}
+
+.dark-mode .mobile-tile.active {
+  background-color: rgba(14, 165, 233, 0.35);
   color: #ffffff;
 }
+
+
 
 /* ============================
    RESPONSIVE (MOBILE)

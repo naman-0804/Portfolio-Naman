@@ -28,6 +28,7 @@ import CodingStats from './components/CodingStats';
 
 const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const location = useLocation();
 
   useEffect(() => {
@@ -39,7 +40,47 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Intersection Observer for Scroll Spy (Mobile)
+  useEffect(() => {
+    if (isDesktop) return;
+
+    const options = {
+      root: null,
+      rootMargin: '-30% 0px -60% 0px', // Responsive strip in the upper-mid screen
+      threshold: 0 // Trigger immediately on any intersection
+    };
+
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, options);
+    
+    // Target all sections that have IDs corresponding to nav links
+    const sectionIds = ['home', 'projects', 'skills', 'experience', 'blogs', 'coding-stats', 'contact'];
+    
+    // Use a small timeout to ensure DOM elements are fully rendered
+    const timeoutId = setTimeout(() => {
+      sectionIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          observer.observe(el);
+        }
+      });
+    }, 500);
+
+    return () => {
+      clearTimeout(timeoutId);
+      observer.disconnect();
+    };
+  }, [isDesktop]);
+
   const scrollToSection = (sectionId) => {
+    setActiveSection(sectionId); // Set immediately for better UX
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -87,25 +128,25 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
               </>
             ) : (
               <>
-                <button onClick={() => scrollToSection('home')} className="nav-link">
+                <button onClick={() => scrollToSection('home')} className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}>
                   Home
                 </button>
-                <button onClick={() => scrollToSection('projects')} className="nav-link">
+                <button onClick={() => scrollToSection('projects')} className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`}>
                   Projects
                 </button>
-                <button onClick={() => scrollToSection('skills')} className="nav-link">
+                <button onClick={() => scrollToSection('skills')} className={`nav-link ${activeSection === 'skills' ? 'active' : ''}`}>
                   Skills
                 </button>
-                <button onClick={() => scrollToSection('experience')} className="nav-link">
+                <button onClick={() => scrollToSection('experience')} className={`nav-link ${activeSection === 'experience' ? 'active' : ''}`}>
                   Experience
                 </button>
-                <button onClick={() => scrollToSection('blogs')} className="nav-link">
+                <button onClick={() => scrollToSection('blogs')} className={`nav-link ${activeSection === 'blogs' ? 'active' : ''}`}>
                   Blogs
                 </button>
-                <button onClick={() => scrollToSection('coding-stats')} className="nav-link">
+                <button onClick={() => scrollToSection('coding-stats')} className={`nav-link ${activeSection === 'coding-stats' ? 'active' : ''}`}>
                   Coding Stats
                 </button>
-                <button onClick={() => scrollToSection('contact')} className="nav-link">
+                <button onClick={() => scrollToSection('contact')} className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}>
                   Contact
                 </button>
               </>
@@ -126,31 +167,59 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
       {/* --- MOBILE BOTTOM DOCK --- */}
       {!isDesktop && (
         <div className="mobile-bottom-dock">
-          <button className="mobile-tile" onClick={() => scrollToSection('home')} title="Home">
+          <button 
+            className={`mobile-tile ${activeSection === 'home' ? 'active' : ''}`} 
+            onClick={() => scrollToSection('home')} 
+            title="Home"
+          >
             <FaHome />
             <span>Home</span>
           </button>
-          <button className="mobile-tile" onClick={() => scrollToSection('projects')} title="Projects">
+          <button 
+            className={`mobile-tile ${activeSection === 'projects' ? 'active' : ''}`} 
+            onClick={() => scrollToSection('projects')} 
+            title="Projects"
+          >
             <FaLaptopCode />
             <span>Projects</span>
           </button>
-          <button className="mobile-tile" onClick={() => scrollToSection('skills')} title="Skills">
+          <button 
+            className={`mobile-tile ${activeSection === 'skills' ? 'active' : ''}`} 
+            onClick={() => scrollToSection('skills')} 
+            title="Skills"
+          >
             <FaShapes />
             <span>Skills</span>
           </button>
-          <button className="mobile-tile" onClick={() => scrollToSection('experience')} title="Experience">
+          <button 
+            className={`mobile-tile ${activeSection === 'experience' ? 'active' : ''}`} 
+            onClick={() => scrollToSection('experience')} 
+            title="Experience"
+          >
             <FaBriefcase />
             <span>Experience</span>
           </button>
-          <button className="mobile-tile" onClick={() => scrollToSection('blogs')} title="Blogs">
+          <button 
+            className={`mobile-tile ${activeSection === 'blogs' ? 'active' : ''}`} 
+            onClick={() => scrollToSection('blogs')} 
+            title="Blogs"
+          >
             <FaPenNib />
             <span>Blogs</span>
           </button>
-          <button className="mobile-tile" onClick={() => scrollToSection('coding-stats')} title="Stats">
+          <button 
+            className={`mobile-tile ${activeSection === 'coding-stats' ? 'active' : ''}`} 
+            onClick={() => scrollToSection('coding-stats')} 
+            title="Stats"
+          >
             <FaCode />
             <span>Stats</span>
           </button>
-          <button className="mobile-tile" onClick={() => scrollToSection('contact')} title="Contact">
+          <button 
+            className={`mobile-tile ${activeSection === 'contact' ? 'active' : ''}`} 
+            onClick={() => scrollToSection('contact')} 
+            title="Contact"
+          >
             <FaEnvelope />
             <span>Contact</span>
           </button>
