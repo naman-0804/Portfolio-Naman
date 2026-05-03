@@ -23,6 +23,12 @@
   align-items: start; 
 }
 
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 /* ===============================
    LEFT CARD (SUMMARY)
    =============================== */
@@ -121,6 +127,39 @@
 .difficulty-item.easy { color: #10b981; }
 .difficulty-item.medium { color: #8b5cf6; }
 .difficulty-item.hard { color: #f59e0b; }
+
+.sql-card {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(15,23,42,0.08);
+  border-radius: 22px;
+  padding: 1.75rem;
+  margin-top: 2rem;
+  text-align: left;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.sql-card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.sql-total {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.sql-difficulty-breakdown {
+  width: 100%;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top: 1rem;
+}
+
+.dark-mode .sql-card {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.1);
+}
 
 /* ===============================
    RIGHT CARD (DETAILS)

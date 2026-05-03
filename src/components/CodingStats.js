@@ -38,46 +38,67 @@ const CodingStats = () => {
     <section className="stats-container">
       <div className="stats-wrapper">
 
-        {/* =========================================
-            LEFT CARD: SUMMARY
-           ========================================= */}
-        <div className="stats-summary" style={{ height: "fit-content" }}>
-          
-          <div className="summary-top">
-            <h2>DSA - Problem Solving</h2>
+        <div className="left-column">
+          {/* =========================================
+              LEFT CARD: SUMMARY
+             ========================================= */}
+          <div className="stats-summary" style={{ height: "fit-content" }}>
             
-            <div className="total-solved">{total}</div>
-            <span className="total-label">Total Solved</span>
+            <div className="summary-top">
+              <h2>DSA - Problem Solving</h2>
+              
+              <div className="total-solved">{total}</div>
+              <span className="total-label">Total Solved</span>
 
-            <div className="platforms-row">
-              <span className="p-name leetcode">LeetCode</span>
-              <span className="divider">•</span>
-              <span className="p-name gfg">GFG</span>
-              <span className="divider">•</span>
-              <span className="p-name tuf">TUF</span>
-              <span className="divider">•</span>
-              <span className="p-name ninjas">Coding Ninjas</span>
-              <span className="divider">•</span>
-              <span className="p-name interviewbit">InterviewBit</span>
-              <span className="divider">•</span>
-              <span className="p-name codechef">CodeChef</span>
-              <span className="divider">•</span>
-              <span className="p-name codeforces">CodeForces</span>
+              <div className="platforms-row">
+                <span className="p-name leetcode">LeetCode</span>
+                <span className="divider">•</span>
+                <span className="p-name gfg">GFG</span>
+                <span className="divider">•</span>
+                <span className="p-name tuf">TUF</span>
+                <span className="divider">•</span>
+                <span className="p-name ninjas">Coding Ninjas</span>
+                <span className="divider">•</span>
+                <span className="p-name interviewbit">InterviewBit</span>
+                <span className="divider">•</span>
+                <span className="p-name codechef">CodeChef</span>
+                <span className="divider">•</span>
+                <span className="p-name codeforces">CodeForces</span>
+              </div>
+            </div>
+
+            <div className="difficulty-breakdown">
+              <div className="difficulty-item easy">
+                <span>Easy</span>
+                <span className="count">{easy}</span>
+              </div>
+              <div className="difficulty-item medium">
+                <span>Medium</span>
+                <span className="count">{medium}</span>
+              </div>
+              <div className="difficulty-item hard">
+                <span>Hard</span>
+                <span className="count">{hard}</span>
+              </div>
             </div>
           </div>
 
-          <div className="difficulty-breakdown">
-            <div className="difficulty-item easy">
-              <span>Easy</span>
-              <span className="count">{easy}</span>
-            </div>
-            <div className="difficulty-item medium">
-              <span>Medium</span>
-              <span className="count">{medium}</span>
-            </div>
-            <div className="difficulty-item hard">
-              <span>Hard</span>
-              <span className="count">{hard}</span>
+          <div className="sql-card">
+            <h3>SQL Practice</h3>
+            <div className="sql-total">85 questions</div>
+            <div className="sql-difficulty-breakdown">
+              <div className="difficulty-item easy">
+                <span>Easy</span>
+                <span className="count">54</span>
+              </div>
+              <div className="difficulty-item medium">
+                <span>Medium</span>
+                <span className="count">25</span>
+              </div>
+              <div className="difficulty-item hard">
+                <span>Hard</span>
+                <span className="count">1</span>
+              </div>
             </div>
           </div>
         </div>
@@ -149,6 +170,7 @@ const CodingStats = () => {
         </div>
 
       </div>
+
     </section>
   );
 };
