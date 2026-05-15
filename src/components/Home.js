@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaLinkedin, FaGithub, FaYoutube, FaDownload, FaEye } from 'react-icons/fa';
+import { SiOrcid } from 'react-icons/si';
 import mypic from '../Images/IMG_20240807_232437_330.jpeg';
 
 function Home() {
@@ -27,6 +28,9 @@ function Home() {
               </a>
               <a href="https://www.youtube.com/@naman_0804/" target="_blank" rel="noopener noreferrer" className="social-icon youtube">
                 <FaYoutube />
+              </a>
+              <a href="https://orcid.org/0009-0007-1557-9333" target="_blank" rel="noopener noreferrer" className="social-icon orcid">
+                <SiOrcid />
               </a>
             </div>
 
@@ -65,7 +69,7 @@ function Home() {
                   I thrive in <span className="highlight purple">Hackathons</span>, which bring out my best and help me think innovatively.
                 </p>
                 <p>
-                  With experience in software development, cloud computing (<span className="highlight orange">AWS</span>), and full-stack projects, I am always eager to explore new technologies and enhance my skills.
+                  With experience in software development, cloud computing (<span className="highlight orange">AWS</span>), AI&ML , and full-stack projects, I am always eager to explore new technologies and enhance my skills.
                 </p>
                 <p>
                   I'm currently seeking opportunities for a <span className="highlight blue">Software Developer role</span>.
