@@ -19,6 +19,8 @@ import route from '../Images/route.png';
 import ecommerce from '../Images/ecommerce.png';
 import wecalm from '../Images/wecalm.png';
 import contextImg from '../Images/contxt.png';
+import vpc from '../Images/vpc-aws.png';
+import cityAssist from '../Images/city-assist.png';
 
 function Projects() {
   const [activeProject, setActiveProject] = useState(null);
@@ -193,6 +195,26 @@ function Projects() {
       technologies: ['React', 'EmailJs', 'CSS3'],
       github: 'https://github.com/naman-0804/Portfolio-Naman',
       youtube: 'https://www.youtube.com/watch?v=u4lYKwQs48s'
+    },
+    {
+      id: 'vpc-aws-button',
+      category: 'Cloud',
+      title: 'Advanced Secure VPC Architecture on AWS',
+      description: 'Made an AWS Virtual Private Cloud and demonstrated the connection with private EC2 instance using SSH inside NAT instance',
+      image: vpc,
+      technologies: ['AWS', 'VPC', 'EC2', 'NAT'],
+      github: 'https://github.com/naman-0804/Cloud-AWS/tree/main/Virtual%20Private%20Cloud%20Setup',
+      youtube: ''
+    },
+    {
+      id: 'city-assist-button',
+      category: 'Machine Learning',
+      title: 'City Assist',
+      description: 'Platform for household help, combines identity verification with semantic search to help users find workers',
+      image: cityAssist,
+      technologies: ['ML', 'Semantic Search', 'Identity Verification'],
+      github: '',
+      youtube: ''
     }
   ];
 
