@@ -213,7 +213,7 @@ function Projects() {
       description: 'Platform for household help, combines identity verification with semantic search to help users find workers',
       image: cityAssist,
       technologies: ['ML', 'Semantic Search', 'Identity Verification'],
-      github: '',
+      github: 'https://github.com/naman-0804/cityassist',
       youtube: ''
     }
   ];
