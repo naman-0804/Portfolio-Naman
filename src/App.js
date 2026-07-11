@@ -29,7 +29,6 @@ import CodingStats from './components/CodingStats';
 const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,10 +39,8 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Intersection Observer for Scroll Spy (Mobile)
+  // Intersection Observer for Scroll Spy
   useEffect(() => {
-    if (isDesktop) return;
-
     const options = {
       root: null,
       rootMargin: '-30% 0px -60% 0px', // Responsive strip in the upper-mid screen
@@ -87,9 +84,6 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
     }
   };
 
-  // Check if the current route matches
-  const isActive = (path) => location.pathname === path;
-
   return (
     <>
       {/* --- TOP NAVBAR (Logo + Theme Toggle) --- */}
@@ -102,55 +96,27 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
 
           {/* Desktop Links (Hidden on Mobile via CSS) */}
           <div className="navbar-links">
-            {isDesktop ? (
-              <>
-                <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
-                  Home
-                </Link>
-                <Link to="/projects" className={`nav-link ${isActive('/projects') ? 'active' : ''}`}>
-                  Projects
-                </Link>
-                <Link to="/skills" className={`nav-link ${isActive('/skills') ? 'active' : ''}`}>
-                  Skills
-                </Link>
-                <Link to="/experience" className={`nav-link ${isActive('/experience') ? 'active' : ''}`}>
-                  Experience
-                </Link>
-                <Link to="/blogs" className={`nav-link ${isActive('/blogs') ? 'active' : ''}`}>
-                  Blogs
-                </Link>
-                <Link to="/stats" className={`nav-link ${isActive('/stats') ? 'active' : ''}`}>
-                  Coding Stats
-                </Link>
-                <Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>
-                  Contact
-                </Link>
-              </>
-            ) : (
-              <>
-                <button onClick={() => scrollToSection('home')} className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}>
-                  Home
-                </button>
-                <button onClick={() => scrollToSection('projects')} className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`}>
-                  Projects
-                </button>
-                <button onClick={() => scrollToSection('skills')} className={`nav-link ${activeSection === 'skills' ? 'active' : ''}`}>
-                  Skills
-                </button>
-                <button onClick={() => scrollToSection('experience')} className={`nav-link ${activeSection === 'experience' ? 'active' : ''}`}>
-                  Experience
-                </button>
-                <button onClick={() => scrollToSection('blogs')} className={`nav-link ${activeSection === 'blogs' ? 'active' : ''}`}>
-                  Blogs
-                </button>
-                <button onClick={() => scrollToSection('coding-stats')} className={`nav-link ${activeSection === 'coding-stats' ? 'active' : ''}`}>
-                  Coding Stats
-                </button>
-                <button onClick={() => scrollToSection('contact')} className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}>
-                  Contact
-                </button>
-              </>
-            )}
+            <button onClick={() => scrollToSection('home')} className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}>
+              Home
+            </button>
+            <button onClick={() => scrollToSection('projects')} className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`}>
+              Projects
+            </button>
+            <button onClick={() => scrollToSection('skills')} className={`nav-link ${activeSection === 'skills' ? 'active' : ''}`}>
+              Skills
+            </button>
+            <button onClick={() => scrollToSection('experience')} className={`nav-link ${activeSection === 'experience' ? 'active' : ''}`}>
+              Experience
+            </button>
+            <button onClick={() => scrollToSection('blogs')} className={`nav-link ${activeSection === 'blogs' ? 'active' : ''}`}>
+              Blogs
+            </button>
+            <button onClick={() => scrollToSection('coding-stats')} className={`nav-link ${activeSection === 'coding-stats' ? 'active' : ''}`}>
+              Coding Stats
+            </button>
+            <button onClick={() => scrollToSection('contact')} className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}>
+              Contact
+            </button>
           </div>
 
           <button 
@@ -246,36 +212,15 @@ function AppContent() {
     setDarkMode(!darkMode);
   };
 
-  if (isDesktop) {
-    // Desktop: Use page routes
-    return (
-      <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
-        <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} isDesktop={isDesktop} />
-        <main className="content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/blogs" element={<BlogSection />} />
-            <Route path="/stats" element={<CodingStats />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <SpeedInsights />
-        <Analytics />
-      </div>
-    );
-  } else {
-    // Mobile: Single scroll experience
-    return (
-      <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
-        <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} isDesktop={isDesktop} />
-        <main className="content">
-          {/* Home Section */}
-          <section id="home" className="section-wrapper">
-            <Home />
-          </section>
+  // Single scroll experience for both Mobile and Desktop
+  return (
+    <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
+      <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} isDesktop={isDesktop} />
+      <main className="content">
+        {/* Home Section */}
+        <section id="home" className="section-wrapper">
+          <Home />
+        </section>
 
           {/* Projects Section */}
           <section id="projects" className="section-wrapper">
@@ -302,16 +247,15 @@ function AppContent() {
             <CodingStats />
           </section>
 
-          {/* Contact Section */}
-          <section id="contact" className="section-wrapper">
-            <Contact />
-          </section>
-        </main>
-        <SpeedInsights />
-        <Analytics />
-      </div>
-    );
-  }
+        {/* Contact Section */}
+        <section id="contact" className="section-wrapper">
+          <Contact />
+        </section>
+      </main>
+      <SpeedInsights />
+      <Analytics />
+    </div>
+  );
 }
 
 function App() {
