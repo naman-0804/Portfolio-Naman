@@ -3,9 +3,10 @@ import '../Design/eyefollower.css';
 
 const EyeFollower = () => {
     useEffect(() => {
-        const handleMove = (e) => {
-            const pupils = document.querySelectorAll('.pupil');
+        let animationFrameId;
+        const pupils = document.querySelectorAll('.pupil');
 
+        const handleMove = (e) => {
             const clientX = e.clientX || (e.touches && e.touches[0].clientX);
             const clientY = e.clientY || (e.touches && e.touches[0].clientY);
 
@@ -13,25 +14,34 @@ const EyeFollower = () => {
                 return;
             }
 
-            pupils.forEach(pupil => {
-                const eye = pupil.parentElement;
-                const rect = eye.getBoundingClientRect();
-                const eyeCenterX = rect.left + rect.width / 2;
-                const eyeCenterY = rect.top + rect.height / 2;
-                const angle = Math.atan2(clientY - eyeCenterY, clientX - eyeCenterX);
-                const radius = eye.offsetWidth / 4;
-                const x = radius * Math.cos(angle);
-                const y = radius * Math.sin(angle);
-                pupil.style.transform = `translate(${x}px, ${y}px)`;
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+
+            animationFrameId = requestAnimationFrame(() => {
+                pupils.forEach(pupil => {
+                    const eye = pupil.parentElement;
+                    const rect = eye.getBoundingClientRect();
+                    const eyeCenterX = rect.left + rect.width / 2;
+                    const eyeCenterY = rect.top + rect.height / 2;
+                    const angle = Math.atan2(clientY - eyeCenterY, clientX - eyeCenterX);
+                    const radius = eye.offsetWidth / 4;
+                    const x = radius * Math.cos(angle);
+                    const y = radius * Math.sin(angle);
+                    pupil.style.transform = `translate(${x}px, ${y}px)`;
+                });
             });
         };
 
-        document.addEventListener('mousemove', handleMove);
-        document.addEventListener('touchmove', handleMove);
+        document.addEventListener('mousemove', handleMove, { passive: true });
+        document.addEventListener('touchmove', handleMove, { passive: true });
 
         return () => {
             document.removeEventListener('mousemove', handleMove);
             document.removeEventListener('touchmove', handleMove);
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
         };
     }, []);
 
