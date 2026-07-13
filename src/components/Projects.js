@@ -2,25 +2,25 @@ import React, { useState } from 'react';
 import { FaGithub, FaYoutube, FaExternalLinkAlt } from 'react-icons/fa';
 
 // Import Images
-import okrapic from '../Images/okra-website.png';
-import vitalized from '../Images/vitalized-website.png';
-import medhub from '../Images/medhub360-website.png';
-import sl from '../Images/SL-website.png';
-import dl from '../Images/Filetransfer.png';
-import sahyogi from '../Images/sahyogi.png';
-import aws from '../Images/AWS.png';
-import db from '../Images/Diabetes.png';
-import wcs from '../Images/th.png';
-import lex from '../Images/lex.png';
-import Portfolio from '../Images/portfolio.png';
-import devops from '../Images/devops.png';
-import auth from '../Images/auth.png';
-import route from '../Images/route.png';
-import ecommerce from '../Images/ecommerce.png';
-import wecalm from '../Images/wecalm.png';
-import contextImg from '../Images/contxt.png';
-import vpc from '../Images/vpc-aws.png';
-import cityAssist from '../Images/city-assist.png';
+import okrapic from '../Images/okra-website.webp';
+import vitalized from '../Images/vitalized-website.webp';
+import medhub from '../Images/medhub360-website.webp';
+import sl from '../Images/SL-website.webp';
+import dl from '../Images/Filetransfer.webp';
+import sahyogi from '../Images/sahyogi.webp';
+import aws from '../Images/AWS.webp';
+import db from '../Images/Diabetes.webp';
+import wcs from '../Images/th.webp';
+import lex from '../Images/lex.webp';
+import Portfolio from '../Images/portfolio.webp';
+import devops from '../Images/devops.webp';
+import auth from '../Images/auth.webp';
+import route from '../Images/route.webp';
+import ecommerce from '../Images/ecommerce.webp';
+import wecalm from '../Images/wecalm.webp';
+import contextImg from '../Images/contxt.webp';
+import vpc from '../Images/vpc-aws.webp';
+import cityAssist from '../Images/city-assist.webp';
 
 function Projects() {
   const [activeProject, setActiveProject] = useState(null);
@@ -257,7 +257,7 @@ function Projects() {
       onClick={() => handleProjectInteraction(project.id)}
     >
       <div className="project-image-container">
-        <img src={project.image} alt={project.title} />
+        <img src={project.image} alt={project.title} loading="lazy" />
 
         <div className={`project-overlay ${activeProject === project.id ? 'active' : ''}`}>
           <div className="project-description">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaLinkedin, FaGithub, FaYoutube, FaDownload, FaEye } from 'react-icons/fa';
 import { SiOrcid } from 'react-icons/si';
-import mypic from '../Images/IMG_20240807_232437_330.jpeg';
+import mypic from '../Images/IMG_20240807_232437_330.webp';
 
 function Home() {
   return (
@@ -14,7 +14,7 @@ function Home() {
           {/* Profile Card */}
           <div className="profile-card">
             <div className="profile-image-container">
-              <img src={mypic} alt="Naman Srivastava" />
+              <img src={mypic} alt="Naman Srivastava" fetchpriority="high" />
             </div>
             <h1>Naman Srivastava</h1>
             <h2>Software Developer</h2>

@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Import Images
-import dl from '../Images/Filetransfer.png';
-import db from '../Images/Diabetes.png';
-import chat from '../Images/auth.png';
-import ecommerece from '../Images/ecommerce.png';
-import stat from '../Images/stat.png';
+import dl from '../Images/Filetransfer.webp';
+import db from '../Images/Diabetes.webp';
+import chat from '../Images/auth.webp';
+import ecommerece from '../Images/ecommerce.webp';
+import stat from '../Images/stat.webp';
 const blogs = [  
   {
     id: 'blog-1',
@@ -78,7 +78,7 @@ function BlogSection() {
                 rel="noopener noreferrer"
                 className="blog-image-container"
               >
-                <img src={blog.image} alt={blog.title} />
+                <img src={blog.image} alt={blog.title} loading="lazy" />
               </a>
 
               {/* Card Content */}
