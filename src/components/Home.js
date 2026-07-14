@@ -27,17 +27,17 @@ function Home() {
             <h2>Software Developer</h2>
 
             <div className="social-links">
-              <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
-                <FaLinkedin />
+              <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noopener noreferrer" className="social-icon linkedin" aria-label="Naman Srivastava on LinkedIn">
+                <FaLinkedin aria-hidden="true" focusable="false" />
               </a>
-              <a href="https://github.com/naman-0804" target="_blank" rel="noopener noreferrer" className="social-icon github">
-                <FaGithub />
+              <a href="https://github.com/naman-0804" target="_blank" rel="noopener noreferrer" className="social-icon github" aria-label="Naman Srivastava on GitHub">
+                <FaGithub aria-hidden="true" focusable="false" />
               </a>
-              <a href="https://www.youtube.com/@naman_0804/" target="_blank" rel="noopener noreferrer" className="social-icon youtube">
-                <FaYoutube />
+              <a href="https://www.youtube.com/@naman_0804/" target="_blank" rel="noopener noreferrer" className="social-icon youtube" aria-label="Naman Srivastava on YouTube">
+                <FaYoutube aria-hidden="true" focusable="false" />
               </a>
-              <a href="https://orcid.org/0009-0007-1557-9333" target="_blank" rel="noopener noreferrer" className="social-icon orcid">
-                <SiOrcid />
+              <a href="https://orcid.org/0009-0007-1557-9333" target="_blank" rel="noopener noreferrer" className="social-icon orcid" aria-label="Naman Srivastava ORCID profile">
+                <SiOrcid aria-hidden="true" focusable="false" role="presentation" />
               </a>
             </div>
 
@@ -101,13 +101,13 @@ function Home() {
                   rel="noopener noreferrer"
                   className="resume-btn secondary"
                 >
-                  <FaEye /> View
+                  <FaEye aria-hidden="true" focusable="false" /> View
                 </a>
                 <a
                   href="https://drive.google.com/uc?export=download&id=1GT2cGCyLLkD9CqNMD3gDRPYPTpiLgZP8"
                   className="resume-btn secondary"
                 >
-                  <FaDownload /> Download
+                  <FaDownload aria-hidden="true" focusable="false" /> Download
                 </a>
               </div>
             </div>
@@ -128,7 +128,7 @@ function Home() {
                   rel="noopener noreferrer"
                   className="resume-btn secondary"
                 >
-                  <FaEye /> Read Now
+                  <FaEye aria-hidden="true" focusable="false" /> Read Now
                 </a>
               </div>
             </div>

@@ -1,0 +1,16 @@
+# Naman Srivastava Portfolio
+
+This site is the personal portfolio of Naman Srivastava, a software developer focused on full-stack development, cloud architecture, machine learning, and DevOps.
+
+## Site Links
+
+- [Portfolio Home](https://namansrivastava.in/)
+- [Interview Experiences](https://interview-exp-inky.vercel.app/)
+- [GitHub](https://github.com/naman-0804)
+- [LinkedIn](https://linkedin.com/in/naman1608)
+- [YouTube](https://www.youtube.com/@naman_0804/)
+- [ORCID](https://orcid.org/0009-0007-1557-9333)
+
+## Guidance
+
+AI agents may browse and summarize the public portfolio content to help users understand Naman Srivastava's projects, skills, experience, blogs, and contact information.
