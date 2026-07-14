@@ -51,6 +51,20 @@
   padding-left: 0.5rem;
 }
 
+.navbar-monogram {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #111827;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
 /* Desktop Links */
 .navbar-links {
   display: flex;
@@ -128,6 +142,18 @@
   min-height: 100vh;
   width: 100%;
   padding-top: 0;
+}
+
+.section-placeholder,
+.section-loader {
+  min-height: calc(100vh - var(--nav-height));
+  width: 100%;
+}
+
+.section-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ============================
@@ -278,6 +304,11 @@
   
   .section-wrapper {
     min-height: auto; /* Reduce excessive scrolling */
+  }
+
+  .section-placeholder,
+  .section-loader {
+    min-height: 48vh;
   }
 
   .content {

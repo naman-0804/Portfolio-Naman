@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Icons for the Floating Dock
 import { FaHome, FaLaptopCode, FaShapes, FaBriefcase, FaPenNib, FaEnvelope, FaCode } from 'react-icons/fa';
@@ -18,24 +16,160 @@ import '../src/Design/terminal.css';
 import '../src/Design/stats.css';
 // Component Imports
 import Home from './components/Home';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Contact from './components/Contact';
-import BlogSection from './components/Blogsection';
-import EyeFollower from './components/EyeFollower';
-import CodingStats from './components/CodingStats';
+const EyeFollower = lazy(() => import('./components/EyeFollower'));
+const Projects = lazy(() => import('./components/Projects'));
+const Skills = lazy(() => import('./components/Skills'));
+const Experience = lazy(() => import('./components/Experience'));
+const BlogSection = lazy(() => import('./components/Blogsection'));
+const CodingStats = lazy(() => import('./components/CodingStats'));
+const Contact = lazy(() => import('./components/Contact'));
 
-const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+const NAV_SECTION_IDS = ['home', 'projects', 'skills', 'experience', 'blogs', 'coding-stats', 'contact'];
+
+const SectionLoader = () => (
+  <div className="section-loader" aria-hidden="true" />
+);
+
+const DeferredSection = ({ id, component: Component, forceLoad = false }) => {
+  const [shouldRender, setShouldRender] = useState(forceLoad);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    if (forceLoad) {
+      setShouldRender(true);
+    }
+  }, [forceLoad]);
+
+  useEffect(() => {
+    if (shouldRender) {
+      return undefined;
+    }
+
+    const section = sectionRef.current;
+    if (!section) {
+      return undefined;
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      const timeoutId = window.setTimeout(() => setShouldRender(true), 500);
+      return () => window.clearTimeout(timeoutId);
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldRender(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '700px 0px', threshold: 0 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [shouldRender]);
+
+  return (
+    <section id={id} ref={sectionRef} className="section-wrapper">
+      {shouldRender ? (
+        <Suspense fallback={<SectionLoader />}>
+          <Component />
+        </Suspense>
+      ) : (
+        <div className="section-placeholder" aria-hidden="true" />
+      )}
+    </section>
+  );
+};
+
+const DeferredInsights = () => {
+  const [insights, setInsights] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    let timeoutId;
+    let idleId;
+
+    const loadInsights = () => {
+      Promise.all([
+        import('@vercel/analytics/react'),
+        import('@vercel/speed-insights/react')
+      ]).then(([analyticsModule, speedModule]) => {
+        if (!cancelled) {
+          setInsights({
+            AnalyticsComponent: analyticsModule.Analytics,
+            SpeedInsightsComponent: speedModule.SpeedInsights
+          });
+        }
+      });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const scheduleIdleLoad = () => {
+      timeoutId = window.setTimeout(() => {
+        if ('requestIdleCallback' in window) {
+          idleId = window.requestIdleCallback(loadInsights, { timeout: 4000 });
+        } else {
+          loadInsights();
+        }
+      }, 4000);
+    };
+
+    if (document.readyState === 'complete') {
+      scheduleIdleLoad();
+    } else {
+      window.addEventListener('load', scheduleIdleLoad, { once: true });
+    }
+
+    return () => {
+      cancelled = true;
+      window.removeEventListener('load', scheduleIdleLoad);
+      window.clearTimeout(timeoutId);
+      if (idleId && 'cancelIdleCallback' in window) {
+        window.cancelIdleCallback(idleId);
+      }
+    };
+  }, []);
+
+  if (!insights) {
+    return null;
+  }
+
+  const { AnalyticsComponent, SpeedInsightsComponent } = insights;
+
+  return (
+    <>
+      <SpeedInsightsComponent />
+      <AnalyticsComponent />
+    </>
+  );
+};
+
+const NavBar = ({ toggleDarkMode, darkMode, isDesktop, requestSection }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const scrolledRef = useRef(false);
+
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (ticking) {
+        return;
+      }
+
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        const nextScrolled = window.scrollY > 50;
+        if (nextScrolled !== scrolledRef.current) {
+          scrolledRef.current = nextScrolled;
+          setIsScrolled(nextScrolled);
+        }
+        ticking = false;
+      });
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -57,12 +191,8 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
 
     const observer = new IntersectionObserver(handleIntersect, options);
     
-    // Target all sections that have IDs corresponding to nav links
-    const sectionIds = ['home', 'projects', 'skills', 'experience', 'blogs', 'coding-stats', 'contact'];
-    
-    // Use a small timeout to ensure DOM elements are fully rendered
     const timeoutId = setTimeout(() => {
-      sectionIds.forEach(id => {
+      NAV_SECTION_IDS.forEach(id => {
         const el = document.getElementById(id);
         if (el) {
           observer.observe(el);
@@ -78,6 +208,7 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId); // Set immediately for better UX
+    requestSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -91,7 +222,13 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
         <div className="navbar-container">
           
           <div className="navbar-logo">
-             <EyeFollower />
+             {isDesktop ? (
+               <Suspense fallback={<span className="navbar-monogram">NS</span>}>
+                 <EyeFollower />
+               </Suspense>
+             ) : (
+               <span className="navbar-monogram">NS</span>
+             )}
           </div>
 
           {/* Desktop Links (Hidden on Mobile via CSS) */}
@@ -197,7 +334,8 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop }) => {
 
 function AppContent() {
   const [darkMode, setDarkMode] = useState(true);
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 992);
+  const [isDesktop, setIsDesktop] = useState(() => window.innerWidth > 992);
+  const [requestedSections, setRequestedSections] = useState({});
 
   useEffect(() => {
     const handleResize = () => {
@@ -208,52 +346,64 @@ function AppContent() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    const loadHashedSection = () => {
+      const sectionId = window.location.hash.replace('#', '');
+      if (!sectionId || sectionId === 'home' || !NAV_SECTION_IDS.includes(sectionId)) {
+        return;
+      }
+
+      setRequestedSections((current) => (
+        current[sectionId] ? current : { ...current, [sectionId]: true }
+      ));
+
+      window.requestAnimationFrame(() => {
+        document.getElementById(sectionId)?.scrollIntoView();
+      });
+    };
+
+    loadHashedSection();
+    window.addEventListener('hashchange', loadHashedSection);
+    return () => window.removeEventListener('hashchange', loadHashedSection);
+  }, []);
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
+  };
+
+  const requestSection = (sectionId) => {
+    if (sectionId === 'home') {
+      return;
+    }
+
+    setRequestedSections((current) => (
+      current[sectionId] ? current : { ...current, [sectionId]: true }
+    ));
   };
 
   // Single scroll experience for both Mobile and Desktop
   return (
     <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
-      <NavBar toggleDarkMode={toggleDarkMode} darkMode={darkMode} isDesktop={isDesktop} />
+      <NavBar
+        toggleDarkMode={toggleDarkMode}
+        darkMode={darkMode}
+        isDesktop={isDesktop}
+        requestSection={requestSection}
+      />
       <main className="content">
         {/* Home Section */}
         <section id="home" className="section-wrapper">
           <Home />
         </section>
 
-          {/* Projects Section */}
-          <section id="projects" className="section-wrapper">
-            <Projects />
-          </section>
-
-          {/* Skills Section */}
-          <section id="skills" className="section-wrapper">
-            <Skills />
-          </section>
-
-          {/* Experience Section */}
-          <section id="experience" className="section-wrapper">
-            <Experience />
-          </section>
-
-          {/* Blogs Section */}
-          <section id="blogs" className="section-wrapper">
-            <BlogSection />
-          </section>
-
-          {/* Coding Stats Section */}
-          <section id="coding-stats" className="section-wrapper">
-            <CodingStats />
-          </section>
-
-        {/* Contact Section */}
-        <section id="contact" className="section-wrapper">
-          <Contact />
-        </section>
+        <DeferredSection id="projects" component={Projects} forceLoad={requestedSections.projects} />
+        <DeferredSection id="skills" component={Skills} forceLoad={requestedSections.skills} />
+        <DeferredSection id="experience" component={Experience} forceLoad={requestedSections.experience} />
+        <DeferredSection id="blogs" component={BlogSection} forceLoad={requestedSections.blogs} />
+        <DeferredSection id="coding-stats" component={CodingStats} forceLoad={requestedSections['coding-stats']} />
+        <DeferredSection id="contact" component={Contact} forceLoad={requestedSections.contact} />
       </main>
-      <SpeedInsights />
-      <Analytics />
+      <DeferredInsights />
     </div>
   );
 }
