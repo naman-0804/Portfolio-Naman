@@ -69,6 +69,7 @@ body {
   display: flex;
   flex-direction: column;
   background:
+    radial-gradient(circle 560px at -120px -42px, rgba(110, 156, 137, 0.42), transparent 76%),
     linear-gradient(165deg, var(--portfolio-canvas-a), var(--portfolio-canvas-b));
   background-attachment: fixed;
   transition: background-color 0.4s ease, color 0.4s ease;
@@ -99,7 +100,9 @@ body {
   
   background-color: var(--bg-dark);
   color: var(--text-dark);
-  background-image: linear-gradient(165deg, var(--portfolio-canvas-a), var(--portfolio-canvas-b));
+  background-image:
+    radial-gradient(circle 560px at -120px -42px, rgba(138, 191, 168, 0.32), transparent 76%),
+    linear-gradient(165deg, var(--portfolio-canvas-a), var(--portfolio-canvas-b));
   background-attachment: fixed;
 }
 
