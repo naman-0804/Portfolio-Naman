@@ -69,7 +69,8 @@ body {
   display: flex;
   flex-direction: column;
   background:
-    radial-gradient(circle 560px at -120px -42px, rgba(110, 156, 137, 0.42), transparent 76%),
+    radial-gradient(circle 640px at -130px -64px, rgba(110, 156, 137, 0.46), transparent 78%),
+    radial-gradient(circle 520px at 88% 12%, rgba(124, 147, 192, 0.16), transparent 70%),
     linear-gradient(165deg, var(--portfolio-canvas-a), var(--portfolio-canvas-b));
   background-attachment: fixed;
   transition: background-color 0.4s ease, color 0.4s ease;
@@ -81,8 +82,8 @@ body {
   --portfolio-ink-faint: #839098;
   --portfolio-canvas-a: #111318;
   --portfolio-canvas-b: #1B2027;
-  --portfolio-surface: rgba(28, 32, 38, 0.68);
-  --portfolio-surface-strong: rgba(32, 37, 44, 0.9);
+  --portfolio-surface: rgba(24, 29, 35, 0.62);
+  --portfolio-surface-strong: rgba(30, 36, 43, 0.84);
   --portfolio-border: rgba(238, 243, 244, 0.1);
   --portfolio-sage: #8ABFA8;
   --portfolio-sage-soft: rgba(138, 191, 168, 0.15);
@@ -101,7 +102,8 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-dark);
   background-image:
-    radial-gradient(circle 560px at -120px -42px, rgba(138, 191, 168, 0.32), transparent 76%),
+    radial-gradient(circle 640px at -130px -64px, rgba(138, 191, 168, 0.36), transparent 78%),
+    radial-gradient(circle 540px at 88% 10%, rgba(154, 174, 214, 0.17), transparent 72%),
     linear-gradient(165deg, var(--portfolio-canvas-a), var(--portfolio-canvas-b));
   background-attachment: fixed;
 }
