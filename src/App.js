@@ -231,6 +231,14 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop, requestSection }) => {
              )}
           </div>
 
+          {!isDesktop && (
+            <span className="mobile-nav-title">
+              {activeSection === 'coding-stats'
+                ? 'Coding Stats'
+                : activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}
+            </span>
+          )}
+
           {/* Desktop Links (Hidden on Mobile via CSS) */}
           <div className="navbar-links">
             <button onClick={() => scrollToSection('home')} className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}>

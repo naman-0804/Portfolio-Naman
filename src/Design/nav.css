@@ -59,6 +59,20 @@
   flex-shrink: 0;
 }
 
+.mobile-nav-title {
+  display: none;
+  min-width: 0;
+  color: var(--portfolio-ink);
+  font-family: var(--font-main);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .navbar-monogram {
   display: inline-flex;
   align-items: center;
@@ -274,7 +288,7 @@
 
 @media (max-width: 992px) {
   .navbar {
-    width: min(72%, 248px);
+    width: min(78%, 304px);
     min-height: 56px;
   }
 
@@ -284,6 +298,12 @@
 
   .navbar-container {
     padding: 0.45rem 0.65rem;
+    gap: 0.65rem;
+  }
+
+  .mobile-nav-title {
+    display: block;
+    flex: 1;
   }
 
   .mobile-bottom-dock {
