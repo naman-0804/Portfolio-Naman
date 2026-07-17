@@ -1,26 +1,40 @@
 :root {
-  /* Colors - Refreshing Oceanic Theme */
-  --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
-  --bg-light: #f8f9fa;
-  --bg-dark: #18181b;
-  --text-light: #000000;
-  --text-dark: #ffffff;
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-main: 'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 
-  /* Glassmorphism Cards */
-  --card-light: rgba(255, 255, 255, 0.75);
-  --card-dark: rgba(20, 20, 20, 0.65);
-  --glass-border-light: 1px solid rgba(255, 255, 255, 0.7);
-  --glass-border-dark: 1px solid rgba(255, 255, 255, 0.1);
+  --bg-light: #F6F9F8;
+  --bg-dark: #111318;
+  --text-light: #26343B;
+  --text-dark: #E7EEF0;
 
-  /* Accents */
-  --primary-gradient: linear-gradient(135deg, #111827 0%, #000000 100%);
-  --accent-gradient: linear-gradient(135deg, #374151 0%, #111827 100%);
+  --portfolio-ink: #26343B;
+  --portfolio-ink-soft: #5C6E76;
+  --portfolio-ink-faint: #8CA0A8;
+  --portfolio-canvas-a: #F6F9F8;
+  --portfolio-canvas-b: #E9F0EE;
+  --portfolio-surface: rgba(255, 255, 255, 0.6);
+  --portfolio-surface-strong: rgba(255, 255, 255, 0.85);
+  --portfolio-border: rgba(38, 52, 59, 0.09);
+  --portfolio-sage: #6E9C89;
+  --portfolio-sage-soft: rgba(110, 156, 137, 0.16);
+  --portfolio-dusk: #7C93C0;
+  --portfolio-dusk-soft: rgba(124, 147, 192, 0.16);
+  --portfolio-rose: #B5726A;
+  --portfolio-rose-soft: rgba(216, 154, 147, 0.2);
+  --portfolio-amber: #9C7A34;
+  --portfolio-amber-soft: rgba(201, 161, 94, 0.2);
+  --portfolio-radius-lg: 28px;
+  --portfolio-radius-md: 18px;
+  --portfolio-shadow: 0 20px 45px -22px rgba(38, 52, 59, 0.25);
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-glow: 0 0 20px rgba(0, 0, 0, 0.2);
+  --card-light: var(--portfolio-surface);
+  --card-dark: rgba(22, 38, 42, 0.55);
+  --glass-border-light: 1px solid var(--portfolio-border);
+  --glass-border-dark: 1px solid rgba(231, 238, 240, 0.09);
+  --primary-gradient: linear-gradient(135deg, var(--portfolio-sage), var(--portfolio-dusk));
+  --accent-gradient: linear-gradient(135deg, var(--portfolio-rose), var(--portfolio-amber));
+  --shadow-glow: 0 0 20px rgba(110, 156, 137, 0.22);
 }
 
 *,
@@ -54,22 +68,88 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-light);
-  /* Refreshing subtle mesh/noise for light mode */
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  background:
+    linear-gradient(165deg, var(--portfolio-canvas-a), var(--portfolio-canvas-b));
   background-attachment: fixed;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .app-container.dark-mode {
-  --primary-gradient: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
-  --accent-gradient: linear-gradient(135deg, #f1f5f9 0%, #94a3b8 100%);
-  --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.2);
+  --portfolio-ink: #EEF3F4;
+  --portfolio-ink-soft: #B8C3C8;
+  --portfolio-ink-faint: #839098;
+  --portfolio-canvas-a: #111318;
+  --portfolio-canvas-b: #1B2027;
+  --portfolio-surface: rgba(28, 32, 38, 0.68);
+  --portfolio-surface-strong: rgba(32, 37, 44, 0.9);
+  --portfolio-border: rgba(238, 243, 244, 0.1);
+  --portfolio-sage: #8ABFA8;
+  --portfolio-sage-soft: rgba(138, 191, 168, 0.15);
+  --portfolio-dusk: #9AAED6;
+  --portfolio-dusk-soft: rgba(154, 174, 214, 0.16);
+  --portfolio-rose: #DCA49E;
+  --portfolio-rose-soft: rgba(220, 164, 158, 0.16);
+  --portfolio-amber: #D3B06D;
+  --portfolio-amber-soft: rgba(211, 176, 109, 0.16);
+  --portfolio-shadow: 0 20px 45px -22px rgba(0, 0, 0, 0.55);
+  --card-dark: var(--portfolio-surface);
+  --primary-gradient: linear-gradient(135deg, var(--portfolio-sage), var(--portfolio-dusk));
+  --accent-gradient: linear-gradient(135deg, var(--portfolio-rose), var(--portfolio-amber));
+  --shadow-glow: 0 0 20px rgba(134, 194, 169, 0.2);
   
   background-color: var(--bg-dark);
   color: var(--text-dark);
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: linear-gradient(165deg, var(--portfolio-canvas-a), var(--portfolio-canvas-b));
   background-attachment: fixed;
+}
+
+.premium-section-header {
+  max-width: 1180px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.premium-section-header::before {
+  content: '';
+  display: inline-block;
+  width: 52px;
+  height: 1px;
+  background: var(--portfolio-sage);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--portfolio-sage);
+}
+
+.premium-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 7vw, 4.8rem);
+  font-weight: 600;
+  line-height: 0.98;
+  color: var(--portfolio-ink);
+  margin: 0;
+}
+
+.premium-subtitle {
+  max-width: 620px;
+  margin: 0;
+  color: var(--portfolio-ink-soft);
+  font-size: 1.04rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.dark-mode .premium-heading {
+  color: var(--portfolio-ink);
+}
+
+@media (max-width: 768px) {
+  .premium-section-header {
+    margin-bottom: 2rem;
+  }
 }
