@@ -31,7 +31,7 @@ function App() {
             >
               {darkMode ? <FiSun /> : <FiMoon />}
             </button>
-            <a href="/" style={{marginLeft: '10px'}} title="Back to Portfolio">
+            <a href="https://namansrivastava.in" style={{marginLeft: '10px'}} title="Back to Portfolio">
               <FiArrowLeft size={20} />
             </a>
           </div>
