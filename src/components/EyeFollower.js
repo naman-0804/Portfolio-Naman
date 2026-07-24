@@ -1,14 +1,37 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../Design/eyefollower.css';
 
 const EyeFollower = () => {
+    // Cache the rects to avoid layout thrashing
+    const eyesRectsRef = useRef([]);
+
     useEffect(() => {
         let animationFrameId;
         const pupils = document.querySelectorAll('.pupil');
+        const eyes = Array.from(pupils).map(p => p.parentElement);
+
+        const updateRects = () => {
+            eyesRectsRef.current = eyes.map(eye => {
+                const rect = eye.getBoundingClientRect();
+                return {
+                    centerX: rect.left + rect.width / 2,
+                    centerY: rect.top + rect.height / 2,
+                    radius: eye.offsetWidth / 4
+                };
+            });
+        };
+
+        // Initial cache
+        // Small delay to ensure elements are painted
+        setTimeout(updateRects, 100);
+        
+        // Update cache on scroll or resize since position relative to viewport might change
+        window.addEventListener('resize', updateRects, { passive: true });
+        window.addEventListener('scroll', updateRects, { passive: true });
 
         const handleMove = (e) => {
-            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
-            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+            const clientX = e.clientX;
+            const clientY = e.clientY;
 
             if (clientX === undefined || clientY === undefined) {
                 return;
@@ -19,26 +42,29 @@ const EyeFollower = () => {
             }
 
             animationFrameId = requestAnimationFrame(() => {
-                pupils.forEach(pupil => {
-                    const eye = pupil.parentElement;
-                    const rect = eye.getBoundingClientRect();
-                    const eyeCenterX = rect.left + rect.width / 2;
-                    const eyeCenterY = rect.top + rect.height / 2;
-                    const angle = Math.atan2(clientY - eyeCenterY, clientX - eyeCenterX);
-                    const radius = eye.offsetWidth / 4;
-                    const x = radius * Math.cos(angle);
-                    const y = radius * Math.sin(angle);
+                if (eyesRectsRef.current.length === 0) {
+                    updateRects();
+                }
+
+                pupils.forEach((pupil, index) => {
+                    const rectData = eyesRectsRef.current[index];
+                    if (!rectData) return;
+                    
+                    const angle = Math.atan2(clientY - rectData.centerY, clientX - rectData.centerX);
+                    const x = rectData.radius * Math.cos(angle);
+                    const y = rectData.radius * Math.sin(angle);
                     pupil.style.transform = `translate(${x}px, ${y}px)`;
                 });
             });
         };
 
+        // Only listen for mousemove. touchmove on mobile causes scroll lag.
         document.addEventListener('mousemove', handleMove, { passive: true });
-        document.addEventListener('touchmove', handleMove, { passive: true });
 
         return () => {
             document.removeEventListener('mousemove', handleMove);
-            document.removeEventListener('touchmove', handleMove);
+            window.removeEventListener('resize', updateRects);
+            window.removeEventListener('scroll', updateRects);
             if (animationFrameId) {
                 cancelAnimationFrame(animationFrameId);
             }

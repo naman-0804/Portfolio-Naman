@@ -199,6 +199,11 @@
   #project-section {
     padding: 4.8rem 1rem 3.5rem;
   }
+  #project-section .project-item {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: var(--portfolio-surface-strong);
+  }
 
   #project-section .project-grid {
     grid-template-columns: 1fr;

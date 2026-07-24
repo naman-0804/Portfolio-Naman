@@ -68,12 +68,24 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.app-container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   background:
     radial-gradient(circle 640px at -130px -64px, rgba(110, 156, 137, 0.46), transparent 78%),
     radial-gradient(circle 520px at 88% 12%, rgba(124, 147, 192, 0.16), transparent 70%),
     linear-gradient(165deg, var(--portfolio-canvas-a), var(--portfolio-canvas-b));
-  background-attachment: fixed;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background 0.4s ease;
 }
 
 .app-container.dark-mode {
@@ -101,11 +113,13 @@ body {
   
   background-color: var(--bg-dark);
   color: var(--text-dark);
-  background-image:
+}
+
+.app-container.dark-mode::before {
+  background:
     radial-gradient(circle 640px at -130px -64px, rgba(138, 191, 168, 0.36), transparent 78%),
     radial-gradient(circle 540px at 88% 10%, rgba(154, 174, 214, 0.17), transparent 72%),
     linear-gradient(165deg, var(--portfolio-canvas-a), var(--portfolio-canvas-b));
-  background-attachment: fixed;
 }
 
 .premium-section-header {

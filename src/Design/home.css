@@ -96,6 +96,7 @@
   border-radius: 50%;
   filter: blur(78px);
   opacity: 0.38;
+  will-change: transform, filter;
 }
 
 .blob-a {
@@ -586,6 +587,17 @@
 @media (max-width: 768px) {
   .hero-container {
     padding: 2.25rem 1rem 7rem;
+  }
+  .ambient-blob {
+    animation: none !important;
+    opacity: 0.15;
+    filter: blur(40px);
+  }
+  .profile-card,
+  .about-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: var(--surface-strong);
   }
   .profile-card {
     padding: 2.2rem 1.5rem 1.8rem;
