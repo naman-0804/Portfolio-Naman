@@ -1,20 +1,3 @@
-
-
-
-.dark-mode {
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
-  }
-  
-  .dark-mode .dark-mode-toggle {
-    background-color: #3a3a3a;
-    color: #ffffff;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-  }
-  
-  .dark-mode .dark-mode-toggle:hover {
-    background-color: #565656;
-  }
-  
+/* Dark mode is handled via CSS custom properties in index.css */
+/* This file is kept for compatibility but all dark mode
+   overrides are defined in index.css under .app-container:not(.dark-mode) */

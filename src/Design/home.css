@@ -1,80 +1,12 @@
-/* =========================================================
-   FONTS — Fraunces (display), Plus Jakarta Sans (body),
-   IBM Plex Mono (labels/meta). If you already load fonts via
-   <link> tags in index.html, remove this @import for better
-   performance and add the same families there instead.
-   ========================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+/* ==========================================================
+   HERO / HOME SECTION
+   No @import for fonts — loaded via <link> in index.html
+   ========================================================== */
 
-/* =========================================================
-   DESIGN TOKENS — scoped to this page, no dependency on
-   global index.css variables.
-   ========================================================= */
-.hero-container {
-  --ink: #26343B;
-  --ink-soft: #5C6E76;
-  --ink-faint: #8CA0A8;
-
-  --canvas-a: #F6F9F8;
-  --canvas-b: #E9F0EE;
-
-  --surface: rgba(255, 255, 255, 0.6);
-  --surface-strong: rgba(255, 255, 255, 0.85);
-  --surface-border: rgba(38, 52, 59, 0.09);
-
-  --sage: #6E9C89;
-  --sage-soft: rgba(110, 156, 137, 0.16);
-  --dusk: #7C93C0;
-  --dusk-soft: rgba(124, 147, 192, 0.16);
-  --rose: #B5726A;
-  --rose-soft: rgba(216, 154, 147, 0.2);
-  --amber: #9C7A34;
-  --amber-soft: rgba(201, 161, 94, 0.2);
-
-  --font-display: 'Fraunces', 'Georgia', serif;
-  --font-body: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
-  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
-
-  --radius-lg: 28px;
-  --radius-md: 18px;
-  --shadow-soft: 0 20px 45px -22px rgba(38, 52, 59, 0.25);
-}
-
-.dark-mode .hero-container {
-  --ink: #EEF3F4;
-  --ink-soft: #B8C3C8;
-  --ink-faint: #839098;
-
-  --canvas-a: #111318;
-  --canvas-b: #1B2027;
-
-  --surface: rgba(24, 29, 35, 0.62);
-  --surface-strong: rgba(30, 36, 43, 0.84);
-  --surface-border: rgba(238, 243, 244, 0.1);
-
-  --sage: #8ABFA8;
-  --sage-soft: rgba(138, 191, 168, 0.15);
-  --dusk: #9AAED6;
-  --dusk-soft: rgba(154, 174, 214, 0.16);
-  --rose: #DCA49E;
-  --rose-soft: rgba(220, 164, 158, 0.16);
-  --amber: #D3B06D;
-  --amber-soft: rgba(211, 176, 109, 0.16);
-
-  --shadow-soft: 0 20px 45px -22px rgba(0, 0, 0, 0.55);
-}
-
-.dark-mode .hero-container .ambient-blob {
-  opacity: 0.28;
-}
-
-/* =========================================================
-   PAGE SHELL + AMBIENT BACKGROUND
-   ========================================================= */
+/* ---- Page Shell ---- */
 .hero-container {
   min-height: calc(100vh - var(--nav-height));
-  padding: clamp(2.7rem, 4vw, 4rem) 2rem 5.5rem;
-  background: transparent;
+  padding: clamp(2.5rem, 4vw, 4rem) 2rem 5rem;
   font-family: var(--font-body);
   display: flex;
   justify-content: center;
@@ -83,102 +15,57 @@
   overflow: visible;
 }
 
-.ambient-field {
-  position: absolute;
-  inset: calc(-1 * var(--nav-height)) 0 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
+/* Ambient blobs removed — relying on the global app-container radial gradient instead for a cleaner, bug-free glow */
 
-.ambient-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(78px);
-  opacity: 0.38;
-  will-change: transform, filter;
-}
-
-.blob-a {
-  width: 560px;
-  height: 560px;
-  top: -245px;
-  left: -155px;
-  background: var(--sage);
-  animation: drift-a 26s ease-in-out infinite;
-}
-
-.blob-b {
-  width: 380px;
-  height: 380px;
-  bottom: -150px;
-  right: -90px;
-  background: var(--dusk);
-  animation: drift-b 30s ease-in-out infinite;
-}
-
-.blob-c {
-  width: 280px;
-  height: 280px;
-  top: 45%;
-  left: 58%;
-  background: var(--rose);
-  opacity: 0.22;
-  animation: drift-c 24s ease-in-out infinite;
-}
-
+/* ---- Content Layout ---- */
 .hero-content {
   display: flex;
   align-items: flex-start;
-  max-width: 1280px;
+  max-width: 1200px;
   width: 100%;
-  gap: clamp(2.5rem, 4vw, 4.2rem);
+  gap: clamp(2.5rem, 4vw, 4rem);
   position: relative;
   z-index: 1;
 }
 
-/* =========================================================
-   LEFT — PROFILE
-   ========================================================= */
+/* ---- Left: Profile Card ---- */
 .hero-left {
   flex: 1;
-  max-width: 410px;
+  max-width: 380px;
   display: flex;
 }
 
 .profile-card {
   width: 100%;
-  background: linear-gradient(145deg, var(--surface-strong), var(--surface));
-  backdrop-filter: blur(22px) saturate(1.12);
-  -webkit-backdrop-filter: blur(22px) saturate(1.12);
-  border: 1px solid var(--surface-border);
+  background: var(--bg-surface-solid);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
-  padding: 2.6rem 2rem 2.2rem;
+  box-shadow: var(--shadow-card);
+  padding: 2.4rem 1.8rem 2rem;
   text-align: center;
-  animation: rise-in 0.7s ease both;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fade-up 0.6s ease both;
+  transition: transform 0.35s ease;
 }
 
 .profile-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 
-/* Avatar + breathing aura (signature element) */
+/* Avatar */
 .avatar-wrap {
   position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 1.5rem;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1.4rem;
 }
 
 .avatar-aura {
   position: absolute;
-  inset: -26px;
+  inset: -20px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, var(--sage) 0%, var(--dusk) 55%, transparent 72%);
-  filter: blur(26px);
-  opacity: 0.55;
+  background: radial-gradient(circle at 35% 30%, var(--accent) 0%, var(--violet) 55%, transparent 72%);
+  filter: blur(24px);
+  opacity: 0.4;
   z-index: 0;
   animation: breathe 6s ease-in-out infinite;
 }
@@ -190,88 +77,89 @@
   height: 100%;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid var(--surface-strong);
-  box-shadow: var(--shadow-soft);
+  border: 3px solid var(--border-color);
+  box-shadow: var(--shadow-card);
 }
 
 .avatar-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.5s ease;
 }
 
 .profile-card:hover .avatar-frame img {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
+/* Name & Role */
 .profile-name {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.85rem;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin: 0 0 0.6rem;
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
 }
 
 .profile-role {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--sage);
-  background: var(--sage-soft);
-  padding: 0.4rem 0.95rem;
-  border-radius: 999px;
-  margin-bottom: 1.6rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.4rem;
 }
 
-/* Social row — neutral by default, brand color on hover only */
+/* Social Row */
 .social-row {
   display: flex;
   justify-content: center;
-  gap: 0.7rem;
-  margin-bottom: 1.7rem;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
 }
 
 .social-node {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.05rem;
-  color: var(--ink-soft);
-  background: var(--surface);
-  border: 1.5px solid var(--surface-border);
-  transition: all 0.25s ease;
+  font-size: 1rem;
+  color: var(--text-tertiary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 .social-node:hover {
   color: #fff;
   border-color: transparent;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 18px -8px rgba(38, 52, 59, 0.35);
+  transform: translateY(-2px);
 }
 
 .social-node:focus-visible,
 .pill-btn:focus-visible {
-  outline: 2px solid var(--sage);
-  outline-offset: 3px;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .social-node[data-brand="linkedin"]:hover { background: #0077B5; }
-.social-node[data-brand="github"]:hover { background: #24292F; }
+.social-node[data-brand="github"]:hover { background: #333; }
 .social-node[data-brand="youtube"]:hover { background: #EF4444; }
-.social-node[data-brand="orcid"]:hover { background: #A6CE39; color: #26343B; }
+.social-node[data-brand="orcid"]:hover { background: #A6CE39; color: #1a1a2e; }
 
+/* Divider */
 .quiet-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--surface-border), transparent);
-  margin: 0 0 1.7rem;
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+  margin: 0 0 1.5rem;
 }
 
 /* Testimonial */
@@ -279,20 +167,20 @@
   position: relative;
   text-align: left;
   margin: 0;
-  padding: 1.5rem 1.4rem 1.3rem;
-  background: var(--surface);
-  border: 1px solid var(--surface-border);
+  padding: 1.3rem 1.2rem 1.1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
 }
 
 .testimonial-mark {
   position: absolute;
-  top: -8px;
-  left: 16px;
+  top: -6px;
+  left: 14px;
   font-family: var(--font-display);
-  font-size: 3.6rem;
+  font-size: 3rem;
   line-height: 1;
-  color: var(--sage-soft);
+  color: var(--accent-soft);
   pointer-events: none;
   user-select: none;
 }
@@ -300,42 +188,39 @@
 .testimonial blockquote {
   position: relative;
   z-index: 1;
-  margin: 0.9rem 0 1rem;
-  font-family: var(--font-display);
+  margin: 0.7rem 0 0.85rem;
   font-style: italic;
-  font-size: 0.98rem;
+  font-size: 0.92rem;
   line-height: 1.65;
-  color: var(--ink-soft);
+  color: var(--text-secondary);
 }
 
 .testimonial figcaption {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.12rem;
 }
 
 .testimonial-name {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 0.88rem;
-  color: var(--ink);
+  font-size: 0.85rem;
+  color: var(--text-primary);
 }
 
 .testimonial-role {
-  font-size: 0.78rem;
-  color: var(--ink-faint);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
 }
 
 .testimonial-date {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   letter-spacing: 0.03em;
-  color: var(--ink-faint);
+  color: var(--text-tertiary);
 }
 
-/* =========================================================
-   RIGHT — ABOUT & CONTENT
-   ========================================================= */
+/* ---- Right: About Card ---- */
 .hero-right {
   flex: 2.15;
   display: flex;
@@ -345,29 +230,15 @@
 .about-card {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(145deg, var(--surface-strong), var(--surface));
-  backdrop-filter: blur(22px) saturate(1.12);
-  -webkit-backdrop-filter: blur(22px) saturate(1.12);
-  border: 1px solid var(--surface-border);
+  background: var(--bg-surface-solid);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
-  padding: 2.8rem 2.6rem;
+  box-shadow: var(--shadow-card);
+  padding: 2.6rem 2.4rem;
   display: flex;
   flex-direction: column;
-  gap: 2.6rem;
-  animation: rise-in 0.7s ease 0.12s both;
-}
-
-.about-card::before {
-  content: '';
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  right: -170px;
-  bottom: -190px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--dusk-soft), transparent 68%);
-  pointer-events: none;
+  gap: 2.4rem;
+  animation: fade-up 0.6s ease 0.1s both;
 }
 
 .about-card > * {
@@ -375,31 +246,32 @@
   z-index: 1;
 }
 
+/* Eyebrow labels */
 .eyebrow {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--sage);
-  margin-bottom: 0.5rem;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
 }
 
 .block-title {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.55rem;
-  color: var(--ink);
-  margin: 0.1rem 0 1.2rem;
+  font-weight: 700;
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0.1rem 0 1rem;
 }
 
 .about-copy p {
-  font-family: var(--font-body);
   font-size: 1.02rem;
   line-height: 1.85;
-  color: var(--ink-soft);
-  margin: 0 0 1.1rem;
+  color: var(--text-secondary);
+  margin: 0 0 1rem;
 }
 
 .about-copy p:last-child {
@@ -411,8 +283,7 @@
   position: relative;
   font-weight: 700;
   z-index: 0;
-  padding: 0 3px;
-  color: var(--ink);
+  padding: 0 2px;
 }
 
 .highlight::after {
@@ -421,9 +292,8 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 32%;
+  height: 30%;
   z-index: -1;
-  background: var(--sage-soft);
   transition: height 0.25s ease;
 }
 
@@ -431,55 +301,51 @@
   height: 100%;
 }
 
-.highlight.sage { color: var(--sage); }
-.highlight.sage::after { background: var(--sage-soft); }
-
+.highlight.sage { color: var(--accent); }
+.highlight.sage::after { background: var(--accent-soft); }
 .highlight.rose { color: var(--rose); }
 .highlight.rose::after { background: var(--rose-soft); }
-
 .highlight.amber { color: var(--amber); }
 .highlight.amber::after { background: var(--amber-soft); }
+.highlight.dusk { color: var(--violet); }
+.highlight.dusk::after { background: var(--violet-soft); }
 
-.highlight.dusk { color: var(--dusk); }
-.highlight.dusk::after { background: var(--dusk-soft); }
-
-/* Info rows — Resume + Interview Experiences */
+/* Info rows */
 .info-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1.2rem;
-  padding: 1.3rem 1.5rem;
-  background: var(--surface);
-  border: 1px solid var(--surface-border);
+  gap: 1rem;
+  padding: 1.2rem 1.3rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  transition: all 0.3s ease;
+  transition: border-color 0.25s ease;
 }
 
 .info-row:hover {
-  transform: translateY(-3px);
-  border-color: var(--sage-soft);
+  border-color: var(--border-hover);
 }
 
 .info-row-main h4 {
   margin: 0;
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--ink);
+  font-size: 1rem;
+  color: var(--text-primary);
 }
 
 .info-row-main p {
-  margin: 0.25rem 0 0;
+  margin: 0.2rem 0 0;
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   letter-spacing: 0.02em;
-  color: var(--ink-faint);
+  color: var(--text-tertiary);
 }
 
 .info-row-actions {
   display: flex;
-  gap: 0.7rem;
+  gap: 0.6rem;
   flex-shrink: 0;
 }
 
@@ -487,69 +353,161 @@
 .pill-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1.3rem;
-  border-radius: 999px;
+  gap: 0.45rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-pill);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .pill-btn.outline {
   background: transparent;
-  color: var(--ink);
-  border: 1.5px solid var(--surface-border);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
 }
 
 .pill-btn.outline:hover {
-  color: var(--sage);
-  border-color: var(--sage);
-  background: var(--sage-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .pill-btn.solid {
-  color: var(--canvas-a);
-  background: var(--sage);
-  border: 1.5px solid transparent;
-  box-shadow: 0 10px 20px -8px rgba(110, 156, 137, 0.55);
+  color: var(--bg-primary);
+  background: var(--accent);
+  border: 1px solid transparent;
 }
 
 .pill-btn.solid:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.06);
-  box-shadow: 0 14px 26px -8px rgba(110, 156, 137, 0.6);
+  transform: translateY(-1px);
+  filter: brightness(1.1);
 }
 
-/* =========================================================
+/* ==========================================================
    MOTION
-   ========================================================= */
+   ========================================================== */
 @keyframes breathe {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.1); opacity: 0.8; }
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.08); opacity: 0.6; }
 }
 
 @keyframes drift-a {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(40px, 30px); }
+  50% { transform: translate(35px, 25px); }
 }
 
 @keyframes drift-b {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-35px, -25px); }
+  50% { transform: translate(-30px, -20px); }
 }
 
 @keyframes drift-c {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(25px, -35px); }
+  50% { transform: translate(20px, -30px); }
 }
 
-@keyframes rise-in {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    max-width: 680px;
+    gap: 1.8rem;
+  }
+  .hero-left {
+    max-width: 420px;
+    width: 100%;
+  }
+  .hero-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 2rem 1rem 6rem;
+  }
+
+  /* Kill blobs entirely on mobile */
+  .ambient-field {
+    display: none;
+  }
+
+  /* No backdrop-filter, solid backgrounds */
+  .profile-card,
+  .about-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .profile-card {
+    padding: 2rem 1.3rem 1.6rem;
+  }
+
+  .avatar-wrap {
+    width: 150px;
+    height: 150px;
+  }
+
+  .avatar-aura {
+    animation: none;
+    display: none;
+  }
+
+  .about-card {
+    padding: 1.7rem 1.3rem;
+    gap: 2rem;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .info-row-actions {
+    width: 100%;
+  }
+
+  .profile-card:hover,
+  .about-card:hover {
+    transform: none;
+  }
+}
+
+@media (min-width: 2000px) {
+  .hero-content {
+    max-width: var(--max-width-wide);
+    gap: 4rem;
+  }
+  .hero-left {
+    max-width: 460px;
+  }
+  .avatar-wrap {
+    width: 240px;
+    height: 240px;
+  }
+  .profile-name {
+    font-size: 2.1rem;
+  }
+  .block-title {
+    font-size: 1.85rem;
+  }
+  .about-copy p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+  }
+  .about-card {
+    padding: 3.2rem 3rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -562,88 +520,5 @@
     animation: none;
     opacity: 1;
     transform: none;
-  }
-}
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-@media (max-width: 992px) {
-  .hero-content {
-    flex-direction: column;
-    align-items: center;
-    max-width: 720px;
-    gap: 2rem;
-  }
-  .hero-left {
-    max-width: 460px;
-    width: 100%;
-  }
-  .hero-right {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-container {
-    padding: 2.25rem 1rem 7rem;
-  }
-  .ambient-blob {
-    animation: none !important;
-    opacity: 0.15;
-    filter: blur(40px);
-  }
-  .profile-card,
-  .about-card {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background: var(--surface-strong);
-  }
-  .profile-card {
-    padding: 2.2rem 1.5rem 1.8rem;
-  }
-  .avatar-wrap {
-    width: 170px;
-    height: 170px;
-  }
-  .about-card {
-    padding: 1.9rem 1.5rem;
-    gap: 2.2rem;
-  }
-  .info-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .info-row-actions {
-    width: 100%;
-  }
-}
-
-/* Large screens */
-@media (min-width: 2000px) {
-  .hero-content {
-    max-width: 2300px;
-    gap: 4rem;
-  }
-  .hero-left {
-    max-width: 480px;
-  }
-  .avatar-wrap {
-    width: 260px;
-    height: 260px;
-  }
-  .profile-name {
-    font-size: 2.3rem;
-  }
-  .block-title {
-    font-size: 2rem;
-  }
-  .about-copy p {
-    font-size: 1.25rem;
-    line-height: 1.9;
-  }
-  .about-card {
-    padding: 3.4rem 3.2rem;
   }
 }

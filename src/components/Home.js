@@ -6,11 +6,6 @@ import mypic from '../Images/profile-hero.webp';
 function Home() {
   return (
     <div className="hero-container" id="home">
-      <div className="ambient-field" aria-hidden="true">
-        <span className="ambient-blob blob-a"></span>
-        <span className="ambient-blob blob-b"></span>
-        <span className="ambient-blob blob-c"></span>
-      </div>
 
       <div className="hero-content">
 

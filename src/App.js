@@ -341,7 +341,7 @@ const NavBar = ({ toggleDarkMode, darkMode, isDesktop, requestSection }) => {
 };
 
 function AppContent() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [isDesktop, setIsDesktop] = useState(() => window.innerWidth > 992);
   const [requestedSections, setRequestedSections] = useState({});
 

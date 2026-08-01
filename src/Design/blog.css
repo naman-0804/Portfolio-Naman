@@ -1,10 +1,12 @@
+/* ==========================================================
+   BLOG SECTION
+   ========================================================== */
+
 #blog-section {
-  padding: 5.5rem 2rem 6rem;
-  background: linear-gradient(165deg, var(--portfolio-canvas-a), var(--portfolio-canvas-b));
-  color: var(--portfolio-ink);
-  font-family: var(--font-main);
+  padding: 5rem 2rem 5.5rem;
+  color: var(--text-primary);
+  font-family: var(--font-body);
   position: relative;
-  overflow: hidden;
 }
 
 #blog-section .premium-section-header::before {
@@ -12,40 +14,44 @@
   width: fit-content;
   height: auto;
   background: transparent;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 #blog-section .blog-container {
-  max-width: 1180px;
+  max-width: var(--max-width);
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
+/* ---- Blog Grid ---- */
 #blog-section .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 1.4rem;
+  gap: 1.3rem;
 }
 
+/* ---- Blog Card ---- */
 #blog-section .blog-card {
   display: flex;
   flex-direction: column;
   min-height: 100%;
   overflow: hidden;
-  background: var(--portfolio-surface);
-  border: 1px solid var(--portfolio-border);
-  border-radius: var(--portfolio-radius-lg);
-  box-shadow: var(--portfolio-shadow);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  animation: blog-rise 0.65s ease both;
-  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  background: var(--bg-surface-solid);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 #blog-section .blog-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--portfolio-dusk-soft);
-  box-shadow: 0 24px 48px -24px rgba(38, 52, 59, 0.35);
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
 }
 
 #blog-section .blog-image-container {
@@ -53,100 +59,102 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: var(--portfolio-dusk-soft);
+  background: var(--bg-elevated);
 }
 
 #blog-section .blog-image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.65s ease;
+  transition: transform 0.5s ease;
 }
 
 #blog-section .blog-card:hover .blog-image-container img {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
 #blog-section .blog-content {
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 1.45rem;
+  padding: 1.3rem;
 }
 
 #blog-section .blog-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-bottom: 0.85rem;
-  color: var(--portfolio-sage);
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+  color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 #blog-section .blog-title {
   display: block;
-  margin-bottom: 0.75rem;
-  color: var(--portfolio-ink);
+  margin-bottom: 0.65rem;
+  color: var(--text-primary);
   text-decoration: none;
 }
 
 #blog-section .blog-title h3 {
   margin: 0;
-  font-size: 1.08rem;
+  font-size: 1.02rem;
   font-weight: 700;
   line-height: 1.4;
   transition: color 0.2s ease;
 }
 
 #blog-section .blog-card:hover .blog-title h3 {
-  color: var(--portfolio-dusk);
+  color: var(--violet);
 }
 
 #blog-section .blog-description {
   display: -webkit-box;
   margin: 0;
-  color: var(--portfolio-ink-soft);
-  font-size: 0.95rem;
-  line-height: 1.7;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 
-@keyframes blog-rise {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #blog-section .blog-card,
-  #blog-section .blog-image-container img {
-    animation: none;
-    transition: none;
-  }
-}
-
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
 @media (max-width: 768px) {
   #blog-section {
-    padding: 4.8rem 1rem 3.5rem;
+    padding: 4rem 1rem 3rem;
   }
 
   #blog-section .blog-grid {
     grid-template-columns: 1fr;
+  }
+
+  #blog-section .blog-card {
+    transition: none;
+  }
+
+  #blog-section .blog-card:hover {
+    transform: none;
+  }
+
+  #blog-section .blog-image-container img {
+    transition: none;
   }
 }
 
 @media (min-width: 2000px) {
   #blog-section .blog-container,
   #blog-section .premium-section-header {
-    max-width: 2300px;
+    max-width: var(--max-width-wide);
   }
 
   #blog-section .blog-grid {
-    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 2rem;
   }
 }

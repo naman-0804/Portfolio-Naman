@@ -1,64 +1,59 @@
-/* --- Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+/* ==========================================================
+   TERMINAL — No @import for fonts (loaded via HTML)
+   ========================================================== */
 
-/* --- Base Terminal Styles --- */
 .terminal-card {
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   overflow: hidden;
-  font-family: 'Fira Code', 'Consolas', monospace; /* Better coding font */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-mono);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  height: 250px; /* Fixed height for scrolling */
+  height: 250px;
   width: 100%;
 }
 
-/* --- Header --- */
+/* ---- Header ---- */
 .terminal-header {
   padding: 10px 16px;
   display: flex;
   align-items: center;
   gap: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  user-select: none; /* Prevent selecting UI elements */
+  border-bottom: 1px solid var(--border-color);
+  user-select: none;
 }
 
 .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  transition: transform 0.2s;
 }
 
-.dot:hover { transform: scale(1.1); }
-
-.red { background: #ff5f56; box-shadow: 0 0 8px rgba(255, 95, 86, 0.4); }
-.yellow { background: #ffbd2e; box-shadow: 0 0 8px rgba(255, 189, 46, 0.4); }
-.green { background: #27c93f; box-shadow: 0 0 8px rgba(39, 201, 63, 0.4); }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
 
 .terminal-title {
   margin-left: 12px;
-  font-size: 0.8rem;
-  opacity: 0.7;
+  font-size: 0.78rem;
+  opacity: 0.6;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
 }
 
-/* --- Body --- */
+/* ---- Body ---- */
 .terminal-body {
   padding: 16px;
   flex: 1;
-  overflow-y: auto; /* Enable scrolling */
-  font-size: 0.9rem;
+  overflow-y: auto;
+  font-size: 0.88rem;
   line-height: 1.6;
-  cursor: text; /* Indicates clickable */
+  cursor: text;
 }
 
-/* Custom Scrollbar */
 .terminal-body::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 .terminal-body::-webkit-scrollbar-track {
@@ -66,21 +61,17 @@
 }
 
 .terminal-body::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
-}
-
-.terminal-body::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
 }
 
 .terminal-line {
-  margin-bottom: 6px;
-  white-space: pre-wrap; /* Handle long lines */
+  margin-bottom: 5px;
+  white-space: pre-wrap;
   word-break: break-word;
 }
 
-/* --- Input Area --- */
+/* ---- Input ---- */
 .terminal-input {
   display: flex;
   align-items: center;
@@ -98,50 +89,40 @@
   border: none;
   outline: none;
   flex: 1;
-  font-family: 'Fira Code', monospace;
-  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
   font-weight: 500;
-  caret-color: currentColor; /* Cursor matches text color */
+  caret-color: currentColor;
 }
 
-/* ======================
-   THEME: DEFAULT (Glass Dark)
-   ====================== */
+/* ---- Theme: Default ---- */
 .theme-default {
-  background: rgba(15, 23, 42, 0.85); /* Dark Glass */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: #e2e8f0;
+  background: var(--bg-surface-solid);
+  color: var(--text-secondary);
 }
 
-.theme-default .terminal-header { background: rgba(255, 255, 255, 0.03); }
-.theme-default .terminal-title { color: #94a3b8; }
-.theme-default .prompt { color: #a855f7; /* Purple prompt */ }
-.theme-default input { color: #f1f5f9; }
+.theme-default .terminal-header { background: rgba(255, 255, 255, 0.02); }
+.theme-default .terminal-title { color: var(--text-tertiary); }
+.theme-default .prompt { color: var(--violet); }
+.theme-default input { color: var(--text-primary); }
 
-/* ======================
-   THEME: MATRIX (Hacker)
-   ====================== */
+/* ---- Theme: Matrix ---- */
 .theme-matrix {
   background: #000000;
   color: #00ff41;
-  border: 1px solid #003b00;
-  box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+  border-color: #003b00;
 }
 
-.theme-matrix .terminal-header { background: #0a0a0a; border-bottom: 1px solid #003b00; }
+.theme-matrix .terminal-header { background: #0a0a0a; border-bottom-color: #003b00; }
 .theme-matrix .terminal-title { color: #008f11; }
-.theme-matrix .prompt { color: #00ff41; text-shadow: 0 0 5px rgba(0, 255, 65, 0.5); }
-.theme-matrix input { color: #00ff41; text-shadow: 0 0 5px rgba(0, 255, 65, 0.5); }
-.theme-matrix .terminal-line { text-shadow: 0 0 2px rgba(0, 255, 65, 0.3); }
+.theme-matrix .prompt { color: #00ff41; }
+.theme-matrix input { color: #00ff41; }
 
-/* ======================
-   THEME: SOLARIZED (Pro)
-   ====================== */
+/* ---- Theme: Solarized ---- */
 .theme-solarized {
   background: #002b36;
   color: #839496;
-  border: 1px solid #073642;
+  border-color: #073642;
 }
 
 .theme-solarized .terminal-header { background: #073642; }
@@ -149,7 +130,7 @@
 .theme-solarized .prompt { color: #b58900; }
 .theme-solarized input { color: #93a1a1; }
 
-/* Mobile Adjustment */
+/* ---- Mobile ---- */
 @media (max-width: 480px) {
   .terminal-card { height: 300px; }
   .terminal-input { flex-wrap: wrap; gap: 4px; }

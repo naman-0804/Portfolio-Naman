@@ -9,37 +9,37 @@ function Skills() {
       title: "Backend", 
       content: "Express js, Flask", 
       icon: <FaServer />,
-      color: "#10b981" // Emerald
+      color: "#10b981"
     },
     { 
       title: "Frontend", 
       content: "React, Vite", 
       icon: <FaReact />,
-      color: "#3b82f6" // Blue
+      color: "#3b82f6"
     },
     { 
       title: "Database", 
       content: "MongoDB, MySQL, Supabase", 
       icon: <FaDatabase />,
-      color: "#f59e0b" // Amber
+      color: "#f59e0b"
     },
     { 
       title: "Cloud", 
       content: "Amazon Web Services, GCP", 
       icon: <FaCloud />,
-      color: "#8b5cf6" // Violet
+      color: "#8b5cf6"
     },
     { 
       title: "Coding", 
       content: "DSA(500+), C++, Python, Java", 
       icon: <FaCode />,
-      color: "#ec4899" // Pink
+      color: "#ec4899"
     },
     { 
       title: "Tools", 
       content: "Git, Figma, Postman, WinSCP, PUTTY, Clerk", 
       icon: <FaTools />,
-      color: "#6366f1" // Indigo
+      color: "#6366f1"
     },
   ];
 
@@ -75,42 +75,40 @@ function Skills() {
       description: "Participated in the Devshouse competition and secured the 4th place among 600+ teams.",
     },
   ];
+
   const certificationsData = [
-  {
-    title: "Oracle Cloud Infrastructure Associate",
-    year: "2025",
-    score: "Passed",
-  },
-  {
-    title: "Microsoft Azure DP-900",
-    year: "2024",
-    score: "925 / 1000",
-  },
-  {
-    title: "Spoken Tutorial – IIT Bombay (C++)",
-    year: "2023",
-    score: "74%",
-  },
-  {
-    title: "Spoken Tutorial – IIT Bombay (C)",
-    year: "2023",
-    score: "77.5%",
-  },
-  {
-    title: "Spoken Tutorial – IIT Bombay (Python)",
-    year: "2023",
-    score: "80%",
-  },
-];
-
-
-
+    {
+      title: "Oracle Cloud Infrastructure Associate",
+      year: "2025",
+      score: "Passed",
+    },
+    {
+      title: "Microsoft Azure DP-900",
+      year: "2024",
+      score: "925 / 1000",
+    },
+    {
+      title: "Spoken Tutorial – IIT Bombay (C++)",
+      year: "2023",
+      score: "74%",
+    },
+    {
+      title: "Spoken Tutorial – IIT Bombay (C)",
+      year: "2023",
+      score: "77.5%",
+    },
+    {
+      title: "Spoken Tutorial – IIT Bombay (Python)",
+      year: "2023",
+      score: "80%",
+    },
+  ];
 
   return (
     <div id="skills-section">
       
-      {/* Premium Typography Header */}
-      <div className="premium-section-header" style={{ marginBottom: "3rem" }}>
+      {/* Skills Header */}
+      <div className="premium-section-header" style={{ marginBottom: "2.5rem" }}>
         <h2 className="premium-heading">Technical<br/>Arsenal.</h2>
         <p className="premium-subtitle">Languages, frameworks, databases, and continuous learning.</p>
       </div>
@@ -137,7 +135,7 @@ function Skills() {
       </div>
 
       {/* Achievements Section */}
-      <div className="premium-section-header" style={{ marginBottom: "3rem", marginTop: "4rem" }}>
+      <div className="premium-section-header" style={{ marginBottom: "2.5rem", marginTop: "3.5rem" }}>
         <h2 className="premium-heading">Milestones.</h2>
         <p className="premium-subtitle">Awards, hackathons, and professional highlights.</p>
       </div>
@@ -145,13 +143,16 @@ function Skills() {
         {achievementsData.map((achievement, index) => (
           <div key={index} className="achievement-card">
             <span className="achievement-date">{achievement.date}</span>
-            <h3>{achievement.title}</h3>
-            <p>{achievement.description}</p>
+            <div>
+              <h3>{achievement.title}</h3>
+              <p>{achievement.description}</p>
+            </div>
           </div>
         ))}
       </div>
+
       {/* Certifications Section */}
-      <div className="premium-section-header" style={{ marginBottom: "3rem", marginTop: "4rem" }}>
+      <div className="premium-section-header" style={{ marginBottom: "2.5rem", marginTop: "3.5rem" }}>
         <h2 className="premium-heading">Credentials.</h2>
         <p className="premium-subtitle">Verified certifications and coursework.</p>
       </div>
