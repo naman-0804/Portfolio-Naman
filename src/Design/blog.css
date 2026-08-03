@@ -9,18 +9,6 @@
   position: relative;
 }
 
-#blog-section .premium-section-header::before {
-  content: 'Writing';
-  width: fit-content;
-  height: auto;
-  background: transparent;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
 
 #blog-section .blog-container {
   max-width: var(--max-width);
@@ -54,8 +42,8 @@
   text-decoration: none;
   color: inherit;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 0.4s ease,
-              box-shadow 0.4s ease;
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
   animation: blogFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: calc(var(--i, 0) * 0.1s);
 }
@@ -65,6 +53,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -93,7 +82,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-              filter 0.4s ease;
+    filter 0.4s ease;
 }
 
 #blog-section .blog-card:hover .blog-image-container img {
@@ -157,25 +146,8 @@
   transition: color 0.3s ease;
 }
 
-/* Animated underline on hover */
-#blog-section .blog-title::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--violet);
-  border-radius: 1px;
-  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
 #blog-section .blog-card:hover .blog-title {
   color: var(--violet);
-}
-
-#blog-section .blog-card:hover .blog-title::after {
-  width: 100%;
 }
 
 #blog-section .blog-description {
@@ -207,25 +179,6 @@
   transform: translateX(4px);
 }
 
-/* ==========================================================
-   READ TIME PROGRESS BAR
-   ========================================================== */
-#blog-section .blog-progress-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: var(--read-progress, 50%);
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--violet));
-  border-radius: 0 2px 0 0;
-  opacity: 0.5;
-  transition: opacity 0.3s ease, height 0.3s ease;
-}
-
-#blog-section .blog-card:hover .blog-progress-bar {
-  opacity: 1;
-  height: 4px;
-}
 
 /* ==========================================================
    LIGHT MODE ADJUSTMENTS
@@ -282,6 +235,7 @@
 }
 
 @media (min-width: 2000px) {
+
   #blog-section .blog-container,
   #blog-section .premium-section-header {
     max-width: var(--max-width-wide);

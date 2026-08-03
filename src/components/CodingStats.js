@@ -35,9 +35,13 @@ const CodingStats = () => {
   const devto = stats.devto || {};
 
   return (
-    <section className="stats-container">
-      <div className="stats-wrapper">
+    <section className="stats-container" id="coding-stats">
+      <div className="premium-section-header" style={{ marginBottom: "2.5rem", padding: "0 1rem" }}>
+        <h2 className="premium-heading">Stats</h2>
+        <p className="premium-subtitle">Coding, development, and content creation metrics.</p>
+      </div>
 
+      <div className="stats-wrapper">
         <div className="left-column">
           {/* =========================================
               LEFT CARD: SUMMARY

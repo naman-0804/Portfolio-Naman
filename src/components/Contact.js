@@ -96,7 +96,7 @@ function Contact() {
 
           {/* LEFT */}
           <div className="contact-left-col premium">
-            <h2 className="premium-heading">Let's build<br/>something<br/>great.</h2>
+            <h2 className="premium-heading">Get In Touch</h2>
             
             <div className="premium-contact-info">
               <div className="info-block">

@@ -6,7 +6,7 @@ import db from '../Images/Diabetes.webp';
 import chat from '../Images/auth.webp';
 import ecommerece from '../Images/ecommerce.webp';
 import stat from '../Images/stat.webp';
-const blogs = [  
+const blogs = [
   {
     id: 'blog-1',
     title: 'Combining Total DSA + Github Stats across Platforms',
@@ -67,10 +67,10 @@ function BlogSection() {
   return (
     <div id="blog-section">
       <div className="blog-container">
-        
+
         {/* Premium Typography Header */}
         <div className="premium-section-header">
-          <h2 className="premium-heading">Project<br/>Walkthroughs.</h2>
+          <h2 className="premium-heading">Blog</h2>
           <p className="premium-subtitle">Technical breakdowns, development concepts, and behind-the-scenes.</p>
         </div>
 
@@ -112,9 +112,6 @@ function BlogSection() {
                   Read article →
                 </span>
               </div>
-
-              {/* Read time progress bar */}
-              <div className="blog-progress-bar" />
             </a>
           ))}
         </div>

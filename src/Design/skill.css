@@ -9,18 +9,6 @@
   position: relative;
 }
 
-#skills-section .premium-section-header::before {
-  content: 'Capabilities';
-  width: fit-content;
-  height: auto;
-  background: transparent;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
 
 /* ---- Skills Grid ---- */
 #skills-section .skills-container {

@@ -10,18 +10,6 @@
   position: relative;
 }
 
-#experience-section .premium-section-header::before {
-  content: 'Timeline';
-  width: fit-content;
-  height: auto;
-  background: transparent;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
 
 #experience-section .section-container {
   max-width: var(--max-width);
