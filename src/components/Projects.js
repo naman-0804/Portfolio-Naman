@@ -273,7 +273,6 @@ function Projects() {
             >
               {/* Row header */}
               <div className="proj-row-header">
-                <span className="proj-row-num">{String(index + 1).padStart(2, '0')}</span>
                 <h3 className="proj-row-title">{project.title}</h3>
                 <span className="proj-row-category">{project.category}</span>
               </div>

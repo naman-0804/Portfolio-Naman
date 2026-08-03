@@ -1,43 +1,43 @@
 import React from "react";
-import { 
-  FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode, FaTrophy 
+import {
+  FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode, FaTrophy
 } from "react-icons/fa";
 
 function Skills() {
   const skillsData = [
-    { 
-      title: "Backend", 
-      content: "Express js, Flask", 
+    {
+      title: "Backend",
+      content: "Express js, Flask",
       icon: <FaServer />,
       color: "#10b981"
     },
-    { 
-      title: "Frontend", 
-      content: "React, Vite", 
+    {
+      title: "Frontend",
+      content: "React, Vite",
       icon: <FaReact />,
       color: "#3b82f6"
     },
-    { 
-      title: "Database", 
-      content: "MongoDB, MySQL, Supabase", 
+    {
+      title: "Database",
+      content: "MongoDB, MySQL, Supabase",
       icon: <FaDatabase />,
       color: "#f59e0b"
     },
-    { 
-      title: "Cloud", 
-      content: "Amazon Web Services, GCP", 
+    {
+      title: "Cloud",
+      content: "Amazon Web Services, GCP",
       icon: <FaCloud />,
       color: "#8b5cf6"
     },
-    { 
-      title: "Coding", 
-      content: "DSA(500+), C++, Python, Java", 
+    {
+      title: "Coding",
+      content: "DSA(500+), C++, Python, Java",
       icon: <FaCode />,
       color: "#ec4899"
     },
-    { 
-      title: "Tools", 
-      content: "Git, Figma, Postman, WinSCP, PUTTY, Clerk", 
+    {
+      title: "Tools",
+      content: "Git, Figma, Postman, WinSCP, PUTTY, Clerk",
       icon: <FaTools />,
       color: "#6366f1"
     },
@@ -50,27 +50,27 @@ function Skills() {
       description: "Cleared TCS NQT for Prime role and TCS Prime interview process and got selected for the role of TCS Digital.",
     },
     {
-      date: "December 2025",
+      date: "Dec 2025",
       title: "Infosys Selection",
       description: "Cleared Infosys aptitude exam, interviews and got selected as an intern for the role of Software Developer.",
     },
     {
-      date: "November 2024",
+      date: "Nov 2024",
       title: "VITISH (SIH Internal Hackathon)",
       description: "Qualified two elimination rounds and got nominated for official SIH24 from VIT Chennai out of 600 teams.",
     },
     {
-      date: "June 2024",
+      date: "Jun 2024",
       title: "Software Developer Intern",
       description: "Secured a summer internship with The Entrepreneurship Network and learned a lot of new skills.",
     },
     {
-      date: "April 2024",
+      date: "Apr 2024",
       title: "Solveathon 6th Place",
       description: "Ranked 6th in the Solveathon and received special appreciation from vice chancellor of VIT for our idea.",
     },
     {
-      date: "March 2024",
+      date: "Mar 2024",
       title: "Devshouse 4th Place",
       description: "Participated in the Devshouse competition and secured the 4th place among 600+ teams.",
     },
@@ -106,17 +106,17 @@ function Skills() {
 
   return (
     <div id="skills-section">
-      
+
       {/* Skills Header */}
       <div className="premium-section-header" style={{ marginBottom: "2.5rem" }}>
-        <h2 className="premium-heading">Technical<br/>Arsenal.</h2>
+        <h2 className="premium-heading">Technical<br />Arsenal.</h2>
         <p className="premium-subtitle">Languages, frameworks, databases, and continuous learning.</p>
       </div>
       <div className="skills-container">
         {skillsData.map((skill, index) => (
-          <div 
-            key={index} 
-            className="skill-item" 
+          <div
+            key={index}
+            className="skill-item"
             style={{ "--skill-color": skill.color }}
           >
             <div className="skill-icon-container">

@@ -91,7 +91,7 @@
   width: 110px;
   padding-top: 0.15rem;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.03em;
   color: var(--text-tertiary);
@@ -110,7 +110,7 @@
   margin: 0 0 0.3rem;
   color: var(--text-primary);
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.3;
@@ -121,7 +121,7 @@
   align-items: center;
   gap: 0.4rem;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.65rem;
 }
@@ -133,7 +133,7 @@
 
 #experience-section .timeline-summary {
   color: var(--text-secondary);
-  font-size: 0.92rem;
+  font-size: 1rem;
   line-height: 1.7;
   margin: 0 0 0.85rem;
 }
@@ -191,7 +191,7 @@
   width: 110px;
   padding-top: 0.15rem;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.03em;
   color: var(--text-tertiary);
@@ -209,7 +209,7 @@
   margin: 0 0 0.25rem;
   color: var(--text-primary);
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.3;
@@ -220,7 +220,7 @@
   align-items: center;
   gap: 0.4rem;
   color: var(--text-secondary);
-  font-size: 0.88rem;
+  font-size: 0.98rem;
   font-weight: 500;
   margin-bottom: 0.15rem;
 }
@@ -246,7 +246,7 @@
 
 #experience-section .edu-detail {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.65;
   margin: 0;
 }
