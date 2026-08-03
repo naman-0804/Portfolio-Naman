@@ -60,14 +60,7 @@
 }
 
 .avatar-aura {
-  position: absolute;
-  inset: -20px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, var(--accent) 0%, var(--violet) 55%, transparent 72%);
-  filter: blur(24px);
-  opacity: 0.4;
-  z-index: 0;
-  animation: breathe 6s ease-in-out infinite;
+  display: none;
 }
 
 .avatar-frame {
