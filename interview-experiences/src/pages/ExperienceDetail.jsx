@@ -1,6 +1,6 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { experiences } from '../data/experiences';
-import { FiArrowLeft, FiClock, FiMapPin, FiTarget, FiInfo } from 'react-icons/fi';
+import { FiArrowLeft, FiClock, FiMapPin, FiTarget, FiInfo, FiExternalLink, FiBookOpen } from 'react-icons/fi';
 
 const ExperienceDetail = () => {
   const { id } = useParams();
@@ -96,6 +96,29 @@ const ExperienceDetail = () => {
                 <li key={index}>{feedback}</li>
               ))}
             </ul>
+          </div>
+        )}
+
+        {experience.supportMaterials && experience.supportMaterials.length > 0 && (
+          <div className="support-materials">
+            <h2 className="section-heading">
+              <FiBookOpen /> Support Material
+            </h2>
+            <div className="resource-links">
+              {experience.supportMaterials.map((material, index) => (
+                <a
+                  key={index}
+                  href={material.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resource-link"
+                >
+                  <FiExternalLink />
+                  <span>{material.label}</span>
+                  <span className="resource-badge">{material.type}</span>
+                </a>
+              ))}
+            </div>
           </div>
         )}
       </div>

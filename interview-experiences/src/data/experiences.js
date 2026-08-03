@@ -27,6 +27,13 @@ export const experiences = [
       'TCS Prime targets specialized domains like big data, cloud architecture, and cybersecurity.',
       'TCS Digital is often more aligned toward standard cloud and DevOps roles, whereas Prime expects a slightly deeper system-level understanding.'
     ],
+    supportMaterials: [
+      {
+        label: 'TCS NQT Aptitude Preparation (Full Playlist)',
+        url: 'https://www.youtube.com/playlist?list=PL3JmT-xgOMNw9mwzaCFdDSapW83Y9Ilj_',
+        type: 'YouTube'
+      }
+    ],
     details: {
       difficulty: 'Medium',
       timeline: '0-1 Weeks',
@@ -90,6 +97,13 @@ export const experiences = [
     additionalFeedback: [
       'The Aptitude + pseudocode round is the main elimination stage; do not underestimate it.',
       'The technical interview is generally straightforward and tests foundational knowledge rather than deep, complex engineering edge-cases.'
+    ],
+    supportMaterials: [
+      {
+        label: 'Infosys Interview Experiences (Glassdoor)',
+        url: 'https://www.glassdoor.co.in/Interview/Infosys-Systems-Engineer-Interview-Questions-EI_IE7927.0,7_KO8,24.htm',
+        type: 'Glassdoor'
+      }
     ],
     details: {
       difficulty: 'Easy',
@@ -214,6 +228,13 @@ export const experiences = [
       'The puzzle round is the most critical hurdle. The puzzles can be quite confusing and difficult if you haven\'t studied classic logical puzzles (e.g., GeeksforGeeks puzzle section) recently.',
       'There is little point in applying for this specific role with a purely development-based resume unless you have strong analytical and puzzle-solving preparation to back it up.',
       'Strong analytical and lateral thinking is prioritized heavily over framework-specific coding skills.'
+    ],
+    supportMaterials: [
+      {
+        label: 'GFG Aptitude Puzzles (Must Practice)',
+        url: 'https://www.geeksforgeeks.org/aptitude/puzzles/',
+        type: 'GeeksforGeeks'
+      }
     ],
     details: {
       difficulty: 'Medium',
