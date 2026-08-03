@@ -23,7 +23,7 @@ import vpc from '../Images/vpc-aws.webp';
 import cityAssist from '../Images/city-assist.webp';
 
 function Projects() {
-  const [activeProject, setActiveProject] = useState(null);
+  const [activeFilter, setActiveFilter] = useState('All');
 
   const projects = [
     {
@@ -218,120 +218,113 @@ function Projects() {
     }
   ];
 
-  // Group projects by category for sectioned rendering
-  const groupedProjects = projects.reduce((acc, project) => {
-    const cat = project.category || 'Other';
-    if (!acc[cat]) acc[cat] = [];
-    acc[cat].push(project);
-    return acc;
-  }, {});
+  const categories = ['All', 'Fullstack', 'Machine Learning', 'DevOps', 'Cloud'];
 
-  // Define preferred category order for display
-  const categoryOrder = ['Fullstack', 'Machine Learning', 'DevOps', 'Cloud', 'Other'];
+  const categoryColors = {
+    'Fullstack': 'var(--accent)',
+    'Machine Learning': 'var(--violet)',
+    'DevOps': 'var(--amber)',
+    'Cloud': 'var(--blue)',
+  };
+
+  const filteredProjects = activeFilter === 'All'
+    ? projects
+    : projects.filter(p => p.category === activeFilter);
 
   const redirectToProject = (url) => {
     if (url) window.open(url, '_blank');
   };
 
-  const handleProjectInteraction = (projectId) => {
-    if (window.innerWidth <= 768) {
-      setActiveProject(activeProject === projectId ? null : projectId);
-    } else {
-      setActiveProject(projectId);
-    }
-  };
 
-  const handleMouseLeave = () => {
-    if (window.innerWidth > 768) {
-      setActiveProject(null);
-    }
-  };
-
-  // Reusable renderer for a single project item
-  const renderProjectItem = (project) => (
-    <div
-      className="project-item"
-      key={project.id}
-      onMouseEnter={() => handleProjectInteraction(project.id)}
-      onMouseLeave={handleMouseLeave}
-      onClick={() => handleProjectInteraction(project.id)}
-    >
-      <div className="project-image-container">
-        <img src={project.image} alt={project.title} loading="lazy" />
-
-        <div className={`project-overlay ${activeProject === project.id ? 'active' : ''}`}>
-          <div className="project-description">
-            <p>{project.description || `A cool project built with ${project.technologies[0]}.`}</p>
-            <div className="tech-stack">
-              {project.technologies.map((tech, i) => (
-                <span key={i} className="tech-tag">{tech}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="project-info">
-        <h3 title={project.title}>{project.title}</h3>
-        <div className="project-links">
-          <button
-            className="icon-button github-btn"
-            title="View Code"
-            onClick={(e) => {
-              e.stopPropagation();
-              redirectToProject(project.github);
-            }}
-          >
-            <FaGithub />
-          </button>
-
-          {project.youtube && (
-            <button
-              className="icon-button youtube-btn"
-              title="Watch Demo"
-              onClick={(e) => {
-                e.stopPropagation();
-                redirectToProject(project.youtube);
-              }}
-            >
-              <FaYoutube />
-            </button>
-          )}
-
-          {project.demo && (
-            <button
-              className="icon-button youtube-btn"
-              title="View Live Demo"
-              onClick={(e) => {
-                e.stopPropagation();
-                redirectToProject(project.demo);
-              }}
-            >
-              <FaExternalLinkAlt />
-            </button>
-          )}
-        </div>
-      </div>
-    </div>
-  );
 
   return (
     <div id="project-section" className="project">
       {/* Premium Typography Header */}
-      <div className="premium-section-header" style={{ marginBottom: "3rem" }}>
+      <div className="premium-section-header" style={{ marginBottom: "2rem" }}>
         <h2 className="premium-heading">Showcase &<br />Works.</h2>
         <p className="premium-subtitle">A collection of full-stack, machine learning, and cloud projects.</p>
       </div>
-      {categoryOrder
-        .filter((cat) => groupedProjects[cat] && groupedProjects[cat].length)
-        .map((cat) => (
-          <div key={cat} className="project-category">
-            <h2 className="category-title">{cat}</h2>
-            <div className="project-grid">
-              {groupedProjects[cat].map((project) => renderProjectItem(project))}
-            </div>
-          </div>
+
+      {/* Filter tabs */}
+      <div className="proj-filter-bar">
+        {categories.map(cat => (
+          <button
+            key={cat}
+            className={`proj-filter-tab${activeFilter === cat ? ' active' : ''}`}
+            onClick={() => setActiveFilter(cat)}
+            style={{ '--cat-color': categoryColors[cat] || 'var(--text-primary)' }}
+          >
+            {cat}
+            {activeFilter === cat && <span className="proj-filter-dot" />}
+          </button>
         ))}
+      </div>
+
+      {/* Project list */}
+      <div className="proj-list">
+        {filteredProjects.map((project, index) => (
+            <div
+              key={project.id}
+              className="proj-row"
+              style={{
+                '--i': index,
+                '--cat-color': categoryColors[project.category] || 'var(--accent)',
+              }}
+            >
+              {/* Row header */}
+              <div className="proj-row-header">
+                <span className="proj-row-num">{String(index + 1).padStart(2, '0')}</span>
+                <h3 className="proj-row-title">{project.title}</h3>
+                <span className="proj-row-category">{project.category}</span>
+              </div>
+
+              {/* Row body — always visible */}
+                <div className="proj-row-body">
+                  <div className="proj-row-details">
+                    <p className="proj-row-desc">{project.description}</p>
+                    <div className="proj-row-tech">
+                      {project.technologies.map((tech, i) => (
+                        <span key={i} className="proj-tech-pill">{tech}</span>
+                      ))}
+                    </div>
+                    <div className="proj-row-actions">
+                      <button
+                        className="proj-action-btn"
+                        onClick={(e) => { e.stopPropagation(); redirectToProject(project.github); }}
+                      >
+                        <FaGithub /> <span>Source Code</span>
+                      </button>
+                      {project.youtube && (
+                        <button
+                          className="proj-action-btn proj-action-yt"
+                          onClick={(e) => { e.stopPropagation(); redirectToProject(project.youtube); }}
+                        >
+                          <FaYoutube /> <span>Watch Demo</span>
+                        </button>
+                      )}
+                      {project.demo && (
+                        <button
+                          className="proj-action-btn proj-action-demo"
+                          onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo); }}
+                        >
+                          <FaExternalLinkAlt /> <span>Live Demo</span>
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                  <div className="proj-row-image">
+                    <img src={project.image} alt={project.title} loading="lazy" />
+                  </div>
+                </div>
+            </div>
+        ))}
+      </div>
+
+      {/* Project count */}
+      <div className="proj-count">
+        <span>{filteredProjects.length}</span> project{filteredProjects.length !== 1 ? 's' : ''}
+        {activeFilter !== 'All' && <> in <em>{activeFilter}</em></>}
+      </div>
     </div>
   );
 }
