@@ -110,7 +110,7 @@ function Skills() {
       {/* Skills Header */}
       <div className="premium-section-header" style={{ marginBottom: "2.5rem" }}>
         <h2 className="premium-heading">Skills & Tools</h2>
-        <p className="premium-subtitle">Languages, frameworks, databases, and continuous learning.</p>
+
       </div>
       <div className="skills-container">
         {skillsData.map((skill, index) => (
@@ -137,7 +137,7 @@ function Skills() {
       {/* Achievements Section */}
       <div className="premium-section-header" style={{ marginBottom: "2.5rem", marginTop: "3.5rem" }}>
         <h2 className="premium-heading">Milestones</h2>
-        <p className="premium-subtitle">Awards, hackathons, and professional highlights.</p>
+
       </div>
       <div className="Achievements">
         {achievementsData.map((achievement, index) => (
@@ -154,7 +154,7 @@ function Skills() {
       {/* Certifications Section */}
       <div className="premium-section-header" style={{ marginBottom: "2.5rem", marginTop: "3.5rem" }}>
         <h2 className="premium-heading">Certifications</h2>
-        <p className="premium-subtitle">Verified certifications and coursework.</p>
+
       </div>
       <div className="certifications-container">
         {certificationsData.map((cert, index) => (

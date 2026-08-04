@@ -71,7 +71,7 @@ function BlogSection() {
         {/* Premium Typography Header */}
         <div className="premium-section-header">
           <h2 className="premium-heading">Blog</h2>
-          <p className="premium-subtitle">Technical breakdowns, development concepts, and behind-the-scenes.</p>
+
         </div>
 
         {/* Editorial Grid */}

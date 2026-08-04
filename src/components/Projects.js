@@ -242,7 +242,7 @@ function Projects() {
       {/* Premium Typography Header */}
       <div className="premium-section-header" style={{ marginBottom: "2rem" }}>
         <h2 className="premium-heading">Showcase &<br />Works.</h2>
-        <p className="premium-subtitle">A collection of full-stack, machine learning, and cloud projects.</p>
+
       </div>
 
       {/* Filter tabs */}
@@ -319,11 +319,7 @@ function Projects() {
         ))}
       </div>
 
-      {/* Project count */}
-      <div className="proj-count">
-        <span>{filteredProjects.length}</span> project{filteredProjects.length !== 1 ? 's' : ''}
-        {activeFilter !== 'All' && <> in <em>{activeFilter}</em></>}
-      </div>
+
     </div>
   );
 }

@@ -51,7 +51,7 @@ function Experience() {
         {/* Experience Header */}
         <div className="premium-section-header" style={{ marginBottom: "2.5rem" }}>
           <h2 className="premium-heading">Experience</h2>
-          <p className="premium-subtitle">Professional experience and internships.</p>
+
         </div>
         
         <div className="experience-timeline">
@@ -77,7 +77,7 @@ function Experience() {
         {/* Education Header */}
         <div className="premium-section-header" style={{ marginBottom: "2.5rem", marginTop: "3.5rem" }}>
           <h2 className="premium-heading">Education</h2>
-          <p className="premium-subtitle">Academic background and institutional learning.</p>
+
         </div>
         
         <div className="experience-timeline">

@@ -23,10 +23,10 @@
   --border-color: rgba(255, 255, 255, 0.12);
   --border-hover: rgba(255, 255, 255, 0.25);
 
-  /* ---- Accent: Neon Cyan ---- */
-  --accent: hsl(180, 100%, 50%);
-  --accent-soft: hsla(180, 100%, 50%, 0.12);
-  --accent-glow: hsla(180, 100%, 50%, 0.25);
+  /* ---- Accent: Soothing Mint ---- */
+  --accent: hsl(150, 60%, 60%);
+  --accent-soft: hsla(150, 60%, 60%, 0.12);
+  --accent-glow: hsla(150, 60%, 60%, 0.25);
 
   /* ---- Secondary: Neon Purple ---- */
   --violet: hsl(280, 100%, 65%);
@@ -172,15 +172,7 @@ body {
   text-align: left;
 }
 
-.premium-section-header::before {
-  content: '';
-  display: inline-block;
-  width: 40px;
-  height: 3px;
-  border-radius: 2px;
-  background: var(--accent);
-  margin-bottom: 0.5rem;
-}
+
 
 .premium-heading {
   font-family: var(--font-display);
