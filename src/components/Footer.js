@@ -71,8 +71,8 @@ function Footer() {
 
         {/* Bottom Bar */}
         <div className="footer-bottom">
-          <div className="footer-bottom-left">
-            <p className="footer-copy">© {currentYear} Naman Srivastava. All rights reserved.</p>
+          <p className="footer-copy">© {currentYear} Naman Srivastava. All rights reserved.</p>
+          <div className="footer-started-wrapper">
             <span className="footer-started-badge">🚀 Started Aug 2024</span>
           </div>
           <p className="footer-made-with">
