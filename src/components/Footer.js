@@ -1,11 +1,8 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaYoutube, FaHeart } from 'react-icons/fa';
-import { SiOrcid } from 'react-icons/si';
+import { FaHeart } from 'react-icons/fa';
 import '../Design/footer.css';
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="footer-wrapper">
       <div className="footer-inner">
@@ -16,56 +13,17 @@ function Footer() {
           <p>Thank you for visiting!</p>
         </div>
 
-        {/* Top Row */}
-        <div className="footer-top">
-
-          {/* Left: Brand */}
+        <div className="footer-content">
           <div className="footer-brand">
-            <h3 className="footer-name">Naman Srivastava</h3>
             <p className="footer-tagline">Building digital experiences with purpose.</p>
           </div>
 
-          {/* Center: Stats */}
-          <div className="footer-stats">
-            <div className="footer-stat-item">
-              <span className="footer-stat-value">379</span>
-              <span className="footer-stat-label">Commits</span>
-            </div>
-            <div className="footer-stat-divider" />
-            <div className="footer-stat-item">
-              <span className="footer-stat-value">~2yr</span>
-              <span className="footer-stat-label">in the making</span>
-            </div>
-          </div>
-
-          {/* Right: Socials */}
-          <div className="footer-right">
-            <div className="footer-socials">
-              <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noopener noreferrer" className="footer-social-btn" aria-label="LinkedIn">
-                <FaLinkedin />
-              </a>
-              <a href="https://github.com/naman-0804" target="_blank" rel="noopener noreferrer" className="footer-social-btn" aria-label="GitHub">
-                <FaGithub />
-              </a>
-              <a href="https://www.youtube.com/@naman_0804/" target="_blank" rel="noopener noreferrer" className="footer-social-btn" aria-label="YouTube">
-                <FaYoutube />
-              </a>
-              <a href="https://orcid.org/0009-0007-1557-9333" target="_blank" rel="noopener noreferrer" className="footer-social-btn" aria-label="ORCID">
-                <SiOrcid />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="footer-bottom">
-          <p className="footer-copy">© {currentYear} Naman Srivastava. All rights reserved.</p>
-          <div className="footer-started-wrapper">
+          <div className="footer-meta">
             <span className="footer-started-badge">🚀 Started Aug 2024</span>
+            <p className="footer-made-with">
+              Made with <FaHeart className="footer-heart" /> & React
+            </p>
           </div>
-          <p className="footer-made-with">
-            Made with <FaHeart className="footer-heart" /> & React
-          </p>
         </div>
 
       </div>
