@@ -14,8 +14,10 @@ import '../src/Design/skill.css';
 import '../src/Design/blog.css';
 import '../src/Design/terminal.css';
 import '../src/Design/stats.css';
+import '../src/Design/footer.css';
 // Component Imports
 import Home from './components/Home';
+import Footer from './components/Footer';
 const EyeFollower = lazy(() => import('./components/EyeFollower'));
 const Projects = lazy(() => import('./components/Projects'));
 const Skills = lazy(() => import('./components/Skills'));
@@ -411,6 +413,7 @@ function AppContent() {
         <DeferredSection id="coding-stats" component={CodingStats} forceLoad={requestedSections['coding-stats']} />
         <DeferredSection id="contact" component={Contact} forceLoad={requestedSections.contact} />
       </main>
+      <Footer />
       <DeferredInsights />
     </div>
   );
