@@ -6,11 +6,6 @@ import '../Design/footer.css';
 function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <footer className="footer-wrapper">
       <div className="footer-inner">
@@ -43,15 +38,8 @@ function Footer() {
             </div>
           </div>
 
-          {/* Right: Nav + Socials */}
+          {/* Right: Socials */}
           <div className="footer-right">
-            <nav className="footer-nav">
-              <a onClick={() => scrollToSection('home')}>Home</a>
-              <a onClick={() => scrollToSection('projects')}>Projects</a>
-              <a onClick={() => scrollToSection('skills')}>Skills</a>
-              <a onClick={() => scrollToSection('experience')}>Experience</a>
-              <a onClick={() => scrollToSection('contact')}>Contact</a>
-            </nav>
             <div className="footer-socials">
               <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noopener noreferrer" className="footer-social-btn" aria-label="LinkedIn">
                 <FaLinkedin />
