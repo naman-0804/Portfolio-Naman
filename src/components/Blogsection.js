@@ -92,7 +92,6 @@ function BlogSection() {
               {/* Image section */}
               <div className="blog-image-container">
                 <img src={blog.image} alt={blog.title} loading="lazy" />
-                <span className="blog-number">{String(index + 1).padStart(2, '0')}</span>
               </div>
 
               {/* Card Content */}
