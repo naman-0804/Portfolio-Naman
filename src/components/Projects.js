@@ -29,6 +29,56 @@ function Projects() {
 
   const projects = [
     {
+      id: 'routeguard',
+      title: 'RouteGuard: Real-Time Detection',
+      category: 'Fullstack',
+      description: 'Real-Time Loitering Detection and safe Navigation using OpenCV and OSM.',
+      image: route,
+      technologies: ['React', 'Python', 'OpenCV', 'OSM API'],
+      github: 'https://github.com/naman-0804/RouteGuard',
+      youtube: 'https://www.youtube.com/watch?v=LGjBXVr_ZvM'
+    },
+    {
+      id: 'vpc-aws-button',
+      category: 'Cloud',
+      title: 'Advanced Secure VPC Architecture on AWS',
+      description: 'Made an AWS Virtual Private Cloud and demonstrated the connection with private EC2 instance using SSH inside NAT instance',
+      image: vpc,
+      technologies: ['AWS', 'VPC', 'EC2', 'NAT'],
+      github: 'https://github.com/naman-0804/Cloud-AWS/tree/main/Virtual%20Private%20Cloud%20Setup',
+      youtube: ''
+    },
+    {
+      id: 'sahyogi-button',
+      category: 'Fullstack',
+      title: 'Real Time SL Translation over WebRTC',
+      description: 'Community helper platform built for SIH with real-time database.',
+      image: sahyogi,
+      technologies: ['React', 'Firebase', 'Material UI'],
+      github: 'https://github.com/naman-0804/sih-site',
+      youtube: 'https://youtu.be/eXR-V_Ck7VA?si=OxYaDhNPUAbsYDEK'
+    },
+    {
+      id: 'context-ai',
+      category: 'Machine Learning',
+      title: 'Multi level retrieval pipeline',
+      description: 'Intelligent document assistant using RAG and LLMs to interact with documents through natural language.',
+      image: contextImg,
+      technologies: ['Flask', 'Pinecone', 'Groq API', 'spaCy'],
+      github: 'https://github.com/Context-Driven-Legal-Text-Analysis/Context_Driven_Text_Analysis',
+      demo: 'https://contextai.tiiny.site/'
+    },
+    {
+      id: 'auth-button',
+      category: 'Fullstack',
+      title: 'Multi user chatting application',
+      description: 'Real-time chat application using Next.js, Clerk Auth and GetStream.',
+      image: auth,
+      technologies: ['Next.js', 'Clerk', 'GetStream'],
+      github: 'https://github.com/naman-0804/Chat-App',
+      youtube: 'https://www.youtube.com/watch?v=OOlXkIn3GucY'
+    },
+    {
       id: 'ml-mini-projects',
       category: 'Machine Learning',
       title: 'AI Projects: ML, DL & NLP',
@@ -45,6 +95,56 @@ function Projects() {
       demo2Text: 'NLP Demo',
       github3: 'https://github.com/naman-0804/E-Commerce-Customer-Segmentation-Purchase-Prediction',
       github3Text: 'E-Comm Source'
+    },
+    {
+      id: 'dl-button',
+      category: 'Cloud',
+      title: 'Anonymous File Share',
+      description: 'Upload and download files securely without requiring user login.',
+      image: dl,
+      technologies: ['GCP', 'Google API', 'Flask'],
+      github: 'https://github.com/naman-0804/File_Storage',
+      youtube: 'https://www.youtube.com/watch?v=5xgZ00DH89w'
+    },
+    {
+      id: 'city-assist-button',
+      category: 'Machine Learning',
+      title: 'City Assist',
+      description: 'Platform for household help, combines identity verification with semantic search to help users find workers',
+      image: cityAssist,
+      technologies: ['ML', 'Semantic Search', 'Identity Verification'],
+      github: 'https://github.com/naman-0804/cityassist',
+      youtube: ''
+    },
+    {
+      id: 'AWS-button',
+      category: 'Cloud',
+      title: 'Serverless Web App',
+      description: 'Fully serverless architecture using AWS Lambda and DynamoDB.',
+      image: aws,
+      technologies: ['AWS Lambda', 'DynamoDB', 'JS'],
+      github: 'https://github.com/naman-0804/Cloud-AWS',
+      youtube: 'https://youtu.be/bld7EkDXFR4?si=4ccr0Le0AUv6gtfL'
+    },
+    {
+      id: 'ml-button',
+      category: 'Cloud',
+      title: 'AWS Diabetes Prediction',
+      description: 'Machine Learning model deployed on AWS for predicting diabetes.',
+      image: db,
+      technologies: ['Python', 'AWS', 'Flask', 'ML'],
+      github: 'https://github.com/naman-0804/Diabetes_Prediction_onAWS',
+      youtube: 'https://youtu.be/OqBdSu4jDhs?si=s80-z3eRVexeqTu1'
+    },
+    {
+      id: 'devops-button',
+      category: 'DevOps',
+      title: 'DevOps CI/CD Pipeline',
+      description: 'React app with Docker containerization and GitHub Actions workflow.',
+      image: devops,
+      technologies: ['Docker', 'React', 'GitHub Actions'],
+      github: 'https://github.com/naman-0804/to-do_devops_',
+      youtube: 'https://www.youtube.com/watch?v=NSN33CLi0M8'
     },
     {
       id: 'pulse-tracker',
@@ -87,66 +187,6 @@ function Projects() {
       youtube: 'https://www.youtube.com/@naman_0804'
     },
     {
-      id: 'routeguard',
-      title: 'RouteGuard: Real-Time Detection',
-      category: 'Fullstack',
-      description: 'Real-Time Loitering Detection and safe Navigation using OpenCV and OSM.',
-      image: route,
-      technologies: ['React', 'Python', 'OpenCV', 'OSM API'],
-      github: 'https://github.com/naman-0804/RouteGuard',
-      youtube: 'https://www.youtube.com/watch?v=LGjBXVr_ZvM'
-    },
-    {
-      id: 'context-ai',
-      category: 'Machine Learning',
-      title: 'Context AI',
-      description: 'Intelligent document assistant using RAG and LLMs to interact with documents through natural language.',
-      image: contextImg,
-      technologies: ['Flask', 'Pinecone', 'Groq API', 'spaCy'],
-      github: 'https://github.com/Context-Driven-Legal-Text-Analysis/Context_Driven_Text_Analysis',
-      demo: 'https://contextai.tiiny.site/'
-    },
-    {
-      id: 'auth-button',
-      category: 'Fullstack',
-      title: 'Next.js Chat App',
-      description: 'Real-time chat application using Next.js, Clerk Auth and GetStream.',
-      image: auth,
-      technologies: ['Next.js', 'Clerk', 'GetStream'],
-      github: 'https://github.com/naman-0804/Chat-App',
-      youtube: 'https://www.youtube.com/watch?v=OOlXkIn3GucY'
-    },
-    {
-      id: 'dl-button',
-      category: 'Cloud',
-      title: 'Anonymous File Share',
-      description: 'Upload and download files securely without requiring user login.',
-      image: dl,
-      technologies: ['GCP', 'Google API', 'Flask'],
-      github: 'https://github.com/naman-0804/File_Storage',
-      youtube: 'https://www.youtube.com/watch?v=5xgZ00DH89w'
-    },
-    {
-      id: 'ml-button',
-      category: 'Cloud',
-      title: 'AWS Diabetes Prediction',
-      description: 'Machine Learning model deployed on AWS for predicting diabetes.',
-      image: db,
-      technologies: ['Python', 'AWS', 'Flask', 'ML'],
-      github: 'https://github.com/naman-0804/Diabetes_Prediction_onAWS',
-      youtube: 'https://youtu.be/OqBdSu4jDhs?si=s80-z3eRVexeqTu1'
-    },
-    {
-      id: 'devops-button',
-      category: 'DevOps',
-      title: 'DevOps CI/CD Pipeline',
-      description: 'React app with Docker containerization and GitHub Actions workflow.',
-      image: devops,
-      technologies: ['Docker', 'React', 'GitHub Actions'],
-      github: 'https://github.com/naman-0804/to-do_devops_',
-      youtube: 'https://www.youtube.com/watch?v=NSN33CLi0M8'
-    },
-    {
       id: 'vitalized-button',
       category: 'Fullstack',
       title: 'Vitalized Healthcare',
@@ -157,24 +197,14 @@ function Projects() {
       youtube: 'https://youtu.be/PPTDtrzJOT8?si=e32v89AZyyjjZ0av'
     },
     {
-      id: 'sahyogi-button',
+      id: 'portfolio-button',
       category: 'Fullstack',
-      title: 'Sahyogi Platform',
-      description: 'Community helper platform built for SIH with real-time database.',
-      image: sahyogi,
-      technologies: ['React', 'Firebase', 'Material UI'],
-      github: 'https://github.com/naman-0804/sih-site',
-      youtube: 'https://youtu.be/eXR-V_Ck7VA?si=OxYaDhNPUAbsYDEK'
-    },
-    {
-      id: 'AWS-button',
-      category: 'Cloud',
-      title: 'Serverless Web App',
-      description: 'Fully serverless architecture using AWS Lambda and DynamoDB.',
-      image: aws,
-      technologies: ['AWS Lambda', 'DynamoDB', 'JS'],
-      github: 'https://github.com/naman-0804/Cloud-AWS',
-      youtube: 'https://youtu.be/bld7EkDXFR4?si=4ccr0Le0AUv6gtfL'
+      title: 'Portfolio Website',
+      description: 'The website you are currently looking at!',
+      image: Portfolio,
+      technologies: ['React', 'EmailJs', 'CSS3'],
+      github: 'https://github.com/naman-0804/Portfolio-Naman',
+      youtube: 'https://www.youtube.com/watch?v=u4lYKwQs48s'
     },
     {
       id: 'asl-button',
@@ -195,36 +225,6 @@ function Projects() {
       technologies: ['AWS Lex', 'AI', 'Cloud'],
       github: 'https://github.com/naman-0804?tab=repositories',
       youtube: 'https://www.youtube.com/watch?v=lU9DK8GRS1k'
-    },
-    {
-      id: 'portfolio-button',
-      category: 'Fullstack',
-      title: 'Portfolio Website',
-      description: 'The website you are currently looking at!',
-      image: Portfolio,
-      technologies: ['React', 'EmailJs', 'CSS3'],
-      github: 'https://github.com/naman-0804/Portfolio-Naman',
-      youtube: 'https://www.youtube.com/watch?v=u4lYKwQs48s'
-    },
-    {
-      id: 'vpc-aws-button',
-      category: 'Cloud',
-      title: 'Advanced Secure VPC Architecture on AWS',
-      description: 'Made an AWS Virtual Private Cloud and demonstrated the connection with private EC2 instance using SSH inside NAT instance',
-      image: vpc,
-      technologies: ['AWS', 'VPC', 'EC2', 'NAT'],
-      github: 'https://github.com/naman-0804/Cloud-AWS/tree/main/Virtual%20Private%20Cloud%20Setup',
-      youtube: ''
-    },
-    {
-      id: 'city-assist-button',
-      category: 'Machine Learning',
-      title: 'City Assist',
-      description: 'Platform for household help, combines identity verification with semantic search to help users find workers',
-      image: cityAssist,
-      technologies: ['ML', 'Semantic Search', 'Identity Verification'],
-      github: 'https://github.com/naman-0804/cityassist',
-      youtube: ''
     }
   ];
 
@@ -237,7 +237,7 @@ function Projects() {
     'Cloud': 'var(--blue)',
   };
 
-  const otherProjectIds = ['pulse-tracker', 'wcs-button', 'medhub-button', 'okra-button', 'vitalized-button'];
+  const otherProjectIds = ['pulse-tracker', 'wcs-button', 'medhub-button', 'okra-button', 'vitalized-button', 'portfolio-button', 'asl-button', 'lex-button'];
   
   const mainProjects = projects.filter(p => !otherProjectIds.includes(p.id));
   const modalProjects = projects.filter(p => otherProjectIds.includes(p.id));
