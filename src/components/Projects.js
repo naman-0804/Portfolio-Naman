@@ -371,7 +371,7 @@ function Projects() {
         <div className="project-modal-overlay" onClick={() => setIsModalOpen(false)}>
           <div className="project-modal-content" onClick={e => e.stopPropagation()}>
             <button className="project-modal-close" onClick={() => setIsModalOpen(false)}>&times;</button>
-            <h2 className="premium-heading" style={{ fontSize: '2.5rem', marginBottom: '2rem', textAlign: 'center' }}>Other Projects</h2>
+            <h2 className="premium-heading" style={{ fontSize: '2.5rem', marginTop: '1.5rem', marginBottom: '2rem', textAlign: 'center' }}>Other Projects</h2>
             <div className="proj-list" style={{ overflowY: 'auto', maxHeight: '70vh', paddingRight: '10px' }}>
               {modalProjects.map(renderProject)}
             </div>

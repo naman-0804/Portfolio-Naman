@@ -434,27 +434,25 @@
 
 .project-modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
+  top: 12px;
+  right: 12px;
+  background: var(--rose);
+  border: none;
   border-radius: 50%;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
+  color: white;
   font-size: 2rem;
   cursor: pointer;
   z-index: 100;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.4);
   transition: all 0.2s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .project-modal-close:hover {
-  color: var(--rose);
-  border-color: var(--rose);
   transform: scale(1.1);
 }
 
