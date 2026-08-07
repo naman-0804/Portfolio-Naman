@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { FaGithub, FaYoutube, FaExternalLinkAlt } from 'react-icons/fa';
 
 // Import Images
@@ -21,11 +22,34 @@ import wecalm from '../Images/wecalm.webp';
 import contextImg from '../Images/contxt.webp';
 import vpc from '../Images/vpc-aws.webp';
 import cityAssist from '../Images/city-assist.webp';
+import vehicleCnn from '../Images/vehicle-cnn.png';
+import kindleNlp from '../Images/kindle-nlp.png';
+import mlCombined from '../Images/ml-combined.png';
+import aiCombined from '../Images/ai-combined.png';
 
 function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const projects = [
+    {
+      id: 'ml-mini-projects',
+      category: 'Machine Learning',
+      title: 'AI Projects: ML, DL & NLP',
+      description: 'A comprehensive collection of artificial intelligence applications featuring Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), and Natural Language Processing (Kindle Review Sentiment Analyzer).',
+      image: aiCombined,
+      technologies: ['CNN', 'NLP', 'Scikit-learn', 'Streamlit', 'Pandas'],
+      github: 'https://github.com/naman-0804/learning/tree/deep-learning',
+      githubText: 'CNN Source',
+      demo: 'https://vehicleclassifiercnn.streamlit.app/',
+      demoText: 'CNN Demo',
+      github2: 'https://github.com/naman-0804/learning/tree/natural-language-processing',
+      github2Text: 'NLP Source',
+      demo2: 'https://nlp-learning-naman.streamlit.app/',
+      demo2Text: 'NLP Demo',
+      github3: 'https://github.com/naman-0804/E-Commerce-Customer-Segmentation-Purchase-Prediction',
+      github3Text: 'E-Comm Source'
+    },
     {
       id: 'pulse-tracker',
       category: 'Fullstack',
@@ -35,6 +59,36 @@ function Projects() {
       technologies: ['React', 'Flask', 'MongoDB', 'Recharts'],
       github: 'https://github.com/naman-0804/Counselling-Management-',
       youtube: ''
+    },
+    {
+      id: 'wcs-button',
+      category: 'Machine Learning',
+      title: 'AI Content Summarizer',
+      description: 'NLP-based tool to summarize long web articles automatically.',
+      image: wcs,
+      technologies: ['Python', 'NLP', 'Flask'],
+      github: 'https://github.com/naman-0804/Ai_content_summarizer',
+      youtube: 'https://www.youtube.com/watch?v=X9xr08p2mtk'
+    },
+    {
+      id: 'medhub-button',
+      category: 'Fullstack',
+      title: 'Medhub360',
+      description: 'Medical resource aggregator and appointment booking system.',
+      image: medhub,
+      technologies: ['React', 'Node.js', 'Express'],
+      github: 'https://github.com/naman-0804/Healthcare',
+      youtube: 'https://www.youtube.com/@naman_0804'
+    },
+    {
+      id: 'okra-button',
+      category: 'Machine Learning',
+      title: 'Okra Maturity Analysis',
+      description: 'Agricultural tech solution for analyzing crop maturity via images.',
+      image: okrapic,
+      technologies: ['Python', 'Image Processing'],
+      github: 'https://github.com/naman-0804/Okra-Maturity-Analysis',
+      youtube: 'https://www.youtube.com/@naman_0804'
     },
     {
       id: 'routeguard',
@@ -55,16 +109,6 @@ function Projects() {
       technologies: ['Flask', 'Pinecone', 'Groq API', 'spaCy'],
       github: 'https://github.com/Context-Driven-Legal-Text-Analysis/Context_Driven_Text_Analysis',
       demo: 'https://contextai.tiiny.site/'
-    },
-    {
-      id: 'ecommerce-ml',
-      category: 'Machine Learning',
-      title: 'E-Commerce ML Prediction',
-      description: 'Customer Segmentation and Purchase Prediction using Scikit-learn.',
-      image: ecommerce,
-      technologies: ['Scikit-learn', 'Pandas', 'Matplotlib'],
-      github: 'https://github.com/naman-0804/E-Commerce-Customer-Segmentation-Purchase-Prediction',
-      youtube: ''
     },
     {
       id: 'auth-button',
@@ -137,26 +181,6 @@ function Projects() {
       youtube: 'https://youtu.be/bld7EkDXFR4?si=4ccr0Le0AUv6gtfL'
     },
     {
-      id: 'wcs-button',
-      category: 'Machine Learning',
-      title: 'AI Content Summarizer',
-      description: 'NLP-based tool to summarize long web articles automatically.',
-      image: wcs,
-      technologies: ['Python', 'NLP', 'Flask'],
-      github: 'https://github.com/naman-0804/Ai_content_summarizer',
-      youtube: 'https://www.youtube.com/watch?v=X9xr08p2mtk'
-    },
-    {
-      id: 'medhub-button',
-      category: 'Fullstack',
-      title: 'Medhub360',
-      description: 'Medical resource aggregator and appointment booking system.',
-      image: medhub,
-      technologies: ['React', 'Node.js', 'Express'],
-      github: 'https://github.com/naman-0804/Healthcare',
-      youtube: 'https://www.youtube.com/@naman_0804'
-    },
-    {
       id: 'asl-button',
       category: 'Machine Learning',
       title: 'Sign Language Translator',
@@ -165,16 +189,6 @@ function Projects() {
       technologies: ['TensorFlow', 'OpenCV', 'Python'],
       github: 'https://github.com/naman-0804/Sign-Language-Translator',
       youtube: 'https://youtu.be/qMkM-zELXGI?si=hYzMO1V07OooRW-y'
-    },
-    {
-      id: 'okra-button',
-      category: 'Machine Learning',
-      title: 'Okra Maturity Analysis',
-      description: 'Agricultural tech solution for analyzing crop maturity via images.',
-      image: okrapic,
-      technologies: ['Python', 'Image Processing'],
-      github: 'https://github.com/naman-0804/Okra-Maturity-Analysis',
-      youtube: 'https://www.youtube.com/@naman_0804'
     },
     {
       id: 'lex-button',
@@ -227,15 +241,99 @@ function Projects() {
     'Cloud': 'var(--blue)',
   };
 
-  const filteredProjects = activeFilter === 'All'
-    ? projects
-    : projects.filter(p => p.category === activeFilter);
+  const otherProjectIds = ['pulse-tracker', 'wcs-button', 'medhub-button', 'okra-button', 'vitalized-button'];
+  
+  const mainProjects = projects.filter(p => !otherProjectIds.includes(p.id));
+  const modalProjects = projects.filter(p => otherProjectIds.includes(p.id));
+
+  const displayedProjects = activeFilter === 'All'
+    ? mainProjects
+    : mainProjects.filter(p => p.category === activeFilter);
 
   const redirectToProject = (url) => {
     if (url) window.open(url, '_blank');
   };
 
-
+  const renderProject = (project, index) => (
+    <div
+      key={project.id}
+      className="proj-row"
+      style={{
+        '--i': index,
+        '--cat-color': categoryColors[project.category] || 'var(--accent)',
+      }}
+    >
+      <div className="proj-row-header">
+        <h3 className="proj-row-title">{project.title}</h3>
+        <span className="proj-row-category">{project.category}</span>
+      </div>
+      <div className="proj-row-body">
+        <div className="proj-row-details">
+          <p className="proj-row-desc">{project.description}</p>
+          <div className="proj-row-tech">
+            {project.technologies.map((tech, i) => (
+              <span key={i} className="proj-tech-pill">{tech}</span>
+            ))}
+          </div>
+          <div className="proj-row-actions">
+            {project.github && (
+              <button
+                className="proj-action-btn"
+                onClick={(e) => { e.stopPropagation(); redirectToProject(project.github); }}
+              >
+                <FaGithub /> <span>{project.githubText || 'Source Code'}</span>
+              </button>
+            )}
+            {project.github2 && (
+              <button
+                className="proj-action-btn"
+                onClick={(e) => { e.stopPropagation(); redirectToProject(project.github2); }}
+              >
+                <FaGithub /> <span>{project.github2Text || 'Source Code 2'}</span>
+              </button>
+            )}
+            {project.github3 && (
+              <button
+                className="proj-action-btn"
+                onClick={(e) => { e.stopPropagation(); redirectToProject(project.github3); }}
+              >
+                <FaGithub /> <span>{project.github3Text || 'Source Code 3'}</span>
+              </button>
+            )}
+            {project.youtube && (
+              <button
+                className="proj-action-btn proj-action-yt"
+                onClick={(e) => { e.stopPropagation(); redirectToProject(project.youtube); }}
+              >
+                <FaYoutube /> <span>Watch Demo</span>
+              </button>
+            )}
+            {project.demo && (
+              <button
+                className="proj-action-btn proj-action-demo"
+                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo); }}
+              >
+                <FaExternalLinkAlt /> <span>{project.demoText || 'Live Demo'}</span>
+              </button>
+            )}
+            {project.demo2 && (
+              <button
+                className="proj-action-btn proj-action-demo"
+                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo2); }}
+              >
+                <FaExternalLinkAlt /> <span>{project.demo2Text || 'Live Demo 2'}</span>
+              </button>
+            )}
+          </div>
+        </div>
+        {project.image && (
+          <div className="proj-row-image">
+            <img src={project.image} alt={project.title} loading="lazy" />
+          </div>
+        )}
+      </div>
+    </div>
+  );
 
   return (
     <div id="project-section" className="project">
@@ -262,63 +360,29 @@ function Projects() {
 
       {/* Project list */}
       <div className="proj-list">
-        {filteredProjects.map((project, index) => (
-            <div
-              key={project.id}
-              className="proj-row"
-              style={{
-                '--i': index,
-                '--cat-color': categoryColors[project.category] || 'var(--accent)',
-              }}
-            >
-              {/* Row header */}
-              <div className="proj-row-header">
-                <h3 className="proj-row-title">{project.title}</h3>
-                <span className="proj-row-category">{project.category}</span>
-              </div>
-
-              {/* Row body — always visible */}
-                <div className="proj-row-body">
-                  <div className="proj-row-details">
-                    <p className="proj-row-desc">{project.description}</p>
-                    <div className="proj-row-tech">
-                      {project.technologies.map((tech, i) => (
-                        <span key={i} className="proj-tech-pill">{tech}</span>
-                      ))}
-                    </div>
-                    <div className="proj-row-actions">
-                      <button
-                        className="proj-action-btn"
-                        onClick={(e) => { e.stopPropagation(); redirectToProject(project.github); }}
-                      >
-                        <FaGithub /> <span>Source Code</span>
-                      </button>
-                      {project.youtube && (
-                        <button
-                          className="proj-action-btn proj-action-yt"
-                          onClick={(e) => { e.stopPropagation(); redirectToProject(project.youtube); }}
-                        >
-                          <FaYoutube /> <span>Watch Demo</span>
-                        </button>
-                      )}
-                      {project.demo && (
-                        <button
-                          className="proj-action-btn proj-action-demo"
-                          onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo); }}
-                        >
-                          <FaExternalLinkAlt /> <span>Live Demo</span>
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                  <div className="proj-row-image">
-                    <img src={project.image} alt={project.title} loading="lazy" />
-                  </div>
-                </div>
-            </div>
-        ))}
+        {displayedProjects.map(renderProject)}
       </div>
 
+      {!isModalOpen && (
+        <div className="see-all-container">
+          <button className="see-all-btn" onClick={() => setIsModalOpen(true)}>
+            See Other Projects
+          </button>
+        </div>
+      )}
+
+      {isModalOpen && createPortal(
+        <div className="project-modal-overlay" onClick={() => setIsModalOpen(false)}>
+          <div className="project-modal-content" onClick={e => e.stopPropagation()}>
+            <button className="project-modal-close" onClick={() => setIsModalOpen(false)}>&times;</button>
+            <h2 className="premium-heading" style={{ fontSize: '2.5rem', marginBottom: '2rem', textAlign: 'center' }}>Other Projects</h2>
+            <div className="proj-list" style={{ overflowY: 'auto', maxHeight: '70vh', paddingRight: '10px' }}>
+              {modalProjects.map(renderProject)}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
 
     </div>
   );
