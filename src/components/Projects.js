@@ -17,14 +17,10 @@ import Portfolio from '../Images/portfolio.webp';
 import devops from '../Images/devops.webp';
 import auth from '../Images/auth.webp';
 import route from '../Images/route.webp';
-import ecommerce from '../Images/ecommerce.webp';
 import wecalm from '../Images/wecalm.webp';
 import contextImg from '../Images/contxt.webp';
 import vpc from '../Images/vpc-aws.webp';
 import cityAssist from '../Images/city-assist.webp';
-import vehicleCnn from '../Images/vehicle-cnn.png';
-import kindleNlp from '../Images/kindle-nlp.png';
-import mlCombined from '../Images/ml-combined.png';
 import aiCombined from '../Images/ai-combined.png';
 
 function Projects() {
