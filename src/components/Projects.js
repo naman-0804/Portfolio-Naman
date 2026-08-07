@@ -257,6 +257,7 @@ function Projects() {
       style={{
         '--i': index,
         '--cat-color': categoryColors[project.category] || 'var(--accent)',
+        flexShrink: 0
       }}
     >
       <div className="proj-row-header">
@@ -372,7 +373,7 @@ function Projects() {
           <div className="project-modal-content" onClick={e => e.stopPropagation()}>
             <button className="project-modal-close" onClick={() => setIsModalOpen(false)}>&times;</button>
             <h2 className="premium-heading" style={{ fontSize: '2.5rem', marginTop: '1.5rem', marginBottom: '2rem', textAlign: 'center' }}>Other Projects</h2>
-            <div className="proj-list" style={{ overflowY: 'auto', maxHeight: '70vh', paddingRight: '10px' }}>
+            <div className="proj-list" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', overflowY: 'auto', maxHeight: '70vh', paddingRight: '10px' }}>
               {modalProjects.map(renderProject)}
             </div>
           </div>
