@@ -128,7 +128,7 @@ function Home() {
                 </div>
                 <div className="info-row-actions">
                   <a
-                    href="https://interview-exp-inky.vercel.app/"
+                    href="https://interview.namansrivastava.in/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="pill-btn solid"
