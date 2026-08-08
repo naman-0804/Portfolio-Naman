@@ -82,19 +82,15 @@ function Projects() {
       id: 'ml-mini-projects',
       category: 'Machine Learning',
       title: 'AI Projects: ML, DL & NLP',
-      description: 'A comprehensive collection of artificial intelligence applications featuring Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), and Natural Language Processing (Kindle Review Sentiment Analyzer).',
+      description: 'Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), and Natural Language Processing (Kindle Review Sentiment Analyzer)',
       image: aiCombined,
-      technologies: ['CNN', 'NLP', 'Scikit-learn', 'Streamlit', 'Pandas'],
+      technologies: ['CNN', 'NLP', 'Scikit-learn', 'Pandas'],
       github: 'https://github.com/naman-0804/learning/tree/deep-learning',
-      githubText: 'CNN Source',
+      githubText: 'Source',
       demo: 'https://vehicleclassifiercnn.streamlit.app/',
       demoText: 'CNN Demo',
-      github2: 'https://github.com/naman-0804/learning/tree/natural-language-processing',
-      github2Text: 'NLP Source',
       demo2: 'https://nlp-learning-naman.streamlit.app/',
-      demo2Text: 'NLP Demo',
-      github3: 'https://github.com/naman-0804/E-Commerce-Customer-Segmentation-Purchase-Prediction',
-      github3Text: 'E-Comm Source'
+      demo2Text: 'NLP Demo'
     },
     {
       id: 'dl-button',
@@ -237,7 +233,7 @@ function Projects() {
     'Cloud': 'var(--blue)',
   };
 
-  const otherProjectIds = ['pulse-tracker', 'wcs-button', 'medhub-button', 'okra-button', 'vitalized-button', 'portfolio-button', 'asl-button', 'lex-button', 'AWS-button'];
+  const otherProjectIds = ['pulse-tracker', 'wcs-button', 'medhub-button', 'okra-button', 'vitalized-button', 'portfolio-button', 'asl-button', 'lex-button', 'AWS-button', 'devops-button'];
 
   const mainProjects = projects.filter(p => !otherProjectIds.includes(p.id));
   const modalProjects = projects.filter(p => otherProjectIds.includes(p.id));
