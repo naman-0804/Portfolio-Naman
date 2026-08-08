@@ -13,47 +13,48 @@
 /* ---- Skills Grid ---- */
 #skills-section .skills-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 1.5rem;
   max-width: var(--max-width);
   margin: 0 auto 3.5rem;
+  padding: 3rem;
+  background: var(--bg-surface-solid);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
   position: relative;
   z-index: 1;
 }
 
 #skills-section .skill-item {
   display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  padding: 1.5rem;
-  background: var(--bg-surface-solid);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
-  transition: border-color 0.25s ease;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: transform 0.25s ease;
 }
 
 #skills-section .skill-item:hover {
-  border-color: var(--border-hover);
+  transform: translateY(-3px);
 }
 
 #skills-section .skill-icon-container {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--accent-soft);
+  justify-content: flex-start;
   color: var(--skill-color, var(--accent));
-  font-size: 1.25rem;
+  font-size: 2rem;
   flex-shrink: 0;
 }
 
 #skills-section .skill-content h3 {
   margin: 0;
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.35;
 }
@@ -62,25 +63,29 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-top: 0.55rem;
+  margin-top: 0.2rem;
 }
 
 #skills-section .skill-tag {
   display: inline-flex;
   align-items: center;
-  min-height: 24px;
-  padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-pill);
-  background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--text-secondary);
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+#skills-section .skill-tag:not(:last-child)::after {
+  content: '•';
+  margin-left: 0.4rem;
+  color: var(--text-tertiary);
 }
 
 #skills-section .skill-item:hover .skill-tag {
-  color: var(--skill-color, var(--accent));
+  color: var(--text-primary);
 }
 
 /* ---- Achievements (Alternating Tree Timeline) ---- */
@@ -388,6 +393,11 @@
   gap: 2rem 1.5rem;
   max-width: var(--max-width);
   margin: 0 auto;
+  padding: 3rem;
+  background: var(--bg-surface-solid);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
 }
 
 #skills-section .cert-item {
@@ -420,14 +430,21 @@
 }
 
 @media (max-width: 1024px) {
-  #skills-section .certifications-grid {
+  #skills-section .certifications-grid,
+  #skills-section .skills-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  #skills-section .certifications-grid {
+  #skills-section .certifications-grid,
+  #skills-section .skills-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  
+  #skills-section .certifications-grid,
+  #skills-section .skills-container {
+    padding: 1.5rem;
   }
 }
