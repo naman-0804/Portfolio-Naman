@@ -102,6 +102,11 @@ function Skills() {
       year: "2023",
       score: "80%",
     },
+    {
+      title: "Annual Academic Excellence Scholarship (Air Force)",
+      year: "2022",
+      score: "Awarded",
+    },
   ];
 
   return (
@@ -156,26 +161,17 @@ function Skills() {
         <h2 className="premium-heading">Certifications</h2>
 
       </div>
-      <div className="certifications-container">
+      <div className="certifications-grid">
         {certificationsData.map((cert, index) => (
-          <div key={index} className="certification-card">
+          <div key={index} className="cert-item">
+            <span className="cert-year">{cert.year}</span>
             <h3>{cert.title}</h3>
-            <span className="certification-score">{cert.score}</span>
-            <span className="certification-year">{cert.year}</span>
+            <span className="cert-score">{cert.score}</span>
           </div>
         ))}
       </div>
 
-      {/* Scholarship Section */}
-      <div className="scholarship-banner">
-        <FaTrophy className="scholarship-icon" />
-        <div>
-          <h3>Annual Academic Excellence Scholarship</h3>
-          <p>
-            Awarded scholarship from INDIAN AIR FORCE each academic year for academic excellence in class 12th CBSE Boards.
-          </p>
-        </div>
-      </div>
+
 
     </div>
   );
