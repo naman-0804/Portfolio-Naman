@@ -83,65 +83,100 @@
   color: var(--skill-color, var(--accent));
 }
 
-/* ---- Achievements (Stacked list, not alternating timeline) ---- */
+/* ---- Achievements (Alternating Tree Timeline) ---- */
 #skills-section .Achievements {
   position: relative;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto 3.5rem;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 0;
   z-index: 1;
 }
 
-#skills-section .achievement-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 1.4rem 0;
-  border-bottom: 1px solid var(--border-color);
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+#skills-section .Achievements::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: var(--border-color);
+  z-index: 0;
 }
 
-#skills-section .achievement-card:last-child {
-  border-bottom: none;
+#skills-section .achievement-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 0.25s ease;
+}
+
+#skills-section .achievement-card:nth-child(odd) {
+  padding-right: 3rem;
+  padding-left: 0;
+  align-items: flex-end;
+  text-align: right;
+}
+
+#skills-section .achievement-card:nth-child(even) {
+  padding-left: 3rem;
+  padding-right: 0;
+  align-items: flex-start;
+  text-align: left;
 }
 
 #skills-section .achievement-card:hover {
-  transform: none;
-  box-shadow: none;
+  transform: translateY(-2px);
 }
 
-/* Override the pseudo-elements from old timeline */
-#skills-section .achievement-card::after {
-  display: none;
+#skills-section .achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 4px var(--blue-soft);
+  z-index: 2;
+}
+
+#skills-section .achievement-card:nth-child(odd)::before {
+  right: 0;
+  transform: translateX(50%);
+}
+
+#skills-section .achievement-card:nth-child(even)::before {
+  left: 0;
+  transform: translateX(-50%);
 }
 
 #skills-section .achievement-date {
-  flex-shrink: 0;
-  min-width: 100px;
   display: inline-flex;
   align-items: center;
   min-height: 24px;
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-pill);
-  background: var(--violet-soft);
-  color: var(--violet);
+  background: var(--blue-soft);
+  color: var(--blue);
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.03em;
-  margin-bottom: 0;
+  margin-bottom: 0.2rem;
   width: fit-content;
 }
 
 #skills-section .achievement-card h3 {
-  margin: 0 0 0.25rem;
+  margin: 0;
   color: var(--text-primary);
   font-size: 1.25rem;
   font-weight: 700;
@@ -149,7 +184,7 @@
 }
 
 #skills-section .achievement-card p {
-  margin: 0.4rem 0 0;
+  margin: 0;
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.65;
@@ -190,7 +225,7 @@
   pointer-events: none;
 }
 
-#skills-section .certification-card > * {
+#skills-section .certification-card>* {
   position: relative;
   z-index: 1;
 }
@@ -299,11 +334,31 @@
     transition: none;
   }
 
-  /* Stack achievement date above text */
-  #skills-section .achievement-card {
-    flex-direction: column;
-    gap: 0.6rem;
-    padding: 1.2rem 0;
+  /* Responsive grid for achievements */
+  #skills-section .Achievements {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 1rem 0;
+  }
+
+  #skills-section .Achievements::before {
+    left: 10px;
+    transform: none;
+  }
+
+  #skills-section .achievement-card:nth-child(odd),
+  #skills-section .achievement-card:nth-child(even) {
+    padding-left: 2.5rem;
+    padding-right: 0;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  #skills-section .achievement-card:nth-child(odd)::before,
+  #skills-section .achievement-card:nth-child(even)::before {
+    left: 10px;
+    right: auto;
+    transform: translateX(-50%);
   }
 
   #skills-section .scholarship-banner {
@@ -313,6 +368,7 @@
 }
 
 @media (min-width: 2000px) {
+
   #skills-section .skills-container,
   #skills-section .certifications-container,
   #skills-section .premium-section-header {

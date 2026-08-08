@@ -238,7 +238,7 @@ function Projects() {
   };
 
   const otherProjectIds = ['pulse-tracker', 'wcs-button', 'medhub-button', 'okra-button', 'vitalized-button', 'portfolio-button', 'asl-button', 'lex-button', 'AWS-button'];
-  
+
   const mainProjects = projects.filter(p => !otherProjectIds.includes(p.id));
   const modalProjects = projects.filter(p => otherProjectIds.includes(p.id));
 

@@ -18,12 +18,12 @@
 }
 
 /* ==========================================================
-   EDITORIAL GRID — Stacked list on all sizes
+   EDITORIAL GRID — 2x2 layout on desktop
    ========================================================== */
 #blog-section .blog-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
 /* ==========================================================
@@ -194,12 +194,20 @@
 /* ==========================================================
    RESPONSIVE
    ========================================================== */
+@media (max-width: 1024px) {
+  #blog-section .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   #blog-section {
     padding: 4rem 1rem 3rem;
   }
 
-  /* Stack vertically on mobile */
+  #blog-section .blog-grid {
+    grid-template-columns: 1fr;
+  }
   #blog-section .blog-card {
     flex-direction: column;
     height: auto;
