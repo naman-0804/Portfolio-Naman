@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode, FaTrophy
+  FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode
 } from "react-icons/fa";
 
 function Skills() {
