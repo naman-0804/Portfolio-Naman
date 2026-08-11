@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 // Import Images
 import dl from '../Images/Filetransfer.webp';
@@ -60,9 +61,6 @@ const blogs = [
 
 ];
 
-// Max read time for progress bar scaling
-const maxReadMinutes = Math.max(...blogs.map(b => b.readMinutes));
-
 function BlogSection() {
   return (
     <div id="blog-section">
@@ -71,45 +69,30 @@ function BlogSection() {
         {/* Premium Typography Header */}
         <div className="premium-section-header">
           <h2 className="premium-heading">Blog</h2>
-
         </div>
 
-        {/* Editorial Grid */}
-        <div className="blog-grid">
+        {/* Blog List */}
+        <div className="blog-list">
           {blogs.map((blog, index) => (
             <a
               key={blog.id}
               href={blog.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="blog-card"
-              style={{
-                '--i': index,
-                '--read-progress': `${(blog.readMinutes / maxReadMinutes) * 100}%`,
-              }}
-              data-number={String(index + 1).padStart(2, '0')}
+              className="blog-list-item"
+              style={{ '--i': index }}
             >
-              {/* Image section */}
-              <div className="blog-image-container">
-                <img src={blog.image} alt={blog.title} loading="lazy" />
+              <div className="blog-list-number">{String(index + 1).padStart(2, '0')}</div>
+              <div className="blog-list-info">
+                <h3 className="blog-list-title">{blog.title}</h3>
+                <p className="blog-list-desc">{blog.description}</p>
               </div>
-
-              {/* Card Content */}
-              <div className="blog-content">
-                <div className="blog-meta">
-                  <span>{blog.date}</span>
-                  {blog.readTime && <span>• {blog.readTime}</span>}
-                </div>
-
-                <h3 className="blog-title">{blog.title}</h3>
-
-                <p className="blog-description">
-                  {blog.description || "Combining DSA problem-solving stats from multiple platforms and GitHub contributions using APIs and web scraping."}
-                </p>
-
-                <span className="blog-read-link">
-                  Read article →
-                </span>
+              <div className="blog-list-meta">
+                <span className="blog-list-date">{blog.date}</span>
+                <span className="blog-list-read">{blog.readTime}</span>
+              </div>
+              <div className="blog-list-arrow">
+                <FaExternalLinkAlt />
               </div>
             </a>
           ))}

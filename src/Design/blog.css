@@ -1,5 +1,5 @@
 /* ==========================================================
-   BLOG SECTION — Editorial Magazine Layout
+   BLOG SECTION — Clean List Layout
    ========================================================== */
 
 #blog-section {
@@ -9,7 +9,6 @@
   position: relative;
 }
 
-
 #blog-section .blog-container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -18,232 +17,174 @@
 }
 
 /* ==========================================================
-   EDITORIAL GRID — 2x2 layout on desktop
+   BLOG LIST
    ========================================================== */
-#blog-section .blog-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 /* ==========================================================
-   BLOG CARD — Horizontal magazine layout
+   BLOG LIST ITEM
    ========================================================== */
-#blog-section .blog-card {
-  position: relative;
+.blog-list-item {
   display: flex;
-  flex-direction: row;
-  height: 180px;
-  overflow: hidden;
-  background: var(--bg-surface-solid);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.4rem 1.2rem;
+  border-bottom: 1px solid var(--border-color);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.4s ease,
-    box-shadow 0.4s ease;
-  animation: blogFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: calc(var(--i, 0) * 0.1s);
+  transition: background 0.3s ease, padding-left 0.3s ease;
+  animation: blogListFadeUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 0.08s);
 }
 
-@keyframes blogFadeUp {
+.blog-list-item:first-child {
+  border-top: 1px solid var(--border-color);
+}
+
+.blog-list-item:hover {
+  background: var(--bg-surface);
+  padding-left: 1.8rem;
+}
+
+@keyframes blogListFadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-#blog-section .blog-card:hover {
-  transform: translateY(-4px) scale(1.008);
-  border-color: var(--border-hover);
-  box-shadow: var(--shadow-hover), 0 0 24px -8px var(--accent-glow);
+/* ---- Number ---- */
+.blog-list-number {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+  opacity: 0.5;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
-/* ==========================================================
-   IMAGE SECTION (Left 35%)
-   ========================================================== */
-#blog-section .blog-image-container {
-  position: relative;
-  flex: 0 0 35%;
-  max-width: 35%;
-  overflow: hidden;
-  background: var(--bg-elevated);
+.blog-list-item:hover .blog-list-number {
+  color: var(--accent);
+  opacity: 1;
 }
 
-#blog-section .blog-image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.4s ease;
-}
-
-#blog-section .blog-card:hover .blog-image-container img {
-  transform: scale(1.06);
-  filter: brightness(1.05);
-}
-
-/* ---- Large editorial number overlay ---- */
-#blog-section .blog-number {
-  position: absolute;
-  top: 0.6rem;
-  left: 0.8rem;
-  font-family: var(--font-display);
-  font-size: 3.2rem;
-  font-weight: 800;
-  line-height: 1;
-  color: rgba(255, 255, 255, 0.12);
-  letter-spacing: -0.04em;
-  pointer-events: none;
-  z-index: 2;
-  transition: color 0.4s ease, transform 0.4s ease;
-}
-
-#blog-section .blog-card:hover .blog-number {
-  color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-}
-
-/* ==========================================================
-   CONTENT SECTION (Right 65%)
-   ========================================================== */
-#blog-section .blog-content {
-  display: flex;
+/* ---- Info (title + description) ---- */
+.blog-list-info {
   flex: 1;
-  flex-direction: column;
-  padding: 1.5rem 1.6rem;
-  justify-content: center;
   min-width: 0;
 }
 
-#blog-section .blog-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.65rem;
-  color: var(--accent);
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-#blog-section .blog-title {
-  margin: 0 0 0.55rem;
+.blog-list-title {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--text-primary);
-  font-size: 1.1rem;
-  font-weight: 700;
   line-height: 1.35;
-  position: relative;
-  display: inline-block;
   transition: color 0.3s ease;
 }
 
-#blog-section .blog-card:hover .blog-title {
+.blog-list-item:hover .blog-list-title {
   color: var(--violet);
 }
 
-#blog-section .blog-description {
+.blog-list-desc {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  line-height: 1.5;
   display: -webkit-box;
-  margin: 0 0 0.85rem;
-  color: var(--text-secondary);
-  font-size: 0.88rem;
-  line-height: 1.65;
-  overflow: hidden;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
-/* ---- "Read article" link ---- */
-#blog-section .blog-read-link {
-  display: inline-flex;
-  align-items: center;
-  color: var(--text-tertiary);
+/* ---- Meta (date + read time) ---- */
+.blog-list-meta {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.blog-list-date {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 500;
+  color: var(--text-secondary);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.blog-list-read {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ---- Arrow ---- */
+.blog-list-arrow {
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-#blog-section .blog-card:hover .blog-read-link {
+.blog-list-item:hover .blog-list-arrow {
   color: var(--accent);
-  transform: translateX(4px);
-}
-
-
-/* ==========================================================
-   LIGHT MODE ADJUSTMENTS
-   ========================================================== */
-.app-container:not(.dark-mode) #blog-section .blog-number {
-  color: rgba(0, 0, 0, 0.06);
-}
-
-.app-container:not(.dark-mode) #blog-section .blog-card:hover .blog-number {
-  color: rgba(0, 0, 0, 0.12);
+  transform: translateX(3px);
 }
 
 /* ==========================================================
    RESPONSIVE
    ========================================================== */
-@media (max-width: 1024px) {
-  #blog-section .blog-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 768px) {
   #blog-section {
     padding: 4rem 1rem 3rem;
   }
 
-  #blog-section .blog-grid {
-    grid-template-columns: 1fr;
-  }
-  #blog-section .blog-card {
-    flex-direction: column;
-    height: auto;
-    animation: none;
-    transition: none;
+  .blog-list-item {
+    gap: 1rem;
+    padding: 1.1rem 0.8rem;
   }
 
-  #blog-section .blog-card:hover {
-    transform: none;
+  .blog-list-item:hover {
+    padding-left: 1.2rem;
   }
 
-  #blog-section .blog-image-container {
-    flex: none;
-    max-width: 100%;
-    aspect-ratio: 16 / 9;
+  .blog-list-title {
+    font-size: 0.92rem;
   }
 
-  #blog-section .blog-image-container img {
-    transition: none;
+  .blog-list-desc {
+    display: none;
   }
 
-  #blog-section .blog-number {
-    font-size: 2.4rem;
+  .blog-list-meta {
+    display: none;
   }
 
-  #blog-section .blog-content {
-    padding: 1.1rem 1.2rem;
-  }
-
-  #blog-section .blog-title {
-    font-size: 0.98rem;
+  .blog-list-number {
+    font-size: 0.65rem;
   }
 }
 
 @media (min-width: 2000px) {
-
   #blog-section .blog-container,
   #blog-section .premium-section-header {
     max-width: var(--max-width-wide);
