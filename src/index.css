@@ -28,9 +28,9 @@
   --accent-soft: hsla(150, 60%, 60%, 0.12);
   --accent-glow: hsla(150, 60%, 60%, 0.25);
 
-  /* ---- Secondary: Neon Purple ---- */
-  --violet: hsl(280, 100%, 65%);
-  --violet-soft: hsla(280, 100%, 65%, 0.12);
+  /* ---- Secondary: Teal Blue ---- */
+  --violet: hsl(185, 70%, 55%);
+  --violet-soft: hsla(185, 70%, 55%, 0.12);
 
   /* ---- Tertiary colors ---- */
   --rose: hsl(0, 60%, 68%);
@@ -78,8 +78,8 @@
   --accent-soft: hsla(165, 55%, 38%, 0.08);
   --accent-glow: hsla(165, 55%, 38%, 0.15);
 
-  --violet: hsl(255, 50%, 52%);
-  --violet-soft: hsla(255, 50%, 52%, 0.08);
+  --violet: hsl(185, 55%, 38%);
+  --violet-soft: hsla(185, 55%, 38%, 0.08);
 
   --rose: hsl(0, 55%, 55%);
   --rose-soft: hsla(0, 55%, 55%, 0.08);
