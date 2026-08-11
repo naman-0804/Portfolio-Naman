@@ -409,7 +409,7 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   width: 90%;
-  max-width: 1000px;
+  max-width: 700px;
   max-height: 90vh;
   padding: 3rem;
   position: relative;
@@ -452,4 +452,19 @@
     padding: 1.5rem;
     width: 95%;
   }
+
+  .modal-proj-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Modal list override — single column full cards */
+.modal-proj-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem;
+}
+
+.modal-proj-grid .proj-row {
+  flex-shrink: 0;
 }
