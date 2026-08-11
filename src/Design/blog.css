@@ -3,10 +3,11 @@
    ========================================================== */
 
 #blog-section {
-  padding: 2rem 2rem 2rem;
+  padding: 5rem 2rem 2rem;
   color: var(--text-primary);
   font-family: var(--font-body);
   position: relative;
+  scroll-margin-top: var(--nav-height);
 }
 
 #blog-section .blog-container {
