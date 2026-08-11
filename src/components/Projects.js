@@ -82,15 +82,17 @@ function Projects() {
       id: 'ml-mini-projects',
       category: 'Machine Learning',
       title: 'AI Projects: ML, DL & NLP',
-      description: 'Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), and Natural Language Processing (Kindle Review Sentiment Analyzer)',
+      description: 'Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), Natural Language Processing (Kindle Review Sentiment Analyzer), and LSTM (Word Predictor)',
       image: aiCombined,
-      technologies: ['CNN', 'NLP', 'Scikit-learn', 'Pandas'],
-      github: 'https://github.com/naman-0804/learning/tree/deep-learning',
-      githubText: 'Source',
-      demo: 'https://vehicleclassifiercnn.streamlit.app/',
-      demoText: 'CNN Demo',
-      demo2: 'https://nlp-learning-naman.streamlit.app/',
-      demo2Text: 'NLP Demo'
+      technologies: ['CNN', 'NLP', 'ML', 'RNN'],
+      demo: 'https://ecommerce-prediction-segmentation.streamlit.app/',
+      demoText: 'ML',
+      demo2: 'https://vehicleclassifiercnn.streamlit.app/',
+      demo2Text: 'CNN',
+      demo3: 'https://nlp-learning-naman.streamlit.app/',
+      demo3Text: 'NLP',
+      demo4: 'https://next-wordd-prediction.streamlit.app/',
+      demo4Text: 'RNN'
     },
     {
       id: 'dl-button',
@@ -315,6 +317,22 @@ function Projects() {
                 onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo2); }}
               >
                 <FaExternalLinkAlt /> <span>{project.demo2Text || 'Live Demo 2'}</span>
+              </button>
+            )}
+            {project.demo3 && (
+              <button
+                className="proj-action-btn proj-action-demo"
+                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo3); }}
+              >
+                <FaExternalLinkAlt /> <span>{project.demo3Text || 'Live Demo 3'}</span>
+              </button>
+            )}
+            {project.demo4 && (
+              <button
+                className="proj-action-btn proj-action-demo"
+                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo4); }}
+              >
+                <FaExternalLinkAlt /> <span>{project.demo4Text || 'Live Demo 4'}</span>
               </button>
             )}
           </div>
