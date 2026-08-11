@@ -8,15 +8,15 @@ function Experience() {
       role: "Upcoming SE at TCS Digital",
       company: "TCS Digital",
       date: "2026 — Present",
-      summary: "Cleared interview process and selected for Digital role. Starting with focus on Full-Stack development, Cloud technologies, and BigData projects.",
-      technologies: ["Cloud", "Big Data", "Full Stack"]
+      summary: "Starting with focus on AIML, Langchain and LLMs, Cloud technology, and Java based projects.",
+      technologies: ["ML", "NLP", "DL", "Cloud", "Java"]
     },
     {
       role: "Software Development Intern",
       company: "The Entrepreneurship Network (TEN)",
       date: "Jun — Jul 2024",
-      summary: "Built an Employee System using React and Flask with MongoDB. Gained hands-on experience working in a real-world dev environment.",
-      technologies: ["Full Stack"]
+      summary: "Built an Employee Management System using React and Flask with MongoDB. Gained hands-on experience working in a real-world dev environment.",
+      technologies: ["React", "Flask", "MongoDB", "Render"]
     },
     {
       role: "Web Developer",
@@ -33,27 +33,34 @@ function Experience() {
       institution: "Vellore Institute of Technology",
       date: "2022 — 2026",
       location: "Chennai",
-      detail: "Pursuing undergraduate degree with focus on software development, cloud computing, and computer science fundamentals."
+      detail: "Cleared VITEEE 2022 and got selected for pursuing undergraduate degree under CSE branch ."
     },
     {
       degree: "Higher Secondary Education",
       institution: "Peace Public School",
-      date: "2020 — 2022",
+      date: "2018 — 2022",
       location: "Ludhiana",
-      detail: "Class XII — 90.4% · Class X — 90%"
+      detail: "Class XII — 90.4% · Class X — 89.4%"
+    },
+    {
+      degree: "Junior Education",
+      institution: "Air Force Bal Bharati School (AFBBS)",
+      date: "2012 - 2017",
+      location: "Delhi",
+      detail: "Class III-VII"
     }
   ];
 
   return (
     <div id="experience-section">
       <div className="section-container">
-        
+
         {/* Experience Header */}
         <div className="premium-section-header" style={{ marginBottom: "2.5rem" }}>
           <h2 className="premium-heading">Experience</h2>
 
         </div>
-        
+
         <div className="experience-timeline">
           {experienceData.map((exp, index) => (
             <div key={index} className="timeline-entry">
@@ -73,13 +80,13 @@ function Experience() {
             </div>
           ))}
         </div>
-        
+
         {/* Education Header */}
         <div className="premium-section-header" style={{ marginBottom: "2.5rem", marginTop: "3.5rem" }}>
           <h2 className="premium-heading">Education</h2>
 
         </div>
-        
+
         <div className="experience-timeline">
           {educationData.map((edu, index) => (
             <div key={index} className="edu-entry">

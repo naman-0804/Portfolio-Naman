@@ -83,12 +83,12 @@ function Home() {
                 </p>
                 <p>
                   With experience across software development, cloud computing
-                  (<span className="highlight amber">AWS</span>), AI &amp; ML, and
+                  (<span className="highlight amber">AWS</span>), AI &amp; ML,DL,NLP and
                   full-stack projects, I'm always looking for the next technology
                   worth learning.
                 </p>
                 <p>
-                  I'm currently open to <span className="highlight dusk">Software Developer</span> roles.
+                  I'm currently working as <span className="highlight dusk">Software Developer</span> roles.
                 </p>
               </div>
             </div>

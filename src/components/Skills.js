@@ -13,31 +13,31 @@ function Skills() {
     },
     {
       title: "Frontend",
-      content: "React, Vite",
+      content: "React, Vite, Next.js",
       icon: <FaReact />,
       color: "#3b82f6"
     },
     {
       title: "Database",
-      content: "MongoDB, MySQL, Supabase",
+      content: "MongoDB, MySQL, Supabase, DynamoDB",
       icon: <FaDatabase />,
       color: "#f59e0b"
     },
     {
       title: "Cloud",
-      content: "Amazon Web Services, GCP",
+      content: "AWS, GCP",
       icon: <FaCloud />,
       color: "#8b5cf6"
     },
     {
       title: "Coding",
-      content: "DSA(500+), C++, Python, Java",
+      content: "DSA(600+), C++, Python, Java",
       icon: <FaCode />,
       color: "#ec4899"
     },
     {
       title: "Tools",
-      content: "Git, Figma, Postman, WinSCP, PUTTY, Clerk",
+      content: "Git, Postman, WinSCP, PUTTY, Clerk, Docker",
       icon: <FaTools />,
       color: "#6366f1"
     },
@@ -52,7 +52,7 @@ function Skills() {
     {
       date: "Dec 2025",
       title: "Infosys Selection",
-      description: "Cleared Infosys aptitude exam, interviews and got selected as an intern for the role of Software Developer.",
+      description: "Cleared Infosys exam, interviews and got selected for the role of Systems Engineer.",
     },
     {
       date: "Nov 2024",
@@ -103,9 +103,9 @@ function Skills() {
       score: "80%",
     },
     {
-      title: "Annual Academic Excellence Scholarship (Air Force)",
+      title: "Academic Excellence Scholarship (Air Force)",
       year: "2022",
-      score: "Awarded",
+      score: "Awarded for getting above 90% in 12th",
     },
   ];
 
