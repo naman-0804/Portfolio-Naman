@@ -72,24 +72,20 @@ function Home() {
               <h3 className="block-title">About Me</h3>
               <div className="about-copy">
                 <p>
-                  I love working on new problems and designing their solutions.
-                  <span className="highlight sage"> Debugging</span> and
-                  <span className="highlight sage"> designing</span> code isn't just a
-                  task for me — it's something I could do all day with enthusiasm.
+                  I'm a <span className="highlight dusk">Software Developer</span> with experience across
+                  <span className="highlight dusk"> Full-Stack Development</span>, <span className="highlight sage">DevOps</span>, and <span className="highlight rose">Cloud Architecture</span>, working with technologies such as
+                  <span className="highlight amber"> AWS</span> and <span className="highlight blue">Kubernetes</span>.
                 </p>
                 <p>
-                  I thrive in <span className="highlight rose">hackathons</span>, which
-                  bring out my best thinking and push me to build fast and creatively.
+                  My recent focus has been on building intelligent applications using
+                  <span className="highlight sage"> Machine Learning, Deep Learning, and NLP</span>, with hands-on experience developing LLM-powered applications and AI agents using
+                  <span className="highlight rose"> LangChain</span> and <span className="highlight amber">LangGraph</span>.
                 </p>
                 <p>
-                  With experience across software development, cloud computing
-                  (<span className="highlight amber">AWS</span>), AI &amp; ML,DL,NLP and
-                  full-stack projects, I'm always looking for the next technology
-                  worth learning.
+                  I thrive in fast-paced environments like <span className="highlight rose">hackathons</span>.
+                  Being selected for several top-tier events has really pushed me to think on my feet, build fast, and stay creative.
                 </p>
-                <p>
-                  I'm currently working as <span className="highlight dusk">Software Developer</span> roles.
-                </p>
+
               </div>
             </div>
 
