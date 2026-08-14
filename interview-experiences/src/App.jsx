@@ -56,7 +56,14 @@ function Navbar({ darkMode, setDarkMode }) {
     <nav className="navbar" role="navigation" aria-label="Main navigation">
       <div className="navbar-left">
         <Link to="/" className="navbar-monogram" title="Home">NS</Link>
-        <Link to="/" className="navbar-brand">Interview Journey</Link>
+        <Link to="/" className="navbar-brand">
+          <span className="brand-desktop">Interview Journey</span>
+          <span className="brand-mobile">
+            {activeSection === 'prep-section' ? 'Prep' 
+             : activeSection === 'experiences-section' ? 'Experiences' 
+             : 'Interview Journey'}
+          </span>
+        </Link>
       </div>
 
       <div className="navbar-center">

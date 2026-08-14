@@ -221,6 +221,10 @@ body {
   transition: color 0.2s;
 }
 
+.brand-mobile {
+  display: none;
+}
+
 .navbar-brand:hover {
   color: var(--accent);
 }
@@ -1175,7 +1179,7 @@ h1, h2, h3 {
    ========================================================== */
 @media (max-width: 992px) {
   .navbar {
-    width: min(92%, 400px);
+    width: min(95%, 440px);
     min-height: 50px;
     background: var(--bg-surface-solid);
     backdrop-filter: none;
@@ -1183,21 +1187,19 @@ h1, h2, h3 {
   }
 
   .navbar-center {
-    display: flex;
-    gap: 0.15rem;
-  }
-
-  .nav-link {
-    font-size: 0.78rem;
-    padding: 0.35rem 0.6rem;
-  }
-
-  .portfolio-link span {
     display: none;
   }
 
   .navbar-brand {
+    font-size: 0.88rem;
+  }
+
+  .brand-desktop {
     display: none;
+  }
+
+  .brand-mobile {
+    display: inline;
   }
 }
 
@@ -1428,12 +1430,7 @@ h1, h2, h3 {
 
 @media (max-width: 420px) {
   .navbar {
-    width: min(94%, 340px);
-  }
-
-  .nav-link {
-    font-size: 0.72rem;
-    padding: 0.3rem 0.45rem;
+    width: min(96%, 360px);
   }
 
   .page-content {
