@@ -24,8 +24,7 @@ const prepSections = [
         label: 'Complete Machine Learning, NLP & MLOps Bootcamp (Krish Naik)',
         url: 'https://www.udemy.com/course/complete-machine-learning-nlp-bootcamp-mlops-deployment/',
         type: 'Udemy'
-      }
-      ,
+      },
       {
         label: 'Machine Learning — Part 1',
         url: 'https://youtu.be/ie4oGI85SAE?si=PIMhjLQg3aXU4jnS',
@@ -117,29 +116,35 @@ const prepSections = [
 const Prep = () => {
   return (
     <div className="page-content">
-      <div className="placement-prep-section">
-        <div className="prep-categories">
-          {prepSections.map((section) => (
-            <div className="prep-category-card" key={section.title}>
-              <div className={`prep-category-icon ${section.accent}`}>
-                {section.icon}
-              </div>
-              <h3>{section.title}</h3>
-              <p>{section.description}</p>
-              <ul className="prep-resource-list">
-                {section.resources.map((item, idx) => (
-                  <li key={`${section.title}-${idx}`}>
-                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="prep-resource-item">
-                      {item.type === 'Video' ? <FiPlay /> : <FiExternalLink />}
-                      <span className="prep-item-text">{item.label}</span>
-                      <span className="prep-item-badge">{item.type}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+      <header className="premium-section-header">
+        <span className="eyebrow">// Resources</span>
+        <h1 className="premium-heading">Interview Prep</h1>
+        <p className="premium-subtitle">
+          Curated resources for DSA, AI, cloud, OOPs, and the study material I actually leaned on while preparing.
+        </p>
+      </header>
+
+      <div className="prep-categories">
+        {prepSections.map((section) => (
+          <div className="prep-category-card" key={section.title}>
+            <div className={`prep-category-icon ${section.accent}`}>
+              {section.icon}
             </div>
-          ))}
-        </div>
+            <h3>{section.title}</h3>
+            <p>{section.description}</p>
+            <ul className="prep-resource-list">
+              {section.resources.map((item, idx) => (
+                <li key={`${section.title}-${idx}`}>
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="prep-resource-item">
+                    {item.type === 'Video' || item.type === 'Playlist' ? <FiPlay /> : <FiExternalLink />}
+                    <span className="prep-item-text">{item.label}</span>
+                    <span className="prep-item-badge">{item.type}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

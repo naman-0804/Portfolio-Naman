@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import { experiences } from '../data/experiences';
-import { FiBriefcase, FiArrowRight, FiBookOpen, FiCloud, FiCpu, FiFileText, FiPlay, FiExternalLink, FiCode, FiLayers } from 'react-icons/fi';
+import {
+  FiBriefcase, FiArrowRight, FiBookOpen, FiCloud, FiCpu,
+  FiFileText, FiPlay, FiExternalLink, FiCode, FiLayers,
+  FiTarget, FiClock, FiMapPin, FiCheckCircle, FiTrendingUp
+} from 'react-icons/fi';
 
 const prepSections = [
   {
@@ -45,22 +49,22 @@ const prepSections = [
       {
         label: 'Machine Learning — Part 1',
         url: 'https://youtu.be/ie4oGI85SAE?si=PIMhjLQg3aXU4jnS',
-        type: 'Video'
+        type: 'YouTube'
       },
       {
         label: 'Machine Learning — Part 2',
         url: 'https://youtu.be/Eky8CZXapBQ?si=Z4uhlZMb3Y7y1EIU',
-        type: 'Video'
+        type: 'YouTube'
       },
       {
         label: 'Deep Learning (Krish Naik)',
         url: 'https://youtu.be/d2kxUVwWWwU?si=VlHiFHHz_0cbnAqr',
-        type: 'Video'
+        type: 'YouTube'
       },
       {
         label: 'NLP — Natural Language Processing (Krish Naik)',
         url: 'https://youtu.be/ENLEjGozrio?si=PJgYlMmDpVsP3QJz',
-        type: 'Video'
+        type: 'YouTube'
       }
     ]
   },
@@ -83,12 +87,12 @@ const prepSections = [
       {
         label: 'Linking Express.js (API) to React',
         url: 'https://www.youtube.com/watch?v=PeuFbuzoseE',
-        type: 'Video'
+        type: 'YouTube'
       },
       {
         label: 'Mongoose — MongoDB with API',
         url: 'https://www.youtube.com/watch?v=wgwo5hbY7SY',
-        type: 'Video'
+        type: 'YouTube'
       }
     ]
   },
@@ -101,17 +105,17 @@ const prepSections = [
       {
         label: 'AWS VPC — Virtual Private Cloud Explained',
         url: 'https://youtu.be/fZuxp_pOzgI?si=dEkza_6-X6g2LYSd',
-        type: 'Video'
+        type: 'YouTube'
       },
       {
         label: 'AWS Lambda — Serverless Concepts',
         url: 'https://youtu.be/43tIX7901Gs?si=tY-scJhPQJed6eTr',
-        type: 'Video'
+        type: 'YouTube'
       },
       {
         label: 'AWS EC2 — Compute Basics',
         url: 'https://youtu.be/NWzfgAw_DYA?si=3UFkDhZ_SCQAhzpG',
-        type: 'Video'
+        type: 'YouTube'
       }
     ]
   },
@@ -130,19 +134,22 @@ const prepSections = [
   }
 ];
 
+const statusIcon = {
+  'Selected': <FiCheckCircle />,
+  'In Progress': <FiTrendingUp />,
+};
+
 const Home = () => {
   return (
     <div className="page-content">
-      {/* Hero */}
-      <div className="glass-card home-hero">
-        <h1>My Interview Journey</h1>
-        <p>
-          I have documented my interview experiences across various top companies. 
-          Use these insights to prepare for your own technical interviews!
-        </p>
-      </div>
+      {/* Editorial Hero */}
+      <header className="premium-section-header">
+        <span className="eyebrow">// Interview Journey</span>
+        <h1 className="premium-heading">My Interview<br />Experiences and Preparation</h1>
+      </header>
 
-      <div className="placement-prep-section">
+      {/* Interview Prep Section — ON TOP */}
+      <div className="prep-section-block" id="prep-section">
         <div className="prep-section-header">
           <h2>Interview Prep</h2>
           <p>
@@ -150,19 +157,23 @@ const Home = () => {
           </p>
         </div>
 
-        <div className="prep-categories">
+        <div className="prep-stack">
           {prepSections.map((section) => (
-            <div className="prep-category-card" key={section.title}>
-              <div className={`prep-category-icon ${section.accent}`}>
-                {section.icon}
+            <div className="prep-row-card" key={section.title}>
+              <div className="prep-row-top">
+                <div className={`prep-category-icon ${section.accent}`}>
+                  {section.icon}
+                </div>
+                <div className="prep-row-info">
+                  <h3>{section.title}</h3>
+                  <p>{section.description}</p>
+                </div>
               </div>
-              <h3>{section.title}</h3>
-              <p>{section.description}</p>
               <ul className="prep-resource-list">
                 {section.resources.map((item, idx) => (
                   <li key={`${section.title}-${idx}`}>
                     <a href={item.url} target="_blank" rel="noopener noreferrer" className="prep-resource-item">
-                      {item.type === 'Video' || item.type === 'Playlist' || item.type === 'Sheet' || item.type === 'Udemy' ? <FiPlay /> : <FiExternalLink />}
+                      {item.type === 'YouTube' || item.type === 'Playlist' || item.type === 'Sheet' || item.type === 'Udemy' ? <FiPlay /> : <FiExternalLink />}
                       <span className="prep-item-text">{item.label}</span>
                       <span className="prep-item-badge">{item.type}</span>
                     </a>
@@ -174,38 +185,60 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="placement-prep-section" style={{ marginTop: '2.5rem' }}>
+      {/* Interview Experiences Timeline — BELOW */}
+      <div className="prep-section-block" id="experiences-section">
         <div className="prep-section-header">
           <h2>Interview Experiences</h2>
           <p>
             Real interview stories and round-by-round breakdowns from companies I applied to and interviewed with.
           </p>
         </div>
-      </div>
 
-      {/* Experience Cards Grid */}
-      <div className="experiences-grid">
-        {experiences.map((exp) => (
-          <Link 
-            to={`/experience/${exp.id}`} 
-            className="glass-card" 
-            key={exp.id} 
-            style={{ display: 'flex', flexDirection: 'column', padding: '2rem', textDecoration: 'none', color: 'inherit' }}
-          >
-            <h2 className="card-title">
-              <FiBriefcase style={{ color: 'var(--accent)', fontSize: '1.2rem' }} /> {exp.company}
-            </h2>
-            <span className="card-role">{exp.role}</span>
-            <p className="card-text">
-              {exp.overview.substring(0, 110)}...
-            </p>
-            <div className="read-more-link">
-              Read Full Experience <FiArrowRight />
-            </div>
-          </Link>
-        ))}
-      </div>
+        <div className="interview-timeline">
+          {experiences.map((exp) => (
+            <Link
+              to={`/experience/${exp.id}`}
+              className="timeline-entry"
+              key={exp.id}
+            >
+              <div className="timeline-date">{exp.date}</div>
+              <div className="timeline-content">
+                <h2 className="timeline-company">{exp.company}</h2>
+                <span className="timeline-role-badge">{exp.role}</span>
 
+                <div className="timeline-meta">
+                  {exp.status && (
+                    <span className={`meta-tag status-${exp.status.toLowerCase().replace(/\s+/g, '-')}`}>
+                      {statusIcon[exp.status] || <FiBriefcase />}
+                      {exp.status}
+                    </span>
+                  )}
+                  <span className="meta-tag">
+                    <FiTarget />
+                    {exp.details?.difficulty || 'Medium'}
+                  </span>
+                  <span className="meta-tag">
+                    <FiClock />
+                    {exp.details?.timeline || '1-2 Weeks'}
+                  </span>
+                  <span className="meta-tag">
+                    <FiMapPin />
+                    {exp.details?.mode || 'On-site'}
+                  </span>
+                </div>
+
+                <p className="timeline-overview">
+                  {exp.overview.substring(0, 180)}…
+                </p>
+
+                <span className="timeline-read-more">
+                  Read full experience <FiArrowRight />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

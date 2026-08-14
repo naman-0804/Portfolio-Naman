@@ -16,10 +16,10 @@ const ExperienceDetail = () => {
         <FiArrowLeft /> Back to all experiences
       </Link>
 
-      <div className="glass-card detail-card">
+      <div className="detail-card">
         <div className="hero-box">
           <h1 className="company-name">{experience.company}</h1>
-          <span className="card-role highlight-role">{experience.role}</span>
+          <span className="highlight-role">{experience.role}</span>
         </div>
 
         <div className="stats-strip">
@@ -89,7 +89,7 @@ const ExperienceDetail = () => {
         </div>
 
         {experience.additionalFeedback && experience.additionalFeedback.length > 0 && (
-          <div className="feedback-section glass-card inner-card">
+          <div className="inner-card">
             <h2 className="section-heading">Candidate Advice</h2>
             <ul className="feedback-list">
               {experience.additionalFeedback.map((feedback, index) => (

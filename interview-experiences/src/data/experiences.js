@@ -2,7 +2,9 @@ export const experiences = [
   {
     id: 'tcs-prime',
     company: 'Tata Consultancy Services (TCS)',
-    role: 'TCS Prime',
+    role: 'TCS Prime → TCS Digital',
+    date: '2024',
+    status: 'Selected',
     overview: 'The TCS Prime interview is a comprehensive evaluation covering technical depth, managerial skills, and cultural fit. The process heavily emphasizes Object-Oriented Programming (OOP) principles, database management (SQL), and system-level architecture, especially focusing on cloud infrastructure and scalability.',
     rounds: [
       'Round 1: NQT (Aptitude, Advanced Aptitude, 1 Basic Coding, 1 Medium Coding)',
@@ -75,6 +77,8 @@ export const experiences = [
     id: 'infosys-se',
     company: 'Infosys',
     role: 'System Engineer',
+    date: '2024',
+    status: 'Selected',
     overview: 'The Infosys System Engineer selection process prioritizes strong logical reasoning, quantitative aptitude, and a solid foundation in computer science fundamentals. While the initial assessment is rigorous, the technical interview focuses heavily on practical applications of OOP and basic backend architecture.',
     rounds: [
       'Round 1: Coding + Aptitude Assessment (Pseudocode, English, Logical, Maths)',
