@@ -790,6 +790,20 @@ body:not(.dark-mode) .resource-badge {
   max-width: 600px;
 }
 
+.section-tag {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+}
+
 .prep-categories {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
