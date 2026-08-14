@@ -4,15 +4,25 @@ import { FiBriefcase, FiArrowRight, FiBookOpen, FiCloud, FiCpu, FiFileText, FiPl
 
 const prepSections = [
   {
-    icon: <FiBookOpen />,
-    title: 'DSA — A to Z',
-    description: 'A structured roadmap covering arrays, strings, graphs, trees, DP, and interview-level problem solving.',
+    icon: <FiLayers />,
+    title: 'Striver (TUF+)',
+    description: 'Grouped Striver / TUF+ resources I referenced: DSA A2Z, OOPs, and Data Engineering.',
     accent: 'web',
     resources: [
       {
         label: "Striver's A to Z DSA Sheet",
         url: 'https://takeuforward.org/dsa/strivers-a2z-sheet-learn-dsa-a-to-z',
         type: 'Sheet'
+      },
+      {
+        label: 'TUF+ OOPs — Java Basics (Python approach)',
+        url: 'https://takeuforward.org/plus/oops/introduction-to-oops/java-basics?subject=oops&approach=python',
+        type: 'TUF+'
+      },
+      {
+        label: 'TUF+ — SQL & Data Engineering Foundations (Getting Started)',
+        url: 'https://takeuforward.org/plus/sql-data-engineering-foundations/getting-started/introduction-to-sql?subject=sql-data-engineering-foundations',
+        type: 'TUF+'
       }
     ]
   },
@@ -74,24 +84,6 @@ const prepSections = [
         label: 'Mongoose — MongoDB with API',
         url: 'https://www.youtube.com/watch?v=wgwo5hbY7SY',
         type: 'Video'
-      }
-    ]
-  },
-  {
-    icon: <FiLayers />,
-    title: 'OOPs + Data Engineering',
-    description: 'TUF+ (Striver) resources I referred for object-oriented programming and core data engineering fundamentals.',
-    accent: 'ml',
-    resources: [
-      {
-        label: 'TUF+ (Striver) — OOPs & Data Engineering',
-        url: 'https://takeuforward.org/',
-        type: 'TUF+'
-      },
-      {
-        label: 'TakeUForward — Data Engineering Basics',
-        url: 'https://takeuforward.org/data-engineering/',
-        type: 'Roadmap'
       }
     ]
   },
