@@ -1175,7 +1175,7 @@ h1, h2, h3 {
    ========================================================== */
 @media (max-width: 992px) {
   .navbar {
-    width: min(72%, 300px);
+    width: min(92%, 400px);
     min-height: 50px;
     background: var(--bg-surface-solid);
     backdrop-filter: none;
@@ -1183,7 +1183,13 @@ h1, h2, h3 {
   }
 
   .navbar-center {
-    display: none;
+    display: flex;
+    gap: 0.15rem;
+  }
+
+  .nav-link {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.6rem;
   }
 
   .portfolio-link span {
@@ -1191,7 +1197,7 @@ h1, h2, h3 {
   }
 
   .navbar-brand {
-    font-size: 0.88rem;
+    display: none;
   }
 }
 
@@ -1422,7 +1428,12 @@ h1, h2, h3 {
 
 @media (max-width: 420px) {
   .navbar {
-    width: min(68%, 260px);
+    width: min(94%, 340px);
+  }
+
+  .nav-link {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.45rem;
   }
 
   .page-content {
