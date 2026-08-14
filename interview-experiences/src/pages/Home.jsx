@@ -23,6 +23,11 @@ const prepSections = [
         label: 'TUF+ — SQL & Data Engineering Foundations (Getting Started)',
         url: 'https://takeuforward.org/plus/sql-data-engineering-foundations/getting-started/introduction-to-sql?subject=sql-data-engineering-foundations',
         type: 'TUF+'
+      },
+      {
+        label: 'TUF+ — Computer Networks (Why Networks Exist)',
+        url: 'https://takeuforward.org/plus/computer-networks-by-striver/module-1-cn-foundations/why-networks-exists?subject=computer-networks-by-striver&sidebar=open',
+        type: 'TUF+'
       }
     ]
   },
