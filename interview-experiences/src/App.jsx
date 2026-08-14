@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { FiSun, FiMoon, FiArrowLeft } from 'react-icons/fi';
 import Home from './pages/Home';
+import Prep from './pages/Prep';
 import ExperienceDetail from './pages/ExperienceDetail';
-import { experiences } from './data/experiences';
 import './index.css';
 
 function App() {
@@ -23,7 +23,8 @@ function App() {
         <nav>
           <Link to="/" className="nav-brand">My Interview Journey</Link>
           <div className="nav-links">
-            <Link to="/">Home</Link>
+            <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Interview Experiences</NavLink>
+            <NavLink to="/prep" className={({ isActive }) => isActive ? 'active' : ''}>Interview Prep</NavLink>
             <button 
               className="btn-theme" 
               onClick={() => setDarkMode(!darkMode)}
@@ -39,6 +40,7 @@ function App() {
         <main className="page-content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/prep" element={<Prep />} />
             <Route path="/experience/:id" element={<ExperienceDetail />} />
           </Routes>
         </main>
