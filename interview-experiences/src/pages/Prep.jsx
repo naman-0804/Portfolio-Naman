@@ -1,4 +1,4 @@
-import { FiBookOpen, FiCloud, FiCpu, FiFileText, FiPlay, FiExternalLink } from 'react-icons/fi';
+import { FiBookOpen, FiCloud, FiCpu, FiFileText, FiPlay, FiExternalLink, FiCode } from 'react-icons/fi';
 
 const prepSections = [
   {
@@ -24,6 +24,55 @@ const prepSections = [
         label: 'Complete Machine Learning, NLP & MLOps Bootcamp (Krish Naik)',
         url: 'https://www.udemy.com/course/complete-machine-learning-nlp-bootcamp-mlops-deployment/',
         type: 'Udemy'
+      }
+      ,
+      {
+        label: 'Machine Learning — Part 1',
+        url: 'https://youtu.be/ie4oGI85SAE?si=PIMhjLQg3aXU4jnS',
+        type: 'Video'
+      },
+      {
+        label: 'Machine Learning — Part 2',
+        url: 'https://youtu.be/Eky8CZXapBQ?si=Z4uhlZMb3Y7y1EIU',
+        type: 'Video'
+      },
+      {
+        label: 'Deep Learning (Krish Naik) — YouTube',
+        url: 'https://youtu.be/d2kxUVwWWwU?si=VlHiFHHz_0cbnAqr',
+        type: 'Video'
+      },
+      {
+        label: 'NLP — Natural Language Processing (Krish Naik)',
+        url: 'https://youtu.be/ENLEjGozrio?si=PJgYlMmDpVsP3QJz',
+        type: 'Video'
+      }
+    ]
+  },
+  {
+    icon: <FiCode />,
+    title: 'Full-Stack Web Development',
+    description: 'JavaScript, React, Express.js, and MongoDB — the MERN stack essentials.',
+    accent: 'web',
+    resources: [
+      {
+        label: 'JavaScript — Full Course',
+        url: 'https://www.youtube.com/playlist?list=PLrdDvCsCDu0GG0_qgNTcR7R6R95ad8x1X',
+        type: 'Playlist'
+      },
+      {
+        label: 'React JS — Complete Guide',
+        url: 'https://www.youtube.com/playlist?list=PLrdDvCsCDu0Gdr-E7NlcFYaNPw29t7xmq',
+        type: 'Playlist'
+      },
+      {
+        label: 'Linking Express.js (API) to React',
+        url: 'https://www.youtube.com/watch?v=PeuFbuzoseE',
+        type: 'Video'
+      },
+      {
+        label: 'Mongoose — MongoDB with API',
+        url: 'https://www.youtube.com/watch?v=wgwo5hbY7SY',
+        type: 'Video'
       }
     ]
   },
@@ -68,13 +117,6 @@ const prepSections = [
 const Prep = () => {
   return (
     <div className="page-content">
-      <div className="glass-card home-hero">
-        <h1>General Interview Prep</h1>
-        <p>
-          A focused collection of resources covering DSA, cloud, AI, and practical learning paths to strengthen your interview readiness.
-        </p>
-      </div>
-
       <div className="placement-prep-section">
         <div className="prep-categories">
           {prepSections.map((section) => (
