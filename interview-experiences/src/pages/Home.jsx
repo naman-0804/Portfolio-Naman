@@ -3,7 +3,7 @@ import { experiences } from '../data/experiences';
 import {
   FiBriefcase, FiArrowRight, FiBookOpen, FiCloud, FiCpu,
   FiFileText, FiPlay, FiExternalLink, FiCode, FiLayers,
-  FiTarget, FiClock, FiMapPin, FiCheckCircle, FiTrendingUp
+  FiTarget, FiClock, FiMapPin, FiCheckCircle, FiTrendingUp, FiTerminal
 } from 'react-icons/fi';
 
 const prepSections = [
@@ -120,15 +120,20 @@ const prepSections = [
     ]
   },
   {
-    icon: <FiFileText />,
-    title: 'My Blogs',
-    description: 'Notes, tutorials, and project write-ups covering cloud, AI, and dev workflows.',
-    accent: 'cloud',
+    icon: <FiTerminal />,
+    title: 'Others',
+    description: 'Essential dev tools and workflows — Linux commands, Git version control, and more.',
+    accent: 'web',
     resources: [
       {
-        label: 'Dev.to — Naman Srivastava',
-        url: 'https://dev.to/naman_2004',
-        type: 'Blog'
+        label: 'Linux Codes',
+        url: 'https://youtu.be/Byx4sgLR88E?si=wyQ6kCY5GXuTtpSx',
+        type: 'YouTube'
+      },
+      {
+        label: 'Git & GitHub',
+        url: 'https://youtu.be/AB3J8ufDYHQ?si=0ldKYt-D_6mQsk9Y',
+        type: 'YouTube'
       }
     ]
   }
@@ -231,7 +236,7 @@ const Home = () => {
                   {exp.overview.substring(0, 180)}…
                 </p>
 
-                <span className="timeline-read-more">
+                <span className="timeline-cta-btn">
                   Read full experience <FiArrowRight />
                 </span>
               </div>
