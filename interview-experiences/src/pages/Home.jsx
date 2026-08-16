@@ -172,6 +172,16 @@ const prepSections = [
         label: 'Git & GitHub',
         url: 'https://youtu.be/AB3J8ufDYHQ?si=0ldKYt-D_6mQsk9Y',
         type: 'YouTube'
+      },
+      {
+        label: 'GitHub Actions CI/CD',
+        url: 'https://youtu.be/YLtlz88zrLg?si=POnQxP609013RAHs',
+        type: 'YouTube'
+      },
+      {
+        label: 'Dockerfile',
+        url: 'https://www.youtube.com/watch?v=DQdB7wFEygo',
+        type: 'YouTube'
       }
     ]
   }
