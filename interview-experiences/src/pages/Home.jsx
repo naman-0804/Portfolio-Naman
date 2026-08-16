@@ -19,17 +19,17 @@ const prepSections = [
         type: 'Sheet'
       },
       {
-        label: 'TUF+ OOPs — Java Basics (Python approach)',
+        label: 'TUF+ OOPs — Java Basics ',
         url: 'https://takeuforward.org/plus/oops/introduction-to-oops/java-basics?subject=oops&approach=python',
         type: 'TUF+'
       },
       {
-        label: 'TUF+ — SQL & Data Engineering Foundations (Getting Started)',
+        label: 'TUF+ — SQL & Data Engineering Foundations',
         url: 'https://takeuforward.org/plus/sql-data-engineering-foundations/getting-started/introduction-to-sql?subject=sql-data-engineering-foundations',
         type: 'TUF+'
       },
       {
-        label: 'TUF+ — Computer Networks (Why Networks Exist)',
+        label: 'TUF+ — Computer Networks',
         url: 'https://takeuforward.org/plus/computer-networks-by-striver/module-1-cn-foundations/why-networks-exists?subject=computer-networks-by-striver&sidebar=open',
         type: 'TUF+'
       }
@@ -38,7 +38,7 @@ const prepSections = [
   {
     icon: <FiCpu />,
     title: 'Complete AI',
-    description: 'ML, deep learning, NLP, MLOps, and deployment fundamentals from one comprehensive course.',
+    description: 'Either do that Udemy course for complete ML DL NLP or the same playlist on youtube same on both',
     accent: 'ml',
     resources: [
       {
@@ -71,7 +71,7 @@ const prepSections = [
   {
     icon: <FiCode />,
     title: 'Full-Stack Web Development',
-    description: 'JavaScript, React, Express.js, and MongoDB — the MERN stack essentials.',
+    description: 'Try to build end to end projects on your own',
     accent: 'web',
     resources: [
       {
@@ -99,22 +99,60 @@ const prepSections = [
   {
     icon: <FiCloud />,
     title: 'AWS',
-    description: 'Core cloud concepts for interviews: VPC, EC2, Lambda, and networking fundamentals.',
+    description: 'Prefer Documentation + GPT for understanding , look at videos while doing practically',
     accent: 'cloud',
     resources: [
       {
-        label: 'AWS VPC — Virtual Private Cloud Explained',
-        url: 'https://youtu.be/fZuxp_pOzgI?si=dEkza_6-X6g2LYSd',
+        label: 'AWS VPC — Virtual Private Cloud Explained (I didn\'t refer to this)',
+        url: 'https://www.youtube.com/watch?v=43tIX7901Gs',
         type: 'YouTube'
       },
       {
-        label: 'AWS Lambda — Serverless Concepts',
-        url: 'https://youtu.be/43tIX7901Gs?si=tY-scJhPQJed6eTr',
+        label: 'AWS Lambda — Serverless Concepts (I didn\'t refer to this)',
+        url: 'https://www.youtube.com/watch?v=NWzfgAw_DYA',
         type: 'YouTube'
       },
       {
-        label: 'AWS EC2 — Compute Basics',
-        url: 'https://youtu.be/NWzfgAw_DYA?si=3UFkDhZ_SCQAhzpG',
+        label: 'AWS EC2 — Compute Basics (I didn\'t refer to this)',
+        url: 'https://www.youtube.com/watch?v=Ens8asZLomk',
+        type: 'YouTube'
+      },
+      {
+        label: 'AWS Load Balancer and Auto Scalers (I didn\'t refer to this)',
+        url: 'https://www.youtube.com/watch?v=fZuxp_pOzgI',
+        type: 'YouTube'
+      },
+      {
+        label: 'AWS S3 (I didn\'t refer to this)',
+        url: 'https://www.youtube.com/watch?v=kFeplA2bubM',
+        type: 'YouTube'
+      }
+    ]
+  },
+  {
+    icon: <FiBookOpen />,
+    title: 'Core Subjects',
+    description: 'One shot videos for OS, DBMS, and Computer Networks.',
+    accent: 'ml',
+    resources: [
+      {
+        label: 'Operating System (OS)',
+        url: 'https://youtu.be/KlwNyagHWuk?si=xnMYfcBW0l45KyQb',
+        type: 'YouTube'
+      },
+      {
+        label: 'Database Management System (DBMS)',
+        url: 'https://youtu.be/KWkm1Gip4j4?si=LbgknswAoZHP22nD',
+        type: 'YouTube'
+      },
+      {
+        label: 'Computer Networks (CN)',
+        url: 'https://youtu.be/skvCwFPZ7zM?si=EJI2c1t-_Si-BAKZ',
+        type: 'YouTube'
+      },
+      {
+        label: 'Object-Oriented Programming (OOPs) (I didn\'t refer to this)',
+        url: 'https://youtu.be/mlIUKyZIUUU?si=stAqNtmxBPHBG_kq',
         type: 'YouTube'
       }
     ]
@@ -158,7 +196,7 @@ const Home = () => {
         <div className="prep-section-header">
           <h2>Interview Prep</h2>
           <p>
-            Curated resources for DSA, AI, cloud, OOPs, and the study material I actually leaned on while preparing.
+            Curated resources for DSA, AI, Cloud, Core and the study material I actually leaned on while preparing.
           </p>
         </div>
 
@@ -187,6 +225,14 @@ const Home = () => {
               </ul>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Mandatory Note */}
+      <div className="mandatory-note">
+        <div className="mandatory-note-icon">⚠️</div>
+        <div className="mandatory-note-content">
+          <strong>Make short notes while learning.</strong> Trust me — if you don't write things down as you go, you'll forget most of it by the time your interview comes. A quick revision from your own notes is far far more effective than re-watching one-shot videos.
         </div>
       </div>
 

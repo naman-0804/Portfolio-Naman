@@ -594,6 +594,39 @@ h1, h2, h3 {
 }
 
 /* ==========================================================
+   MANDATORY NOTE CALLOUT
+   ========================================================== */
+.mandatory-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--amber-soft);
+  border: 1px solid var(--amber);
+  border-left: 4px solid var(--amber);
+  border-radius: var(--radius-md);
+  animation: fade-up 0.5s ease forwards;
+}
+
+.mandatory-note-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+.mandatory-note-content {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.mandatory-note-content strong {
+  color: var(--amber);
+  font-weight: 700;
+}
+
+/* ==========================================================
    PREP SECTION HEADER
    ========================================================== */
 .prep-section-block {
