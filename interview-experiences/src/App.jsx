@@ -5,6 +5,14 @@ import Home from './pages/Home';
 import ExperienceDetail from './pages/ExperienceDetail';
 import './index.css';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 function Navbar({ darkMode, setDarkMode }) {
   const [activeSection, setActiveSection] = useState('');
   const location = useLocation();
@@ -107,6 +115,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className={`app-container${darkMode ? ' dark-mode' : ''}`}>
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
         <main className="main-content">
