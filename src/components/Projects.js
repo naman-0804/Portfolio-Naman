@@ -85,7 +85,7 @@ function Projects() {
       title: 'AI & LLM Projects',
       description: 'Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), Natural Language Processing (Kindle Review Sentiment Analyzer), and LSTM (Word Predictor)',
       image: aiCombined,
-      technologies: ['DL', 'NLP', 'LangChain', 'LangGraph', 'ML'],
+      technologies: [],
       demo: 'https://ecommerce-prediction-segmentation.streamlit.app/',
       demoText: 'ML',
       demo2: 'https://vehicleclassifiercnn.streamlit.app/',
@@ -93,7 +93,13 @@ function Projects() {
       demo3: 'https://nlp-learning-naman.streamlit.app/',
       demo3Text: 'NLP',
       demo4: 'https://next-wordd-prediction.streamlit.app/',
-      demo4Text: 'RNN'
+      demo4Text: 'RNN',
+      demo5: 'https://ats-scanner-llm.streamlit.app/',
+      demo5Text: 'LC',
+      demo6: 'https://agentic-news.streamlit.app/',
+      demo6Text: 'LangGraph',
+      demo7: 'https://agenticc-rag.streamlit.app/',
+      demo7Text: 'RAG'
     },
     {
       id: 'dl-button',
@@ -352,6 +358,30 @@ function Projects() {
                 onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo4); }}
               >
                 <FaExternalLinkAlt /> <span>{project.demo4Text || 'Live Demo 4'}</span>
+              </button>
+            )}
+            {project.demo5 && (
+              <button
+                className="proj-action-btn proj-action-demo"
+                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo5); }}
+              >
+                <FaExternalLinkAlt /> <span>{project.demo5Text || 'Live Demo 5'}</span>
+              </button>
+            )}
+            {project.demo6 && (
+              <button
+                className="proj-action-btn proj-action-demo"
+                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo6); }}
+              >
+                <FaExternalLinkAlt /> <span>{project.demo6Text || 'Live Demo 6'}</span>
+              </button>
+            )}
+            {project.demo7 && (
+              <button
+                className="proj-action-btn proj-action-demo"
+                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo7); }}
+              >
+                <FaExternalLinkAlt /> <span>{project.demo7Text || 'Live Demo 7'}</span>
               </button>
             )}
           </div>
