@@ -26,6 +26,7 @@ import aiCombined from '../Images/ai-combined.png';
 function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [expandedDescs, setExpandedDescs] = useState({});
 
   const projects = [
     {
@@ -81,10 +82,10 @@ function Projects() {
     {
       id: 'ml-mini-projects',
       category: 'Machine Learning',
-      title: 'AI Projects: ML, DL & NLP',
+      title: 'AI & LLM Projects',
       description: 'Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), Natural Language Processing (Kindle Review Sentiment Analyzer), and LSTM (Word Predictor)',
       image: aiCombined,
-      technologies: ['CNN', 'NLP', 'ML', 'RNN'],
+      technologies: ['DL', 'NLP', 'LangChain', 'LangGraph', 'ML'],
       demo: 'https://ecommerce-prediction-segmentation.streamlit.app/',
       demoText: 'ML',
       demo2: 'https://vehicleclassifiercnn.streamlit.app/',
@@ -248,7 +249,17 @@ function Projects() {
     if (url) window.open(url, '_blank');
   };
 
-  const renderProject = (project, index) => (
+  const DESC_CLAMP_THRESHOLD = 80; // chars; descriptions longer than this get a toggle
+
+  const toggleDesc = (id) => {
+    setExpandedDescs(prev => ({ ...prev, [id]: !prev[id] }));
+  };
+
+  const renderProject = (project, index) => {
+    const isExpanded = !!expandedDescs[project.id];
+    const isLong = project.description.length > DESC_CLAMP_THRESHOLD;
+
+    return (
     <div
       key={project.id}
       className="proj-row"
@@ -264,7 +275,15 @@ function Projects() {
       </div>
       <div className="proj-row-body">
         <div className="proj-row-details">
-          <p className="proj-row-desc">{project.description}</p>
+          <p className={`proj-row-desc${!isExpanded && isLong ? ' clamped' : ''}`}>{project.description}</p>
+          {isLong && (
+            <button
+              className="proj-read-more-btn"
+              onClick={(e) => { e.stopPropagation(); toggleDesc(project.id); }}
+            >
+              {isExpanded ? 'Read Less ▲' : 'Read More ▼'}
+            </button>
+          )}
           <div className="proj-row-tech">
             {project.technologies.map((tech, i) => (
               <span key={i} className="proj-tech-pill">{tech}</span>
@@ -345,6 +364,7 @@ function Projects() {
       </div>
     </div>
   );
+  };
 
   return (
     <div id="project-section" className="project">
