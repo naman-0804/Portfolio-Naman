@@ -15,7 +15,7 @@ import wcs from '../Images/th.webp';
 import lex from '../Images/lex.webp';
 import Portfolio from '../Images/portfolio.webp';
 import devops from '../Images/devops.webp';
-import auth from '../Images/auth.webp';
+import anonChat from '../Images/anon-chat.png';
 import route from '../Images/route.webp';
 import wecalm from '../Images/wecalm.webp';
 import contextImg from '../Images/contxt.webp';
@@ -70,20 +70,20 @@ function Projects() {
       demo: 'https://contextai.tiiny.site/'
     },
     {
-      id: 'auth-button',
+      id: 'anon-chat-button',
       category: 'Fullstack',
-      title: 'Multi user chatting application',
-      description: 'Real-time chat application using Next.js, Clerk Auth and GetStream.',
-      image: auth,
-      technologies: ['Next.js', 'Clerk', 'GetStream'],
-      github: 'https://github.com/naman-0804/Chat-App',
-      youtube: 'https://www.youtube.com/watch?v=OOlXkIn3GucY'
+      title: 'Anon Chat – Anonymous Messaging',
+      description: 'Real-time anonymous chat application built with WebSockets. No login required — just create or join a room and start chatting instantly.',
+      image: anonChat,
+      technologies: ['Node.js', 'WebSocket', 'Express', 'Render'],
+      github: 'https://github.com/naman-0804/Anon-chat',
+      demo: 'https://anon-chat-e7x5.onrender.com'
     },
     {
       id: 'ml-mini-projects',
       category: 'Machine Learning',
-      title: 'AI & LLM Projects',
-      description: 'Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), Natural Language Processing (Kindle Review Sentiment Analyzer), and LSTM (Word Predictor)',
+      title: 'AI, LLM & GenAI Projects',
+      description: 'Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), Natural Language Processing (Kindle Review Sentiment Analyzer), LSTM (Word Predictor), LangChain (AI News Summarizer), and LangGraph (Multi-Source Retrieval)',
       image: aiCombined,
       technologies: [],
       demo: 'https://ecommerce-prediction-segmentation.streamlit.app/',
