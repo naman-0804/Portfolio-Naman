@@ -5,7 +5,7 @@ export const experiences = [
     role: 'TCS Prime → TCS Digital',
     date: 'Jan 2026',
     status: 'Selected',
-    overview: 'The TCS Prime interview is a comprehensive evaluation covering technical depth, managerial skills, and cultural fit. The process heavily emphasizes Object-Oriented Programming (OOP) principles, database management (SQL), and system-level architecture, especially focusing on cloud infrastructure and scalability.',
+    overview: 'The TCS Prime interview is a comprehensive evaluation covering technical depth, managerial skills, and cultural fit. The process heavily emphasizes Object-Oriented Programming (OOP) principles, database management (SQL), cloud architecture, full-stack development, and your ability to communicate and articulate your thought process clearly.',
     rounds: [
       'Round 1: NQT (Aptitude, Advanced Aptitude, 1 Basic Coding, 1 Medium Coding)',
       'Round 2: Technical + Managerial + HR (Final Interview)'
