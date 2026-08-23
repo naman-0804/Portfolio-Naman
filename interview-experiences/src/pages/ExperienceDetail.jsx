@@ -165,6 +165,16 @@ const ExperienceDetail = () => {
           </div>
         )}
 
+        {/* Disclaimer Note */}
+        {experience.disclaimerNote && (
+          <div className="mandatory-note" style={{ marginTop: '0', marginBottom: '2rem' }}>
+            <div className="mandatory-note-icon"><FiAlertCircle /></div>
+            <div className="mandatory-note-content">
+              <strong>Note: </strong>{experience.disclaimerNote}
+            </div>
+          </div>
+        )}
+
         {/* Support Materials */}
         {experience.supportMaterials && experience.supportMaterials.length > 0 && (
           <div className="support-materials">

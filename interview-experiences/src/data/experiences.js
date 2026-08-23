@@ -21,14 +21,15 @@ export const experiences = [
     ],
     preparationTips: [
       'Clear the NQT first — practice aptitude and medium-level coding; no need for advanced data structures.',
-      'Build strong conceptual clarity in OOPs and SQL — expect scenario-based questions, not just definitions.',
-      'After clearing NQT, shift focus toward cloud architecture, DevOps, and system-level thinking.',
+      'Build strong conceptual clarity in OOPs and SQL — expect more scenario-based questions than definitions.',
+      'After clearing NQT, shift focus toward cloud architecture, DevOps, and Full Stack.',
       'Be ready to explain your projects end-to-end — architecture decisions, trade-offs, and your specific contributions.'
     ],
     additionalFeedback: [
       'TCS Prime targets specialized domains like data scientist roles, cloud architecture, and cybersecurity.',
       'TCS Digital is offered only when you excel in a few of the most specialized and in-demand branches like cloud, cybersecurity, or data science.'
     ],
+    disclaimerNote: 'I chose my specific skill set for the interview which included Cloud, DevOps, Full Stack, and Data Science. Your interview experience may vary based on the domain you choose.',
     supportMaterials: [
       {
         label: 'TCS NQT Aptitude Preparation (Full Playlist)',
