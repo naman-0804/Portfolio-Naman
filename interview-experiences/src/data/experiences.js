@@ -11,23 +11,23 @@ export const experiences = [
       'Round 2: Technical + Managerial + HR (Final Interview)'
     ],
     focusAreas: [
-      'OOPs: abstract functions, encapsulation, access specifiers, anonymous classes',
-      'SQL: UPDATE query, difference between DROP vs TRUNCATE vs DELETE',
-      'C++: header files, scope resolution operator (::)',
-      'AWS: SNS, handling heavy load, gaming server scaling, DDoS handling',
-      'System thinking: load management, scalability scenarios',
-      'Containerization and orchestration concepts',
-      'Resume-based deep discussion (projects + hackathon role)',
-      'Basic DSA: optimized logic (e.g., prime number without brute force)'
+      'Object-Oriented Programming fundamentals and design principles',
+      'SQL and relational database concepts',
+      'Cloud architecture and scalability (AWS-focused)',
+      'System design thinking — load management, high-traffic scenarios',
+      'Containerization and DevOps fundamentals',
+      'Resume-driven discussion — projects, hackathons, and real-world impact',
+      'Basic DSA — optimized approaches over brute-force'
     ],
     preparationTips: [
-      'Prepare aptitude and medium-level DSA (no need for advanced data structures)',
-      'A strong foundational understanding of OOPs and SQL is mandatory',
-      'Shift preparation toward cloud architecture and DevOps after clearing the initial assessment stage'
+      'Clear the NQT first — practice aptitude and medium-level coding; no need for advanced data structures.',
+      'Build strong conceptual clarity in OOPs and SQL — expect scenario-based questions, not just definitions.',
+      'After clearing NQT, shift focus toward cloud architecture, DevOps, and system-level thinking.',
+      'Be ready to explain your projects end-to-end — architecture decisions, trade-offs, and your specific contributions.'
     ],
     additionalFeedback: [
-      'TCS Prime targets specialized domains like big data, cloud architecture, and cybersecurity.',
-      'TCS Digital is often more aligned toward standard cloud and DevOps roles, whereas Prime expects a slightly deeper system-level understanding.'
+      'TCS Prime targets specialized domains like data scientist roles, cloud architecture, and cybersecurity.',
+      'TCS Digital is offered only when you excel in a few of the most specialized and in-demand branches like cloud, cybersecurity, or data science.'
     ],
     supportMaterials: [
       {
