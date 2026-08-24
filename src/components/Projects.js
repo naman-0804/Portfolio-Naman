@@ -22,6 +22,7 @@ import contextImg from '../Images/contxt.webp';
 import vpc from '../Images/vpc-aws.webp';
 import cityAssist from '../Images/city-assist.webp';
 import aiCombined from '../Images/ai-combined.png';
+import multiTool from '../Images/multi-tool-agent.png';
 
 function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -29,6 +30,16 @@ function Projects() {
   const [expandedDescs, setExpandedDescs] = useState({});
 
   const projects = [
+    {
+      id: 'multi-tool-agent',
+      category: 'Machine Learning',
+      title: 'Multi-Tool LLM Workflow',
+      description: 'A dynamic workflow capable of executing real-time web searches (Tavily), API querying (Wikipedia), and calci calculations. The system integrates document parsing (PDFs/DOCX) enabling the agent to autonomously extract context from unstructured data and write generated outputs directly in text format.',
+      image: multiTool,
+      technologies: ['LangGraph', 'Gemini API', 'Tavily'],
+      github: 'https://github.com/naman-0804/langgraph-gemini-multi-tool-agent',
+      demo: 'https://multi-tool-agent.streamlit.app/'
+    },
     {
       id: 'routeguard',
       title: 'RouteGuard: Real-Time Detection',
@@ -83,7 +94,7 @@ function Projects() {
       id: 'ml-mini-projects',
       category: 'Machine Learning',
       title: 'AI, LLM & GenAI Projects',
-      description: 'Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), Natural Language Processing (Kindle Review Sentiment Analyzer), LSTM (Word Predictor), LangChain (AI News Summarizer), and LangGraph (Multi-Source Retrieval)',
+      description: 'Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), Natural Language Processing (Kindle Review Sentiment Analyzer), and LSTM (Word Predictor)',
       image: aiCombined,
       technologies: [],
       demo: 'https://ecommerce-prediction-segmentation.streamlit.app/',
@@ -94,10 +105,6 @@ function Projects() {
       demo3Text: 'NLP',
       demo4: 'https://next-wordd-prediction.streamlit.app/',
       demo4Text: 'RNN',
-      demo5: 'https://ats-scanner-llm.streamlit.app/',
-      demo5Text: 'LC',
-      demo6: 'https://agentic-news.streamlit.app/',
-      demo6Text: 'LangGraph',
       demo7: 'https://agenticc-rag.streamlit.app/',
       demo7Text: 'RAG'
     },
@@ -325,7 +332,7 @@ function Projects() {
                 className="proj-action-btn proj-action-yt"
                 onClick={(e) => { e.stopPropagation(); redirectToProject(project.youtube); }}
               >
-                <FaYoutube /> <span>Watch Demo</span>
+                <FaYoutube /> <span>Demo</span>
               </button>
             )}
             {project.demo && (
@@ -333,7 +340,7 @@ function Projects() {
                 className="proj-action-btn proj-action-demo"
                 onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo); }}
               >
-                <FaExternalLinkAlt /> <span>{project.demoText || 'Live Demo'}</span>
+                <FaExternalLinkAlt /> <span>{project.demoText || 'Demo'}</span>
               </button>
             )}
             {project.demo2 && (
@@ -341,7 +348,7 @@ function Projects() {
                 className="proj-action-btn proj-action-demo"
                 onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo2); }}
               >
-                <FaExternalLinkAlt /> <span>{project.demo2Text || 'Live Demo 2'}</span>
+                <FaExternalLinkAlt /> <span>{project.demo2Text || 'Demo 2'}</span>
               </button>
             )}
             {project.demo3 && (
@@ -349,7 +356,7 @@ function Projects() {
                 className="proj-action-btn proj-action-demo"
                 onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo3); }}
               >
-                <FaExternalLinkAlt /> <span>{project.demo3Text || 'Live Demo 3'}</span>
+                <FaExternalLinkAlt /> <span>{project.demo3Text || 'Demo 3'}</span>
               </button>
             )}
             {project.demo4 && (
@@ -357,7 +364,7 @@ function Projects() {
                 className="proj-action-btn proj-action-demo"
                 onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo4); }}
               >
-                <FaExternalLinkAlt /> <span>{project.demo4Text || 'Live Demo 4'}</span>
+                <FaExternalLinkAlt /> <span>{project.demo4Text || 'Demo 4'}</span>
               </button>
             )}
             {project.demo5 && (
@@ -365,7 +372,7 @@ function Projects() {
                 className="proj-action-btn proj-action-demo"
                 onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo5); }}
               >
-                <FaExternalLinkAlt /> <span>{project.demo5Text || 'Live Demo 5'}</span>
+                <FaExternalLinkAlt /> <span>{project.demo5Text || 'Demo 5'}</span>
               </button>
             )}
             {project.demo6 && (
@@ -373,7 +380,7 @@ function Projects() {
                 className="proj-action-btn proj-action-demo"
                 onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo6); }}
               >
-                <FaExternalLinkAlt /> <span>{project.demo6Text || 'Live Demo 6'}</span>
+                <FaExternalLinkAlt /> <span>{project.demo6Text || 'Demo 6'}</span>
               </button>
             )}
             {project.demo7 && (
@@ -381,7 +388,7 @@ function Projects() {
                 className="proj-action-btn proj-action-demo"
                 onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo7); }}
               >
-                <FaExternalLinkAlt /> <span>{project.demo7Text || 'Live Demo 7'}</span>
+                <FaExternalLinkAlt /> <span>{project.demo7Text || 'Demo 7'}</span>
               </button>
             )}
           </div>
