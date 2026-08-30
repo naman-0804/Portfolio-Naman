@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode
+  FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode, FaRobot
 } from "react-icons/fa";
 
 function Skills() {
@@ -41,6 +41,12 @@ function Skills() {
       icon: <FaTools />,
       color: "#6366f1"
     },
+    {
+      title: "AI",
+      content: "LangGraph, LangChain, NLP, ML, DL",
+      icon: <FaRobot />,
+      color: "#ef4444"
+    },
   ];
 
   const achievementsData = [
@@ -56,8 +62,8 @@ function Skills() {
     },
     {
       date: "Nov 2024",
-      title: "VITISH (SIH Internal Hackathon)",
-      description: "Qualified two elimination rounds and got nominated for official SIH24 from VIT Chennai out of 600 teams.",
+      title: "SIH Internal Hackathon 22nd Place",
+      description: "Qualified two elimination rounds and got nominated for official SIH24 from VIT Chennai out of 1000 teams.",
     },
     {
       date: "Jun 2024",

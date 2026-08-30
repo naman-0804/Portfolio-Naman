@@ -20,7 +20,6 @@ import route from '../Images/route.webp';
 import wecalm from '../Images/wecalm.webp';
 import contextImg from '../Images/contxt.webp';
 import vpc from '../Images/vpc-aws.webp';
-import cityAssist from '../Images/city-assist.webp';
 import aiCombined from '../Images/ai-combined.png';
 import multiTool from '../Images/multi-tool-agent.png';
 
@@ -93,7 +92,7 @@ function Projects() {
     {
       id: 'ml-mini-projects',
       category: 'Machine Learning',
-      title: 'AI, LLM & GenAI Projects',
+      title: 'AI Projects',
       description: 'Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), Natural Language Processing (Kindle Review Sentiment Analyzer), and LSTM (Word Predictor)',
       image: aiCombined,
       technologies: [],
@@ -118,16 +117,7 @@ function Projects() {
       github: 'https://github.com/naman-0804/File_Storage',
       youtube: 'https://www.youtube.com/watch?v=5xgZ00DH89w'
     },
-    {
-      id: 'city-assist-button',
-      category: 'Machine Learning',
-      title: 'City Assist',
-      description: 'Platform for household help, combines identity verification with semantic search to help users find workers',
-      image: cityAssist,
-      technologies: ['PaddleOCR', 'Semantic Search'],
-      github: 'https://github.com/naman-0804/cityassist',
-      youtube: ''
-    },
+
     {
       id: 'AWS-button',
       category: 'Cloud',
