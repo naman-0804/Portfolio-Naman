@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode, FaRobot
+  FaServer, FaReact, FaDatabase, FaCloud, FaTools, FaCode, FaRobot, FaInfinity
 } from "react-icons/fa";
 
 function Skills() {
@@ -37,7 +37,7 @@ function Skills() {
     },
     {
       title: "Tools",
-      content: "Git, Postman, WinSCP, PUTTY, Clerk, Docker",
+      content: "Git, Postman, WinSCP, PUTTY, Clerk",
       icon: <FaTools />,
       color: "#6366f1"
     },
@@ -46,6 +46,12 @@ function Skills() {
       content: "LangGraph, LangChain, NLP, ML, DL",
       icon: <FaRobot />,
       color: "#ef4444"
+    },
+    {
+      title: "DevOps",
+      content: "Docker, GitHub Actions, CI/CD, Render",
+      icon: <FaInfinity />,
+      color: "#f97316"
     },
   ];
 
