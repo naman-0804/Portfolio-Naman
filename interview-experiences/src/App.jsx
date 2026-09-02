@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { FiSun, FiMoon, FiArrowLeft } from 'react-icons/fi';
+import { FiSun, FiMoon, FiArrowLeft, FiStar, FiArrowUpRight } from 'react-icons/fi';
 import Home from './pages/Home';
 import ExperienceDetail from './pages/ExperienceDetail';
 import './index.css';
@@ -110,6 +110,53 @@ function Navbar({ darkMode, setDarkMode }) {
   );
 }
 
+function RateWidget() {
+  const [rating, setRating] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
+  const [hoveredStar, setHoveredStar] = useState(0);
+
+  const handleRating = (value) => {
+    if (submitted) return;
+    setRating(value);
+
+    // Silent POST to Google Form
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSd6rliinPaSf1TM6lKQDXiVt5ctNlK7Swz-XEreC3gEB_4XBw/formResponse";
+    const formData = new FormData();
+    formData.append("entry.1095894507", value);
+
+    fetch(formUrl, {
+      method: "POST",
+      mode: "no-cors",
+      body: formData
+    }).then(() => {
+      setSubmitted(true);
+    }).catch((err) => console.error("Error submitting rating:", err));
+  };
+
+  return (
+    <div className={`rate-fab ${submitted ? 'submitted' : ''}`} title="Rate my content">
+      <span className="rate-fab-label">
+        {submitted ? 'Thank you! 🌟' : 'Rate this'}
+      </span>
+      {!submitted && (
+        <span className="rate-fab-stars">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <span
+              key={star}
+              className={`rate-star ${star <= hoveredStar ? 'glow' : ''} ${rating >= star ? 'selected' : ''}`}
+              onMouseEnter={() => setHoveredStar(star)}
+              onMouseLeave={() => setHoveredStar(0)}
+              onClick={() => handleRating(star)}
+            >
+              ★
+            </span>
+          ))}
+        </span>
+      )}
+    </div>
+  );
+}
+
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
@@ -118,6 +165,7 @@ function App() {
       <ScrollToTop />
       <div className={`app-container${darkMode ? ' dark-mode' : ''}`}>
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+        <RateWidget />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />

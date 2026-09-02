@@ -328,6 +328,94 @@ body {
 }
 
 /* ==========================================================
+   FLOATING "RATE THIS" STAR WIDGET
+   ========================================================== */
+.rate-fab {
+  position: fixed;
+  top: 5.2rem;
+  right: 1.5rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--amber);
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 20px -6px hsla(40, 70%, 58%, 0.25);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.rate-fab:hover {
+  background: var(--amber-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px -6px hsla(40, 70%, 58%, 0.35);
+}
+
+.rate-fab:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+.rate-fab-label {
+  white-space: nowrap;
+  color: var(--text-secondary);
+}
+
+.rate-fab-stars {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.rate-star {
+  font-size: 1rem;
+  color: var(--text-tertiary);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.rate-star.glow {
+  color: var(--amber);
+  filter: drop-shadow(0 0 4px hsla(40, 70%, 58%, 0.5));
+  transform: scale(1.15);
+}
+
+/* Idle animation — subtle twinkle on the first star */
+.rate-fab-stars .rate-star:first-child {
+  animation: star-twinkle 2.5s ease-in-out infinite;
+}
+
+@keyframes star-twinkle {
+  0%, 100% { color: var(--text-tertiary); transform: scale(1); }
+  50% { color: var(--amber); transform: scale(1.15); }
+}
+
+.rate-fab:hover .rate-fab-stars .rate-star:first-child {
+  animation: none;
+}
+
+.rate-fab.submitted {
+  border-color: var(--amber-soft);
+  color: var(--amber);
+  cursor: default;
+}
+.rate-fab.submitted:hover {
+  transform: none;
+  box-shadow: 0 4px 20px -6px hsla(40, 70%, 58%, 0.25);
+  background: var(--bg-surface);
+}
+
+/* ==========================================================
    PAGE LAYOUT
    ========================================================== */
 .main-content {
@@ -1544,6 +1632,18 @@ h1, h2, h3 {
 
   .brand-mobile {
     display: inline;
+  }
+
+  .rate-fab {
+    top: 4.8rem;
+    right: 1rem;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.72rem;
+    gap: 0;
+  }
+
+  .rate-fab-label {
+    display: none;
   }
 }
 
