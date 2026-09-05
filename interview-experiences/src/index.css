@@ -328,91 +328,131 @@ body {
 }
 
 /* ==========================================================
-   FLOATING "RATE THIS" STAR WIDGET
+   INTERVIEW FOOTER WITH STAR RATING
    ========================================================== */
-.rate-fab {
-  position: fixed;
-  top: 5.2rem;
-  right: 1.5rem;
-  z-index: 999;
+.interview-footer {
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-surface-solid);
+  padding: 1.4rem 2rem;
+}
+
+.interview-footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.5rem 0.85rem;
-  border: 1px solid var(--amber);
-  border-radius: var(--radius-pill);
-  background: var(--bg-surface);
-  backdrop-filter: blur(16px) saturate(1.2);
-  -webkit-backdrop-filter: blur(16px) saturate(1.2);
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  box-shadow: 0 4px 20px -6px hsla(40, 70%, 58%, 0.25);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.rate-fab:hover {
-  background: var(--amber-soft);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px -6px hsla(40, 70%, 58%, 0.35);
+.interview-footer-top,
+.interview-footer-bottom {
+  display: none;
 }
 
-.rate-fab:focus-visible {
-  outline: 2px solid var(--amber);
-  outline-offset: 2px;
-}
-
-.rate-fab-label {
-  white-space: nowrap;
-  color: var(--text-secondary);
-}
-
-.rate-fab-stars {
+.interview-footer-rating {
   display: flex;
-  gap: 0.1rem;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.rate-star {
-  font-size: 1rem;
-  color: var(--text-tertiary);
-  transition: all 0.2s ease;
+.interview-footer-rating-header {
+  display: contents;
+}
+
+.interview-footer-rating-label {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.interview-footer-avg {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(255, 215, 0, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.interview-footer-avg span {
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.interview-footer-stars {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+}
+
+.interview-star-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   cursor: pointer;
-  line-height: 1;
+  transition: transform 0.2s ease;
 }
 
-.rate-star.glow {
-  color: var(--amber);
-  filter: drop-shadow(0 0 4px hsla(40, 70%, 58%, 0.5));
+.interview-star-item:hover:not(.submitted) {
   transform: scale(1.15);
 }
 
-/* Idle animation — subtle twinkle on the first star */
-.rate-fab-stars .rate-star:first-child {
-  animation: star-twinkle 2.5s ease-in-out infinite;
-}
-
-@keyframes star-twinkle {
-  0%, 100% { color: var(--text-tertiary); transform: scale(1); }
-  50% { color: var(--amber); transform: scale(1.15); }
-}
-
-.rate-fab:hover .rate-fab-stars .rate-star:first-child {
-  animation: none;
-}
-
-.rate-fab.submitted {
-  border-color: var(--amber-soft);
-  color: var(--amber);
+.interview-star-item.submitted {
   cursor: default;
 }
-.rate-fab.submitted:hover {
-  transform: none;
-  box-shadow: 0 4px 20px -6px hsla(40, 70%, 58%, 0.25);
-  background: var(--bg-surface);
+
+.interview-star-num {
+  color: var(--text-tertiary);
+  font-size: 0.6rem;
+  font-family: var(--font-mono);
+}
+
+.interview-star-icon {
+  font-size: 1.4rem;
+  transition: all 0.2s ease;
+}
+
+.interview-star-icon.filled {
+  color: #ffd700;
+  filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.4));
+}
+
+.interview-star-icon.empty {
+  color: var(--text-tertiary);
+}
+
+.interview-star-item:hover:not(.submitted) .interview-star-icon.empty {
+  color: rgba(255, 215, 0, 0.5);
+}
+
+.app-container:not(.dark-mode) .interview-footer-stars {
+  background: var(--bg-secondary);
+}
+
+@media (max-width: 500px) {
+  .interview-footer {
+    padding: 0.75rem 1rem;
+  }
+  .interview-footer-rating-label {
+    font-size: 0.75rem;
+  }
+  .interview-star-icon {
+    font-size: 0.95rem;
+  }
 }
 
 /* ==========================================================

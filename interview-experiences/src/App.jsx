@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { FiSun, FiMoon, FiArrowLeft, FiStar, FiArrowUpRight } from 'react-icons/fi';
+import { FiSun, FiMoon, FiArrowLeft, FiStar } from 'react-icons/fi';
+import { FaStar, FaRegStar } from 'react-icons/fa';
 import Home from './pages/Home';
 import ExperienceDetail from './pages/ExperienceDetail';
 import './index.css';
@@ -110,16 +111,46 @@ function Navbar({ darkMode, setDarkMode }) {
   );
 }
 
-function RateWidget() {
+function FooterRating() {
   const [rating, setRating] = useState(0);
   const [submitted, setSubmitted] = useState(false);
-  const [hoveredStar, setHoveredStar] = useState(0);
+  const [averageRating, setAverageRating] = useState(null);
+  const [totalRatings, setTotalRatings] = useState(0);
+
+  useEffect(() => {
+    const fetchRatings = async () => {
+      try {
+        const response = await fetch("https://docs.google.com/spreadsheets/d/1Pv7fL7UJjVhgpXGIFHh0c2aWQpSh_3VeL9mJ5mxBFTA/gviz/tq?tqx=out:csv");
+        const csvText = await response.text();
+        const lines = csvText.split('\n').slice(1);
+        let sum = 0;
+        let count = 0;
+        lines.forEach(line => {
+          const columns = line.split(',');
+          if (columns.length >= 2) {
+            const ratingStr = columns[1].replace(/"/g, '');
+            const ratingNum = parseInt(ratingStr, 10);
+            if (!isNaN(ratingNum)) {
+              sum += ratingNum;
+              count++;
+            }
+          }
+        });
+        if (count > 0) {
+          setAverageRating((sum / count).toFixed(1));
+          setTotalRatings(count);
+        }
+      } catch (err) {
+        console.error("Error fetching ratings:", err);
+      }
+    };
+    fetchRatings();
+  }, []);
 
   const handleRating = (value) => {
     if (submitted) return;
     setRating(value);
 
-    // Silent POST to Google Form
     const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSd6rliinPaSf1TM6lKQDXiVt5ctNlK7Swz-XEreC3gEB_4XBw/formResponse";
     const formData = new FormData();
     formData.append("entry.1095894507", value);
@@ -130,30 +161,58 @@ function RateWidget() {
       body: formData
     }).then(() => {
       setSubmitted(true);
+      const newCount = totalRatings + 1;
+      const newSum = (parseFloat(averageRating || 0) * totalRatings) + value;
+      setAverageRating((newSum / newCount).toFixed(1));
+      setTotalRatings(newCount);
     }).catch((err) => console.error("Error submitting rating:", err));
   };
 
   return (
-    <div className={`rate-fab ${submitted ? 'submitted' : ''}`} title="Rate my content">
-      <span className="rate-fab-label">
-        {submitted ? 'Thank you! 🌟' : 'Rate this'}
-      </span>
-      {!submitted && (
-        <span className="rate-fab-stars">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <span
-              key={star}
-              className={`rate-star ${star <= hoveredStar ? 'glow' : ''} ${rating >= star ? 'selected' : ''}`}
-              onMouseEnter={() => setHoveredStar(star)}
-              onMouseLeave={() => setHoveredStar(0)}
-              onClick={() => handleRating(star)}
-            >
-              ★
-            </span>
-          ))}
-        </span>
-      )}
-    </div>
+    <footer className="interview-footer">
+      <div className="interview-footer-inner">
+        <div className="interview-footer-top">
+          <span className="interview-footer-emoji">🙏</span>
+          <p>Thank you for reading!</p>
+        </div>
+
+        <div className="interview-footer-rating">
+          <div className="interview-footer-rating-header">
+            <p className="interview-footer-rating-label">
+              {submitted ? 'Thanks! Glad it helped 🌟' : 'Rate this if it helped your preparation'}
+            </p>
+            {averageRating && (
+              <div className="interview-footer-avg">
+                <FaStar style={{ color: '#ffd700', fontSize: '1rem' }} />
+                <span>{averageRating}</span>
+              </div>
+            )}
+          </div>
+
+          <div className="interview-footer-stars">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <div
+                key={star}
+                className={`interview-star-item ${submitted ? 'submitted' : ''} ${rating >= star ? 'selected' : ''}`}
+                onClick={() => handleRating(star)}
+              >
+                <span className="interview-star-num">{star}</span>
+                {rating >= star ? (
+                  <FaStar className="interview-star-icon filled" />
+                ) : (
+                  <FaRegStar className="interview-star-icon empty" />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="interview-footer-bottom">
+          <p className="interview-footer-made">Made with ❤️ &amp; React</p>
+          <span className="interview-footer-badge">🚀 Interview Journey</span>
+        </div>
+      </div>
+    </footer>
   );
 }
 
@@ -165,13 +224,13 @@ function App() {
       <ScrollToTop />
       <div className={`app-container${darkMode ? ' dark-mode' : ''}`}>
         <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <RateWidget />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/experience/:id" element={<ExperienceDetail />} />
           </Routes>
         </main>
+        <FooterRating />
       </div>
     </Router>
   );
