@@ -165,7 +165,7 @@ const prepSections = [
     resources: [
       {
         label: 'Linux Codes',
-        url: 'https://youtu.be/Byx4sgLR88E?si=wyQ6kCY5GXuTtpSx',
+        url: 'https://youtu.be/ldgl9Bd3lLg',
         type: 'YouTube'
       },
       {
