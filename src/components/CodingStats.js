@@ -47,10 +47,10 @@ const CodingStats = () => {
               LEFT CARD: SUMMARY
              ========================================= */}
           <div className="stats-summary" style={{ height: "fit-content" }}>
-            
+
             <div className="summary-top">
               <h2>DSA - Problem Solving</h2>
-              
+
               <div className="total-solved">{total}</div>
               <span className="total-label">Total Solved</span>
 
@@ -88,7 +88,7 @@ const CodingStats = () => {
           </div>
 
           <div className="sql-card">
-            <h3>SQL Practice</h3>
+            <h3>SQL</h3>
             <div className="sql-total">85 questions</div>
             <div className="sql-difficulty-breakdown">
               <div className="difficulty-item easy">
@@ -105,71 +105,93 @@ const CodingStats = () => {
               </div>
             </div>
           </div>
+
+          <div className="sql-card">
+            <div className="pub-header">
+              <h3>Publications</h3>
+              <span className="p-name" style={{ color: "#0162B4" }}>Zenodo</span>
+            </div>
+            <div className="pub-stats-row">
+              <div className="pub-stat-item">
+                <span className="pub-stat-value">276</span>
+                <span className="pub-stat-label">views</span>
+              </div>
+              <div className="pub-stat-item">
+                <span className="pub-stat-value">52</span>
+                <span className="pub-stat-label">downloads</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* =========================================
             RIGHT CARD: ACTIVITY & SOCIALS
            ========================================= */}
-        <div className="stats-details">
-          
-          {/* --- GitHub Section --- */}
-          <h2 className="stats-title">GitHub</h2>
-          <div className="github-grid">
-            <div className="platform-card">
-              <span className="platform-badge">Commits</span>
-              <div className="platform-total">{github.commits || 0}</div>
-              <div className="platform-stats">Total contributions</div>
-            </div>
+        <div className="right-column" style={{ display: "flex", flexDirection: "column", gap: "1.3rem" }}>
 
-            <div className="platform-card">
-              <span className="platform-badge" style={{ background: "#8b5cf6" }}>Active</span>
-              <div className="platform-total">{github.totalActiveDays || 0}</div>
-              <div className="platform-stats">Days coding</div>
-            </div>
+          <div className="stats-details">
+            {/* --- GitHub Section --- */}
+            <h2 className="stats-title">GitHub</h2>
+            <div className="github-grid">
+              <div className="platform-card">
+                <span className="platform-badge">Commits</span>
+                <div className="platform-total">{github.commits || 0}</div>
+                <div className="platform-stats">Total contributions</div>
+              </div>
 
-            <div className="platform-card">
-              <span className="platform-badge" style={{ background: "#f59e0b" }}>Stars</span>
-              <div className="platform-total">{github.stars || 0}</div>
-              <div className="platform-stats">Repositories starred</div>
-            </div>
+              <div className="platform-card">
+                <span className="platform-badge" style={{ background: "#8b5cf6" }}>Active</span>
+                <div className="platform-total">{github.totalActiveDays || 0}</div>
+                <div className="platform-stats">Days coding</div>
+              </div>
 
-            <div className="platform-card">
-              <span className="platform-badge" style={{ background: "#ec4899" }}>PRs</span>
-              <div className="platform-total">{github.pushRequestsCount || 0}</div>
-              <div className="platform-stats">Pull Requests</div>
+              <div className="platform-card">
+                <span className="platform-badge" style={{ background: "#f59e0b" }}>Stars</span>
+                <div className="platform-total">{github.stars || 0}</div>
+                <div className="platform-stats">Repositories starred</div>
+              </div>
+
+              <div className="platform-card">
+                <span className="platform-badge" style={{ background: "#ec4899" }}>PRs</span>
+                <div className="platform-total">{github.pushRequestsCount || 0}</div>
+                <div className="platform-stats">Pull Requests</div>
+              </div>
             </div>
           </div>
 
-          {/* --- Socials Section --- */}
-          <h2 className="stats-title" style={{ marginTop: "1.5rem" }}>Socials</h2>
-          <div className="github-grid">
-            
-            {/* YouTube Card */}
-            <div className="platform-card">
-              <span className="platform-badge" style={{ background: "#FF0000" }}>YouTube</span>
-              <div className="platform-total">{youtube.viewCountText || "0 views"}</div>
-              <div className="platform-stats">Total Channel Views</div>
-            </div>
+          <div className="stats-details">
+            {/* --- Socials Section --- */}
+            <h2 className="stats-title">Socials</h2>
+            <div className="github-grid">
 
-            {/* Dev.to Card */}
-            <div className="platform-card">
-              <span className="platform-badge" style={{ background: "#000000" }}>Dev.to</span>
-              <div className="platform-total">{devto.totalViews || 0} views</div>
-              <div className="platform-stats">Total Blog Views</div>
-            </div>
-            {/* LinkedIn Card */}
-            <div className="platform-card">
-              <span className="platform-badge" style={{ background: "#098d9c" }}>LinkedIn</span>
-              <div className="platform-total"> 805 reactions</div>
-              <div className="platform-stats">Total Linkedn Reaction</div>
-            </div>
-            {/* Vercel Card */}
-            <div className="platform-card">
-              <span className="platform-badge" style={{ background: "#7509c8b5" }}>Portfolio Views</span>
-              <div className="platform-total">{stats.vercel ? stats.vercel.Pageviews : 0} views</div>
-              <div className="platform-stats">Total Portfolio Views (30 Days)</div>
+              {/* YouTube Card */}
+              <div className="platform-card">
+                <span className="platform-badge" style={{ background: "#FF0000" }}>YouTube</span>
+                <div className="platform-total">{youtube.viewCountText || "0 views"}</div>
+                <div className="platform-stats">Total Channel Views</div>
+              </div>
+
+              {/* Dev.to Card */}
+              <div className="platform-card">
+                <span className="platform-badge" style={{ background: "#000000" }}>Dev.to</span>
+                <div className="platform-total">{devto.totalViews || 0} views</div>
+                <div className="platform-stats">Total Blog Views</div>
+              </div>
+              {/* LinkedIn Card */}
+              <div className="platform-card">
+                <span className="platform-badge" style={{ background: "#098d9c" }}>LinkedIn</span>
+                <div className="platform-total"> 805 reactions</div>
+                <div className="platform-stats">Total Linkedn Reaction</div>
+              </div>
+              {/* Vercel Card */}
+              <div className="platform-card">
+                <span className="platform-badge" style={{ background: "#7509c8b5" }}>Portfolio Views</span>
+                <div className="platform-total">{stats.vercel ? stats.vercel.Pageviews : 0} views</div>
+                <div className="platform-stats">Total Portfolio Views (30 Days)</div>
+              </div>
             </div>
           </div>
+
 
         </div>
 

@@ -224,6 +224,44 @@
   font-size: clamp(1.4rem, 3.5vw, 2.1rem);
 }
 
+/* ---- Publications Card ---- */
+.pub-stats-row {
+  display: flex;
+  gap: 2rem;
+  margin: 0.75rem 0 0.9rem;
+}
+
+.pub-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.pub-stat-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.pub-stat-label {
+  color: var(--text-tertiary);
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+
+.pub-source {
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.pub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* ==========================================================
    RESPONSIVE
    ========================================================== */
