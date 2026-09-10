@@ -27,15 +27,20 @@ function Navbar({ darkMode, setDarkMode }) {
 
     const handleScroll = () => {
       const prepEl = document.getElementById('prep-section');
+      const roadmapEl = document.getElementById('roadmap-section');
       const expEl = document.getElementById('experiences-section');
 
-      if (!prepEl || !expEl) return;
+      if (!prepEl || !roadmapEl || !expEl) return;
 
-      const scrollPos = window.scrollY + 120; // Offset for navbar
+      // Use getBoundingClientRect for more reliable viewport-relative positions
+      // 150px offset allows the section to activate a bit before it hits the navbar
+      const offset = 150;
       
-      if (expEl.offsetTop <= scrollPos) {
+      if (expEl.getBoundingClientRect().top <= offset) {
         setActiveSection('experiences-section');
-      } else if (prepEl.offsetTop <= scrollPos) {
+      } else if (roadmapEl.getBoundingClientRect().top <= offset) {
+        setActiveSection('roadmap-section');
+      } else if (prepEl.getBoundingClientRect().top <= offset) {
         setActiveSection('prep-section');
       } else {
         setActiveSection('');
@@ -69,6 +74,7 @@ function Navbar({ darkMode, setDarkMode }) {
           <span className="brand-desktop">Interview Journey</span>
           <span className="brand-mobile">
             {activeSection === 'prep-section' ? 'Prep' 
+             : activeSection === 'roadmap-section' ? 'Roadmap'
              : activeSection === 'experiences-section' ? 'Experiences' 
              : 'Interview Journey'}
           </span>
@@ -81,6 +87,12 @@ function Navbar({ darkMode, setDarkMode }) {
           onClick={() => scrollTo('prep-section')}
         >
           Prep
+        </button>
+        <button 
+          className={`nav-link ${activeSection === 'roadmap-section' ? 'active' : ''}`} 
+          onClick={() => scrollTo('roadmap-section')}
+        >
+          Roadmap
         </button>
         <button 
           className={`nav-link ${activeSection === 'experiences-section' ? 'active' : ''}`} 

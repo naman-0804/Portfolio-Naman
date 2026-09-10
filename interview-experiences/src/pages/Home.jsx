@@ -3,7 +3,8 @@ import { experiences } from '../data/experiences';
 import {
   FiBriefcase, FiArrowRight, FiBookOpen, FiCloud, FiCpu,
   FiFileText, FiPlay, FiExternalLink, FiCode, FiLayers,
-  FiTarget, FiClock, FiMapPin, FiCheckCircle, FiTrendingUp, FiTerminal
+  FiTarget, FiClock, FiMapPin, FiCheckCircle, FiTrendingUp, FiTerminal,
+  FiMap, FiDatabase, FiServer, FiGitBranch, FiBox, FiZap, FiRepeat
 } from 'react-icons/fi';
 
 const prepSections = [
@@ -187,6 +188,66 @@ const prepSections = [
   }
 ];
 
+const roadmapPhases = [
+  {
+    id: 'fundamentals',
+    phase: 'Phase 0',
+    title: 'Before everything',
+    subtitle: 'Core programming and CS fundamentals',
+    accent: 'web',
+    icon: <FiBookOpen />,
+    steps: [
+      { label: 'Java', desc: 'Many companies use it for interviews and backend', icon: <FiCode /> },
+      { label: 'OOP', desc: 'Object-Oriented Programming concepts and design', icon: <FiLayers /> },
+      { label: 'Core Subjects', desc: 'Computer Networks (CN), Operating Systems (OS), DBMS', icon: <FiServer /> },
+      { label: 'Python', desc: 'Must for AI, Pandas, Numpy', icon: <FiTerminal /> },
+    ]
+  },
+  {
+    id: 'fullstack',
+    phase: 'Phase 1',
+    title: 'Full-Stack Web Development',
+    subtitle: 'Build the core web development muscle',
+    accent: 'web',
+    icon: <FiCode />,
+    steps: [
+      { label: 'JavaScript', desc: 'Core language, ES6+, DOM manipulation, async/await', icon: <FiFileText /> },
+      { label: 'React.js', desc: 'Component architecture, hooks, state management, routing', icon: <FiLayers /> },
+      { label: 'Express.js', desc: 'RESTful APIs, middleware, routing, error handling', icon: <FiServer /> },
+      { label: 'Linking React + Express', desc: 'Connect frontend to backend, proxy setup, CORS, API calls', icon: <FiZap /> },
+      { label: 'MongoDB + Mongoose', desc: 'NoSQL database, schemas, CRUD operations, aggregation', icon: <FiDatabase /> },
+    ]
+  },
+  {
+    id: 'cloud',
+    phase: 'Phase 2',
+    title: 'Cloud & DevOps',
+    subtitle: 'Deploy, automate, and scale your projects',
+    accent: 'cloud',
+    icon: <FiCloud />,
+    steps: [
+      { label: 'AWS', desc: 'EC2, S3, Lambda, VPC, SNS, API Gateway — deploy a full-stack project on AWS', icon: <FiCloud /> },
+      { label: 'Docker', desc: 'Containerization, Dockerfiles, images, multi-stage builds', icon: <FiBox /> },
+      { label: 'Git', desc: 'Version control, branching strategies, merge vs rebase', icon: <FiGitBranch /> },
+      { label: 'GitHub Actions', desc: 'CI/CD pipelines, automated testing, deployment workflows', icon: <FiRepeat /> },
+    ]
+  },
+  {
+    id: 'ai',
+    phase: 'Phase 3',
+    title: 'AI',
+    subtitle: 'From classical ML to cutting-edge GenAI',
+    accent: 'ml',
+    icon: <FiCpu />,
+    steps: [
+      { label: 'Machine Learning', desc: 'Supervised & unsupervised learning, feature engineering, model evaluation', icon: <FiTrendingUp /> },
+      { label: 'Deep Learning', desc: 'Neural networks, CNNs, RNNs, PyTorch / TensorFlow', icon: <FiCpu /> },
+      { label: 'NLP', desc: 'Text processing, embeddings, transformers, sentiment analysis', icon: <FiFileText /> },
+      { label: 'Generative AI', desc: 'LLMs, prompt engineering, RAG, fine-tuning, LangChain, LangGraph', icon: <FiZap /> },
+    ]
+  }
+];
+
 const statusIcon = {
   'Selected': <FiCheckCircle />,
   'In Progress': <FiTrendingUp />,
@@ -243,6 +304,87 @@ const Home = () => {
         <div className="mandatory-note-icon">⚠️</div>
         <div className="mandatory-note-content">
           <strong>Make short notes while learning.</strong> Trust me — if you don't write things down as you go, you'll forget most of it by the time your interview comes. A quick revision from your own notes is far far more effective than re-watching one-shot videos.
+        </div>
+      </div>
+
+      {/* ============================================================
+          ROADMAP SECTION
+          ============================================================ */}
+      <div className="prep-section-block" id="roadmap-section">
+        <div className="prep-section-header">
+          <h2>Learning Roadmap</h2>
+          <p>
+            A structured path from web development to AI — follow these phases sequentially while keeping DSA & SQL as a constant practice alongside.
+          </p>
+        </div>
+
+        {/* Persistent DSA + SQL Banner */}
+        <div className="roadmap-persistent-track">
+          <div className="roadmap-persistent-icon">
+            <FiRepeat />
+          </div>
+          <div className="roadmap-persistent-info">
+            <h4>🔁 Running Throughout — DSA & SQL</h4>
+            <p>
+              Practice <strong>Striver's A to Z DSA Sheet</strong> and <strong>SQL problems</strong> consistently alongside every phase. These are not optional — they form the backbone of every technical interview.
+            </p>
+          </div>
+        </div>
+
+        {/* Phase Cards */}
+        <div className="roadmap-phases">
+          {roadmapPhases.map((phase, phaseIdx) => (
+            <div className="roadmap-phase-card" key={phase.id}>
+              <div className="roadmap-phase-header">
+                <div className={`roadmap-phase-badge ${phase.accent}`}>
+                  {phase.icon}
+                  <span>{phase.phase}</span>
+                </div>
+                <div className="roadmap-phase-title-group">
+                  <h3>{phase.title}</h3>
+                  <p>{phase.subtitle}</p>
+                </div>
+              </div>
+
+              <div className="roadmap-steps">
+                {phase.steps.map((step, stepIdx) => (
+                  <div className="roadmap-step" key={stepIdx}>
+                    <div className="roadmap-step-connector">
+                      <div className={`roadmap-step-dot ${phase.accent}`}>
+                        {step.icon}
+                      </div>
+                      {stepIdx < phase.steps.length - 1 && (
+                        <div className={`roadmap-step-line ${phase.accent}`} />
+                      )}
+                    </div>
+                    <div className="roadmap-step-content">
+                      <h4>{step.label}</h4>
+                      <p>{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Arrow connector between phase cards */}
+              {phaseIdx < roadmapPhases.length - 1 && (
+                <div className="roadmap-phase-arrow">
+                  <FiArrowRight />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Pro Tips */}
+        <div className="roadmap-tips">
+          <h4>💡 Pro Tips</h4>
+          <ul>
+            <li>Build at least <strong>one end-to-end project per phase</strong> — learning without building is forgetting.</li>
+            <li>After Phase 1, deploy your full-stack project on AWS (Phase 2) — this ties everything together.</li>
+            <li>Use <strong>ChatGPT / Gemini</strong> to understand concepts faster, but always implement yourself.</li>
+            <li>Maintain a <strong>GitHub profile</strong> with clean READMEs — recruiters check this.</li>
+            <li>Start applying by Phase 2 — don't wait until you feel "ready." You'll never feel ready.</li>
+          </ul>
         </div>
       </div>
 
