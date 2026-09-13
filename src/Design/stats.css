@@ -6,9 +6,10 @@
 #coding-stats {
   position: relative;
   z-index: 1;
-  padding: 5rem 2rem 5.5rem;
+  padding: 3rem 2rem 5.5rem;
   color: var(--text-primary);
   font-family: var(--font-body);
+  scroll-margin-top: 10px;
 }
 
 #coding-stats .premium-section-header {
