@@ -162,6 +162,7 @@
   width: 100%;
   min-height: 100vh;
   padding-top: 0;
+  scroll-margin-top: 40px;
 }
 
 .section-placeholder,

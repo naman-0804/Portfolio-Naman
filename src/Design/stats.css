@@ -43,14 +43,14 @@
 .stats-bento-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
   max-width: var(--max-width);
   margin: 0 auto;
   width: 100%;
 }
 
 .stats-bento-card {
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,7 +69,7 @@
 .stats-bento-card h3 {
   font-family: var(--font-display);
   font-size: 1.25rem;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1rem 0;
   color: var(--text-primary);
 }
 
