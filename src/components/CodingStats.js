@@ -19,11 +19,10 @@ const CodingStats = () => {
 
   if (loading) {
     return (
-      <div className="stats-container">
-        <div className="stats-wrapper">
-          <div className="stats-summary" style={{ width: "100%", alignItems: "center" }}>
-            <h2 className="stats-title">Loading...</h2>
-          </div>
+      <div className="stats-container" id="coding-stats">
+        <div className="premium-section-header">
+          <h2 className="premium-heading">Stats</h2>
+          <p className="premium-subtitle">Loading metrics...</p>
         </div>
       </div>
     );
@@ -36,167 +35,110 @@ const CodingStats = () => {
 
   return (
     <section className="stats-container" id="coding-stats">
-      <div className="premium-section-header" style={{ marginBottom: "2.5rem", padding: "0 1rem" }}>
-        <h2 className="premium-heading">Stats</h2>
-
+      <div className="premium-section-header">
+        <h2 className="premium-heading">Metrics & Impact</h2>
+        <p className="premium-subtitle">A data-driven look at my open-source contributions, problem-solving, and community reach.</p>
       </div>
 
-      <div className="stats-wrapper">
-        <div className="left-column">
-          {/* =========================================
-              LEFT CARD: SUMMARY
-             ========================================= */}
-          <div className="stats-summary" style={{ height: "fit-content" }}>
-
-            <div className="summary-top">
-              <h2>DSA - Problem Solving</h2>
-
-              <div className="total-solved">{total}</div>
+      <div className="stats-bento-grid">
+        
+        {/* DSA - Large Bento */}
+        <div className="stats-bento-card dsa-bento">
+          <div className="dsa-header">
+            <h3>DSA Problem Solving</h3>
+            <div className="dsa-total">
+              <span className="total-num">{total}</span>
               <span className="total-label">Total Solved</span>
-
-              <div className="platforms-row">
-                <span className="p-name leetcode">LeetCode</span>
-                <span className="divider">•</span>
-                <span className="p-name gfg">GFG</span>
-                <span className="divider">•</span>
-                <span className="p-name tuf">TUF</span>
-                <span className="divider">•</span>
-                <span className="p-name ninjas">Coding Ninjas</span>
-                <span className="divider">•</span>
-                <span className="p-name interviewbit">InterviewBit</span>
-                <span className="divider">•</span>
-                <span className="p-name codechef">CodeChef</span>
-                <span className="divider">•</span>
-                <span className="p-name codeforces">CodeForces</span>
-              </div>
-            </div>
-
-            <div className="difficulty-breakdown">
-              <div className="difficulty-item easy">
-                <span>Easy</span>
-                <span className="count">{easy}</span>
-              </div>
-              <div className="difficulty-item medium">
-                <span>Medium</span>
-                <span className="count">{medium}</span>
-              </div>
-              <div className="difficulty-item hard">
-                <span>Hard</span>
-                <span className="count">{hard}</span>
-              </div>
             </div>
           </div>
-
-          <div className="sql-card">
-            <h3>SQL</h3>
-            <div className="sql-total">85 questions</div>
-            <div className="sql-difficulty-breakdown">
-              <div className="difficulty-item easy">
-                <span>Easy</span>
-                <span className="count">54</span>
-              </div>
-              <div className="difficulty-item medium">
-                <span>Medium</span>
-                <span className="count">25</span>
-              </div>
-              <div className="difficulty-item hard">
-                <span>Hard</span>
-                <span className="count">1</span>
-              </div>
-            </div>
+          
+          <div className="dsa-platforms">
+            <span>LeetCode</span> • <span>GFG</span> • <span>TUF</span> • <span>Coding Ninjas</span> • <span>CodeForces</span>
           </div>
 
-          <div className="sql-card">
-            <div className="pub-header">
-              <h3>Publications</h3>
-              <span className="p-name" style={{ color: "#0162B4" }}>Zenodo</span>
+          <div className="dsa-bars">
+            <div className="diff-bar easy-bar">
+              <span className="diff-label">Easy</span>
+              <div className="bar-track"><div className="bar-fill" style={{ width: '40%' }}></div></div>
+              <span className="diff-count">{easy}</span>
             </div>
-            <div className="pub-stats-row">
-              <div className="pub-stat-item">
-                <span className="pub-stat-value">276</span>
-                <span className="pub-stat-label">views</span>
-              </div>
-              <div className="pub-stat-item">
-                <span className="pub-stat-value">52</span>
-                <span className="pub-stat-label">downloads</span>
-              </div>
+            <div className="diff-bar medium-bar">
+              <span className="diff-label">Medium</span>
+              <div className="bar-track"><div className="bar-fill" style={{ width: '50%' }}></div></div>
+              <span className="diff-count">{medium}</span>
+            </div>
+            <div className="diff-bar hard-bar">
+              <span className="diff-label">Hard</span>
+              <div className="bar-track"><div className="bar-fill" style={{ width: '10%' }}></div></div>
+              <span className="diff-count">{hard}</span>
             </div>
           </div>
         </div>
 
-        {/* =========================================
-            RIGHT CARD: ACTIVITY & SOCIALS
-           ========================================= */}
-        <div className="right-column" style={{ display: "flex", flexDirection: "column", gap: "1.3rem" }}>
-
-          <div className="stats-details">
-            {/* --- GitHub Section --- */}
-            <h2 className="stats-title">GitHub</h2>
-            <div className="github-grid">
-              <div className="platform-card">
-                <span className="platform-badge">Commits</span>
-                <div className="platform-total">{github.commits || 0}</div>
-                <div className="platform-stats">Total contributions</div>
-              </div>
-
-              <div className="platform-card">
-                <span className="platform-badge" style={{ background: "#8b5cf6" }}>Active</span>
-                <div className="platform-total">{github.totalActiveDays || 0}</div>
-                <div className="platform-stats">Days coding</div>
-              </div>
-
-              <div className="platform-card">
-                <span className="platform-badge" style={{ background: "#f59e0b" }}>Stars</span>
-                <div className="platform-total">{github.stars || 0}</div>
-                <div className="platform-stats">Repositories starred</div>
-              </div>
-
-              <div className="platform-card">
-                <span className="platform-badge" style={{ background: "#ec4899" }}>PRs</span>
-                <div className="platform-total">{github.pushRequestsCount || 0}</div>
-                <div className="platform-stats">Pull Requests</div>
-              </div>
+        {/* GitHub Stats - Grid inside Bento */}
+        <div className="stats-bento-card github-bento">
+          <h3>GitHub Activity</h3>
+          <div className="github-metrics">
+            <div className="metric-box">
+              <span className="metric-title">Commits</span>
+              <span className="metric-val">{github.commits || 0}</span>
+            </div>
+            <div className="metric-box">
+              <span className="metric-title" style={{ color: 'var(--amber)' }}>Active Days</span>
+              <span className="metric-val">{github.totalActiveDays || 0}</span>
+            </div>
+            <div className="metric-box">
+              <span className="metric-title" style={{ color: 'var(--violet)' }}>Stars</span>
+              <span className="metric-val">{github.stars || 0}</span>
+            </div>
+            <div className="metric-box">
+              <span className="metric-title" style={{ color: 'var(--rose)' }}>PRs</span>
+              <span className="metric-val">{github.pushRequestsCount || 0}</span>
             </div>
           </div>
+        </div>
 
-          <div className="stats-details">
-            {/* --- Socials Section --- */}
-            <h2 className="stats-title">Socials</h2>
-            <div className="github-grid">
+        {/* SQL Stats */}
+        <div className="stats-bento-card sql-bento">
+          <h3>SQL Problems</h3>
+          <div className="sql-val">85</div>
+          <p className="sql-desc">Queries mastered</p>
+        </div>
 
-              {/* YouTube Card */}
-              <div className="platform-card">
-                <span className="platform-badge" style={{ background: "#FF0000" }}>YouTube</span>
-                <div className="platform-total">{youtube.viewCountText || "0 views"}</div>
-                <div className="platform-stats">Total Channel Views</div>
-              </div>
+        {/* Publications */}
+        <div className="stats-bento-card pub-bento">
+          <h3>Publications</h3>
+          <div className="pub-tag">Zenodo</div>
+          <div className="pub-metrics">
+            <div><span className="pub-val">276</span> Views</div>
+            <div><span className="pub-val">52</span> Downloads</div>
+          </div>
+        </div>
 
-              {/* Dev.to Card */}
-              <div className="platform-card">
-                <span className="platform-badge" style={{ background: "#000000" }}>Dev.to</span>
-                <div className="platform-total">{devto.totalViews || 0} views</div>
-                <div className="platform-stats">Total Blog Views</div>
-              </div>
-              {/* LinkedIn Card */}
-              <div className="platform-card">
-                <span className="platform-badge" style={{ background: "#098d9c" }}>LinkedIn</span>
-                <div className="platform-total"> 805 reactions</div>
-                <div className="platform-stats">Total Linkedn Reaction</div>
-              </div>
-              {/* Vercel Card */}
-              <div className="platform-card">
-                <span className="platform-badge" style={{ background: "#7509c8b5" }}>Portfolio Views</span>
-                <div className="platform-total">{stats.vercel ? stats.vercel.Pageviews : 0} views</div>
-                <div className="platform-stats">Total Portfolio Views (30 Days)</div>
-              </div>
+        {/* Social Reach - Wide Bento */}
+        <div className="stats-bento-card social-bento">
+          <h3>Community Reach</h3>
+          <div className="social-metrics-row">
+            <div className="social-stat">
+              <span className="social-platform" style={{ color: '#ef4444' }}>YouTube</span>
+              <span className="social-num">{youtube.viewCountText || "0"}</span>
+            </div>
+            <div className="social-stat">
+              <span className="social-platform" style={{ color: '#10b981' }}>Dev.to</span>
+              <span className="social-num">{devto.totalViews || 0} views</span>
+            </div>
+            <div className="social-stat">
+              <span className="social-platform" style={{ color: '#3b82f6' }}>LinkedIn</span>
+              <span className="social-num">805 reactions</span>
+            </div>
+            <div className="social-stat">
+              <span className="social-platform" style={{ color: '#a855f7' }}>Portfolio</span>
+              <span className="social-num">{stats.vercel ? stats.vercel.Pageviews : 0} views</span>
             </div>
           </div>
-
-
         </div>
 
       </div>
-
     </section>
   );
 };
