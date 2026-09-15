@@ -81,6 +81,16 @@ function Footer() {
               Made with <FaHeart className="footer-heart" /> & React
             </p>
           </div>
+          
+          <div className="footer-slop-detect" style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+            <p style={{ color: 'var(--text-secondary, #a0a0a0)', fontSize: '0.9rem', margin: 0, textAlign: 'center' }}>
+              Verified human-made content<br/>
+              (Lower the better out of 100)
+            </p>
+            <a href="https://slop-detect.com/r/ix6mqt7j" target="_blank" rel="noopener noreferrer" style={{ transition: 'transform 0.2s ease', display: 'inline-block' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+              <img src="https://slop-detect.com/badge/namansrivastava.in.svg" alt="slop detect badge" style={{ height: '40px', display: 'block' }} />
+            </a>
+          </div>
         </div>
 
         <div className="footer-rating-container" style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
