@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { experiences } from '../data/experiences';
 import {
@@ -331,51 +332,52 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Phase Cards */}
-        <div className="roadmap-phases">
+        {/* Phase Cards — Compact Grid */}
+        <div className="roadmap-grid">
           {roadmapPhases.map((phase, phaseIdx) => (
-            <div className="roadmap-phase-card" key={phase.id}>
-              <div className="roadmap-phase-header">
-                <div className={`roadmap-phase-badge ${phase.accent}`}>
+            <div className={`roadmap-grid-card ${phase.accent}`} key={phase.id}>
+              <div className="roadmap-grid-header">
+                <div className={`roadmap-grid-badge ${phase.accent}`}>
                   {phase.icon}
                   <span>{phase.phase}</span>
                 </div>
-                <div className="roadmap-phase-title-group">
-                  <h3>{phase.title}</h3>
-                  <p>{phase.subtitle}</p>
-                </div>
+                <h3>{phase.title}</h3>
+                <p className="roadmap-grid-subtitle">{phase.subtitle}</p>
               </div>
 
-              <div className="roadmap-steps">
+              <div className="roadmap-grid-steps">
                 {phase.steps.map((step, stepIdx) => (
-                  <div className="roadmap-step" key={stepIdx}>
-                    <div className="roadmap-step-connector">
-                      <div className={`roadmap-step-dot ${phase.accent}`}>
-                        {step.icon}
-                      </div>
-                      {stepIdx < phase.steps.length - 1 && (
-                        <div className={`roadmap-step-line ${phase.accent}`} />
-                      )}
-                    </div>
-                    <div className="roadmap-step-content">
-                      <h4>{step.label}</h4>
-                      <p>{step.desc}</p>
+                  <div className={`roadmap-chip ${phase.accent}`} key={stepIdx}>
+                    <span className="roadmap-chip-icon">{step.icon}</span>
+                    <div className="roadmap-chip-text">
+                      <span className="roadmap-chip-label">{step.label}</span>
+                      <span className="roadmap-chip-desc">{step.desc}</span>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Arrow connector between phase cards */}
-              {phaseIdx < roadmapPhases.length - 1 && (
-                <div className="roadmap-phase-arrow">
-                  <FiArrowRight />
-                </div>
-              )}
+              {/* Phase number indicator */}
+              <div className={`roadmap-grid-number ${phase.accent}`}>{phaseIdx}</div>
             </div>
           ))}
         </div>
 
-        {/* Pro Tips */}
+        {/* Flow arrows row */}
+        <div className="roadmap-flow-indicator">
+          {roadmapPhases.map((phase, idx) => (
+            <React.Fragment key={phase.id}>
+              <div className={`roadmap-flow-dot ${phase.accent}`}>{idx}</div>
+              {idx < roadmapPhases.length - 1 && (
+                <div className="roadmap-flow-line">
+                  <FiArrowRight />
+                </div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+
+        {/* Pro Tips — Compact */}
         <div className="roadmap-tips">
           <h4>💡 Pro Tips</h4>
           <ul>
