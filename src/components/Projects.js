@@ -22,6 +22,7 @@ import contextImg from '../Images/contxt.webp';
 import vpc from '../Images/vpc-aws.webp';
 import aiCombined from '../Images/ai-combined.png';
 import multiTool from '../Images/multi-tool-agent.png';
+import mlops from '../Images/mlops.png';
 
 function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -29,6 +30,16 @@ function Projects() {
   const [expandedDescs, setExpandedDescs] = useState({});
 
   const projects = [
+    {
+      id: 'mlops-pipeline',
+      category: 'DevOps',
+      title: 'Scalable MLOps Pipeline with Model Monitoring',
+      description: 'Built an end-to-end MLOps pipeline with DVC, Prefect, MLflow, and GitHub Actions CI/CD, deploying a Dockerized FastAPI inference service to Render. Implemented production monitoring and model observability with Prometheus, Grafana, and Evidently AI, providing real-time system metrics, model performance tracking, and automated data drift detection for reliable ML operations.',
+      image: mlops,
+      technologies: ['Prefect', 'MLflow', 'Prometheus', 'Grafana'],
+      github: 'https://github.com/naman-0804/End-to-end-MLOPS-Pipeline',
+      youtube: 'https://www.youtube.com/watch?v=LTsR5537USc'
+    },
     {
       id: 'multi-tool-agent',
       category: 'Machine Learning',
@@ -43,7 +54,7 @@ function Projects() {
       id: 'routeguard',
       title: 'RouteGuard: Real-Time Detection',
       category: 'Fullstack',
-      description: 'Real-Time Loitering Detection and safe Navigation using OpenCV and OSM.',
+      description: 'Real-Time Loitering Detection , Proactive route planning and geofencing based tracking Navigation system.',
       image: route,
       technologies: ['React', 'Python', 'OpenCV', 'OSM API'],
       github: 'https://github.com/naman-0804/RouteGuard',
@@ -55,17 +66,17 @@ function Projects() {
       title: 'Advanced Secure VPC Architecture on AWS',
       description: 'Made an AWS Virtual Private Cloud and demonstrated the connection with private EC2 instance using SSH inside NAT instance',
       image: vpc,
-      technologies: ['AWS', 'VPC', 'EC2', 'NAT'],
+      technologies: ['AWS', 'VPC', 'EC2', 'IAM'],
       github: 'https://github.com/naman-0804/Cloud-AWS/tree/main/Virtual%20Private%20Cloud%20Setup',
       youtube: ''
     },
     {
       id: 'sahyogi-button',
       category: 'Fullstack',
-      title: 'Real Time SL Translation over WebRTC',
-      description: 'Community helper platform built for SIH with real-time database.',
+      title: 'AI Sign lang Telemedicine System',
+      description: 'Designed a two-way real-time communication system where mute patients stream hand-gesture video during live WebRTC-Based video calls on his side. The hand landmark is then processed by ML model and predicted text is delivered live to the doctor\'s interface via MongoDB with TTS support.',
       image: sahyogi,
-      technologies: ['React', 'Firebase', 'Material UI'],
+      technologies: ['React', 'WebRTC', 'MongoDB'],
       github: 'https://github.com/naman-0804/sih-site',
       youtube: 'https://youtu.be/eXR-V_Ck7VA?si=OxYaDhNPUAbsYDEK'
     },
@@ -92,7 +103,7 @@ function Projects() {
     {
       id: 'ml-mini-projects',
       category: 'Machine Learning',
-      title: 'AI Projects',
+      title: 'AI Projects (Mini Projects)',
       description: 'Machine Learning (Customer Segmentation), Deep Learning (Vehicle Classifier CNN), Natural Language Processing (Kindle Review Sentiment Analyzer), and LSTM (Word Predictor)',
       image: aiCombined,
       technologies: [],
@@ -131,8 +142,8 @@ function Projects() {
     {
       id: 'ml-button',
       category: 'Cloud',
-      title: 'AWS Diabetes Prediction',
-      description: 'Machine Learning model deployed on AWS for predicting diabetes.',
+      title: 'Diabetes Prediction (ML) on AWS',
+      description: 'Machine Learning model deployed on AWS for predicting diabetes. Features like AWS SNS for notif, DynamoDB for preds was used',
       image: db,
       technologies: ['Python', 'AWS', 'Flask', 'ML'],
       github: 'https://github.com/naman-0804/Diabetes_Prediction_onAWS',
@@ -239,14 +250,14 @@ function Projects() {
     'Cloud': 'var(--blue)',
   };
 
-  const otherProjectIds = ['pulse-tracker', 'wcs-button', 'medhub-button', 'okra-button', 'vitalized-button', 'portfolio-button', 'asl-button', 'lex-button', 'AWS-button', 'devops-button'];
+  const otherProjectIds = ['pulse-tracker', 'wcs-button', 'medhub-button', 'okra-button', 'vitalized-button', 'portfolio-button', 'asl-button', 'lex-button', 'AWS-button', 'devops-button', 'dl-button'];
 
   const mainProjects = projects.filter(p => !otherProjectIds.includes(p.id));
   const modalProjects = projects.filter(p => otherProjectIds.includes(p.id));
 
   const displayedProjects = activeFilter === 'All'
     ? mainProjects
-    : mainProjects.filter(p => p.category === activeFilter);
+    : projects.filter(p => p.category === activeFilter);
 
   const redirectToProject = (url) => {
     if (url) window.open(url, '_blank');
@@ -263,134 +274,134 @@ function Projects() {
     const isLong = project.description.length > DESC_CLAMP_THRESHOLD;
 
     return (
-    <div
-      key={project.id}
-      className="proj-row"
-      style={{
-        '--i': index,
-        '--cat-color': categoryColors[project.category] || 'var(--accent)',
-        flexShrink: 0
-      }}
-    >
-      <div className="proj-row-header">
-        <h3 className="proj-row-title">{project.title}</h3>
-        <span className="proj-row-category">{project.category}</span>
-      </div>
-      <div className="proj-row-body">
-        <div className="proj-row-details">
-          <p className={`proj-row-desc${!isExpanded && isLong ? ' clamped' : ''}`}>{project.description}</p>
-          {isLong && (
-            <button
-              className="proj-read-more-btn"
-              onClick={(e) => { e.stopPropagation(); toggleDesc(project.id); }}
-            >
-              {isExpanded ? 'Read Less ▲' : 'Read More ▼'}
-            </button>
-          )}
-          <div className="proj-row-tech">
-            {project.technologies.map((tech, i) => (
-              <span key={i} className="proj-tech-pill">{tech}</span>
-            ))}
-          </div>
-          <div className="proj-row-actions">
-            {project.github && (
-              <button
-                className="proj-action-btn"
-                onClick={(e) => { e.stopPropagation(); redirectToProject(project.github); }}
-              >
-                <FaGithub /> <span>{project.githubText || 'Source Code'}</span>
-              </button>
-            )}
-            {project.github2 && (
-              <button
-                className="proj-action-btn"
-                onClick={(e) => { e.stopPropagation(); redirectToProject(project.github2); }}
-              >
-                <FaGithub /> <span>{project.github2Text || 'Source Code 2'}</span>
-              </button>
-            )}
-            {project.github3 && (
-              <button
-                className="proj-action-btn"
-                onClick={(e) => { e.stopPropagation(); redirectToProject(project.github3); }}
-              >
-                <FaGithub /> <span>{project.github3Text || 'Source Code 3'}</span>
-              </button>
-            )}
-            {project.youtube && (
-              <button
-                className="proj-action-btn proj-action-yt"
-                onClick={(e) => { e.stopPropagation(); redirectToProject(project.youtube); }}
-              >
-                <FaYoutube /> <span>Demo</span>
-              </button>
-            )}
-            {project.demo && (
-              <button
-                className="proj-action-btn proj-action-demo"
-                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo); }}
-              >
-                <FaExternalLinkAlt /> <span>{project.demoText || 'Demo'}</span>
-              </button>
-            )}
-            {project.demo2 && (
-              <button
-                className="proj-action-btn proj-action-demo"
-                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo2); }}
-              >
-                <FaExternalLinkAlt /> <span>{project.demo2Text || 'Demo 2'}</span>
-              </button>
-            )}
-            {project.demo3 && (
-              <button
-                className="proj-action-btn proj-action-demo"
-                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo3); }}
-              >
-                <FaExternalLinkAlt /> <span>{project.demo3Text || 'Demo 3'}</span>
-              </button>
-            )}
-            {project.demo4 && (
-              <button
-                className="proj-action-btn proj-action-demo"
-                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo4); }}
-              >
-                <FaExternalLinkAlt /> <span>{project.demo4Text || 'Demo 4'}</span>
-              </button>
-            )}
-            {project.demo5 && (
-              <button
-                className="proj-action-btn proj-action-demo"
-                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo5); }}
-              >
-                <FaExternalLinkAlt /> <span>{project.demo5Text || 'Demo 5'}</span>
-              </button>
-            )}
-            {project.demo6 && (
-              <button
-                className="proj-action-btn proj-action-demo"
-                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo6); }}
-              >
-                <FaExternalLinkAlt /> <span>{project.demo6Text || 'Demo 6'}</span>
-              </button>
-            )}
-            {project.demo7 && (
-              <button
-                className="proj-action-btn proj-action-demo"
-                onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo7); }}
-              >
-                <FaExternalLinkAlt /> <span>{project.demo7Text || 'Demo 7'}</span>
-              </button>
-            )}
-          </div>
+      <div
+        key={project.id}
+        className="proj-row"
+        style={{
+          '--i': index,
+          '--cat-color': categoryColors[project.category] || 'var(--accent)',
+          flexShrink: 0
+        }}
+      >
+        <div className="proj-row-header">
+          <h3 className="proj-row-title">{project.title}</h3>
+          <span className="proj-row-category">{project.category}</span>
         </div>
-        {project.image && (
-          <div className="proj-row-image">
-            <img src={project.image} alt={project.title} loading="lazy" />
+        <div className="proj-row-body">
+          <div className="proj-row-details">
+            <p className={`proj-row-desc${!isExpanded && isLong ? ' clamped' : ''}`}>{project.description}</p>
+            {isLong && (
+              <button
+                className="proj-read-more-btn"
+                onClick={(e) => { e.stopPropagation(); toggleDesc(project.id); }}
+              >
+                {isExpanded ? 'Read Less ▲' : 'Read More ▼'}
+              </button>
+            )}
+            <div className="proj-row-tech">
+              {project.technologies.map((tech, i) => (
+                <span key={i} className="proj-tech-pill">{tech}</span>
+              ))}
+            </div>
+            <div className="proj-row-actions">
+              {project.github && (
+                <button
+                  className="proj-action-btn"
+                  onClick={(e) => { e.stopPropagation(); redirectToProject(project.github); }}
+                >
+                  <FaGithub /> <span>{project.githubText || 'Source Code'}</span>
+                </button>
+              )}
+              {project.github2 && (
+                <button
+                  className="proj-action-btn"
+                  onClick={(e) => { e.stopPropagation(); redirectToProject(project.github2); }}
+                >
+                  <FaGithub /> <span>{project.github2Text || 'Source Code 2'}</span>
+                </button>
+              )}
+              {project.github3 && (
+                <button
+                  className="proj-action-btn"
+                  onClick={(e) => { e.stopPropagation(); redirectToProject(project.github3); }}
+                >
+                  <FaGithub /> <span>{project.github3Text || 'Source Code 3'}</span>
+                </button>
+              )}
+              {project.youtube && (
+                <button
+                  className="proj-action-btn proj-action-yt"
+                  onClick={(e) => { e.stopPropagation(); redirectToProject(project.youtube); }}
+                >
+                  <FaYoutube /> <span>Demo</span>
+                </button>
+              )}
+              {project.demo && (
+                <button
+                  className="proj-action-btn proj-action-demo"
+                  onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo); }}
+                >
+                  <FaExternalLinkAlt /> <span>{project.demoText || 'Demo'}</span>
+                </button>
+              )}
+              {project.demo2 && (
+                <button
+                  className="proj-action-btn proj-action-demo"
+                  onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo2); }}
+                >
+                  <FaExternalLinkAlt /> <span>{project.demo2Text || 'Demo 2'}</span>
+                </button>
+              )}
+              {project.demo3 && (
+                <button
+                  className="proj-action-btn proj-action-demo"
+                  onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo3); }}
+                >
+                  <FaExternalLinkAlt /> <span>{project.demo3Text || 'Demo 3'}</span>
+                </button>
+              )}
+              {project.demo4 && (
+                <button
+                  className="proj-action-btn proj-action-demo"
+                  onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo4); }}
+                >
+                  <FaExternalLinkAlt /> <span>{project.demo4Text || 'Demo 4'}</span>
+                </button>
+              )}
+              {project.demo5 && (
+                <button
+                  className="proj-action-btn proj-action-demo"
+                  onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo5); }}
+                >
+                  <FaExternalLinkAlt /> <span>{project.demo5Text || 'Demo 5'}</span>
+                </button>
+              )}
+              {project.demo6 && (
+                <button
+                  className="proj-action-btn proj-action-demo"
+                  onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo6); }}
+                >
+                  <FaExternalLinkAlt /> <span>{project.demo6Text || 'Demo 6'}</span>
+                </button>
+              )}
+              {project.demo7 && (
+                <button
+                  className="proj-action-btn proj-action-demo"
+                  onClick={(e) => { e.stopPropagation(); redirectToProject(project.demo7); }}
+                >
+                  <FaExternalLinkAlt /> <span>{project.demo7Text || 'Demo 7'}</span>
+                </button>
+              )}
+            </div>
           </div>
-        )}
+          {project.image && (
+            <div className="proj-row-image">
+              <img src={project.image} alt={project.title} loading="lazy" />
+            </div>
+          )}
+        </div>
       </div>
-    </div>
-  );
+    );
   };
 
   return (
