@@ -7,7 +7,18 @@ import db from '../Images/Diabetes.webp';
 import chat from '../Images/auth.webp';
 import ecommerece from '../Images/ecommerce.webp';
 import stat from '../Images/stat.webp';
+import mlops from '../Images/mlops.png';
 const blogs = [
+  {
+    id: 'blog-mlops',
+    title: 'Building a Production-Grade End-to-End MLOps Pipeline from Scratch',
+    link: 'https://dev.to/naman_2004/building-a-production-grade-end-to-end-mlops-pipeline-from-scratch-l9h',
+    date: 'September 2026',
+    readTime: '30 min read',
+    readMinutes: 30,
+    description: 'A comprehensive guide to building a scalable MLOps pipeline with DVC, Prefect, MLflow, GitHub Actions CI/CD, and production monitoring using Prometheus, Grafana, and Evidently AI.',
+    image: mlops,
+  },
   {
     id: 'blog-1',
     title: 'Combining Total DSA + Github Stats across Platforms',
@@ -69,6 +80,7 @@ function BlogSection() {
         {/* Premium Typography Header */}
         <div className="premium-section-header">
           <h2 className="premium-heading">Blog</h2>
+          <p style={{ fontSize: '1.8rem', color: 'var(--text-primary)', marginTop: '0.5rem' }}>Blogs written 85% by AI but still works</p>
         </div>
 
         {/* Blog List */}
