@@ -72,18 +72,18 @@ function Home() {
               <h3 className="block-title">About Me</h3>
               <div className="about-copy">
                 <p>
-                  I'm a <span className="highlight dusk">Software Developer</span> with hands on experience across
+                  I'm a <span className="highlight dusk">Software Developer</span> with practical experience building across
                   <span className="highlight dusk"> Full-Stack Development</span>, <span className="highlight sage">DevOps</span>, <span className="highlight blue">MLOps</span>, and <span className="highlight rose">Cloud Development</span>, working with technologies such as
                   <span className="highlight amber"> AWS</span>, <span className="highlight blue">Docker</span>, <span className="highlight sage">Prometheus</span>, and <span className="highlight rose">Grafana</span>.
                 </p>
                 <p>
-                  My recent focus has been on building applications using
-                  <span className="highlight sage"> Machine Learning, Deep Learning, and NLP</span>, with hands-on experience developing LLM-powered applications and AI agents using
-                  <span className="highlight rose"> LangChain</span> and <span className="highlight amber">LangGraph</span>.
+                  My recent focus has been on AI — developing LLM-powered applications and AI agents using
+                  <span className="highlight rose"> LangChain</span> and <span className="highlight amber">LangGraph</span>, backed by strong fundamentals in
+                  <span className="highlight sage"> Machine Learning, Deep Learning, and NLP</span>.
                 </p>
                 <p>
                   I thrive in fast-paced environments like <span className="highlight rose">hackathons</span>.
-                  Being selected for several top-tier events has really pushed me to think on my feet, build fast, and stay creative.
+                  Finishing in the top 6 across 3 hackathons and being selected for <span className="highlight amber">SIH 2024</span> has pushed me to think on my feet, build fast, and stay creative.
                 </p>
 
               </div>
