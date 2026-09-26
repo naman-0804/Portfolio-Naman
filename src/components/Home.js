@@ -1,9 +1,54 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { FaLinkedin, FaGithub, FaYoutube, FaDownload, FaEye, FaArrowRight } from 'react-icons/fa';
 import { SiOrcid } from 'react-icons/si';
 import mypic from '../Images/profile-hero.webp';
 
+const ROLES = [
+  'Software Developer',
+  'AI Engineer',
+  'Cloud Developer',
+  'Full-Stack Developer',
+];
+
 function Home() {
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const roleIndex = useRef(0);
+
+  const tick = useCallback(() => {
+    const currentRole = ROLES[roleIndex.current];
+
+    if (!isDeleting) {
+      // Typing
+      setDisplayText((prev) => currentRole.substring(0, prev.length + 1));
+    } else {
+      // Deleting
+      setDisplayText((prev) => currentRole.substring(0, prev.length - 1));
+    }
+  }, [isDeleting]);
+
+  useEffect(() => {
+    const currentRole = ROLES[roleIndex.current];
+    let speed;
+
+    if (!isDeleting && displayText === currentRole) {
+      // Finished typing — pause then start deleting
+      speed = 1500;
+      const timeout = setTimeout(() => setIsDeleting(true), speed);
+      return () => clearTimeout(timeout);
+    } else if (isDeleting && displayText === '') {
+      // Finished deleting — move to next role
+      setIsDeleting(false);
+      roleIndex.current = (roleIndex.current + 1) % ROLES.length;
+      speed = 300;
+    } else {
+      speed = isDeleting ? 50 : 100;
+    }
+
+    const timeout = setTimeout(tick, speed);
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, tick]);
+
   return (
     <div className="hero-container" id="home">
 
@@ -28,7 +73,9 @@ function Home() {
             </div>
 
             <h1 className="profile-name">Naman Srivastava</h1>
-            <span className="profile-role">Software Developer</span>
+            <span className="profile-role">
+              {displayText}<span className="typewriter-cursor" aria-hidden="true">|</span>
+            </span>
 
             <div className="social-row">
               <a href="https://linkedin.com/in/naman1608" target="_blank" rel="noopener noreferrer" className="social-node" data-brand="linkedin" aria-label="Naman Srivastava on LinkedIn">
