@@ -41,10 +41,11 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
-  padding: 2.4rem 1.8rem 2rem;
+  padding: 0 1.8rem 2rem;
   text-align: center;
   animation: fade-up 0.6s ease both;
   transition: transform 0.35s ease;
+  overflow: hidden;
 }
 
 .profile-card:hover {
@@ -54,9 +55,9 @@
 /* Avatar */
 .avatar-wrap {
   position: relative;
-  width: 180px;
-  height: 180px;
-  margin: 0 auto 1.4rem;
+  width: calc(100% + 3.6rem);       /* bleed past card padding */
+  margin: 0 -1.8rem 0.6rem;         /* pull flush to card edges */
+  aspect-ratio: 5 / 4;
 }
 
 .avatar-aura {
@@ -68,16 +69,30 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 0;
   overflow: hidden;
-  border: 3px solid var(--border-color);
-  box-shadow: var(--shadow-card);
+  border: none;
+  box-shadow: none;
+  /* Gradient mask: only fade at the bottom */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 55%,
+    rgba(0, 0, 0, 0.5) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 55%,
+    rgba(0, 0, 0, 0.5) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .avatar-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 55%;
   transition: transform 0.5s ease;
 }
 
@@ -442,12 +457,12 @@
   }
 
   .profile-card {
-    padding: 2rem 1.3rem 1.6rem;
+    padding: 0 1.3rem 1.6rem;
   }
 
   .avatar-wrap {
-    width: 150px;
-    height: 150px;
+    width: calc(100% + 2.6rem);
+    margin: 0 -1.3rem 0.6rem;
   }
 
   .avatar-aura {
@@ -485,8 +500,7 @@
     max-width: 460px;
   }
   .avatar-wrap {
-    width: 240px;
-    height: 240px;
+    aspect-ratio: 1 / 1;
   }
   .profile-name {
     font-size: 2.1rem;
